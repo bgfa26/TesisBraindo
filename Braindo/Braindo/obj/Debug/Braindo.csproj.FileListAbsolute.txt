@@ -1,6 +1,0 @@
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\bin\Braindo.dll.config
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\bin\Braindo.dll
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\bin\Braindo.pdb
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\obj\Debug\Braindo.dll
-C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\Braindo\Braindo\obj\Debug\Braindo.pdb
