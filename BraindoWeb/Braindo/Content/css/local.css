@@ -269,7 +269,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #BDBDBD;
-  background-color: #060606;
+  background-color: #1F0A3B;
 }
 input,
 button,
@@ -4011,8 +4011,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #542d89;
+  border-color: #ffffff;
 }
 .navbar-inverse .navbar-brand {
   color: #ffffff;
@@ -4023,10 +4023,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #BDBDBD;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #BDBDBD;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4959,7 +4959,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #2a9fd6;
+  background-color: #542d89;
   border-color: #2a9fd6;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
@@ -5957,8 +5957,8 @@ table.tablesorter thead tr th:hover {
 	top: 50px;
 	height: 100%;
 	border-radius: 0;
-	border: none;
-	background-color: #222222;
+	border-right: 1px solid white;
+	background-color: #5ae2a0;
 	overflow-y: auto;
   }
 
@@ -5993,7 +5993,7 @@ table.tablesorter thead tr th:hover {
 
   .navbar-inverse .navbar-nav>li>a:hover,
   .navbar-inverse .navbar-nav>li>a:focus {
-	background-color: #080808;
+	background-color: #1f0a3b;
   }
 
   /* Nav Messages */
