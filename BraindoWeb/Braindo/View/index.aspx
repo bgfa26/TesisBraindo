@@ -34,15 +34,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Panel</a>
+                <a class="navbar-brand" href="../View/index.aspx">Admin Panel</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
-                    <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                    <li class="selected"><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
                     <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
                     <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
-                    <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
+                    <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Register</a></li>
                     <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
                     <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
                     <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>

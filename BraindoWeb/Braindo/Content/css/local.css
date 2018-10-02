@@ -5958,7 +5958,7 @@ table.tablesorter thead tr th:hover {
 	height: 100%;
 	border-radius: 0;
 	border-right: 1px solid white;
-	background-color: #5ae2a0;
+	background-color: #45b780;
 	overflow-y: auto;
   }
 
@@ -6089,7 +6089,7 @@ table.tablesorter thead tr th:hover {
 }
 
 .selected {
-    border-left:7px solid #2A9FD6;
+    border-left:10px solid #ffffff;
 }
 
  .timeline {
