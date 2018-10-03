@@ -64,6 +64,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
+    <Content Include="Content\css\RegistrationPsychoProfile.css" />
     <Content Include="Content\css\local.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />

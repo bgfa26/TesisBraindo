@@ -4,20 +4,24 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Registrar Perfil Psicologico</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/RegistrationPsychoProfile.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
 
+
     
 </head>
 <body>
-    <form id="form1" runat="server">
 
-       <div id="wrapper">
+    <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -63,7 +67,7 @@
                             <li><a href="#">Go to Inbox <span class="badge">2</span></a></li>
                         </ul>
                     </li>
-                     <li class="dropdown user-dropdown">
+                        <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
@@ -76,93 +80,89 @@
             </div>
         </nav>
 
-       <div>
-        <div class="row text-center">
-            <h2>Registrar Perfil Psicologico</h2>
-        </div>
-        <div>
-            <label for="comportamiento" class="col-md-2">
-                Comportamiento:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+        <div id="page-wrapper">
+            <div class="row centerRegistrationTitle">
+                <h2>Perfil Psicologico</h2>
+            </div>
+            <div>
+                <label for="comportamiento" class="col-md-1">
+                    Comportamiento:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>        
+            <div>
+                <label for="actitud" class="col-md-1">
+                    Actitud:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>        
-        <div>
-            <label for="actitud" class="col-md-2">
-                Actitud:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div>
+                <label for="atencion" class="col-md-1">
+                    Atencion:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <label for="atencion" class="col-md-2">
-                Atencion:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div>
+                <label for="conciencia" class="col-md-1">
+                    Conciencia:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <label for="conciencia" class="col-md-2">
-                Conciencia:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div>
+                <label for="estadoAnimo" class="col-md-1">
+                    Estado de Animo:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <label for="estadoAnimo" class="col-md-2">
-                Estado de Animo:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div>
+                <label for="lenguaje" class="col-md-1">
+                    Lenguaje:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <label for="lenguaje" class="col-md-2">
-                Lenguaje:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div>
+                <label for="pensamiento" class="col-md-1">
+                    Pensamiento:
+                </label>
+                <div class="col-md-5">
+                    <div class="form-group paddingTextArea">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <label for="pensamiento" class="col-md-2">
-                Pensamiento:
-            </label>
-            <div class="col-md-9">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+            <div class="row centerRegistrationButton">
+                <div class="col-md-10">
+                    <button type="submit" class="btn btn-lg btn-info">
+                        Registrar Perfil
+                    </button>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-10">
-                <button type="submit" class="btn btn-info">
-                    Registrar
-                </button>
-            </div>
-        </div>
-    </div>  
+        </div>  
     </div>     
-
-    </form>
 
 </body>
 </html>

@@ -4,8 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Braindo</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
 
@@ -25,8 +28,8 @@
     <div>
     </div>
     </form>
-   <div id="wrapper">
-          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -84,7 +87,7 @@
                     <li class="divider-vertical"></li>
                     <li>
                         <form class="navbar-search">
-                            <input type="text" placeholder="Search" class="form-control">
+                            <input type="text" placeholder="Search" class="form-control"/>
                         </form>
                     </li>
                 </ul>
