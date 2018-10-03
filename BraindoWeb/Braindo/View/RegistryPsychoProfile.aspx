@@ -78,113 +78,84 @@
 
        <div>
         <div class="row text-center">
-            <h2>New Registration</h2>
+            <h2>Registrar Perfil Psicologico</h2>
         </div>
         <div>
-            <label for="firstname" class="col-md-2">
-                First Name:
+            <label for="comportamiento" class="col-md-2">
+                Comportamiento:
             </label>
             <div class="col-md-9">
-                <input type="text" class="form-control" id="firstname" placeholder="Enter First Name">
-            </div>
-            <div class="col-md-1">
-                <i class="fa fa-lock fa-2x"></i>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
             </div>
         </div>        
         <div>
-            <label for="lastname" class="col-md-2">
-                Last Name:
+            <label for="actitud" class="col-md-2">
+                Actitud:
             </label>
             <div class="col-md-9">
-                <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
-            </div>
-             <div class="col-md-1">
-                <i class="fa fa-lock fa-2x"></i>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
             </div>
         </div>
         <div>
-            <label for="emailaddress" class="col-md-2">
-                Email address:
+            <label for="atencion" class="col-md-2">
+                Atencion:
             </label>
             <div class="col-md-9">
-                <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
-                <p class="help-block">
-                    Example: yourname@domain.com
-                </p>
-            </div>
-             <div class="col-md-1">
-                <i class="fa fa-lock fa-2x"></i>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
             </div>
         </div>
         <div>
-            <label for="password" class="col-md-2">
-                Password:
+            <label for="conciencia" class="col-md-2">
+                Conciencia:
             </label>
             <div class="col-md-9">
-                <input type="password" class="form-control" id="password" placeholder="Enter Password">
-                <p class="help-block">
-                    Min: 6 characters (Alphanumeric only)
-                </p>
-            </div>
-             <div class="col-md-1">
-                <i class="fa fa-lock fa-2x"></i>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
             </div>
         </div>
         <div>
-            <label for="sex" class="col-md-2">
-                Gender:
-            </label>
-            <div class="col-md-10">
-                <label class="radio">
-                    <input type="radio" name="sex" id="sex" value="male" checked>
-                    Male
-                </label>
-                <label class="radio">
-                    <input type="radio" name="sex" id="Radio1" value="female">
-                    Female
-                </label>
-            </div>             
-        </div>
-        <div>
-            <label for="country" class="col-md-2">
-                Country:
+            <label for="estadoAnimo" class="col-md-2">
+                Estado de Animo:
             </label>
             <div class="col-md-9">
-                <select name="country" id="country" class="form-control">
-                    <option>--Please Select--</option>
-                    <option>India</option>
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>United Kingdom</option>
-                    <option>Others</option>
-                </select>
-            </div>            
-        </div>
-        <div>
-            <label for="uploadimage" class="col-md-2">
-                Upload Image:
-            </label>
-            <div class="col-md-10">
-                <input type="file" name="uploadimage" id="uploadimage">
-                <p class="help-block">
-                    Allowed formats: jpeg, jpg, gif, png
-                </p>
-            </div>          
-        </div>
-        <div>
-            <div class="col-md-2">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
             </div>
-            <div class="col-md-10">
-                <label>
-                    <input type="checkbox">I hereby accept the terms and conditions for using this site</label>
-            </div>            
+        </div>
+        <div>
+            <label for="lenguaje" class="col-md-2">
+                Lenguaje:
+            </label>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="pensamiento" class="col-md-2">
+                Pensamiento:
+            </label>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-2">
             </div>
             <div class="col-md-10">
                 <button type="submit" class="btn btn-info">
-                    Register
+                    Registrar
                 </button>
             </div>
         </div>
