@@ -85,77 +85,77 @@
                 <h2>Perfil Psicologico</h2>
             </div>
             <div>
-                <label for="comportamiento" class="col-md-1">
+                <label for="comportamiento" class="col-lg-2">
                     Comportamiento:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>        
             <div>
-                <label for="actitud" class="col-md-1">
+                <label for="actitud" class="col-lg-2">
                     Actitud:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="atencion" class="col-md-1">
+                <label for="atencion" class="col-lg-2">
                     Atencion:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="conciencia" class="col-md-1">
+                <label for="conciencia" class="col-lg-2">
                     Conciencia:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="estadoAnimo" class="col-md-1">
+                <label for="estadoAnimo" class="col-lg-2">
                     Estado de Animo:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="lenguaje" class="col-md-1">
+                <label for="lenguaje" class="col-lg-2">
                     Lenguaje:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="pensamiento" class="col-md-1">
+                <label for="pensamiento" class="col-lg-2">
                     Pensamiento:
                 </label>
-                <div class="col-md-5">
+                <div class="col-lg-4">
                     <div class="form-group paddingTextArea">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </div>
             <div class="row centerRegistrationButton">
-                <div class="col-md-10">
+                <div class="col-lg-12">
                     <button type="submit" class="btn btn-lg btn-info">
                         Registrar Perfil
                     </button>
