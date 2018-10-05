@@ -45,7 +45,7 @@
                     <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
                     <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
                     <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
-                    <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Register</a></li>
+                    <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
                     <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
                     <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
                     <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
@@ -75,20 +75,14 @@
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Ronald Navas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a href="../View/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
 
                         </ul>
-                    </li>
-                    <li class="divider-vertical"></li>
-                    <li>
-                        <form class="navbar-search">
-                            <input type="text" placeholder="Search" class="form-control"/>
-                        </form>
                     </li>
                 </ul>
             </div>
