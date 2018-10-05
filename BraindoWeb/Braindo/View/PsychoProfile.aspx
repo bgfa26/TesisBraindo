@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistryPsychoProfile.aspx.cs" Inherits="Braindo.View.RegistryPsychoProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychoProfile" %>
 
 <!DOCTYPE html>
 
@@ -6,20 +6,21 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Registrar Perfil Psicologico</title>
+    <title>Braindo - Perfil</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/RegistrationPsychoProfile.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfile.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
-
-
-    
 </head>
 <body>
+    <form id="form1" runat="server">
+    <div>
+    </div>
+    </form>
 
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -81,88 +82,57 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="row centerRegistrationTitle">
-                <h2>Perfil Psicologico</h2>
+            <div class="row centerProfileTitle">
+                <h1>Perfil del Psicologo</h1>
             </div>
-            <div>
-                <label for="comportamiento" class="col-lg-2">
-                    Comportamiento:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>        
-            <div>
-                <label for="actitud" class="col-lg-2">
-                    Actitud:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="atencion" class="col-lg-2">
-                    Atencion:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="conciencia" class="col-lg-2">
-                    Conciencia:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="estadoAnimo" class="col-lg-2">
-                    Estado de Animo:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="lenguaje" class="col-lg-2">
-                    Lenguaje:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="pensamiento" class="col-lg-2">
-                    Pensamiento:
-                </label>
-                <div class="col-lg-4">
-                    <div class="form-group paddingTextArea">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row centerRegistrationButton">
+
+            <div class="row">
                 <div class="col-lg-12">
-                    <button type="submit" class="btn btn-lg btn-info">
-                        Registrar Perfil
-                    </button>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h2>Datos Personales</h2>
+                            <dl>
+                                <dt>Cedula</dt>
+                                <dd>20678868</dd>
+                                <dt>Numero de Matricula</dt>
+                                <dd>20678868-7309566</dd>
+                                <dt>Primer Nombre</dt>
+                                <dd>Ronald</dd>
+                                <dt>Segundo Nombre</dt>
+                                <dd>Efrain</dd>
+                                <dt>Primer Apellido</dt>
+                                <dd>Navas</dd>
+                                <dt>Segundo Apellido</dt>
+                                <dd>Hernandez</dd>
+                                <dt>Fecha de Nacimiento</dt>
+                                <dd>27/02/1993</dd>
+                            </dl>
+                        </div>
+                        <div class="col-lg-4">
+                            <h2>Informacion de acceso</h2>
+                            <dl>
+                                <dt>Correo Electronico</dt>
+                                <dd>rn2702@gmail.com</dd>
+                            </dl>
+                        </div>
+                        <div class="col-lg-4">
+                            <h2>Editar informacion</h2>
+                            <div class="bs-example">
+                              <div class="list-group">
+                                <a href="#" class="list-group-item-psycho">
+                                  Editar datos personales
+                                </a>
+                                <a href="#" class="list-group-item-psycho">
+                                  Cambiar contraseña
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>  
-    </div>     
+        </div>
+    </div>
 
 </body>
 </html>
