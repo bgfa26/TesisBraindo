@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychoProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoProfileEdit.aspx.cs" Inherits="Braindo.View.PsychoProfileEdit" %>
 
 <!DOCTYPE html>
 
@@ -6,22 +6,17 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo - Perfil</title>
+    <title>Braindo - Editar datos personales</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfile.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfileEdit.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    </div>
-    </form>
-
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
@@ -39,7 +34,7 @@
                     <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
                     <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
                     <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
-                    <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
+                    <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
                     <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
                     <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
                     <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
@@ -80,57 +75,58 @@
                 </ul>
             </div>
         </nav>
-
-        <div id="page-wrapper">
+        <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h1>Perfil del Psicologo</h1>
+                <h1>Editar datos personales</h1>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
+             <form id="form1" runat="server">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <h2>Datos Personales</h2>
-                            <dl>
-                                <dt>Cedula</dt>
-                                <dd>20678868</dd>
-                                <dt>Numero de Matricula</dt>
-                                <dd>20678868-7309566</dd>
-                                <dt>Primer Nombre</dt>
-                                <dd>Ronald</dd>
-                                <dt>Segundo Nombre</dt>
-                                <dd>Efrain</dd>
-                                <dt>Primer Apellido</dt>
-                                <dd>Navas</dd>
-                                <dt>Segundo Apellido</dt>
-                                <dd>Hernandez</dd>
-                                <dt>Fecha de Nacimiento</dt>
-                                <dd>27/02/1993</dd>
-                            </dl>
-                        </div>
-                        <div class="col-lg-4">
-                            <h2>Informacion de acceso</h2>
-                            <dl>
-                                <dt>Correo Electronico</dt>
-                                <dd>rn2702@gmail.com</dd>
-                            </dl>
-                        </div>
-                        <div class="col-lg-4">
-                            <h2>Editar informacion</h2>
-                            <div class="bs-example">
-                              <div class="list-group">
-                                <a href="../View/PsychoProfileEdit.aspx" class="list-group-item-psycho">
-                                  Editar datos personales
-                                </a>
-                                <a href="#" class="list-group-item-psycho">
-                                  Cambiar contraseña
-                                </a>
-                              </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-lg-offset-4">
+                                    <div class="panel-EditProfile panel-default">
+                                        <div class="panel-body-EditProfile">
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Primer Nombre</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Segundo Nombre</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Primer Apellido</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Segundo Apellido</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Fecha de Nacimiento</label>
+                                            <input id="date" type="date" class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Numero de Matricula</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <label>Email</label>
+                                            <input class="form-control-ProfileEdit"/>
+                                        </div>
+                                        <div class="form-group-ProfileEdit">
+                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
+                                                Registrar Perfil
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>     
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+             </form>
         </div>
     </div>
 

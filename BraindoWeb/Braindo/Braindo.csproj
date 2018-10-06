@@ -65,6 +65,7 @@
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
     <Content Include="Content\css\PsychoProfile.css" />
+    <Content Include="Content\css\PsychoProfileEdit.css" />
     <Content Include="Content\css\RegistrationPsychoProfile.css" />
     <Content Include="Content\css\local.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
@@ -75,6 +76,7 @@
     <Content Include="Content\js\shieldui-all.min.js" />
     <Content Include="View\index.aspx" />
     <Content Include="View\PsychoProfile.aspx" />
+    <Content Include="View\PsychoProfileEdit.aspx" />
     <Content Include="View\RegistryPsychoProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,6 +95,13 @@
     </Compile>
     <Compile Include="View\PsychoProfile.aspx.designer.cs">
       <DependentUpon>PsychoProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PsychoProfileEdit.aspx.cs">
+      <DependentUpon>PsychoProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PsychoProfileEdit.aspx.designer.cs">
+      <DependentUpon>PsychoProfileEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\RegistryPsychoProfile.aspx.cs">
       <DependentUpon>RegistryPsychoProfile.aspx</DependentUpon>
