@@ -6280,3 +6280,13 @@ table.tablesorter thead tr th:hover {
                     right: auto;
                 }
         }
+
+#logoImage{
+    position:absolute;
+    top:7px; 
+    left:15px;
+    bottom:10px;
+    width:150px;
+    height:37px;
+    overflow:hidden;
+}

@@ -31,15 +31,8 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
-                    <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
-                    <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
                     <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
-                    <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
-                    <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
-                    <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
-                    <li><a href="bootstrap-elements.html"><i class="fa fa-list-ul"></i> Bootstrap Elements</a></li>
-                    <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i > Bootstrap Grid</a></li>            
+                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos del Paciente</a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">

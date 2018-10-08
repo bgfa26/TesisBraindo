@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychoChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditPatientInformation.aspx.cs" Inherits="Braindo.View.EditPatientInformation" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,12 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo - Cambiar Contraseña</title>
+    <title>Braindo - Editar datos del paciente</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfileEdit.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/PatientEditInformation.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
-                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos del Paciente</a></li>    
+                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos del Paciente</a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -70,27 +70,34 @@
         </nav>
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h1>Cambiar Contraseña</h1>
+                <h1>Editar datos personales del paciente</h1>
             </div>
-
-             <form id="form1" runat="server">
+            <form id="form1" runat="server">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="col-lg-4 col-lg-offset-4">
-                                    <div class="panel-EditProfile panel-default">
-                                        <div class="panel-body-EditProfile">
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Contraseña Anterior</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                    <div class="panel-Patient panel-default">
+                                        <div class="panel-body-Patient">
+                                        <div class="form-group-Patient">
+                                            <label>Primer Nombre</label>
+                                            <input class="form-control-Patient"/>
                                         </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Nueva Contraseña</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>  
-                                        <div class="form-group-ProfileEdit">
-                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Cambiar Contraseña
+                                        <div class="form-group-Patient">
+                                            <label>Primer Apellido</label>
+                                            <input class="form-control-Patient"/>
+                                        </div>
+                                        <div class="form-group-Patient">
+                                            <label>Edad</label>
+                                            <input class="form-control-Patient"/>
+                                        </div>
+                                        <div class="form-group-Patient">
+                                            <label>Carrera</label>
+                                            <input class="form-control-Patient"/>
+                                        </div>
+                                        <div class="form-group-Patient">
+                                            <button type="submit" class="btn btn-lg btn-info-Patient">
+                                                Modificar Datos
                                             </button>
                                         </div>
                                         </div>
@@ -101,9 +108,7 @@
                     </div>
              </form>
         </div>
-
-
-
     </div>
+
 </body>
 </html>
