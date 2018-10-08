@@ -14,13 +14,14 @@
 .panel-EditProfile {
   margin-bottom: 20px;
   background-color: #45b780;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 20px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body-EditProfile {
   
+  border: 2px double white;
+  border-radius: 20px;
   padding: 15px;
   color: #ffffff;
 }
@@ -34,9 +35,9 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  width: 50%;
+  width: 60%;
   height: 38px;
-  padding: 8px 12px;
+  padding: 0px 12px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #111111;

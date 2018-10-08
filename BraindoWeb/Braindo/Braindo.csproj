@@ -75,6 +75,7 @@
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\shieldui-all.min.js" />
     <Content Include="View\index.aspx" />
+    <Content Include="View\PsychoChangePassword.aspx" />
     <Content Include="View\PsychoProfile.aspx" />
     <Content Include="View\PsychoProfileEdit.aspx" />
     <Content Include="View\RegistryPsychoProfile.aspx" />
@@ -88,6 +89,13 @@
     </Compile>
     <Compile Include="View\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PsychoChangePassword.aspx.cs">
+      <DependentUpon>PsychoChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PsychoChangePassword.aspx.designer.cs">
+      <DependentUpon>PsychoChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\PsychoProfile.aspx.cs">
       <DependentUpon>PsychoProfile.aspx</DependentUpon>
