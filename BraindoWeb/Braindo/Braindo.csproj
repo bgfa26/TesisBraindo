@@ -64,6 +64,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
+    <Content Include="Content\css\PatientEditInformation.css" />
     <Content Include="Content\css\PsychoProfile.css" />
     <Content Include="Content\css\PsychoProfileEdit.css" />
     <Content Include="Content\css\RegistrationPsychoProfile.css" />
@@ -71,9 +72,12 @@
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\LogoLetrasMin.png" />
+    <Content Include="Content\images\LogoSoloMin.png" />
     <Content Include="Content\js\gridData.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\shieldui-all.min.js" />
+    <Content Include="View\EditPatientInformation.aspx" />
     <Content Include="View\index.aspx" />
     <Content Include="View\PsychoChangePassword.aspx" />
     <Content Include="View\PsychoProfile.aspx" />
@@ -83,6 +87,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\EditPatientInformation.aspx.cs">
+      <DependentUpon>EditPatientInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\EditPatientInformation.aspx.designer.cs">
+      <DependentUpon>EditPatientInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
