@@ -9,6 +9,7 @@
     <title>Registrar Perfil Psicologico</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/RegistrationPsychoProfile.css" />
@@ -35,8 +36,8 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Perfil Psicologico</a></li>
-                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos del Paciente</a></li>            
+                    <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-list-ol"></i> Registrar Perfil Psicologico</a></li>
+                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>            
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -89,83 +90,43 @@
                                     <option>6820508 - Ana Hernandez</option>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="comportamiento" class="col-lg-2">
-                            Comportamiento:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
+                            <div class="panel-Patient panel-default">
+                                <div class="panel-body-Patient">
+                                    <div class="form-group-Patient">
+                                        <label>Comportamiento:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Actitud:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Atencion:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Conciencia:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Estado de Animo:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Lenguaje:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <label>Pensamiento:</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group-Patient">
+                                        <button type="submit" class="btn btn-lg btn-info-Patient">
+                                            Registrar
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="actitud" class="col-lg-2">
-                            Actitud:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="atencion" class="col-lg-2">
-                            Atencion:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="conciencia" class="col-lg-2">
-                            Conciencia:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="estadoAnimo" class="col-lg-2">
-                            Estado de Animo:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="lenguaje" class="col-lg-2">
-                            Lenguaje:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="pensamiento" class="col-lg-2">
-                            Pensamiento:
-                        </label>
-                        <div class="col-lg-4">
-                            <div class="form-group paddingTextArea">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row centerRegistrationButton">
-                        <div class="col-lg-12">
-                            <button type="submit" class="btn btn-lg btn-info">
-                                Registrar Perfil
-                            </button>
                         </div>
                     </div>
                 </div>
