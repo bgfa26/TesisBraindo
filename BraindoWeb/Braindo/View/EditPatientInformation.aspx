@@ -13,8 +13,9 @@
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/PatientEditInformation.css" />
 
-    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
+    
 </head>
 <body>
     <div id="wrapper">
@@ -68,7 +69,7 @@
                 </ul>
             </div>
         </nav>
-        <div id="page-wrapper-PsychoEdit">
+        <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
                 <h1>Editar datos personales del paciente</h1>
             </div>
@@ -77,6 +78,14 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="col-lg-4 col-lg-offset-4">
+                                    <div class="form-group">
+                                        <label>Lista de pacientes:</label>
+                                        <select class="form-control">
+                                            <option>24220210 - Barbara Fernandez</option>
+                                            <option>6963282 - Dario Navas</option>
+                                            <option>6820508 - Ana Hernandez</option>
+                                        </select>
+                                    </div>
                                     <div class="panel-Patient panel-default">
                                         <div class="panel-body-Patient">
                                         <div class="form-group-Patient">
