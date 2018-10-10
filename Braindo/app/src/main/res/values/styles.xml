@@ -8,4 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!-- heyDriver application theme. -->
+    <style name="BraindoTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/braindoLightPurple</item>
+        <item name="colorPrimaryDark">@color/braindoDarkPurple</item>
+        <item name="colorAccent">@color/braindoGreen</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="BraindoTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
