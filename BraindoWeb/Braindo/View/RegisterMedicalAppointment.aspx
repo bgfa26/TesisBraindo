@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/MedicalAppointment.css" />
 
-    <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script> 
 </head>
 <body>
     <div id="wrapper">
@@ -32,9 +32,24 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-list-ol"></i> Registrar Perfil Psicologico</a></li>
-                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>
-                    <li class="selected"><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-list-ol"></i> Registrar Cita</a></li>  
+                    <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Paciente<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Administrar Citas<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="selected"><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar cita</a></li>
+                        </ul>
+                    </li>   
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
