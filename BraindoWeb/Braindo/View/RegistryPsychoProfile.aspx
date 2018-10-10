@@ -37,7 +37,8 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-list-ol"></i> Registrar Perfil Psicologico</a></li>
-                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>            
+                    <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>
+                    <li><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-list-ol"></i> Registrar Cita</a></li>             
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -90,38 +91,38 @@
                                     <option>6820508 - Ana Hernandez</option>
                                 </select>
                             </div>
-                            <div class="panel-Patient panel-default">
-                                <div class="panel-body-Patient">
-                                    <div class="form-group-Patient">
+                            <div class="panel-PsychoRegistration panel-default">
+                                <div class="panel-body-PsychoRegistration">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Comportamiento:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Actitud:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Atencion:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Conciencia:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Estado de Animo:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Lenguaje:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
+                                    <div class="form-group-PsychoRegistration">
                                         <label>Pensamiento:</label>
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group-Patient">
-                                        <button type="submit" class="btn btn-lg btn-info-Patient">
+                                    <div class="form-group-PsychoRegistration">
+                                        <button type="submit" class="btn btn-lg btn-info-PsychoRegistration">
                                             Registrar
                                         </button>
                                     </div>

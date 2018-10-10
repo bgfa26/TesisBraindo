@@ -90,3 +90,8 @@ fieldset[disabled] .form-control {
   background-color: #542d89;
   border-color: #ffffff;
 }
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}

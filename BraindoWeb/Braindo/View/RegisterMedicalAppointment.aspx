@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychoChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterMedicalAppointment.aspx.cs" Inherits="Braindo.View.RegisterMedicalAppointment" %>
 
 <!DOCTYPE html>
 
@@ -6,16 +6,16 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo - Cambiar Contraseña</title>
+    <title>Braindo - Registrar Cita Medica</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfileEdit.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/MedicalAppointment.css" />
 
-    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -34,7 +34,7 @@
                     <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-list-ol"></i> Registrar Perfil Psicologico</a></li>
                     <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>
-                    <li><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-list-ol"></i> Registrar Cita</a></li>     
+                    <li class="selected"><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-list-ol"></i> Registrar Cita</a></li>  
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -70,31 +70,38 @@
                 </ul>
             </div>
         </nav>
-        <div id="page-wrapper-PsychoEdit">
+        <div id="page-wrapper-Medical">
             <div class="row centerProfileTitle">
-                <h1>Cambiar Contraseña</h1>
+                <h1>Registrar Cita</h1>
             </div>
-
-             <form id="form1" runat="server">
+            <form id="form1" runat="server">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="col-lg-4 col-lg-offset-4">
-                                    <div class="panel-EditProfile panel-default">
-                                        <div class="panel-body-EditProfile">
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Contraseña Anterior</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Nueva Contraseña</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>  
-                                        <div class="form-group-ProfileEdit">
-                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Cambiar Contraseña
-                                            </button>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Lista de pacientes:</label>
+                                        <select class="form-control">
+                                            <option>24220210 - Barbara Fernandez</option>
+                                            <option>6963282 - Dario Navas</option>
+                                            <option>6820508 - Ana Hernandez</option>
+                                        </select>
+                                    </div>
+                                    <div class="panel-Medical panel-default">
+                                        <div class="panel-body-Medical">
+                                            <div class="form-group-Medical">
+                                                <label>Fecha de la cita</label>
+                                                <input id="date" type="date" class="form-control-Medical"/>
+                                            </div>
+                                            <div class="form-group-Medical">
+                                                <label>Motivo</label>
+                                                <input class="form-control-Medical"/>
+                                            </div>                           
+                                            <div class="form-group-Medical">
+                                                <button type="submit" class="btn btn-lg btn-info-Medical">
+                                                    Registrar Cita
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>     
                                 </div>
@@ -103,9 +110,6 @@
                     </div>
              </form>
         </div>
-
-
-
     </div>
 </body>
 </html>

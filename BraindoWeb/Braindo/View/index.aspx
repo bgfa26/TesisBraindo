@@ -45,6 +45,7 @@
                     <li class="selected"><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-list-ol"></i> Registrar Perfil Psicologico</a></li>
                     <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-list-ol"></i> Editar Datos del Paciente</a></li>
+                    <li><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-list-ol"></i> Registrar Cita</a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">

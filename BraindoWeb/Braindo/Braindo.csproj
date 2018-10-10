@@ -64,6 +64,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
+    <Content Include="Content\css\MedicalAppointment.css" />
     <Content Include="Content\css\PatientEditInformation.css" />
     <Content Include="Content\css\PsychoProfile.css" />
     <Content Include="Content\css\PsychoProfileEdit.css" />
@@ -82,6 +83,7 @@
     <Content Include="View\PsychoChangePassword.aspx" />
     <Content Include="View\PsychoProfile.aspx" />
     <Content Include="View\PsychoProfileEdit.aspx" />
+    <Content Include="View\RegisterMedicalAppointment.aspx" />
     <Content Include="View\RegistryPsychoProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -121,6 +123,13 @@
     </Compile>
     <Compile Include="View\PsychoProfileEdit.aspx.designer.cs">
       <DependentUpon>PsychoProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterMedicalAppointment.aspx.cs">
+      <DependentUpon>RegisterMedicalAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RegisterMedicalAppointment.aspx.designer.cs">
+      <DependentUpon>RegisterMedicalAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\RegistryPsychoProfile.aspx.cs">
       <DependentUpon>RegistryPsychoProfile.aspx</DependentUpon>
