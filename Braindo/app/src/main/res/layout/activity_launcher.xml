@@ -21,9 +21,21 @@
         android:layout_height="@dimen/height_launcher_logo"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_top_launcher_logo"
-        android:layout_weight="0.06"
+        android:layout_weight="0.07"
         android:adjustViewBounds="false"
         app:srcCompat="@drawable/braindo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.07"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Braindo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

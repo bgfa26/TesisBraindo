@@ -18,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".controller.activities.StartUpActivity"
+            android:theme="@style/BraindoTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
