@@ -3012,7 +3012,7 @@ input[type="button"].btn-block {
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
-  background-color: #542d89;
+  background-color: #222222;
   border: 1px solid #444444;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
@@ -3043,7 +3043,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
-  background-color: #2a9fd6;
+  background-color: #45b780;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -3753,9 +3753,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 9px 10px;
   margin-top: 8px;
   margin-bottom: 8px;
-  background-color: transparent;
   background-image: none;
-  border: 1px solid transparent;
   border-radius: 4px;
 }
 .navbar-toggle:focus {
@@ -3966,11 +3964,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color: #282828;
+  border-color: #000000;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #282828;
+  background-color: #000000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #cccccc;
@@ -4014,7 +4012,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .navbar-inverse {
-  background-color: #542d89;
+  background-color: #222222;
   border-color: #ffffff;
 }
 .navbar-inverse .navbar-brand {
@@ -4053,7 +4051,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: #000000;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #ffffff;
@@ -5695,7 +5693,7 @@ button.close {
   }
 }
 .navbar {
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid #000000;
 }
 .text-primary,
 .text-primary:hover {
@@ -5960,8 +5958,9 @@ table.tablesorter thead tr th:hover {
 	top: 50px;
 	height: 100%;
 	border-radius: 0;
-	border-right: 1px solid white;
-	background-color: #45b780;
+	border-right: 1px solid black;
+    border-top: 1px solid black;
+	background-color: #222222;
 	overflow-y: auto;
   }
 
@@ -5995,7 +5994,7 @@ table.tablesorter thead tr th:hover {
 
   .navbar-inverse .navbar-nav>li>a:hover,
   .navbar-inverse .navbar-nav>li>a:focus {
-	background-color: #1f0a3b;
+	background-color: #45b780;
   }
 
   /* Nav Messages */
