@@ -3,9 +3,11 @@
     <color name="colorPrimary">#d2d2d4</color>
     <color name="colorPrimaryDark">#909093</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="braindoDarkGreen">#0e6a5f</color>
     <color name="braindoGreen">#45b780</color>
+    <color name="braindoLightGreen">#69f0ae</color>
     <color name="braindoDarkPurple">#1F0A3B</color>
-    <color name="braindoLightPurple">#542d89</color>
+    <color name="braindoLightPurple">#7127a0</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
 </resources>

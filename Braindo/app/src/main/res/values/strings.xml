@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Braindo</string>
+    <string name="age_prompt">Elige tu Edad</string>
+
+    <string-array name="age_arrays">
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+    </string-array>
+
+    <string name="state_prompt">Elige el estado donde resides</string>
+    <string-array name="state_arrays">
+        <item>Distrito Capital</item>
+        <item>Miranda</item>
+        <item>Vargas</item>
+    </string-array>
 </resources>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/braindoDarkPurple"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.app.braindo.braindo.controller.activities.RegistrationActivity"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_weight="0.24">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb1"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="35dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/braindo" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvRegistrationSubtittle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif"
+        android:text="Información Personal"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <EditText
+        android:id="@+id/etRegistrationCI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Cédula de Identidad"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etRegistrationPrimerNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Primer Nombre"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etRegistrationPrimerApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Primer Apellido"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvRegistrationAge"
+            android:layout_width="42dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.04"
+            android:fontFamily="sans-serif"
+            android:text="Edad"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/spRegistrationEdad"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="65dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentTop="true"
+                android:entries="@array/age_arrays"
+                android:prompt="@string/age_prompt"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/white"
+                android:textSize="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRegistrationSubtittle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="0.01"
+        android:fontFamily="sans-serif"
+        android:text="Zona donde reside"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="57dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvRegistrationState"
+            android:layout_width="48dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="sans-serif"
+            android:text="Estado"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_weight="0.21" />
+
+        <RelativeLayout
+            android:layout_width="164dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/spRegistrationEstado"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="163dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:entries="@array/state_arrays"
+                android:prompt="@string/state_prompt"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/white"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="334dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvRegistrationMunicipio"
+            android:layout_width="62dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="0.10"
+            android:fontFamily="sans-serif"
+            android:text="Municipio"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="164dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/spRegistrationMunicipio"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="163dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/white"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="57dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvRegistrationParroquia"
+            android:layout_width="62dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.11"
+            android:fontFamily="sans-serif"
+            android:text="Parroquia"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="164dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/spinner6"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="163dp"
+                android:layout_height="34dp"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRegistrationEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Correo del Psicólogo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0.01"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <EditText
+        android:id="@+id/etRegistrationEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.01"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="Correo Electrónico"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnRegistration"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="159dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.07"
+        android:background="@color/braindoLightGreen"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Ingresar"
+        android:textColor="@color/braindoDarkGreen"
+        android:textSize="18sp"
+        android:textStyle="bold" />/>
+
+</LinearLayout>

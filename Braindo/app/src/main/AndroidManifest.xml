@@ -23,6 +23,16 @@
             android:name=".controller.activities.StartUpActivity"
             android:theme="@style/BraindoTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".controller.activities.RegistrationActivity"
+            android:theme="@style/BraindoTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".controller.activities.TestActivity"
+            android:theme="@style/BraindoTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

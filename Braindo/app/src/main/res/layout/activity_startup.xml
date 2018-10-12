@@ -41,7 +41,8 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegistry"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="159dp"
         android:layout_height="37dp"
         android:background="@color/colorPrimary"

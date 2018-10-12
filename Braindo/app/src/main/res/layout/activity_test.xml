@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/braindoDarkPurple"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.app.braindo.braindo.controller.activities.TestActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/tvTestTitle"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Encuesta"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRegistrationQ1"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="1. Antes de realizar una exposición. ¿Sientes que te van a criticar?"
+        android:textColor="@color/white" />
+
+    <TableRow
+        android:layout_width="329dp"
+        android:layout_height="50dp">
+
+        <RadioGroup
+            android:layout_width="329dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.84"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RadioButton"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.65"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RadioButton"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:buttonTint="@color/white" />
+
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="329dp"
+        android:layout_height="50dp" >
+
+        <RadioGroup
+            android:layout_width="329dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RadioButton"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.27"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RadioButton"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:buttonTint="@color/white" />
+        </RadioGroup>
+    </TableRow>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:popupBackground="@color/white" />
+
+</LinearLayout>

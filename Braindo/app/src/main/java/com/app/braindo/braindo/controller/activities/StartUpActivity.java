@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.braindo.braindo.R;
@@ -21,7 +23,7 @@ public class StartUpActivity extends AppCompatActivity {
     public static List<Integer> itemPositionStacks = new ArrayList<>();
     public TextView status_message;
     static String str_result = "";
-
+    private Button registrationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,23 @@ public class StartUpActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_startup);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            registrationButton = (Button) findViewById(R.id.btnRegistry);
+
+            registrationButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    moveToRegistration();
+                }
+            });
         }catch(Exception ex){
             ex.getStackTrace();
         }
 
+    }
+
+    private void moveToRegistration() {
+        Intent myintent = new Intent(StartUpActivity.this, RegistrationActivity.class);
+        finish();
+        startActivity(myintent);
     }
 }
