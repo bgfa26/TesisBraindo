@@ -49,6 +49,27 @@
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
+.form-control-Patient-disabled {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  height: 38px;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #ffffff;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #282828;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
 .form-control-Patient:focus {
   border-color: #45b780;
   outline: 0;
@@ -65,11 +86,19 @@
 .form-control-Patient::-webkit-input-placeholder {
   color: #BDBDBD;
 }
+.form-control-Patient-disabled[disabled],
+.form-control-Patient-disabled[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #222222;
+  opacity: 1;
+}
+
 .form-control-Patient[disabled],
 .form-control-Patient[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #adafae;
+  background-color: #222222;
   opacity: 1;
 }
 

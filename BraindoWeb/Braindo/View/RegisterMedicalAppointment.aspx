@@ -42,6 +42,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Paciente<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos</a></li>
+                            <li><a href="../View/DeletePatient.aspx"><i class="fa fa-font"></i> Eliminar Paciente</a></li>
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
@@ -107,6 +108,22 @@
                                             <div class="form-group-Medical">
                                                 <label>Fecha de la cita</label>
                                                 <input id="date" type="date" class="form-control-Medical"/>
+                                            </div>
+                                            <div class="form-group-Medical">
+                                                <label>Hora:</label>
+                                                <select class="form-control-Medical">
+                                                    <option>7:00 am</option>
+                                                    <option>8:00 am</option>
+                                                    <option>9:00 am</option>
+                                                    <option>10:00 am</option>
+                                                    <option>11:00 am</option>
+                                                    <option>12:00 pm</option>
+                                                    <option>1:00 pm</option>
+                                                    <option>2:00 pm</option>
+                                                    <option>3:00 pm</option>
+                                                    <option>4:00 pm</option>
+                                                    <option>5:00 pm</option>
+                                                </select>
                                             </div>
                                             <div class="form-group-Medical">
                                                 <label>Motivo</label>

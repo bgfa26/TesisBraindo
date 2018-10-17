@@ -46,6 +46,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Paciente<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos</a></li>
+                            <li><a href="../View/DeletePatient.aspx"><i class="fa fa-font"></i> Eliminar Paciente</a></li>
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
