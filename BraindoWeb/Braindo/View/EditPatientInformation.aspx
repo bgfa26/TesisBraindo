@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/PatientEditInformation.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/PatientInformation.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
@@ -43,6 +43,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Paciente<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li class="selected"><a href="../View/EditPatientInformation.aspx"><i class="fa fa-font"></i> Editar Datos</a></li>
+                            <li><a href="../View/DeletePatient.aspx"><i class="fa fa-font"></i> Eliminar Paciente</a></li>
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
@@ -95,14 +96,6 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="col-lg-4 col-lg-offset-4">
-                                    <div class="form-group">
-                                        <label>Lista de pacientes:</label>
-                                        <select class="form-control">
-                                            <option>24220210 - Barbara Fernandez</option>
-                                            <option>6963282 - Dario Navas</option>
-                                            <option>6820508 - Ana Hernandez</option>
-                                        </select>
-                                    </div>
                                     <div class="panel-Patient panel-default">
                                         <div class="panel-body-Patient">
                                         <div class="form-group-Patient">
