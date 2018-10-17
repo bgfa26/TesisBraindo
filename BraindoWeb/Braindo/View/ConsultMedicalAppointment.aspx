@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistryPsychoProfile.aspx.cs" Inherits="Braindo.View.RegistryPsychoProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultMedicalAppointment.aspx.cs" Inherits="Braindo.View.ConsultMedicalAppointment" %>
 
 <!DOCTYPE html>
 
@@ -6,22 +6,19 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Registrar Perfil Psicologico</title>
+    <title>Braindo - Lista de Citas</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/RegistrationPsychoProfile.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/MedicalAppointment.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
 
-
-    
 </head>
 <body>
-
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
@@ -39,17 +36,17 @@
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
+                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
                         </ul>
                     </li>
                     <li><a href="../View/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
-                            <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
+                            <li class="selected"><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
+                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
-                    </li>               
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -85,66 +82,48 @@
                 </ul>
             </div>
         </nav>
-
-        <div id="page-wrapper">
-            <div class="row centerRegistrationTitle">
-                <h2>Perfil Psicologico</h2>
+        <div id="page-wrapper-Medical">
+            <div class="row centerProfileTitle">
+                <h1>Lista de Citas</h1>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
+            <form id="form1" runat="server">
                     <div class="row">
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label>Lista de pacientes:</label>
-                                <select class="form-control">
-                                    <option>24220210 - Barbara Fernandez</option>
-                                    <option>6963282 - Dario Navas</option>
-                                    <option>6820508 - Ana Hernandez</option>
-                                </select>
-                            </div>
-                            <div class="panel-PsychoRegistration panel-default">
-                                <div class="panel-body-PsychoRegistration">
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Comportamiento:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Actitud:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Atencion:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Conciencia:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Estado de Animo:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Lenguaje:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <label>Pensamiento:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-PsychoRegistration">
-                                        <button type="submit" class="btn btn-lg btn-info-PsychoRegistration">
-                                            Registrar
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table id="tblData" class="table table-bordered table-striped table-hover boxAppointment">          
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Hora</th>
+                                                <th>Paciente</th>
+                                                <th>Psicologo</th>
+                                                <th>Motivo</th>
+                                                <th>Examen Mental</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>17/10/2018</td>
+                                                <td>8:00 am</td>
+                                                <td>Ronald Navas</td>
+                                                <td>Jhonnathan Sulbaran</td>
+                                                <td>Primera cita para tratar ansiedad al exponer</td>
+                                                <td>Codigo?</td>
+                                                <td>
+                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar cita" />
+                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar cita" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>  
+                                </div>   
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>  
-        </div>  
-    </div>     
-
+             </form>
+        </div>
+    </div>
 </body>
 </html>

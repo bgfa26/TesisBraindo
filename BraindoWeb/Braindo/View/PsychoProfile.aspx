@@ -45,11 +45,12 @@
                     </li>
                     <li><a href="../View/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Administrar Citas<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar cita</a></li>
+                            <li><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
+                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
-                    </li>          
+                    </li>           
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">

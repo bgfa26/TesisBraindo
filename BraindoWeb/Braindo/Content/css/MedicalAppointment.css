@@ -94,3 +94,27 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
+
+.boxAppointment {
+    width:85%; 
+    margin-left:auto; 
+    margin-right:auto;
+    overflow-x:auto;
+}
+
+#tblData{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#tblData th{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #45b780;
+    color: #ffffff;
+}
+
+#tblData td{
+    color: #222222;
+}

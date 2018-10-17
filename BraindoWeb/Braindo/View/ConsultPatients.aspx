@@ -41,11 +41,12 @@
                     </li>
                     <li class="selected"><a href="../View/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Administrar Citas<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar cita</a></li>
+                            <li><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
+                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
-                    </li>  
+                    </li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -90,7 +91,7 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <table id="tblData" class="table table-bordered table-striped table-hover box">          
+                                    <table id="tblData" class="table table-bordered table-striped table-hover boxPatient">          
                                         <thead>
                                             <tr>
                                                 <th>Cedula</th>
@@ -99,7 +100,7 @@
                                                 <th>Edad</th>
                                                 <th>Carrera</th>
                                                 <th>Telefono</th>
-                                                <th></th>
+                                                <th>Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -111,8 +112,8 @@
                                                 <td>Ing. Informatica</td>
                                                 <td>04127309566</td>
                                                 <td>
-                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
                                                     <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../View/EditPatientInformation.aspx');" />
+                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
                                                 </td>
                                             </tr>
                                         </tbody>

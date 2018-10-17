@@ -10,7 +10,7 @@
 namespace Braindo.View {
     
     
-    public partial class ConsultPatients {
+    public partial class ConsultMedicalAppointment {
         
         /// <summary>
         /// form1 control.
