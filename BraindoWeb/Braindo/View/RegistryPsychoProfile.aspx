@@ -42,12 +42,12 @@
                             <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
                         </ul>
                     </li>
-                    <li><a href="../View/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
+                    <li><a href="../View/PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
-                            <li class="selected"><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
+                            <li><a href="../View/MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
+                            <li><a href="../View/MedicalAppointmentModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
                     </li>               
                 </ul>
@@ -76,7 +76,7 @@
                         <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Ronald Navas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
+                            <li><a href="../View/PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>

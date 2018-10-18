@@ -78,38 +78,38 @@
     <Content Include="Content\js\gridData.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\shieldui-all.min.js" />
-    <Content Include="View\ConsultMedicalAppointment.aspx" />
-    <Content Include="View\ConsultPatients.aspx" />
-    <Content Include="View\EditPatientInformation.aspx" />
+    <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
+    <Content Include="View\PatientModule\ConsultPatients.aspx" />
+    <Content Include="View\PatientModule\EditPatientInformation.aspx" />
     <Content Include="View\index.aspx" />
-    <Content Include="View\PsychoChangePassword.aspx" />
-    <Content Include="View\PsychoProfile.aspx" />
-    <Content Include="View\PsychoProfileEdit.aspx" />
-    <Content Include="View\RegisterMedicalAppointment.aspx" />
+    <Content Include="View\PsychologistModule\PsychoChangePassword.aspx" />
+    <Content Include="View\PsychologistModule\PsychoProfile.aspx" />
+    <Content Include="View\PsychologistModule\PsychoProfileEdit.aspx" />
+    <Content Include="View\MedicalAppointmentModule\RegisterMedicalAppointment.aspx" />
     <Content Include="View\RegistryPsychoProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\ConsultMedicalAppointment.aspx.cs">
+    <Compile Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx.cs">
       <DependentUpon>ConsultMedicalAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ConsultMedicalAppointment.aspx.designer.cs">
+    <Compile Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx.designer.cs">
       <DependentUpon>ConsultMedicalAppointment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ConsultPatients.aspx.cs">
+    <Compile Include="View\PatientModule\ConsultPatients.aspx.cs">
       <DependentUpon>ConsultPatients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ConsultPatients.aspx.designer.cs">
+    <Compile Include="View\PatientModule\ConsultPatients.aspx.designer.cs">
       <DependentUpon>ConsultPatients.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\EditPatientInformation.aspx.cs">
+    <Compile Include="View\PatientModule\EditPatientInformation.aspx.cs">
       <DependentUpon>EditPatientInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\EditPatientInformation.aspx.designer.cs">
+    <Compile Include="View\PatientModule\EditPatientInformation.aspx.designer.cs">
       <DependentUpon>EditPatientInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\index.aspx.cs">
@@ -119,32 +119,32 @@
     <Compile Include="View\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\PsychoChangePassword.aspx.cs">
+    <Compile Include="View\PsychologistModule\PsychoChangePassword.aspx.cs">
       <DependentUpon>PsychoChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\PsychoChangePassword.aspx.designer.cs">
+    <Compile Include="View\PsychologistModule\PsychoChangePassword.aspx.designer.cs">
       <DependentUpon>PsychoChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\PsychoProfile.aspx.cs">
+    <Compile Include="View\PsychologistModule\PsychoProfile.aspx.cs">
       <DependentUpon>PsychoProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\PsychoProfile.aspx.designer.cs">
+    <Compile Include="View\PsychologistModule\PsychoProfile.aspx.designer.cs">
       <DependentUpon>PsychoProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\PsychoProfileEdit.aspx.cs">
+    <Compile Include="View\PsychologistModule\PsychoProfileEdit.aspx.cs">
       <DependentUpon>PsychoProfileEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\PsychoProfileEdit.aspx.designer.cs">
+    <Compile Include="View\PsychologistModule\PsychoProfileEdit.aspx.designer.cs">
       <DependentUpon>PsychoProfileEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\RegisterMedicalAppointment.aspx.cs">
+    <Compile Include="View\MedicalAppointmentModule\RegisterMedicalAppointment.aspx.cs">
       <DependentUpon>RegisterMedicalAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\RegisterMedicalAppointment.aspx.designer.cs">
+    <Compile Include="View\MedicalAppointmentModule\RegisterMedicalAppointment.aspx.designer.cs">
       <DependentUpon>RegisterMedicalAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\RegistryPsychoProfile.aspx.cs">

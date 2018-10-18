@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoProfileEdit.aspx.cs" Inherits="Braindo.View.PsychoProfileEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychoChangePassword" %>
 
 <!DOCTYPE html>
 
@@ -6,16 +6,16 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo - Editar datos personales</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/PsychoProfileEdit.css" />
+    <title>Braindo - Cambiar Contraseña</title>
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/local.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
 
-    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Content/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -27,25 +27,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../View/index.aspx"><img src="../Content/images/LogoLetrasMin.png" alt="Logo" id="logoImage"/></a>
+                <a class="navbar-brand" href="../index.aspx"><img src="/Content/images/LogoLetrasMin.png" alt="Logo" id="logoImage"/></a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                    <li><a href="../index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
+                            <li><a href="../RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
                         </ul>
                     </li>
-                    <li><a href="../View/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
+                    <li><a href="../PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
-                            <li><a href="../View/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
+                            <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
+                            <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
-                    </li>    
+                    </li>       
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -72,7 +72,7 @@
                         <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Ronald Navas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../View/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
+                            <li><a href="../PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
@@ -83,7 +83,7 @@
         </nav>
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h1>Editar datos personales</h1>
+                <h1>Cambiar Contraseña</h1>
             </div>
 
              <form id="form1" runat="server">
@@ -94,36 +94,16 @@
                                     <div class="panel-EditProfile panel-default">
                                         <div class="panel-body-EditProfile">
                                         <div class="form-group-ProfileEdit">
-                                            <label>Primer Nombre</label>
+                                            <label>Contraseña Anterior</label>
                                             <input class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
-                                            <label>Segundo Nombre</label>
+                                            <label>Nueva Contraseña</label>
                                             <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Primer Apellido</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Segundo Apellido</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Fecha de Nacimiento</label>
-                                            <input id="date" type="date" class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Numero de Matricula</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Email</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
+                                        </div>  
                                         <div class="form-group-ProfileEdit">
                                             <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Registrar Perfil
+                                                Cambiar Contraseña
                                             </button>
                                         </div>
                                         </div>
@@ -134,7 +114,9 @@
                     </div>
              </form>
         </div>
-    </div>
 
+
+
+    </div>
 </body>
 </html>
