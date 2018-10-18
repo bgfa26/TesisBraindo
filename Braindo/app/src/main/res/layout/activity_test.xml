@@ -16,93 +16,198 @@
 
     <TextView
         android:id="@+id/tvTestTitle"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="Encuesta"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvRegistrationQ1"
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:text="1. Antes de realizar una exposición. ¿Sientes que te van a criticar?"
-        android:textColor="@color/white" />
-
-    <TableRow
-        android:layout_width="329dp"
-        android:layout_height="50dp">
-
-        <RadioGroup
-            android:layout_width="329dp"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.84"
-                android:fontFamily="sans-serif-condensed"
-                android:text="RadioButton"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:buttonTint="@color/white" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.65"
-                android:fontFamily="sans-serif-condensed"
-                android:text="RadioButton"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:buttonTint="@color/white" />
-
-        </RadioGroup>
-    </TableRow>
-
-    <TableRow
-        android:layout_width="329dp"
-        android:layout_height="50dp" >
-
-        <RadioGroup
-            android:layout_width="329dp"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:fontFamily="sans-serif-condensed"
-                android:text="RadioButton"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:buttonTint="@color/white" />
-
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.27"
-                android:fontFamily="sans-serif-condensed"
-                android:text="RadioButton"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:buttonTint="@color/white" />
-        </RadioGroup>
-    </TableRow>
-
-    <Spinner
-        android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:popupBackground="@color/white" />
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Encuesta"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber1"
+                    android:layout_width="5dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.24"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="1."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ1"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="2.79"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Antes de realizar una exposición. ¿Sientes que te van a criticar?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp1"
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber2"
+                    android:layout_width="5dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.24"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="2."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ2"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="2.79"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Evitas hablar en pequeños grupos?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp2"
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber3"
+                    android:layout_width="5dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.24"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="3."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ2"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="2.79"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="En presencia de una autoridad, ¿tartamudeas o transpiras a la hora de hablar?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp2"
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

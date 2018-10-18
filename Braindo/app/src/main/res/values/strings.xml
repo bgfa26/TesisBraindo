@@ -18,4 +18,14 @@
         <item>Miranda</item>
         <item>Vargas</item>
     </string-array>
+
+    <string name="answer_prompt">Elige una opción</string>
+    <string-array name="answer_arrays">
+        <item>Nunca</item>
+        <item>Pocas Veces</item>
+        <item>A Veces</item>
+        <item>Frecuentemente</item>
+        <item>Siempre</item>
+    </string-array>
+
 </resources>

@@ -28,10 +28,12 @@
             android:theme="?attr/actionBarTheme" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgRegistrationLogo"
             android:layout_width="50dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="140dp"
             app:srcCompat="@drawable/braindocirculo" />
     </RelativeLayout>
 
@@ -67,7 +69,8 @@
         android:ems="10"
         android:fontFamily="sans-serif"
         android:hint="Cédula de Identidad"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="14sp" />
@@ -232,7 +235,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spRegistrationEdad"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="0.10"
             android:fontFamily="sans-serif"
             android:text="Municipio"
@@ -274,7 +277,7 @@
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spRegistrationEdad"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="2dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.11"
             android:fontFamily="sans-serif"
@@ -328,14 +331,16 @@
         android:id="@+id/etRegistrationEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="0.01"
         android:backgroundTint="@android:color/white"
         android:ems="10"
+        android:fontFamily="sans-serif"
         android:hint="Correo Electrónico"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="14sp" />
