@@ -10,7 +10,7 @@
 namespace Braindo.View {
     
     
-    public partial class ConsultPatients {
+    public partial class ConsultMedicalAppointment {
         
         /// <summary>
         /// form1 control.
@@ -22,15 +22,6 @@ namespace Braindo.View {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Eliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Eliminar;
-        
-        /// <summary>
         /// Modificar control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,14 @@ namespace Braindo.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton Modificar;
+        
+        /// <summary>
+        /// Eliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton Eliminar;
     }
 }
