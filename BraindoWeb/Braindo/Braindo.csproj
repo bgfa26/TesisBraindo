@@ -68,7 +68,7 @@
     <Content Include="Content\css\PatientInformation.css" />
     <Content Include="Content\css\PsychoProfile.css" />
     <Content Include="Content\css\PsychoProfileEdit.css" />
-    <Content Include="Content\css\RegistrationPsychoProfile.css" />
+    <Content Include="Content\css\MentalExam.css" />
     <Content Include="Content\css\local.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
@@ -78,6 +78,7 @@
     <Content Include="Content\js\gridData.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\shieldui-all.min.js" />
+    <Content Include="View\MentalExamModule\ConsultMentalExam.aspx" />
     <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
     <Content Include="View\PatientModule\ConsultPatients.aspx" />
     <Content Include="View\PatientModule\EditPatientInformation.aspx" />
@@ -86,11 +87,18 @@
     <Content Include="View\PsychologistModule\PsychoProfile.aspx" />
     <Content Include="View\PsychologistModule\PsychoProfileEdit.aspx" />
     <Content Include="View\MedicalAppointmentModule\RegisterMedicalAppointment.aspx" />
-    <Content Include="View\RegistryPsychoProfile.aspx" />
+    <Content Include="View\MentalExamModule\RegistryPsychoProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MentalExamModule\ConsultMentalExam.aspx.cs">
+      <DependentUpon>ConsultMentalExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MentalExamModule\ConsultMentalExam.aspx.designer.cs">
+      <DependentUpon>ConsultMentalExam.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx.cs">
       <DependentUpon>ConsultMedicalAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,11 +155,11 @@
     <Compile Include="View\MedicalAppointmentModule\RegisterMedicalAppointment.aspx.designer.cs">
       <DependentUpon>RegisterMedicalAppointment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\RegistryPsychoProfile.aspx.cs">
+    <Compile Include="View\MentalExamModule\RegistryPsychoProfile.aspx.cs">
       <DependentUpon>RegistryPsychoProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\RegistryPsychoProfile.aspx.designer.cs">
+    <Compile Include="View\MentalExamModule\RegistryPsychoProfile.aspx.designer.cs">
       <DependentUpon>RegistryPsychoProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

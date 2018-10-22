@@ -36,7 +36,8 @@
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar</a></li>
+                            <li><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
+                            <li><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
                         </ul>
                     </li>
                     <li><a href="../PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>

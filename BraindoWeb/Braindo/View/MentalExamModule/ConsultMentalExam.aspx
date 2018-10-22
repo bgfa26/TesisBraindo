@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychoChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultMentalExam.aspx.cs" Inherits="Braindo.View.ConsultMentalExam" %>
 
 <!DOCTYPE html>
 
@@ -6,15 +6,15 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo - Cambiar Contraseña</title>
+    <title>Consultar Examenes Mentales</title>
     <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/local.css" />
-    <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />
 
-    <script type="text/javascript" src="/Content/js/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="/Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/Content/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -35,7 +35,7 @@
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
+                            <li class="selected"><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
                             <li><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
                         </ul>
                     </li>
@@ -44,9 +44,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
-                            <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
+                            <li><a href="../MedicalAppointmentModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
                         </ul>
-                    </li>       
+                    </li>               
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -82,42 +82,52 @@
                 </ul>
             </div>
         </nav>
-        <div id="page-wrapper-PsychoEdit">
+        <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h1>Cambiar Contraseña</h1>
+                <h1>Lista de Examenes Mentales</h1>
             </div>
-
-             <form id="form1" runat="server">
+            <form id="form1" runat="server">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row">
-                                <div class="col-lg-4 col-lg-offset-4">
-                                    <div class="panel-EditProfile panel-default">
-                                        <div class="panel-body-EditProfile">
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Contraseña Anterior</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Nueva Contraseña</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>  
-                                        <div class="form-group-ProfileEdit">
-                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Cambiar Contraseña
-                                            </button>
-                                        </div>
-                                        </div>
-                                    </div>     
-                                </div>
+                                <div class="table-responsive">
+                                    <table id="tblData" class="table table-bordered table-striped table-hover boxAppointment">          
+                                        <thead>
+                                            <tr>
+                                                <th>Paciente</th>
+                                                <th>Fecha</th>
+                                                <th>Comportamiento</th>
+                                                <th>Actitud</th>
+                                                <th>Atencion</th>
+                                                <th>Conciencia</th>
+                                                <th>Estado de Animo</th>
+                                                <th>Lenguaje</th>
+                                                <th>Pensamiento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Ronald Navas</td>
+                                                <td>19/10/2018</td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla </td>
+                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
+                                                <td>
+                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar Examen" />
+                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar Examen" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>  
+                                </div>   
                             </div>
                         </div>
                     </div>
              </form>
         </div>
-
-
-
     </div>
 </body>
 </html>

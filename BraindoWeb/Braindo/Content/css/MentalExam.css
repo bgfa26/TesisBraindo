@@ -1,29 +1,23 @@
-﻿.centerRegistrationTitle {
-
-    text-align: center;
-    padding: 0px 0px 50px 0px;
-
+﻿#page-wrapper-MentalExam {
+  width: 100%;
+  padding: 5px 15px;
 }
 
-.centerRegistrationButton{
+.centerProfileTitle {
+
     text-align: center;
     padding: 0px 0px 30px 0px;
-}
-
-.paddingTextArea {
-
-    padding-bottom: 5%;
 
 }
 
-.panel-PsychoRegistration {
+.panel-MentalExam {
   margin-bottom: 20px;
   background-color: #45b780;
   border-radius: 20px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-.panel-body-PsychoRegistration {
+.panel-body-MentalExam {
   
   border: 2px double white;
   border-radius: 20px;
@@ -31,12 +25,12 @@
   color: #ffffff;
 }
 
-.form-group-PsychoRegistration {
+.form-group-MentalExam {
   margin-bottom: 25px;
   text-align:center;
 }
 
-.form-control-PsychoRegistration {
+.form-control-MentalExam {
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -55,24 +49,24 @@
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.form-control-PsychoRegistration:focus {
+.form-control-MentalExam:focus {
   border-color: #45b780;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-.form-control-PsychoRegistration::-moz-placeholder {
+.form-control-MentalExam::-moz-placeholder {
   color: #BDBDBD;
   opacity: 1;
 }
-.form-control-PsychoRegistration-ms-input-placeholder {
+.form-control-MentalExam-ms-input-placeholder {
   color: #BDBDBD;
 }
-.form-control-PsychoRegistration::-webkit-input-placeholder {
+.form-control-MentalExam::-webkit-input-placeholder {
   color: #BDBDBD;
 }
-.form-control-PsychoRegistration[disabled],
-.form-control-PsychoRegistration[readonly],
+.form-control-MentalExam[disabled],
+.form-control-MentalExam[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
   background-color: #adafae;
@@ -80,18 +74,51 @@ fieldset[disabled] .form-control {
 }
 
 
-.btn-info-PsychoRegistration {
+.btn-info-MentalExam {
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
 }
 
-.btn-info-PsychoRegistration:hover,
-.btn-info-PsychoRegistration:focus,
-.btn-info-PsychoRegistration:active,
-.btn-info-PsychoRegistration.active,
-.open .dropdown-toggle.btn-info-PsychoRegistration {
+.btn-info-MentalExam:hover,
+.btn-info-MentalExam:focus,
+.btn-info-MentalExam:active,
+.btn-info-MentalExam.active,
+.open .dropdown-toggle.btn-info-MentalExam {
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.boxAppointment {
+    width:90%; 
+    margin-left:auto; 
+    margin-right:auto;
+    overflow-x:auto;
+}
+
+#tblData{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#tblData th{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #45b780;
+    color: #ffffff;
+}
+
+#tblData td{
+    color: #222222;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
