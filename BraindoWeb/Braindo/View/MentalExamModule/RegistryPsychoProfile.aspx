@@ -92,56 +92,56 @@
                 <h2>Perfil Psicologico</h2>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label>Lista de pacientes:</label>
-                                <select class="form-control">
-                                    <option>24220210 - Barbara Fernandez</option>
-                                    <option>6963282 - Dario Navas</option>
-                                    <option>6820508 - Ana Hernandez</option>
-                                </select>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group form-group-MentalExam-select">
+                        <label>Lista de pacientes:</label>
+                        <select class="form-control">
+                            <option>24220210 - Barbara Fernandez</option>
+                            <option>6963282 - Dario Navas</option>
+                            <option>6820508 - Ana Hernandez</option>
+                        </select>
+                    </div>
+                    <div class="panel-MentalExam panel-default">
+                        <div class="panel-body-MentalExam">
+                            <div class="form-group-MentalExam">
+                                <label>Comportamiento:</label>
+                                <textarea class="form-control" rows="3"></textarea>
                             </div>
-                            <div class="panel-MentalExam panel-default">
-                                <div class="panel-body-MentalExam">
-                                    <div class="form-group-MentalExam">
-                                        <label>Comportamiento:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Actitud:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Atencion:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Conciencia:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Estado de Animo:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Lenguaje:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <label>Pensamiento:</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group-MentalExam">
-                                        <button type="submit" class="btn btn-lg btn-info-MentalExam">
-                                            Registrar
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="form-group-MentalExam">
+                                <label>Actitud:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Atencion:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Conciencia:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Estado de Animo:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Lenguaje:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Pensamiento:</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <button type="submit" class="btn btn-lg btn-info-MentalExam">
+                                    Registrar
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-3">
                 </div>
             </div>  
         </div>  

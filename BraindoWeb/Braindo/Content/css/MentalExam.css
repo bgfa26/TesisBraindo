@@ -11,23 +11,26 @@
 }
 
 .panel-MentalExam {
+  max-width:500px;
   margin-bottom: 20px;
-  background-color: #45b780;
-  border-radius: 20px;
+  background-color: #cccccc;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body-MentalExam {
   
-  border: 2px double white;
-  border-radius: 20px;
+  max-width:500px;
   padding: 15px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .form-group-MentalExam {
   margin-bottom: 25px;
   text-align:center;
+}
+
+.form-group-MentalExam-select {
+  width: 94%;
 }
 
 .form-control-MentalExam {
@@ -121,4 +124,10 @@ input[type=date]::-webkit-inner-spin-button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.inlineblock { 
+    margin-left:auto; 
+    margin-right:auto;
+    overflow-x:auto;
 }
