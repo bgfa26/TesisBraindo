@@ -14,19 +14,42 @@
     tools:context="com.app.braindo.braindo.controller.activities.TestActivity"
     android:weightSum="1">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb1"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageView
+            android:id="@+id/imageTestLogo"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="140dp"
+            app:srcCompat="@drawable/braindocirculo" />
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/tvTestTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:text="Encuesta"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tb1"
+        android:id="@+id/tb2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimaryDark"
@@ -64,6 +87,7 @@
                     android:layout_width="204dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="2.79"
                     android:fontFamily="sans-serif-condensed"
@@ -73,7 +97,7 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="170dp"
+                android:layout_width="190dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="82dp"
                 android:layout_marginTop="10dp"
@@ -82,7 +106,7 @@
 
                 <Spinner
                     android:id="@+id/spTestOp1"
-                    android:layout_width="170dp"
+                    android:layout_width="190dp"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:entries="@array/answer_arrays"
@@ -128,7 +152,7 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="170dp"
+                android:layout_width="190dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="82dp"
                 android:layout_marginTop="5dp"
@@ -137,7 +161,7 @@
 
                 <Spinner
                     android:id="@+id/spTestOp2"
-                    android:layout_width="170dp"
+                    android:layout_width="190dp"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:entries="@array/answer_arrays"
@@ -159,23 +183,23 @@
 
                 <TextView
                     android:id="@+id/tvTestNumber3"
-                    android:layout_width="5dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="20dp"
-                    android:layout_weight="0.24"
                     android:fontFamily="sans-serif-condensed"
                     android:text="3."
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/tvTestQ2"
+                    android:id="@+id/tvTestQ3"
                     android:layout_width="204dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
                     android:layout_marginTop="20dp"
-                    android:layout_weight="2.79"
+                    android:layout_weight="1.80"
                     android:fontFamily="sans-serif-condensed"
                     android:text="En presencia de una autoridad, ¿tartamudeas o transpiras a la hora de hablar?"
                     android:textColor="@color/white"
@@ -183,16 +207,17 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="170dp"
+                android:layout_width="190dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="82dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
                 android:background="@color/white"
                 android:gravity="center">
 
                 <Spinner
-                    android:id="@+id/spTestOp2"
-                    android:layout_width="170dp"
+                    android:id="@+id/spTestOp3"
+                    android:layout_width="190dp"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:entries="@array/answer_arrays"
@@ -206,8 +231,414 @@
                     android:orientation="horizontal"></LinearLayout>
             </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/tvTestNumber4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="4."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ4"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Te anticipas a fallar al hablar frente a un jurado?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp4"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp"  />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="5."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ5"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Te sientes cómodo yendo a reuniones sociales?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp5"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="6."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ6"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Luego de que alguna persona te critica algún trabajo, ¿te sientes deprimido?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp6"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="7."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ7"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Te has sentido inseguro al hablar con una persona desconocida?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp7"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.04"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="8."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ8"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Al hablar frente a un público, ¿Piensas que te van a criticar?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp8"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.09"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="9."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ9"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Sientes inquietud al pensar en tu futuro?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp9"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTestNumber10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="10."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTestQ10"
+                    android:layout_width="204dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="¿Dejas de pedir un consejo a un amigo por miedo a las críticas?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spTestOp10"
+                    android:layout_width="190dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:entries="@array/answer_arrays"
+                    android:gravity="center"
+                    android:prompt="@string/answer_prompt"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="159dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.07"
+        android:background="@color/braindoLightGreen"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Continuar"
+        android:textColor="@color/braindoDarkGreen"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
