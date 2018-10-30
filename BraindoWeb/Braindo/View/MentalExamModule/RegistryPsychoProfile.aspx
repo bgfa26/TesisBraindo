@@ -39,7 +39,6 @@
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
                             <li class="selected"><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
                         </ul>
                     </li>
@@ -74,11 +73,11 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group form-group-MentalExam-select">
-                        <label>Lista de pacientes:</label>
+                        <label>Lista de citas para hoy:</label>
                         <select class="form-control">
-                            <option>24220210 - Barbara Fernandez</option>
-                            <option>6963282 - Dario Navas</option>
-                            <option>6820508 - Ana Hernandez</option>
+                            <option>29/10/2018 - Barbara Fernandez</option>
+                            <option>01/10/2018 - Dario Navas</option>
+                            <option>02/10/2018 - Ana Hernandez</option>
                         </select>
                     </div>
                     <div class="panel-MentalExam panel-default">

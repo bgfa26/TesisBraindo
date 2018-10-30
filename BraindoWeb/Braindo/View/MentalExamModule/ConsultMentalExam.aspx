@@ -62,49 +62,8 @@
         </nav>
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h2>Lista de Examenes Mentales</h2>
+                <h2>Examen detalle</h2>
             </div>
-            <form id="form1" runat="server">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="table-responsive">
-                                    <table id="tblData" class="table table-bordered table-striped table-hover boxAppointment">          
-                                        <thead>
-                                            <tr>
-                                                <th>Paciente</th>
-                                                <th>Fecha</th>
-                                                <th>Comportamiento</th>
-                                                <th>Actitud</th>
-                                                <th>Atencion</th>
-                                                <th>Conciencia</th>
-                                                <th>Estado de Animo</th>
-                                                <th>Lenguaje</th>
-                                                <th>Pensamiento</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Ronald Navas</td>
-                                                <td>19/10/2018</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla </td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>
-                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar Examen" />
-                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar Examen" />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>  
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
-             </form>
         </div>
     </div>
 </body>
