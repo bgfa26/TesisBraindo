@@ -63,7 +63,7 @@
         </nav>
         <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
-                <h1>Lista de Pacientes</h1>
+                <h2>Lista de Pacientes</h2>
             </div>
             <form id="form1" runat="server">
                     <div class="row">

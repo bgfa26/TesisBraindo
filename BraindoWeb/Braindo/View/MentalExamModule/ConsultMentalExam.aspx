@@ -62,7 +62,7 @@
         </nav>
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h1>Lista de Examenes Mentales</h1>
+                <h2>Lista de Examenes Mentales</h2>
             </div>
             <form id="form1" runat="server">
                     <div class="row">

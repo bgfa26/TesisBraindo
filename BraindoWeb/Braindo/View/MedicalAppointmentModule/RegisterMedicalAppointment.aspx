@@ -62,7 +62,7 @@
         </nav>
         <div id="page-wrapper-Medical">
             <div class="row centerProfileTitle">
-                <h1>Registrar Cita</h1>
+                <h2>Registrar Cita</h2>
             </div>
             <form id="form1" runat="server">
                     <div class="row">
