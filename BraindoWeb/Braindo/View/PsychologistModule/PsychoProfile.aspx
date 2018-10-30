@@ -96,6 +96,16 @@
                                 <label>Correo Electronico:</label>
                                 <input class="form-control-Psychologist" placeholder="rn2702@gmail.com" disabled="disabled"/>
                             </div>
+                            <div class="form-group-Psychologist">
+                                <a href="../PsychologistModule/PsychoProfileEdit.aspx" class="PsychoLink">
+                                  Editar datos personales
+                                </a>
+                            </div>
+                            <div class="form-group-Psychologist">
+                                <a href="../PsychologistModule/PsychoChangePassword.aspx" class="PsychoLink">
+                                  Cambiar contraseña
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

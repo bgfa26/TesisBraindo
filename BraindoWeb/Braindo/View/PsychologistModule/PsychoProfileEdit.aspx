@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Registrar Perfil
+                                                Modificar Datos
                                             </button>
                                         </div>
                                         </div>
