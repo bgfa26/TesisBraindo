@@ -12,17 +12,14 @@
 
 .panel-Patient {
   margin-bottom: 20px;
-  background-color: #45b780;
-  border-radius: 20px;
+  background-color: #cccccc;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body-Patient {
   
-  border: 2px double white;
-  border-radius: 20px;
   padding: 15px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .form-group-Patient {

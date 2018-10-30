@@ -1,8 +1,78 @@
-﻿.centerProfileTitle {
+﻿#page-wrapper-Psychologist {
+  width: 100%;
+  padding: 5px 15px;
+}
 
+.centerProfileTitle {
+
+    font-size: 10px;
     text-align: center;
-    padding: 0px 0px 50px 0px;
+    padding: 0px 0px 30px 0px;
 
+}
+
+.panel-Psychologist {
+  max-width:500px;
+  margin-bottom: 20px;
+  background-color: #cccccc;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-body-Psychologist {
+  
+  max-width:500px;
+  padding: 15px;
+  color: #000000;
+}
+
+.form-group-Psychologist {
+  margin-bottom: 25px;
+  text-align:center;
+}
+
+.form-control-Psychologist {
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  height: 38px;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #111111;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #282828;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control-Psychologist:focus {
+  border-color: #45b780;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control-Psychologist::-moz-placeholder {
+  color: #111111;
+  opacity: 1;
+}
+.form-control-Psychologist-ms-input-placeholder {
+  color: #111111;
+}
+.form-control-Psychologist::-webkit-input-placeholder {
+  color: #111111;
+}
+.form-control-Psychologist[disabled],
+.form-control-Psychologist[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #adafae;
+  opacity: 1;
 }
 
 .list-group-item-psycho {
