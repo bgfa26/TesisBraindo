@@ -62,7 +62,7 @@
         </nav>
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h1>Cambiar Contraseña</h1>
+                <h2>Cambiar Contraseña</h2>
             </div>
 
              <form id="form1" runat="server">

@@ -62,7 +62,7 @@
         </nav>
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h1>Editar datos personales</h1>
+                <h2>Editar datos personales</h2>
             </div>
 
              <form id="form1" runat="server">
