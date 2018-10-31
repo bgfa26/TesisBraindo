@@ -77,7 +77,7 @@
                                                 <th>Paciente</th>
                                                 <th>Psicólogo</th>
                                                 <th>Motivo</th>
-                                                <th>Examen Mental</th>
+                                                <th>Examen</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
@@ -88,10 +88,13 @@
                                                 <td>Ronald Navas</td>
                                                 <td>Jhonnathan Sulbaran</td>
                                                 <td>Primera cita para tratar ansiedad al exponer</td>
-                                                <td>Codigo?</td>
                                                 <td>
-                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar cita" />
-                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar cita" />
+                                                    <asp:ImageButton ID="Agregar" runat="server" ImageUrl="~/Content/images/addArrow4.ico" Height="27px" Width="26px"  ToolTip="Agregar Examen Mental" />
+                                                    <asp:ImageButton ID="Ver" runat="server" ImageUrl="~/Content/images/search.ico" Height="25px" Width="24px"  ToolTip="Ver Examen Mental" />
+                                                </td>
+                                                <td>
+                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
+                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
                                                 </td>
                                             </tr>
                                         </tbody>
