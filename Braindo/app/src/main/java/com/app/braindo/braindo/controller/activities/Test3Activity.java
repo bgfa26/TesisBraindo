@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by LuisAlejandro on 29-10-2018.
+ * Created by LuisAlejandro on 30-10-2018.
  */
 
-public class Test2Activity extends AppCompatActivity {
+public class Test3Activity extends AppCompatActivity {
     public static List<Integer> itemPositionStacks = new ArrayList<>();
     public TextView status_message;
     static String str_result = "";
@@ -25,11 +25,11 @@ public class Test2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        try{
+        try {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_test2);
+            setContentView(R.layout.activity_test3);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            testButton = (Button) findViewById(R.id.btnContinue2);
+            testButton = (Button) findViewById(R.id.btnSend);
 
             testButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -39,12 +39,13 @@ public class Test2Activity extends AppCompatActivity {
 
             });
 
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.getStackTrace();
         }
     }
+
     private void moveToTest(){
-        Intent myintent = new Intent (Test2Activity.this, Test3Activity.class);
+        Intent myintent = new Intent (Test3Activity.this, CloseActivity.class);
         finish();
         startActivity(myintent);
     }
