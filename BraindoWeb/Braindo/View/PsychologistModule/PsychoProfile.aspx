@@ -38,14 +38,14 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Examen Mental<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>            
                         </ul>
                     </li>
                     <li><a href="../PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestión de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
                             <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
@@ -58,7 +58,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,7 +67,7 @@
 
         <div id="page-wrapper-Psychologist">
             <div class="centerProfileTitle">
-                <h2>Perfil del Psicologo</h2>
+                <h2>Perfil del Psicólogo</h2>
             </div>
 
             <div class="row">
@@ -77,11 +77,11 @@
                    <div class="panel-Psychologist panel-default">
                         <div class="panel-body-Psychologist">
                             <div class="form-group-Psychologist">
-                                <label>Cedula:</label>
+                                <label>Cédula:</label>
                                 <input class="form-control-Psychologist" placeholder="20678868" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
-                                <label>Numero de Matricula:</label>
+                                <label>Número de Matricula:</label>
                                 <input class="form-control-Psychologist" placeholder="20678868-2702" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
@@ -93,17 +93,17 @@
                                 <input class="form-control-Psychologist" placeholder="27/02/1993" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
-                                <label>Correo Electronico:</label>
+                                <label>Correo Electrónico:</label>
                                 <input class="form-control-Psychologist" placeholder="rn2702@gmail.com" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <a href="../PsychologistModule/PsychoProfileEdit.aspx" class="PsychoLink">
-                                  Editar datos personales
+                                  Editar Datos
                                 </a>
                             </div>
                             <div class="form-group-Psychologist">
                                 <a href="../PsychologistModule/PsychoChangePassword.aspx" class="PsychoLink">
-                                  Cambiar contraseña
+                                  Cambiar Contraseña
                                 </a>
                             </div>
                         </div>
