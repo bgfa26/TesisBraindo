@@ -33,15 +33,14 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Examen Mental<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="selected"><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
                             <li><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
                         </ul>
                     </li>
                     <li><a href="../PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestión de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
                             <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
@@ -54,7 +53,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,49 +61,8 @@
         </nav>
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h2>Lista de Examenes Mentales</h2>
+                <h2>Examen detalle VISTA PROVISIONAL</h2>
             </div>
-            <form id="form1" runat="server">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="table-responsive">
-                                    <table id="tblData" class="table table-bordered table-striped table-hover boxAppointment">          
-                                        <thead>
-                                            <tr>
-                                                <th>Paciente</th>
-                                                <th>Fecha</th>
-                                                <th>Comportamiento</th>
-                                                <th>Actitud</th>
-                                                <th>Atencion</th>
-                                                <th>Conciencia</th>
-                                                <th>Estado de Animo</th>
-                                                <th>Lenguaje</th>
-                                                <th>Pensamiento</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Ronald Navas</td>
-                                                <td>19/10/2018</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla </td>
-                                                <td>Lorem Ipsum Algo Bla Bla Bla</td>
-                                                <td>
-                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar Examen" />
-                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar Examen" />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>  
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
-             </form>
         </div>
     </div>
 </body>

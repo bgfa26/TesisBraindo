@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Registrar Perfil Psicologico</title>
+    <title>Registrar Examen Mental</title>
     <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/Content/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.css" />
@@ -37,15 +37,14 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a href="../index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Perfil Psicologico<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Examen Mental<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../MentalExamModule/ConsultMentalExam.aspx"><i class="fa fa-font"></i> Consultar Examenes</a></li>
                             <li class="selected"><a href="../MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
                         </ul>
                     </li>
                     <li><a href="../PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestion de Citas<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestión de Citas<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
                             <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
@@ -58,7 +57,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,18 +66,18 @@
 
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h2>Perfil Psicologico</h2>
+                <h2>Examen Mental</h2>
             </div>
             <div class="row">
                 <div class="col-lg-3">
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group form-group-MentalExam-select">
-                        <label>Lista de pacientes:</label>
+                        <label>Lista de citas para hoy:</label>
                         <select class="form-control">
-                            <option>24220210 - Barbara Fernandez</option>
-                            <option>6963282 - Dario Navas</option>
-                            <option>6820508 - Ana Hernandez</option>
+                            <option>29/10/2018 - Barbara Fernandez</option>
+                            <option>01/10/2018 - Dario Navas</option>
+                            <option>02/10/2018 - Ana Hernandez</option>
                         </select>
                     </div>
                     <div class="panel-MentalExam panel-default">
@@ -92,7 +91,7 @@
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
-                                <label>Atencion:</label>
+                                <label>Atención:</label>
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
@@ -100,7 +99,7 @@
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
-                                <label>Estado de Animo:</label>
+                                <label>Estado de Ánimo:</label>
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
@@ -113,7 +112,7 @@
                             </div>
                             <div class="form-group-MentalExam">
                                 <button type="submit" class="btn btn-lg btn-info-MentalExam">
-                                    Registrar
+                                    Registrar Examen
                                 </button>
                             </div>
                         </div>
