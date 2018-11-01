@@ -73,19 +73,18 @@ fieldset[disabled] .form-control {
 
 
 .btn-info-ProfileEdit {
+  content:'';
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.btn-info-ProfileEdit:hover,
-.btn-info-ProfileEdit:focus,
-.btn-info-ProfileEdit:active,
-.btn-info-ProfileEdit.active,
-.open .dropdown-toggle.btn-info-ProfileEdit {
-  color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
+.btn-info-ProfileEdit:hover {
+    background: rgba(0,0,0,0);
+	color: #542d89;
+	box-shadow: inset 0 0 0 3px #542d89;
+}
 }
 
 input[type=date]::-webkit-inner-spin-button {
