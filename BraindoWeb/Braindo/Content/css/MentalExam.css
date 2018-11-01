@@ -98,7 +98,7 @@ input[type=date]::-webkit-inner-spin-button {
     display: none;
 }
 
-.boxAppointment {
+/*.boxAppointment {
     width:90%; 
     margin-left:auto; 
     margin-right:auto;
@@ -130,4 +130,4 @@ input[type=date]::-webkit-inner-spin-button {
     margin-left:auto; 
     margin-right:auto;
     overflow-x:auto;
-}
+}*/

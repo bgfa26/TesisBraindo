@@ -61,7 +61,47 @@
         </nav>
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h2>Examen detalle VISTA PROVISIONAL</h2>
+                <h2>Examen Mental - Paciente: Ronald Navas</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-6">
+                   <div class="panel-MentalExam panel-default">
+                        <div class="panel-body-MentalExam">
+                            <div class="form-group-MentalExam">
+                                <label>Comportamiento:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Actitud:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Atención:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Conciencia:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Estado de Ánimo:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Lenguaje:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group-MentalExam">
+                                <label>Pensamiento:</label>
+                                <textarea readonly="readonly" class="form-control" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                </div>
             </div>
         </div>
     </div>

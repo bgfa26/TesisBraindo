@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/DropDownEffect.css" />
 
     <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
