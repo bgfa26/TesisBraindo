@@ -28,4 +28,13 @@
         <item>Siempre</item>
     </string-array>
 
+    <string name="answer2_prompt">Elige una opción</string>
+    <string-array name="answer2_arrays">
+        <item>No me molesta ser evaluado de ninguna manera</item>
+        <item>A veces, me siento más seguro porque tengo tiempo para pensar qué responder</item>
+        <item>Ambas opciones son iguales para mi, a veces me incomodan</item>
+        <item>Si, porque solo el profesor lee lo que escribo y nadie más</item>
+        <item>No me gusta ser evaluado en ningún caso</item>
+    </string-array>
+
 </resources>
