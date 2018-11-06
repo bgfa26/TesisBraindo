@@ -76,19 +76,16 @@ fieldset[disabled] .form-control {
 
 
 .btn-info-Medical {
+  content:'';
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.btn-info-Medical:hover,
-.btn-info-Medical:focus,
-.btn-info-Medical:active,
-.btn-info-Medical.active,
-.open .dropdown-toggle.btn-info-Medical {
+.btn-info-Medical:hover {
+  background: #341b56;
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
 }
 
 input[type=date]::-webkit-inner-spin-button {

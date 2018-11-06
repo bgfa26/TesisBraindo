@@ -101,19 +101,16 @@ fieldset[disabled] .form-control {
 
 
 .btn-info-Patient {
+  content:'';
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.btn-info-Patient:hover,
-.btn-info-Patient:focus,
-.btn-info-Patient:active,
-.btn-info-Patient.active,
-.open .dropdown-toggle.btn-info-Patient {
+.btn-info-Patient:hover {
+  background: #341b56;
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
 }
 
 

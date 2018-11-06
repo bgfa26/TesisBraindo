@@ -81,11 +81,10 @@ fieldset[disabled] .form-control {
 }
 
 .btn-info-ProfileEdit:hover {
-    background: rgba(0,0,0,0);
-	color: #542d89;
-	box-shadow: inset 0 0 0 3px #542d89;
+    background: #341b56;
+	color: #ffffff;
 }
-}
+
 
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;

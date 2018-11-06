@@ -78,19 +78,16 @@ fieldset[disabled] .form-control {
 
 
 .btn-info-MentalExam {
+  content:'';
   color: #ffffff;
   background-color: #542d89;
   border-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.btn-info-MentalExam:hover,
-.btn-info-MentalExam:focus,
-.btn-info-MentalExam:active,
-.btn-info-MentalExam.active,
-.open .dropdown-toggle.btn-info-MentalExam {
+.btn-info-MentalExam:hover {
+  background: #341b56;
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
 }
 
 input[type=date]::-webkit-inner-spin-button {
