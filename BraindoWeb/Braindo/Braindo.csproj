@@ -63,6 +63,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.js" />
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
+    <Content Include="Content\css\DropDownEffect.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
     <Content Include="Content\css\MedicalAppointment.css" />
     <Content Include="Content\css\PatientInformation.css" />
@@ -86,7 +87,7 @@
     <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
     <Content Include="View\PatientModule\ConsultPatients.aspx" />
     <Content Include="View\PatientModule\EditPatientInformation.aspx" />
-    <Content Include="View\index.aspx" />
+    <Content Include="View\IndexModule\index.aspx" />
     <Content Include="View\PsychologistModule\PsychoChangePassword.aspx" />
     <Content Include="View\PsychologistModule\PsychoProfile.aspx" />
     <Content Include="View\PsychologistModule\PsychoProfileEdit.aspx" />
@@ -110,6 +111,13 @@
     <Compile Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx.designer.cs">
       <DependentUpon>ConsultMedicalAppointment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\MenuLayout.Master.cs">
+      <DependentUpon>MenuLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MenuLayout.Master.designer.cs">
+      <DependentUpon>MenuLayout.Master</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientModule\ConsultPatients.aspx.cs">
       <DependentUpon>ConsultPatients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,11 +132,11 @@
     <Compile Include="View\PatientModule\EditPatientInformation.aspx.designer.cs">
       <DependentUpon>EditPatientInformation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\index.aspx.cs">
+    <Compile Include="View\IndexModule\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\index.aspx.designer.cs">
+    <Compile Include="View\IndexModule\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\PsychologistModule\PsychoChangePassword.aspx.cs">
@@ -203,6 +211,7 @@
     <Content Include="Content\font-awesome\scss\_spinning.scss" />
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <Content Include="View\MenuLayout.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,78 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.index" %>
+﻿<%@ Page Title="Braindo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.index" %>
 
-<!DOCTYPE html>
+<asp:Content ID="ContentIndex" ContentPlaceHolderID="head" runat="server">
+     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/light-bootstrap/all.min.css" />
+    <link id="gridcss" rel="stylesheet" type="text/css" href="/Content/css/dark-bootstrap/all.min.css" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Braindo</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/css/local.css" />
+    <script type="text/javascript" src="/Content/js/shieldui-all.min.js"></script>
+    <script type="text/javascript" src="/Content/js/gridData.js"></script>
+</asp:Content>
 
-    <script type="text/javascript" src="../Content/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="../Content/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-    <link rel="stylesheet" type="text/css" href="~/Content/css/light-bootstrap/all.min.css" />
-    <link id="gridcss" rel="stylesheet" type="text/css" href="~/Content/css/dark-bootstrap/all.min.css" />
-
-    <script type="text/javascript" src="../Content/js/shieldui-all.min.js"></script>
-    <script type="text/javascript" src="../Content/js/gridData.js"></script>
-
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    </div>
-    </form>
-    <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../View/index.aspx"><img src="../Content/images/LogoLetrasMin.png" alt="Logo" id="logoImage"/></a>
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul id="active" class="nav navbar-nav side-nav">
-                    <li class="selected"><a href="../View/index.aspx"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Examen Mental<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../View/MentalExamModule/RegistryPsychoProfile.aspx"><i class="fa fa-font"></i> Registrar Examen</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../View/PatientModule/ConsultPatients.aspx"><i class="fa fa-bullseye"></i> Pacientes</a></li>
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Gestión de Citas<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../View/MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
-                            <li><a href="../View/MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
-                        </ul>
-                    </li> 
-                </ul>
-                <ul class="nav navbar-nav navbar-right navbar-user">
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Ronald Navas<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../View/PsychologistModule/PsychoProfile.aspx"><i class="fa fa-user"></i> Perfil</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div id="page-wrapper">
+<asp:Content ID="ContentIndex2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Dashboard <small>Statistics and more</small></h1>
@@ -459,9 +397,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /#wrapper -->
-
     <script type="text/javascript">
         jQuery(function ($) {
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
@@ -535,5 +470,4 @@
             });
         });
     </script>
-</body>
-</html>
+</asp:Content>

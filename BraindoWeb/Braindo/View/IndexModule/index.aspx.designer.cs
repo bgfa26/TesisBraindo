@@ -10,6 +10,6 @@
 namespace Braindo.View {
     
     
-    public partial class PsychoProfile {
+    public partial class index {
     }
 }
