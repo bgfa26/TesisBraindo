@@ -38,6 +38,7 @@ public class LauncherActivity extends AppCompatActivity {
                     try {
                         final Intent myintent = new Intent(LauncherActivity.this, StartUpActivity.class);
                         boolean connected = false;
+                        finish();
                         startActivity(myintent);
                     }catch(Exception ex){
                         ex.getStackTrace();

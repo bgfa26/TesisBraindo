@@ -19,6 +19,24 @@
         <item>Vargas</item>
     </string-array>
 
+    <string name="career_prompt">Carrera que cursas actualmente</string>
+    <string-array name="career_arrays">
+        <item>Administración y Contaduría</item>
+        <item>Comunicación Social</item>
+        <item>Derecho</item>
+        <item>Economía</item>
+        <item>Educación</item>
+        <item>Filosofía</item>
+        <item>Ingeniería Civil</item>
+        <item>Ingeniería Industrial</item>
+        <item>Ingeniería Informática</item>
+        <item>Ingeniería en Telecomunicaciones</item>
+        <item>Letras</item>
+        <item>Psicología</item>
+        <item>Relaciones Industriales</item>
+        <item>Teología</item>
+    </string-array>
+
     <string name="answer_prompt">Elige una opción</string>
     <string-array name="answer_arrays">
         <item>Nunca</item>

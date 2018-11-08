@@ -16,7 +16,6 @@ CREATE TABLE PACIENTE(
 	PRIMERAPELLIDO			VARCHAR(50) NOT NULL,
 	EDAD					INTEGER NOT NULL,
 	CARRERA					VARCHAR(35) NOT NULL, 
-	TELEFONO				VARCHAR(11) NOT NULL,
 	FK_LUGAR				INTEGER NOT NULL,
 	CONSTRAINT CH_CARRERA CHECK (CARRERA in('Ingeniería Informática','Ingeniería Civil', 
 	'Ingeniería en Telecomunicaciones','Ingeniería Industrial', 'Psicología','Teología',

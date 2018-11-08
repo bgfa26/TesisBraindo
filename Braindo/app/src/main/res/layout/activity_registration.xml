@@ -106,8 +106,56 @@
         android:textSize="14sp" />
 
     <LinearLayout
+        android:layout_width="333dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+    <TextView
+        android:id="@+id/tvRegistrationCareer"
+        android:layout_width="54dp"
+        android:layout_height="26dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/spRegistrationCareer"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif"
+        android:text="Carrera"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="270dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="2dp"
+            android:background="@color/white">
+
+            <Spinner
+                android:id="@+id/spRegistrationCareer"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="198dp"
+                android:layout_height="27dp"
+                android:layout_alignParentTop="true"
+                android:entries="@array/career_arrays"
+                android:prompt="@string/career_prompt"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/white"
+                android:textSize="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_weight="0.01"
         android:orientation="horizontal"
@@ -118,7 +166,7 @@
             android:layout_width="42dp"
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_alignTop="@+id/spRegistrationAge"
             android:layout_marginTop="1dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.04"
@@ -130,16 +178,16 @@
 
         <RelativeLayout
             android:layout_width="70dp"
-            android:layout_height="27dp"
+            android:layout_height="25dp"
             android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
             android:background="@color/white">
 
             <Spinner
-                android:id="@+id/spRegistrationEdad"
+                android:id="@+id/spRegistrationAge"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 android:layout_width="65dp"
-                android:layout_height="26dp"
-                android:layout_marginTop="3dp"
+                android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:entries="@array/age_arrays"
                 android:prompt="@string/age_prompt"
@@ -178,8 +226,9 @@
 
     <LinearLayout
         android:layout_width="335dp"
-        android:layout_height="57dp"
+        android:layout_height="43dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -190,29 +239,29 @@
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spRegistrationEdad"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="0.21"
             android:fontFamily="sans-serif"
             android:text="Estado"
+            android:textAlignment="viewStart"
             android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
             android:textColor="@color/white"
-            android:textSize="14sp"
-            android:layout_weight="0.21" />
+            android:textSize="14sp" />
 
         <RelativeLayout
-            android:layout_width="164dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="170dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="6dp"
             android:background="@color/white">
 
             <Spinner
                 android:id="@+id/spRegistrationEstado"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
-                android:layout_width="163dp"
-                android:layout_height="34dp"
+                android:layout_width="170dp"
+                android:layout_height="27dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="4dp"
                 android:entries="@array/state_arrays"
                 android:prompt="@string/state_prompt"
                 android:spinnerMode="dialog"
@@ -223,8 +272,9 @@
 
     <LinearLayout
         android:layout_width="334dp"
-        android:layout_height="49dp"
+        android:layout_height="41dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -235,7 +285,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spRegistrationEdad"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="9dp"
             android:layout_weight="0.10"
             android:fontFamily="sans-serif"
             android:text="Municipio"
@@ -244,30 +294,28 @@
             android:textSize="14sp" />
 
         <RelativeLayout
-            android:layout_width="164dp"
-            android:layout_height="35dp"
+            android:layout_width="170dp"
+            android:layout_height="27dp"
             android:layout_marginTop="2dp"
             android:background="@color/white">
 
             <Spinner
                 android:id="@+id/spRegistrationMunicipio"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
-                android:layout_width="163dp"
-                android:layout_height="34dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="4dp"
+                android:layout_width="170dp"
+                android:layout_height="27dp"
                 android:spinnerMode="dialog"
                 android:textColor="@android:color/white"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="335dp"
-        android:layout_height="57dp"
-        android:layout_marginLeft="10dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="9dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -277,7 +325,7 @@
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spRegistrationEdad"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.11"
             android:fontFamily="sans-serif"
@@ -287,21 +335,21 @@
             android:textSize="14sp" />
 
         <RelativeLayout
-            android:layout_width="164dp"
-            android:layout_height="35dp"
+            android:layout_width="170dp"
+            android:layout_height="27dp"
             android:layout_marginTop="2dp"
             android:background="@color/white">
 
             <Spinner
-                android:id="@+id/spinner6"
+                android:id="@+id/spRegistrationParroquia"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
-                android:layout_width="163dp"
-                android:layout_height="34dp"
+                android:layout_width="170dp"
+                android:layout_height="27dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:spinnerMode="dialog"
                 android:textColor="@android:color/white"
-                android:textSize="10dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true" />
+                android:textSize="10dp" />
         </RelativeLayout>
     </LinearLayout>
 
