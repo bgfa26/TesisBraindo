@@ -1,7 +1,7 @@
 package com.app.braindo.braindo.common.entities;
 import com.google.gson.annotations.SerializedName;
 
-public class Pacient {
+public class Patient {
     @SerializedName("_id")
     private String _id;
     @SerializedName("_firstname")
@@ -17,15 +17,15 @@ public class Pacient {
     @SerializedName("_addressString")
     private String _addressString;
 
-    public Pacient(){}
+    public Patient(){}
 
-    public Pacient(String id, String firstname, String lastname){
+    public Patient(String id, String firstname, String lastname){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
     }
 
-    public Pacient(String id, String firstname, String lastname, int age, String career){
+    public Patient(String id, String firstname, String lastname, int age, String career){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -33,7 +33,7 @@ public class Pacient {
         _career = career;
     }
 
-    public Pacient(String id, String firstname, String lastname, int age, String career, int addressInt){
+    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -42,7 +42,7 @@ public class Pacient {
         _addressInt = addressInt;
     }
 
-    public Pacient(String id, String firstname, String lastname, int age, String career, String addressString){
+    public Patient(String id, String firstname, String lastname, int age, String career, String addressString){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -51,7 +51,7 @@ public class Pacient {
         _addressString = addressString;
     }
 
-    public Pacient(String id, String firstname, String lastname, int age, String career, int addressInt, String addressString){
+    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt, String addressString){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;

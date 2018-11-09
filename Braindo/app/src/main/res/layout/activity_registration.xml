@@ -59,7 +59,7 @@
         android:theme="?attr/actionBarTheme" />
 
     <EditText
-        android:id="@+id/etRegistrationCI"
+        android:id="@+id/etRegistrationID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -76,7 +76,7 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/etRegistrationPrimerNombre"
+        android:id="@+id/etRegistrationFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -91,7 +91,7 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/etRegistrationPrimerApellido"
+        android:id="@+id/etRegistrationLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -237,7 +237,7 @@
             android:layout_width="48dp"
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_alignTop="@+id/spRegistrationState"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="4dp"
             android:layout_weight="0.21"
@@ -255,7 +255,7 @@
             android:background="@color/white">
 
             <Spinner
-                android:id="@+id/spRegistrationEstado"
+                android:id="@+id/spRegistrationState"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 android:layout_width="170dp"
                 android:layout_height="27dp"
@@ -279,11 +279,11 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/tvRegistrationMunicipio"
+            android:id="@+id/tvRegistrationMunicipality"
             android:layout_width="62dp"
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_alignTop="@+id/spRegistrationMunicipality"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="9dp"
             android:layout_weight="0.10"
@@ -300,7 +300,7 @@
             android:background="@color/white">
 
             <Spinner
-                android:id="@+id/spRegistrationMunicipio"
+                android:id="@+id/spRegistrationMunicipality"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 android:layout_width="170dp"
                 android:layout_height="27dp"
@@ -320,11 +320,11 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/tvRegistrationParroquia"
+            android:id="@+id/tvRegistrationParish"
             android:layout_width="62dp"
             android:layout_height="26dp"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/spRegistrationEdad"
+            android:layout_alignTop="@+id/spRegistrationParish"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.11"
@@ -341,7 +341,7 @@
             android:background="@color/white">
 
             <Spinner
-                android:id="@+id/spRegistrationParroquia"
+                android:id="@+id/spRegistrationParish"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 android:layout_width="170dp"
                 android:layout_height="27dp"
