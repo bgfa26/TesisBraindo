@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View {
+namespace Braindo.View.IndexModule {
     
     
     public partial class index {

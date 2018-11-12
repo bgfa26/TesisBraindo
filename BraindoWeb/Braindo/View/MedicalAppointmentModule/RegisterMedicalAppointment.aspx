@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Registrar Cita Medica" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="RegisterMedicalAppointment.aspx.cs" Inherits="Braindo.View.RegisterMedicalAppointment" %>
+﻿<%@ Page Title="Braindo - Registrar Cita Medica" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="RegisterMedicalAppointment.aspx.cs" Inherits="Braindo.View.MedicalAppointmentModule.RegisterMedicalAppointment" %>
 
 
 <asp:Content ID="ContentRegisterAppointment" ContentPlaceHolderID="head" runat="server">

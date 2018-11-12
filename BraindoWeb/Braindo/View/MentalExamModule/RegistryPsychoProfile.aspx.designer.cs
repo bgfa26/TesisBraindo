@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View {
+namespace Braindo.View.MentalExamModule {
     
     
     public partial class RegistryPsychoProfile {

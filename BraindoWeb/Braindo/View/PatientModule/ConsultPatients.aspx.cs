@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Braindo.View
+namespace Braindo.View.PatientModule
 {
     public partial class ConsultPatients : System.Web.UI.Page
     {
