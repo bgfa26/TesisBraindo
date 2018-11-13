@@ -1,7 +1,10 @@
 package com.app.braindo.braindo.common.entities;
+
 import com.google.gson.annotations.SerializedName;
 
-public class Patient {
+import java.io.Serializable;
+
+public class Patient implements Serializable {
     @SerializedName("_id")
     private String _id;
     @SerializedName("_firstname")
@@ -14,8 +17,16 @@ public class Patient {
     private String _career;
     @SerializedName("_addressInt")
     private int _addressInt;
-    @SerializedName("_addressString")
-    private String _addressString;
+    @SerializedName("_state")
+    private String _state;
+    @SerializedName("_municipality")
+    private String _municipality;
+    @SerializedName("_parish")
+    private String _parish;
+    @SerializedName("_email")
+    private String _email;
+    @SerializedName("_error")
+    private int _error;
 
     public Patient(){}
 
@@ -33,33 +44,28 @@ public class Patient {
         _career = career;
     }
 
-    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt){
+    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt, String email){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
         _age = age;
         _career = career;
         _addressInt = addressInt;
+        _email = email;
     }
 
-    public Patient(String id, String firstname, String lastname, int age, String career, String addressString){
+    public Patient(String id, String firstname, String lastname, int age, String career, String state, String municipality, String parish, String email){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
         _age = age;
         _career = career;
-        _addressString = addressString;
+        _state = state;
+        _municipality = municipality;
+        _parish = parish;
+        _email = email;
     }
 
-    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt, String addressString){
-        _id = id;
-        _firstname = firstname;
-        _lastname = lastname;
-        _age = age;
-        _career = career;
-        _addressInt = addressInt;
-        _addressString = addressString;
-    }
 
     public String get_id() {
         return _id;
@@ -109,11 +115,44 @@ public class Patient {
         this._addressInt = _addressInt;
     }
 
-    public String get_addressString() {
-        return _addressString;
+    public String get_state() {
+        return _state;
     }
 
-    public void set_addressString(String _addressString) {
-        this._addressString = _addressString;
+    public void set__state(String _state) {
+        this._state = _state;
     }
+
+    public String get_municipality() {
+        return _municipality;
+    }
+
+    public void set_municipality(String _municipality) {
+        this._municipality = _municipality;
+    }
+
+    public String get_parish() {
+        return _parish;
+    }
+
+    public void set_parish(String _parish) {
+        this._parish = _parish;
+    }
+
+    public String get_email() {
+        return _email;
+    }
+
+    public void set_email(String _email) {
+        this._email = _email;
+    }
+
+    public int get_error() {
+        return _error;
+    }
+
+    public void set_error(int _error) {
+        this._error = _error;
+    }
+
 }
