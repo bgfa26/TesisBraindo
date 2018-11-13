@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Consultar Cita" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultMedicalAppointment.aspx.cs" Inherits="Braindo.View.ConsultMedicalAppointment" %>
+﻿<%@ Page Title="Braindo - Consultar Cita" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultMedicalAppointment.aspx.cs" Inherits="Braindo.View.MedicalAppointmentModule.ConsultMedicalAppointment" %>
 
 
 <asp:Content ID="ContentMedicalAppointment" ContentPlaceHolderID="head" runat="server">

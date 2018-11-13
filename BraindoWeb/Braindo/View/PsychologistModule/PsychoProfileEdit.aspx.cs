@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Braindo.View
+namespace Braindo.View.PsychologistModule
 {
     public partial class PsychoProfileEdit : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Cambio de Contraseña" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychoChangePassword" %>
+﻿<%@ Page Title="Braindo - Cambio de Contraseña" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoChangePassword" %>
 
 <asp:Content ID="ContentPsychoChange" ContentPlaceHolderID="head" runat="server">
 

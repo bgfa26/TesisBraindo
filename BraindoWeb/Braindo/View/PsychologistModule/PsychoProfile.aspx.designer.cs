@@ -7,9 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View {
+namespace Braindo.View.PsychologistModule {
     
     
     public partial class PsychoProfile {
+        
+        /// <summary>
+        /// cedula_txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cedula_txt;
+        
+        /// <summary>
+        /// matricula_txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText matricula_txt;
+        
+        /// <summary>
+        /// nombreCompleto_txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreCompleto_txt;
+        
+        /// <summary>
+        /// fechaNac_txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaNac_txt;
+        
+        /// <summary>
+        /// correo_txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText correo_txt;
     }
 }

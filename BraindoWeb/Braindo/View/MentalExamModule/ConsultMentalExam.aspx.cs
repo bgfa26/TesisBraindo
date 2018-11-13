@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Braindo.View
+namespace Braindo.View.MentalExamModule
 {
     public partial class ConsultMentalExam : System.Web.UI.Page
     {

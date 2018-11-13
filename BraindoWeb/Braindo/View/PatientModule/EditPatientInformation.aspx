@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Editar Datos del Paciente" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="EditPatientInformation.aspx.cs" Inherits="Braindo.View.EditPatientInformation" %>
+﻿<%@ Page Title="Braindo - Editar Datos del Paciente" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="EditPatientInformation.aspx.cs" Inherits="Braindo.View.PatientModule.EditPatientInformation" %>
 
 <asp:Content ID="ContentEditPatient" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View {
+namespace Braindo.View.PsychologistModule {
     
     
     public partial class PsychoChangePassword {

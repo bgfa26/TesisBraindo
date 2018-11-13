@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View {
+namespace Braindo.View.MedicalAppointmentModule {
     
     
     public partial class RegisterMedicalAppointment {

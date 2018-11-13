@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Editar Datos" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfileEdit.aspx.cs" Inherits="Braindo.View.PsychoProfileEdit" %>
+﻿<%@ Page Title="Braindo - Editar Datos" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfileEdit.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfileEdit" %>
 
 <asp:Content ID="ContentPsychoEdit" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />

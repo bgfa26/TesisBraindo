@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychoProfile" %>
+﻿<%@ Page Title="Braindo - Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfile" %>
 
 <asp:Content ID="ContentPsychoProfile" ContentPlaceHolderID="head" runat="server">
 
@@ -21,23 +21,23 @@
                         <div class="panel-body-Psychologist">
                             <div class="form-group-Psychologist">
                                 <label>Cédula:</label>
-                                <input class="form-control-Psychologist" placeholder="20678868" disabled="disabled"/>
+                                <input runat="server" id="cedula_txt" class="form-control-Psychologist" placeholder="20678868" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <label>Número de Matricula:</label>
-                                <input class="form-control-Psychologist" placeholder="20678868-2702" disabled="disabled"/>
+                                <input runat="server" id="matricula_txt" class="form-control-Psychologist" placeholder="20678868-2702" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <label>Nombre Completo:</label>
-                                <input class="form-control-Psychologist" placeholder="Ronald Efrain Navas Hernandez" disabled="disabled"/>
+                                <input runat="server" id="nombreCompleto_txt" class="form-control-Psychologist" placeholder="Ronald Efrain Navas Hernandez" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <label>Fecha de Nacimiento:</label>
-                                <input class="form-control-Psychologist" placeholder="27/02/1993" disabled="disabled"/>
+                                <input runat="server" id="fechaNac_txt" class="form-control-Psychologist" placeholder="27/02/1993" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <label>Correo Electrónico:</label>
-                                <input class="form-control-Psychologist" placeholder="rn2702@gmail.com" disabled="disabled"/>
+                                <input runat="server" id="correo_txt" class="form-control-Psychologist" placeholder="rn2702@gmail.com" disabled="disabled"/>
                             </div>
                             <div class="form-group-Psychologist">
                                 <a href="../PsychologistModule/PsychoProfileEdit.aspx" class="PsychoLink">
