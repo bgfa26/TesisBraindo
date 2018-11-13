@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 
 public class RestCommunication {
@@ -46,6 +47,24 @@ public class RestCommunication {
             Patient _patient = new Patient();
             while ((output = br.readLine()) != null) {
                 Gson gson = new GsonBuilder().create();
+                _patient = gson.fromJson(output, Patient.class);
+            }
+            conn.disconnect();
+            return _patient;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public Patient callMethodPatientRegistration(Patient p) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "patientRegistration?patient=" + URLEncoder.encode(gson.toJson( p ).toString(), "UTF-8"));
+            String output;
+            Patient _patient = new Patient();
+            while ((output = br.readLine()) != null) {
                 _patient = gson.fromJson(output, Patient.class);
             }
             conn.disconnect();

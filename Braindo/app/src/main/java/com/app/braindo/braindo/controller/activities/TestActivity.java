@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.braindo.braindo.R;
+import com.app.braindo.braindo.common.entities.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
+            Patient patient = (Patient) getIntent().getSerializableExtra("patient");
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_test);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

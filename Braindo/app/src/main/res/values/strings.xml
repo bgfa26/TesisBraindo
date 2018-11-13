@@ -1,5 +1,7 @@
 <resources>
+    <!-- Strings related to launcher -->
     <string name="app_name">Braindo</string>
+
     <string name="age_prompt">Elige tu Edad</string>
 
     <string-array name="age_arrays">
@@ -55,4 +57,13 @@
         <item>No me gusta ser evaluado en ningún caso</item>
     </string-array>
 
+    <!-- Strings related to register -->
+    <string name="error_field_required">Este campo es requerido</string>
+    <string name="error_special_char">Este campo no puede contener caracteres especiales</string>
+    <string name="error_invalid_space_char">Este campo no puede contener caracteres especiales o espacios</string>
+    <string name="error_starts_with_space">Este campo no puede empezar con un espacio</string>
+    <string name="error_id_registered">La cédula utilizada ya se encuentra registrada en el sistema</string>
+    <string name="error_invalid_email">El correo ingresado no es válido</string>
+    <string name="error_bad_communication">Se produjo un problema de comunicación. Inténtelo de nuevo</string>
+    <string name="operation_cancelled">La operación ha sido cancelada</string>
 </resources>
