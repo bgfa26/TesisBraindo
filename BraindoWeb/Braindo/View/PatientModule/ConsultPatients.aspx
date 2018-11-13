@@ -37,7 +37,7 @@
                                                 <td>25</td>
                                                 <td>Ing. Informatica</td>
                                                 <td>Caracas, Municipio Libertador, Parroquia El Recreo</td>
-                                                <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
+                                                <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" onClientClick="window.open('../PatientModule/ConsultDiagnosis.aspx');"/></td>
                                                 <td>
                                                     <asp:ImageButton ID="Modificar" runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../PatientModule/EditPatientInformation.aspx');" />
                                                     <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />

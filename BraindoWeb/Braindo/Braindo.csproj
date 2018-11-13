@@ -85,7 +85,9 @@
     <Content Include="Content\js\shieldui-all.min.js" />
     <Content Include="View\MentalExamModule\ConsultMentalExam.aspx" />
     <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
+    <Content Include="View\PatientModule\ConsultDiagnosis.aspx" />
     <Content Include="View\PatientModule\ConsultPatients.aspx" />
+    <Content Include="View\PatientModule\DetailedTest.aspx" />
     <Content Include="View\PatientModule\EditPatientInformation.aspx" />
     <Content Include="View\IndexModule\index.aspx" />
     <Content Include="View\PsychologistModule\PsychoChangePassword.aspx" />
@@ -124,12 +126,26 @@
     <Compile Include="View\MenuLayout.Master.designer.cs">
       <DependentUpon>MenuLayout.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientModule\ConsultDiagnosis.aspx.cs">
+      <DependentUpon>ConsultDiagnosis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PatientModule\ConsultDiagnosis.aspx.designer.cs">
+      <DependentUpon>ConsultDiagnosis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientModule\ConsultPatients.aspx.cs">
       <DependentUpon>ConsultPatients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\PatientModule\ConsultPatients.aspx.designer.cs">
       <DependentUpon>ConsultPatients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientModule\DetailedTest.aspx.cs">
+      <DependentUpon>DetailedTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PatientModule\DetailedTest.aspx.designer.cs">
+      <DependentUpon>DetailedTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\PatientModule\EditPatientInformation.aspx.cs">
       <DependentUpon>EditPatientInformation.aspx</DependentUpon>
