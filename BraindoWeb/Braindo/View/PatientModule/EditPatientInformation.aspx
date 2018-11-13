@@ -32,6 +32,26 @@
                                             <label>Carrera</label>
                                             <input class="form-control-Patient"/>
                                         </div>
+                                         <div class="form-group-Patient">
+                                            <label>Estado</label>
+                                            <select class="form-control-Patient">
+                                                <option>Caracas</option>
+                                                <option>Vargas</option>
+                                                <option>Los Teques</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group-Patient">
+                                            <label>Municipio</label>
+                                            <select class="form-control-Patient">
+                                                <option>Libertador</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group-Patient">
+                                            <label>Parroquia</label>
+                                            <select class="form-control-Patient">
+                                                <option>El Recreo</option>
+                                            </select>
+                                        </div>
                                         <div class="form-group-Patient">
                                             <button type="submit" class="btn btn-lg btn-info-Patient">
                                                 Modificar Datos
