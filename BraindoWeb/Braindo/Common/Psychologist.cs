@@ -7,97 +7,102 @@ namespace Braindo.Common
 {
     public class Psychologist
     {
-        private int Cedula;
-        private String Email;
-        private String Clave;
-        private String PrimerNombre;
-        private String SegundoNombre;
-        private String PrimerApellido;
-        private String SegundoApellido;
-        private String NumeroMatricula;
-        private DateTime FechaNacimiento;
+        private int ID;
+        private String email;
+        private String password;
+        private String name;
+        private String secondName;
+        private String surname;
+        private String secondSurname;
+        private String registrationNumber;
+        private DateTime birthdate;
 
-        public Psychologist(int _cedula, String _email, String _clave, String _primerNombre, String _segundoNombre, String _primerApellido, String _segundoApellido, String _numeroMatricula, DateTime _fechaNacimiento)
+        public Psychologist()
         {
-            this.Cedula = _cedula;
-            this.Email = _email;
-            this.Clave = _clave;
-            this.PrimerNombre = _primerNombre;
-            this.SegundoNombre = _segundoNombre;
-            this.PrimerApellido = _primerApellido;
-            this.SegundoApellido = _segundoApellido;
-            this.NumeroMatricula = _numeroMatricula;
-            this.FechaNacimiento = _fechaNacimiento;
+
         }
 
-        public Psychologist(String _email, String _primerNombre, String _segundoNombre, String _primerApellido, String _segundoApellido, String _numeroMatricula, DateTime _fechaNacimiento)
+        public Psychologist(int _id, String _email, String _password, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)
         {
-            this.Email = _email;
-            this.PrimerNombre = _primerNombre;
-            this.SegundoNombre = _segundoNombre;
-            this.PrimerApellido = _primerApellido;
-            this.SegundoApellido = _segundoApellido;
-            this.NumeroMatricula = _numeroMatricula;
-            this.FechaNacimiento = _fechaNacimiento;
+            this.ID = _id;
+            this.email = _email;
+            this.password = _password;
+            this.name = _name;
+            this.secondName = _secondName;
+            this.surname = _surname;
+            this.secondSurname = _secondSurname;
+            this.registrationNumber = _registrationNumber;
+            this.birthdate = _birthdate;
         }
 
-        public Psychologist(String _clave)
+        public Psychologist(String _email, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)
         {
-            this.Clave = _clave;
+            this.email = _email;
+            this.name = _name;
+            this.secondName = _secondName;
+            this.surname = _surname;
+            this.secondSurname = _secondSurname;
+            this.registrationNumber = _registrationNumber;
+            this.birthdate = _birthdate;
         }
 
-        public int _Cedula
+        public Psychologist(String _password)
         {
-            get { return Cedula; }
-            set { Cedula = value; }
+            this.password = _password;
+        }
+
+        public int _ID
+        {
+            get { return ID; }
+            set { ID = value; }
         }
 
         public String _Email
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return email; }
+            set { email = value; }
         }
 
-        public String _Clave
+        public String _Password
         {
-            get { return Clave; }
-            set { Clave = value; }
+            get { return password; }
+            set { password = value; }
         }
 
-        public String _PrimerNombre
+        public String _Name
         {
-            get { return PrimerNombre; }
-            set { PrimerNombre = value; }
+            get { return name; }
+            set { name = value; }
         }
 
-        public String _SegundoNombre
+        public String _SecondName
         {
-            get { return SegundoNombre; }
-            set { SegundoNombre = value; }
+            get { return secondName; }
+            set { secondName = value; }
         }
 
-        public String _PrimerApellido
+        public String _Surname
         {
-            get { return PrimerApellido; }
-            set { PrimerApellido = value; }
+            get { return surname; }
+            set { surname = value; }
         }
 
-        public String _SegundoApellido
+        public String _SecondSurname
         {
-            get { return SegundoApellido; }
-            set { SegundoApellido = value; }
+            get { return secondSurname; }
+            set { secondSurname = value; }
         }
 
-        public String _NumeroMatricula
+        public String _RegistrationNumber
         {
-            get { return NumeroMatricula; }
-            set { NumeroMatricula = value; }
+            get { return registrationNumber; }
+            set { registrationNumber = value; }
         }
 
-        public DateTime _FechaNacimiento
+        public DateTime _Birthdate
         {
-            get { return FechaNacimiento; }
-            set { FechaNacimiento = value; }
+            get { return birthdate; }
+            set { birthdate = value; }
         }
     }
 }

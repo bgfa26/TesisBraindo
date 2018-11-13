@@ -24,7 +24,7 @@
                                                 <th>Apellido</th>
                                                 <th>Edad</th>
                                                 <th>Carrera</th>
-                                                <th>Teléfono</th>
+                                                <th>Dirección</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
@@ -35,7 +35,7 @@
                                                 <td>Navas</td>
                                                 <td>25</td>
                                                 <td>Ing. Informatica</td>
-                                                <td>04127309566</td>
+                                                <td>Caracas, Municipio Libertador, Parroquia El Recreo</td>
                                                 <td>
                                                     <asp:ImageButton ID="Modificar" runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../PatientModule/EditPatientInformation.aspx');" />
                                                     <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
