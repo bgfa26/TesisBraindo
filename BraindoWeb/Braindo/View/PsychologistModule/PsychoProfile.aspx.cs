@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Braindo.Controller.PsychologistModule;
+using Braindo.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +11,19 @@ namespace Braindo.View.PsychologistModule
 {
     public partial class PsychoProfile : System.Web.UI.Page
     {
+
+        private Psychologist psycho;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            cedula_txt.Value = "";
-            matricula_txt.Value = "";
-            nombreCompleto_txt.Value = "";
-            fechaNac_txt.Value = "";
-            correo_txt.Value = "";
+            cedula_txt.Value = "20678868";
+            matricula_txt.Value = "20678868-2702";
+            nombreCompleto_txt.Value = "Ronald Efrain Navas Hernandez";
+            fechaNac_txt.Value = "27/02/1993";
+            correo_txt.Value = "rn2702@gmail.com";
+
+
+            ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
 
         }
     }
