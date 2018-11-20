@@ -13,9 +13,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.app.braindo.braindo.R;
 import com.app.braindo.braindo.common.entities.Patient;
-import com.app.braindo.braindo.model.RestCommunication;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -44,7 +45,7 @@ public class RegistrationActivity extends AppCompatActivity{
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-    public static final String VALID_NAME_REGEX = "^((?=[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
+    public static final String VALID_NAME_REGEX = "^((?=[A-Za-zñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
 
     public static boolean validateEmail(String emailStr) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(emailStr);
@@ -84,7 +85,7 @@ public class RegistrationActivity extends AppCompatActivity{
             registrationButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    moveToTest();
+                    attemptSignUp();
                 }
 
             });
@@ -112,9 +113,7 @@ public class RegistrationActivity extends AppCompatActivity{
         String email = etRegistrationEmail.getText().toString();
         String career = spRegistrationCareer.getSelectedItem().toString();
         String age = spRegistrationAge.getSelectedItem().toString();
-        String state = spRegistrationState.getSelectedItem().toString();
-        String municipality = spRegistrationMunicipality.getSelectedItem().toString();
-        String parish = spRegistrationParish.getSelectedItem().toString();
+
 
 
         boolean cancel = false;
@@ -186,6 +185,11 @@ public class RegistrationActivity extends AppCompatActivity{
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             //showProgress(true);
+            String state = spRegistrationState.getSelectedItem().toString();
+            /*String municipality = spRegistrationMunicipality.getSelectedItem().toString();
+            String parish = spRegistrationParish.getSelectedItem().toString();*/
+            String municipality = "municipio";
+            String parish = "parroquia";
             authTask = new RegistrationActivity.PatientSignUpTask(id, firstname, lastname, age, career, state, municipality, parish, email);
             authTask.execute((Void) null);
         }
@@ -208,8 +212,9 @@ public class RegistrationActivity extends AppCompatActivity{
             // TODO: attempt authentication against a network service.
 
             try {
-                RestCommunication con = new RestCommunication();
-                response = con.callMethodPatientRegistration(patientToRegister);
+                /*RestCommunication con = new RestCommunication();
+                response = con.callMethodPatientRegistration(patientToRegister);*/
+                response = patientToRegister;
                 return true;
             } catch (Exception e) {
                 return false;

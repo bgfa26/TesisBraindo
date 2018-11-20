@@ -1,16 +1,17 @@
 package com.app.braindo.braindo.common.entities;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Test {
+public class Test implements Serializable {
     private ArrayList<Integer> answers;
     private Patient patient;
 
     public Test(){}
 
-    public Test(ArrayList<Integer> _answers, Patient _patient){
-        setAnswers(_answers);
+    public Test(Patient _patient){
+        setAnswers();
         setPatient(_patient);
     }
 
@@ -18,8 +19,8 @@ public class Test {
         return answers;
     }
 
-    public void setAnswers(ArrayList<Integer> answers) {
-        this.answers = answers;
+    public void setAnswers() {
+        this.answers = new ArrayList<Integer>();
     }
 
     public Patient getPatient() {
@@ -29,4 +30,9 @@ public class Test {
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
+
+    public void addAnswer(int answer){
+        answers.add(answer);
+    }
 }
+
