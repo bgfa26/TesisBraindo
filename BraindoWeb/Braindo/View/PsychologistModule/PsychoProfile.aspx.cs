@@ -22,6 +22,9 @@ namespace Braindo.View.PsychologistModule
             fechaNac_txt.Value = "27/02/1993";
             correo_txt.Value = "rn2702@gmail.com";
 
+            int id = 20678868;
+
+            psycho = new Psychologist(id);
 
             ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
 
