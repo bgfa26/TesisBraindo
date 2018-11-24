@@ -15,11 +15,11 @@ namespace Braindo.View.PsychologistModule
 
         private Psychologist psycho;
         private String connString;
-        private String user = "TesisBraindo";
+        private String user = "tesisbraindo";
         private String pass = "barron";
         private String server = "localhost";
         private String port = "5432";
-        private String db = "BRAINDO";
+        private String db = "braindo";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,36 +34,6 @@ namespace Braindo.View.PsychologistModule
             psycho = new Psychologist(id);
 
             ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
-
-            NpgsqlConnection conn = new NpgsqlConnection();
-            conn.ConnectionString = "User ID=" + user + "; Password=" + pass + "; Host=" + server + "; Port=" + port + "; Database=" + db;
-
-            try
-            {
-                conn.Open();
-                if (conn.State == System.Data.ConnectionState.Open)
-                {
-                    Console.WriteLine("Success open postgreSQL connection.");
-                }  
-                conn.Close();
-            }
-            catch (Exception ex )
-            {
-                
-                throw ex;
-            }
-
-            /*connString = String.Format("Server={0};Port={1};" +
-                    "User Id={2};Password={3};Database={4};",
-                    "localhost", "5432", "TesisBraindo",
-                    "barron2601", "braindo");
-
-            NpgsqlConnection conn = new NpgsqlConnection(connString);
-            conn.Open();
-
-            if (conn.State == System.Data.ConnectionState.Open)
-                Console.WriteLine("Success open postgreSQL connection.");
-            conn.Close(); */
 
         }
     }
