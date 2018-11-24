@@ -31,8 +31,8 @@ namespace Braindo.Model
         {
             string connstring = String.Format("Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
-                    "localhost", "5432", "heydriver",
-                    "h3yDr1v3r", "heydriverdb");
+                    "localhost", "5432", "TesisBraindo",
+                    "barron", "BRAINDO");
 
             try
             {
