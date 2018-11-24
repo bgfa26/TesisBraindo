@@ -1,6 +1,7 @@
 package com.app.braindo.braindo.model;
 
 import com.app.braindo.braindo.common.entities.Patient;
+import com.app.braindo.braindo.common.entities.Test;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -69,6 +70,24 @@ public class RestCommunication {
             }
             conn.disconnect();
             return _patient;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public Test callMethodTestRegistration(Test t) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "testRegistration?test=" + URLEncoder.encode(gson.toJson( t ).toString(), "UTF-8"));
+            String output;
+            Test _test = new Test();
+            while ((output = br.readLine()) != null) {
+                _test = gson.fromJson(output, Test.class);
+            }
+            conn.disconnect();
+            return _test;
         }
         catch (Exception ex){
             throw ex;

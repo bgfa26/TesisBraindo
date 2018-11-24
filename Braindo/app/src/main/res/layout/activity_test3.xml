@@ -83,12 +83,12 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/tvTestQ16"
+                    android:id="@+id/tvTestQ31"
                     android:layout_width="204dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="6dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginRight="6dp"
                     android:layout_weight="2.79"
                     android:fontFamily="sans-serif-condensed"
                     android:text="¿Tus experiencias y malos recuerdos hacen que tu vida sea difícil de llevar?"
@@ -605,7 +605,7 @@
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/etTestOp40"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

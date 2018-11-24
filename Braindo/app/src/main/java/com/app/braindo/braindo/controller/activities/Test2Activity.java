@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.app.braindo.braindo.R;
+import com.app.braindo.braindo.common.entities.Patient;
 import com.app.braindo.braindo.common.entities.Test;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class Test2Activity extends AppCompatActivity {
     public static List<Integer> itemPositionStacks = new ArrayList<>();
     public TextView status_message;
     static String str_result = "";
+    private Patient patient;
     private Button testButton;
     private Test test;
 
@@ -81,7 +83,39 @@ public class Test2Activity extends AppCompatActivity {
         }
     }
     private void moveToTest(){
+        int answer16 = spTestOp16.getSelectedItemPosition() + 1;
+        int answer17 = spTestOp17.getSelectedItemPosition() + 1;
+        int answer18 = spTestOp18.getSelectedItemPosition() + 1;
+        int answer19 = spTestOp19.getSelectedItemPosition() + 1;
+        int answer20 = spTestOp20.getSelectedItemPosition() + 1;
+        int answer21 = spTestOp21.getSelectedItemPosition() + 1;
+        int answer22 = spTestOp22.getSelectedItemPosition() + 1;
+        int answer23 = spTestOp23.getSelectedItemPosition() + 1;
+        int answer24 = spTestOp24.getSelectedItemPosition() + 1;
+        int answer25 = spTestOp25.getSelectedItemPosition() + 1;
+        int answer26 = spTestOp26.getSelectedItemPosition() + 1;
+        int answer27 = spTestOp27.getSelectedItemPosition() + 1;
+        int answer28 = spTestOp28.getSelectedItemPosition() + 1;
+        int answer29 = spTestOp29.getSelectedItemPosition() + 1;
+        int answer30 = spTestOp30.getSelectedItemPosition() + 1;
+
+        test.addAnswer(answer16);
+        test.addAnswer(answer17);
+        test.addAnswer(answer18);
+        test.addAnswer(answer19);
+        test.addAnswer(answer20);
+        test.addAnswer(answer21);
+        test.addAnswer(answer22);
+        test.addAnswer(answer23);
+        test.addAnswer(answer24);
+        test.addAnswer(answer25);
+        test.addAnswer(answer26);
+        test.addAnswer(answer27);
+        test.addAnswer(answer28);
+        test.addAnswer(answer29);
+        test.addAnswer(answer30);
         Intent myintent = new Intent (Test2Activity.this, Test3Activity.class);
+        myintent.putExtra("test", test);
         finish();
         startActivity(myintent);
     }
