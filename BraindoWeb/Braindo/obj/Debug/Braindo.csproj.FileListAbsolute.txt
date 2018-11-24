@@ -22,3 +22,5 @@ C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bi
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
+C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
+C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll

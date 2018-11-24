@@ -6,7 +6,7 @@ using System.Data;
 using Npgsql;
 using Braindo.Common;
 using Braindo.Model;
-using System.Objec
+
 namespace Braindo.Model.PsychologistModule
 {
     public class DAOPsychologist : DAO
