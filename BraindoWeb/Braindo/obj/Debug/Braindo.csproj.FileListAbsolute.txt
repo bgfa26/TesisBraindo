@@ -24,3 +24,5 @@ C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\ob
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll
+C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
+C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll

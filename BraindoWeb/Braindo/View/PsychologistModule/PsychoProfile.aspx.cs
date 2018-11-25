@@ -1,6 +1,7 @@
 ﻿using Braindo.Controller.PsychologistModule;
 using Braindo.Common;
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,25 +16,77 @@ namespace Braindo.View.PsychologistModule
 
         private Psychologist psycho;
         private String connString;
-        private String user = "tesisbraindo";
-        private String pass = "barron";
-        private String server = "localhost";
-        private String port = "5432";
-        private String db = "braindo";
+        private static NpgsqlConnection conn;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cedula_txt.Value = "20678868";
+            /*cedula_txt.Value = "20678868";
             matricula_txt.Value = "20678868-2702";
             nombreCompleto_txt.Value = "Ronald Efrain Navas Hernandez";
             fechaNac_txt.Value = "27/02/1993";
-            correo_txt.Value = "rn2702@gmail.com";
+            correo_txt.Value = "rn2702@gmail.com";*/
 
-            int id = 20678868;
+            int id = 6963282;
 
             psycho = new Psychologist(id);
 
             ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
+
+            /*Probando*/
+            string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "tesisbraindo",
+                    "barron", "braindo");
+
+            try
+            {
+                conn = new NpgsqlConnection(connstring);
+                conn.Open();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_consultar(@cedula)", conn);
+                NpgsqlParameter p = new NpgsqlParameter();
+                p.ParameterName = "@cedula";
+                p.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+                p.Direction = ParameterDirection.Input;
+                p.Value = id;
+                command.Parameters.Add(p);
+                command.CommandType = CommandType.StoredProcedure;
+                command.ExecuteNonQuery();
+                
+                
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("{0} \t {1} \n", dr[0], dr[1], dr[2], dr[3], dr[4], dr[5], dr[6], dr[7], dr[8]);
+                        cedula_txt.Value = dr[0].ToString();
+                        correo_txt.Value = dr[1].ToString();
+                        nombreCompleto_txt.Value = dr[3].ToString() + " " + dr[4].ToString() + " " + dr[5].ToString() + " " + dr[6].ToString();
+                        matricula_txt.Value = dr[7].ToString();
+                        fechaNac_txt.Value = dr[8].ToString();
+
+
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    conn.Close();   
+                }
+                catch (Exception x2)
+                {
+                    
+                    throw x2;
+                }
+
+
+            }
+            catch (NpgsqlException ex)
+            {
+                throw ex;
+            }
 
         }
     }
