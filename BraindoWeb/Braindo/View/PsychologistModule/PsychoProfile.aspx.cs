@@ -15,25 +15,38 @@ namespace Braindo.View.PsychologistModule
     {
 
         private Psychologist psycho;
-        private String connString;
+        private Psychologist psychoConsulted;
         private static NpgsqlConnection conn;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*cedula_txt.Value = "20678868";
-            matricula_txt.Value = "20678868-2702";
-            nombreCompleto_txt.Value = "Ronald Efrain Navas Hernandez";
-            fechaNac_txt.Value = "27/02/1993";
-            correo_txt.Value = "rn2702@gmail.com";*/
+         
 
             int id = 6963282;
+            int cedula;
+            String cedulaString;
 
             psycho = new Psychologist(id);
 
             ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
 
-            /*Probando*/
+            try
+            {
+                psychoConsult.execute();
+                psychoConsulted = psychoConsult.getAnswer();
+                cedula = psychoConsulted._ID;
+                cedulaString = Convert.ToString(cedula);
+                cedula_txt.Value = cedulaString;
+
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+
+            /*Probando
             string connstring = String.Format("Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
                     "localhost", "5432", "tesisbraindo",
@@ -86,7 +99,7 @@ namespace Braindo.View.PsychologistModule
             catch (NpgsqlException ex)
             {
                 throw ex;
-            }
+            }*/
 
         }
     }
