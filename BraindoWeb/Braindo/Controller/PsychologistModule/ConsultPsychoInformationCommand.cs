@@ -1,4 +1,5 @@
 ﻿using Braindo.Common;
+using Braindo.Model.PsychologistModule;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Braindo.Controller.PsychologistModule
     {
 
         private Psychologist consultPsycho;
+        private Psychologist answer;
 
         public ConsultPsychoInformationCommand(Psychologist _consultPsycho)
         {
@@ -18,7 +20,13 @@ namespace Braindo.Controller.PsychologistModule
 
         public override void execute()
         {
-            throw new NotImplementedException();
+            DAOPsychologist daopsycho = new DAOPsychologist();
+            answer = daopsycho.consultIInformation(consultPsycho);
+        }
+
+        public Psychologist getAnswer()
+        {
+            return this.answer;
         }
     }
 }
