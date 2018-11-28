@@ -123,6 +123,7 @@
     <Compile Include="Model\MentalExamModule\DAOMentalExam.cs" />
     <Compile Include="Model\PatientModule\DAOPatient.cs" />
     <Compile Include="Model\PsychologistModule\DAOPsychologist.cs" />
+    <Compile Include="Model\Registry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\MentalExamModule\ConsultMentalExam.aspx.cs">
       <DependentUpon>ConsultMentalExam.aspx</DependentUpon>

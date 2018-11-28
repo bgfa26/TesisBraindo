@@ -16,16 +16,13 @@ namespace Braindo.View.PsychologistModule
 
         private Psychologist psycho;
         private Psychologist psychoConsulted;
-        private static NpgsqlConnection conn;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
          
 
-            int id = 6963282;
-            int cedula;
-            String cedulaString;
+            int id = 20678868;
 
             psycho = new Psychologist(id);
 
@@ -35,9 +32,9 @@ namespace Braindo.View.PsychologistModule
             {
                 psychoConsult.execute();
                 psychoConsulted = psychoConsult.getAnswer();
-                cedula = psychoConsulted._ID;
-                cedulaString = Convert.ToString(cedula);
-                cedula_txt.Value = cedulaString;
+                cedula_txt.Value = Convert.ToString(psychoConsulted._ID);
+                matricula_txt.Value = psychoConsulted._RegistrationNumber;
+                nombreCompleto_txt.Value = psychoConsulted._Name + " " + psychoConsulted._SecondName + " " + psychoConsulted._Surname + " " + psychoConsulted._SecondSurname;
 
             }
             catch (Exception ex)
