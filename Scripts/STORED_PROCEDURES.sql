@@ -37,14 +37,14 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION PSICOLOGO_MODIFICAR_DATOS(integer, varchar(80), varchar(50), varchar(50), varchar(50), varchar(50), varchar(20), date) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION PSICOLOGO_MODIFICAR_DATOS(id integer, mail varchar(80), name varchar(50), secondname varchar(50), surname varchar(50), secondsurname varchar(50), registrationnumber varchar(20), birthdate date) RETURNS integer AS $$
 DECLARE
  RESULT integer;
 
 BEGIN
-	IF ((SELECT COUNT(*) FROM PSICOLOGO WHERE CEDULA = $1) = 1) THEN
+	IF ((SELECT COUNT(*) FROM PSICOLOGO WHERE CEDULA = id) = 1) THEN
 
-		UPDATE PSICOLOGO SET EMAIL = $2, PRIMERNOMBRE = $3, SEGUNDONOMBRE = $4, PRIMERAPELLIDO = $5, SEGUNDOAPELLIDO = $6, NUMEROMATRICULA = $7, FECHANACIMIENTO = $8 WHERE CEDULA = $1;
+		UPDATE PSICOLOGO SET EMAIL = mail, PRIMERNOMBRE = name, SEGUNDONOMBRE = secondname, PRIMERAPELLIDO = surname, SEGUNDOAPELLIDO = secondsurname, NUMEROMATRICULA = registrationnumber, FECHANACIMIENTO = birthdate WHERE CEDULA = id;
 		
 		RESULT := 201;
   	

@@ -22,72 +22,66 @@ namespace Braindo.Model.PsychologistModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("psicologo_registrar(@cedula, @email, @clave, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroMatricula, @fechaNacimiento)", conn);
-                
-                
-                NpgsqlParameter cedula = new NpgsqlParameter();
-                NpgsqlParameter email = new NpgsqlParameter();
-                NpgsqlParameter clave = new NpgsqlParameter();
-                NpgsqlParameter primerNombre = new NpgsqlParameter();
-                NpgsqlParameter segundoNombre = new NpgsqlParameter();
-                NpgsqlParameter primerApellido = new NpgsqlParameter();
-                NpgsqlParameter segundoApellido = new NpgsqlParameter();
-                NpgsqlParameter numeroMatricula = new NpgsqlParameter();
-                NpgsqlParameter fechaNacimiento = new NpgsqlParameter();
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_datos(@id, @mail, @name, @secondname, @surname, @secondsurname, @registrationnumber, @birthdate)", conn);
+
+
+                NpgsqlParameter id = new NpgsqlParameter();
+                NpgsqlParameter mail = new NpgsqlParameter();
+                NpgsqlParameter name = new NpgsqlParameter();
+                NpgsqlParameter secondname = new NpgsqlParameter();
+                NpgsqlParameter surname = new NpgsqlParameter();
+                NpgsqlParameter secondsurname = new NpgsqlParameter();
+                NpgsqlParameter registrationnumber = new NpgsqlParameter();
+                NpgsqlParameter birthdate = new NpgsqlParameter();
 
 
 
-                cedula.ParameterName = "@cedula";
-                email.ParameterName = "@email";
-                clave.ParameterName = "@clave";
-                primerNombre.ParameterName = "@primerNombre";
-                segundoNombre.ParameterName = "@segundoNombre";
-                primerApellido.ParameterName = "@primerApellido";
-                segundoApellido.ParameterName = "@segundoApellido";
-                numeroMatricula.ParameterName = "@numeroMatricula";
-                fechaNacimiento.ParameterName = "@fechaNacimiento";
+                id.ParameterName = "@id";
+                mail.ParameterName = "@mail";
+                name.ParameterName = "@name";
+                secondname.ParameterName = "@secondname";
+                surname.ParameterName = "@surname";
+                secondsurname.ParameterName = "@secondsurname";
+                registrationnumber.ParameterName = "@registrationnumber";
+                birthdate.ParameterName = "@birthdate";
 
-                cedula.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
-                email.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                clave.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                primerNombre.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                segundoNombre.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                primerApellido.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                segundoApellido.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                numeroMatricula.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-                fechaNacimiento.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Date;
+                id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+                mail.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                name.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                secondname.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                surname.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                secondsurname.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                registrationnumber.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                birthdate.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Date;
 
 
-                cedula.Direction = ParameterDirection.Input;
-                email.Direction = ParameterDirection.Input;
-                clave.Direction = ParameterDirection.Input;
-                primerNombre.Direction = ParameterDirection.Input;
-                segundoNombre.Direction = ParameterDirection.Input;
-                primerApellido.Direction = ParameterDirection.Input;
-                segundoApellido.Direction = ParameterDirection.Input;
-                numeroMatricula.Direction = ParameterDirection.Input;
-                fechaNacimiento.Direction = ParameterDirection.Input;
+                id.Direction = ParameterDirection.InputOutput;
+                mail.Direction = ParameterDirection.InputOutput;
+                name.Direction = ParameterDirection.InputOutput;
+                secondname.Direction = ParameterDirection.InputOutput;
+                surname.Direction = ParameterDirection.InputOutput;
+                secondsurname.Direction = ParameterDirection.InputOutput;
+                registrationnumber.Direction = ParameterDirection.InputOutput;
+                birthdate.Direction = ParameterDirection.InputOutput;
 
 
-                cedula.Value = _psychologist._ID;
-                email.Value = _psychologist._Email;
-                clave.Value = _psychologist._Password;
-                primerNombre.Value = _psychologist._Name;
-                segundoNombre.Value = _psychologist._SecondName;
-                primerApellido.Value = _psychologist._Surname;
-                segundoApellido.Value = _psychologist._SecondSurname;
-                numeroMatricula.Value = _psychologist._RegistrationNumber;
-                fechaNacimiento.Value = _psychologist._Birthdate;
+                id.Value = _psychologist._ID;
+                mail.Value = _psychologist._Email;
+                name.Value = _psychologist._Name;
+                secondname.Value = _psychologist._SecondName;
+                surname.Value = _psychologist._Surname;
+                secondsurname.Value = _psychologist._SecondSurname;
+                registrationnumber.Value = _psychologist._RegistrationNumber;
+                birthdate.Value = _psychologist._Birthdate;
 
-                command.Parameters.Add(cedula);
-                command.Parameters.Add(email);
-                command.Parameters.Add(clave);
-                command.Parameters.Add(primerNombre);
-                command.Parameters.Add(segundoNombre);
-                command.Parameters.Add(primerApellido);
-                command.Parameters.Add(segundoApellido);
-                command.Parameters.Add(numeroMatricula);
-                command.Parameters.Add(fechaNacimiento);
+                command.Parameters.Add(id);
+                command.Parameters.Add(mail);
+                command.Parameters.Add(name);
+                command.Parameters.Add(secondname);
+                command.Parameters.Add(surname);
+                command.Parameters.Add(secondsurname);
+                command.Parameters.Add(registrationnumber);
+                command.Parameters.Add(birthdate);
                 
 
 
@@ -102,7 +96,8 @@ namespace Braindo.Model.PsychologistModule
                     {
                         resp = dr.GetInt32(0);
                     }
-
+                    dr.Close();
+                    tran.Commit();
                     return _psychologist;
                 }
                 catch (Exception ex)

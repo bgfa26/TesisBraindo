@@ -19,15 +19,15 @@ namespace Braindo.View.PsychologistModule
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            int cedula = 123;
-            String correo = "barbara2601@gmail.com";
-            String clave = "barbara2601";
-            String primerNombre = "Barbara";
-            String segundoNombre = "Gilvania";
-            String primerApellido = "Fernandez";
-            String segundoApellido = "Arisitugeta";
-            String numeroMatricula = "24220210-2601";
-            String fechaNac = "01/26/1996";
+            int cedula = 6963282;
+            String correo = "darionavas01@gmail.com";
+            String clave = "ronald01";
+            String primerNombre = "Jose";
+            String segundoNombre = "Dario";
+            String primerApellido = "Navas";
+            String segundoApellido = "Fernandez";
+            String numeroMatricula = "6963282-1202";
+            String fechaNac = "12/02/1996";
 
             DateTime oDate = DateTime.Parse(fechaNac);
 
