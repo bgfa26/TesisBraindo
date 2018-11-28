@@ -120,6 +120,68 @@ namespace Braindo.Model.PsychologistModule
 
         }
 
+        public Psychologist changePassword (Psychologist _psychologist)
+        {
+
+            int resp = 0;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_clave(@id, @pass)", conn);
+
+                NpgsqlParameter id = new NpgsqlParameter();
+                NpgsqlParameter pass = new NpgsqlParameter();
+
+
+                id.ParameterName = "@id";
+                pass.ParameterName = "@pass";
+
+                id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+                pass.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+
+                id.Direction = ParameterDirection.InputOutput;
+                pass.Direction = ParameterDirection.InputOutput;
+
+                id.Value = _psychologist._ID;
+                pass.Value = _psychologist._Password;
+
+                command.Parameters.Add(id);
+                command.Parameters.Add(pass);
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.ExecuteNonQuery();
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        resp = dr.GetInt32(0);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _psychologist;
+                }
+                catch (Exception ex)
+                {  
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+                
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
         public Psychologist consultIInformation(Psychologist _psychologist)
         {
             Psychologist _psychoConsult = new Psychologist();

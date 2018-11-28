@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Braindo.Controller.PsychologistModule;
+using Braindo.Common;
 
 namespace Braindo.View.PsychologistModule
 {
