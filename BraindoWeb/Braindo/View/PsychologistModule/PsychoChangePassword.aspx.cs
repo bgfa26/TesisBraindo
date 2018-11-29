@@ -13,13 +13,14 @@ namespace Braindo.View.PsychologistModule
     {
 
         private Psychologist psycho;
+        private Psychologist psychoChanged;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             int id = 20678868;
-            String password = "master93";
+            String password = "dario02";
 
             psycho = new Psychologist(id, password);
 
@@ -28,6 +29,9 @@ namespace Braindo.View.PsychologistModule
             try
             {
                 cmd.execute();
+                psychoChanged = cmd.getAnswer();
+                String myStringVariable = "Probando";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
             }
             catch (Exception ex)
             {

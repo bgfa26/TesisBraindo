@@ -18,6 +18,7 @@ namespace Braindo.Common
         private DateTime birthdate;
         private int error;
 
+
         public Psychologist()
         {
 
@@ -131,5 +132,6 @@ namespace Braindo.Common
             get { return error; }
             set { error = value; }
         }
+
     }
 }

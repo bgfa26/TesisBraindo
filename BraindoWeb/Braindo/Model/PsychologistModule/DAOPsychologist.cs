@@ -96,6 +96,16 @@ namespace Braindo.Model.PsychologistModule
                     {
                         resp = dr.GetInt32(0);
                     }
+
+                    if (resp == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        _psychologist._Error = Registry.RESULTADO_CODIGO_RECURSO_CREADO;
+                    }
+                    else
+                    {
+                        _psychologist._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                    }
+
                     dr.Close();
                     tran.Commit();
                     return _psychologist;
@@ -161,6 +171,16 @@ namespace Braindo.Model.PsychologistModule
                     {
                         resp = dr.GetInt32(0);
                     }
+
+                    if (resp == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        _psychologist._Error = resp;
+                    }
+                    else
+                    {
+                        _psychologist._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                    }
+
                     dr.Close();
                     tran.Commit();
                     return _psychologist;
