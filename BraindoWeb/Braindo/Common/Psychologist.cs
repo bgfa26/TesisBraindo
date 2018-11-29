@@ -66,8 +66,9 @@ namespace Braindo.Common
 
         }
 
-        public Psychologist(String _password)
+        public Psychologist(int _id, String _password)
         {
+            this.ID = _id;
             this.password = _password;
         }
 
