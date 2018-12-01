@@ -6,7 +6,7 @@
 package common.entities;
 
 public class Patient {
-    private String _id;
+    private int _id;
     private String _firstname;
     private String _lastname;
     private int _age;
@@ -20,13 +20,13 @@ public class Patient {
     
     public Patient (){}
     
-    public Patient(String id, String firstname, String lastname){
+    public Patient(int id, String firstname, String lastname){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
     }
     
-    public Patient(String id, String firstname, String lastname, int age, String career){
+    public Patient(int id, String firstname, String lastname, int age, String career){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -34,7 +34,7 @@ public class Patient {
         _career = career;
     }
 
-    public Patient(String id, String firstname, String lastname, int age, String career, int addressInt, String email){
+    public Patient(int id, String firstname, String lastname, int age, String career, int addressInt, String email){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -44,7 +44,7 @@ public class Patient {
         _email = email;
     }
 
-    public Patient(String id, String firstname, String lastname, int age, String career, String state, String municipality, String parish, String email){
+    public Patient(int id, String firstname, String lastname, int age, String career, String state, String municipality, String parish, String email){
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
@@ -56,11 +56,11 @@ public class Patient {
         _email = email;
     }
     
-      public String get_id() {
+      public int get_id() {
         return _id;
     }
 
-    public void set_id(String _id) {
+    public void set_id(int _id) {
         this._id = _id;
     }
 

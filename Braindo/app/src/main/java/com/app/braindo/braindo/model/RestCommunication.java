@@ -14,12 +14,12 @@ import java.net.URLEncoder;
 
 
 public class RestCommunication {
-    private String ip = "192.168.0.109";
+    private String ip = "192.168.0.108";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
         try {
-            URL url = new URL("http://"+ip+":8084/BraindoWS/webresources/braindows/" + _restfulMethod);
+            URL url = new URL("http://"+ip+":8085/BraindoWebService/webresources/braindo/" + _restfulMethod);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(_requetMethod);
             conn.setRequestProperty("Accept", "application/json");

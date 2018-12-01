@@ -10,14 +10,14 @@ package model;
  * @author LuisAlejandro
  */
 public class Registry {
-    public static String BD_USUARIO = "tesisbraindo";
-    public static String BD_CLAVE = "barron";
-    public static String BD_URL = "jdbc:postgresql://localhost/braindo";
-    public static String BD_CLASE = "org.postgresql.Driver";
+    public static String DB_USER = "tesisbraindo";
+    public static String DB_PASSWORD = "barron";
+    public static String DB_URL = "jdbc:postgresql://localhost/braindo";
+    public static String DB_CLASS = "org.postgresql.Driver";
     
-    public static int RESULTADO_CODIGO_BIEN = 200;
-    public static int RESULTADO_CODIGO_FALLIDO = 500;
-    public static int RESULTADO_CODIGO_NO_ENCONTRADO = 204;
-    public static int RESULTADO_CODIGO_RECURSO_CREADO = 201;
+    public static int CODE_OK = 200;
+    public static int CODE_FAILED = 500;
+    public static int CODE_NOTFOUND = 204;
+    public static int CODE_RESOURCE_CREATED = 201;
     
 }

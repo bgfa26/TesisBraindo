@@ -51,8 +51,8 @@ public class DAO {
 
         try
         {
-            Class.forName(Registry.BD_CLASE );
-            conn = DriverManager.getConnection(Registry.BD_URL, Registry.BD_USUARIO, Registry.BD_CLAVE );
+            Class.forName(Registry.DB_CLASS );
+            conn = DriverManager.getConnection(Registry.DB_URL, Registry.DB_USER, Registry.DB_PASSWORD );
         }
         catch ( ClassNotFoundException e )
         {

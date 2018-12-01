@@ -21,6 +21,7 @@ import com.app.braindo.braindo.R;
 import com.app.braindo.braindo.common.entities.Municipality;
 import com.app.braindo.braindo.common.entities.Parish;
 import com.app.braindo.braindo.common.entities.Patient;
+import com.app.braindo.braindo.model.RestCommunication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -313,7 +314,7 @@ public class RegistrationActivity extends AppCompatActivity{
         private Patient response;
 
         PatientSignUpTask(String id, String firstname, String lastname, String age, String career, String state, String municipality, String parish, String email) {
-            patientToRegister = new Patient(id, firstname, lastname, Integer.valueOf(age), career, state, municipality, parish, email);
+            patientToRegister = new Patient(Integer.valueOf(id), firstname, lastname, Integer.valueOf(age), career, state, municipality, parish, email);
         }
 
         @Override
@@ -321,9 +322,9 @@ public class RegistrationActivity extends AppCompatActivity{
             // TODO: attempt authentication against a network service.
 
             try {
-                /*RestCommunication con = new RestCommunication();
-                response = con.callMethodPatientRegistration(patientToRegister);*/
-                response = patientToRegister;
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodPatientRegistration(patientToRegister);
+                //response = patientToRegister;
                 return true;
             } catch (Exception e) {
                 return false;
@@ -338,18 +339,17 @@ public class RegistrationActivity extends AppCompatActivity{
             View focusView = null;
 
             if (success) {
-                finish();
-                if (!response.get_id().equals("duplicated")){
+                if (response.get_error() == 201){
                     Intent myintent = new Intent(RegistrationActivity.this, TestActivity.class);
                     finish();
                     myintent.putExtra("patient", response);
                     startActivity(myintent);
                     Context context = getApplicationContext();
-                }else if((!response.get_id().equals("duplicated"))){
+                }else if(response.get_error() == 500){
                     etRegistrationID.setError(getString(R.string.error_id_registered));
                     focusView = etRegistrationID;
                     focusView.requestFocus();
-                }else if (response.get_error() == 500){
+                }else {
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.error_bad_communication);
                     int duration = Toast.LENGTH_SHORT;

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.app.braindo.braindo.R;
 import com.app.braindo.braindo.common.entities.Test;
+import com.app.braindo.braindo.model.RestCommunication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -154,9 +155,9 @@ public class Test3Activity extends AppCompatActivity {
             // TODO: attempt authentication against a network service.
 
             try {
-                /*RestCommunication con = new RestCommunication();
-                response = con.callMethodTestRegistration(testToRegister);*/
-                response = testToRegister;
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodTestRegistration(testToRegister);
+                //response = testToRegister;
                 return true;
             } catch (Exception e) {
                 return false;
@@ -171,9 +172,10 @@ public class Test3Activity extends AppCompatActivity {
             View focusView = null;
 
             if (success) {
-                if (response.get_error() == 200){
+                if (response.get_error() == 201){
                     Intent myintent = new Intent(Test3Activity.this, CloseActivity.class);
                     finish();
+                    startActivity(myintent);
                 }else if (response.get_error() == 500){
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.error_bad_communication);

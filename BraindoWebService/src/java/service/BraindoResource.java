@@ -5,6 +5,12 @@
  */
 package service;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import common.entities.Patient;
+import common.entities.Test;
+import controller.patient_module.RegistrationPatientCommand;
+import controller.test_module.RegistrationTestCommand;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -13,6 +19,8 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.QueryParam;
+import static model.Registry.CODE_FAILED;
 
 /**
  * REST Web Service
@@ -50,5 +58,52 @@ public class BraindoResource {
     @PUT
     @Consumes("application/xml")
     public void putXml(String content) {
+    }
+    
+    
+    @GET
+    @Path("patientRegistration")
+    @Produces("application/json")
+    
+    public String addPatient (@QueryParam("patient") String _patient){
+        
+        Gson gson = new GsonBuilder().create();
+        Patient patient = gson.fromJson(_patient, Patient.class);
+        RegistrationPatientCommand cmd = new RegistrationPatientCommand(patient);
+        
+        try {
+            cmd.execute();
+            return gson.toJson(cmd.getResponse());
+            
+        } catch (Exception ex) {
+            
+            Patient error = new Patient();
+            error.set_error(CODE_FAILED);
+            return gson.toJson(error);
+            
+        }
+    }
+    
+    @GET
+    @Path("testRegistration")
+    @Produces("application/json")
+    
+    public String addTest (@QueryParam("test") String _test){
+        
+        Gson gson = new GsonBuilder().create();
+        Test test = gson.fromJson(_test, Test.class);
+        RegistrationTestCommand cmd = new RegistrationTestCommand(test);
+        
+        try {
+            cmd.execute();
+            return gson.toJson(cmd.getResponse());
+            
+        } catch (Exception ex) {
+            
+            Test error = new Test();
+            error.set_error(CODE_FAILED);
+            return gson.toJson(error);
+            
+        }
     }
 }
