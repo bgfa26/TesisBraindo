@@ -16,6 +16,8 @@ namespace Braindo.Common
         private String secondSurname;
         private String registrationNumber;
         private DateTime birthdate;
+        private int error;
+
 
         public Psychologist()
         {
@@ -38,6 +40,7 @@ namespace Braindo.Common
             this.secondSurname = _secondSurname;
             this.registrationNumber = _registrationNumber;
             this.birthdate = _birthdate;
+            
         }
 
         public Psychologist(String _email, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)
@@ -51,8 +54,22 @@ namespace Braindo.Common
             this.birthdate = _birthdate;
         }
 
-        public Psychologist(String _password)
+        public Psychologist(int _id, String _email, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)
         {
+            this.ID = _id;
+            this.email = _email;
+            this.name = _name;
+            this.secondName = _secondName;
+            this.surname = _surname;
+            this.secondSurname = _secondSurname;
+            this.registrationNumber = _registrationNumber;
+            this.birthdate = _birthdate;
+
+        }
+
+        public Psychologist(int _id, String _password)
+        {
+            this.ID = _id;
             this.password = _password;
         }
 
@@ -109,5 +126,12 @@ namespace Braindo.Common
             get { return birthdate; }
             set { birthdate = value; }
         }
+
+        public int _Error
+        {
+            get { return error; }
+            set { error = value; }
+        }
+
     }
 }
