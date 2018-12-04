@@ -115,6 +115,9 @@
     <Compile Include="Common\Place.cs" />
     <Compile Include="Common\Psychologist.cs" />
     <Compile Include="Controller\Command.cs" />
+    <Compile Include="Controller\PatientModule\ConsultPatientInformationCommand.cs" />
+    <Compile Include="Controller\PatientModule\DeletePatientCommand.cs" />
+    <Compile Include="Controller\PatientModule\ModifyPatientInformation.cs" />
     <Compile Include="Controller\PsychologistModule\ChangePasswordCommand.cs" />
     <Compile Include="Controller\PsychologistModule\ConsultPsychoInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\EditInformationCommand.cs" />
@@ -264,7 +267,6 @@
   <ItemGroup>
     <Folder Include="Controller\MedicalAppointmenModule\" />
     <Folder Include="Controller\MentalExamModule\" />
-    <Folder Include="Controller\PatientModule\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

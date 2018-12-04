@@ -31,12 +31,12 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>20678868</td>
-                                                <td>Ronald</td>
-                                                <td>Navas</td>
-                                                <td>25</td>
-                                                <td>Ing. Informatica</td>
-                                                <td>Caracas, Municipio Libertador, Parroquia El Recreo</td>
+                                                <td runat="server" id="cedula_txt"></td>
+                                                <td runat="server" id="nombre_txt"></td>
+                                                <td runat="server" id="apellido_txt"></td>
+                                                <td runat="server" id="edad_txt"></td>
+                                                <td runat="server" id="carrera_txt"></td>
+                                                <td runat="server" id="direccion_txt"></td>
                                                 <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" onClientClick="window.open('../PatientModule/ConsultDiagnosis.aspx');"/></td>
                                                 <td>
                                                     <asp:ImageButton ID="Modificar" runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../PatientModule/EditPatientInformation.aspx');" />
