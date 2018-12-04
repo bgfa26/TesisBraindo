@@ -30,6 +30,11 @@
         </activity>
 
         <activity
+            android:name=".controller.activities.LoginActivity"
+            android:theme="@style/BraindoTheme.NoActionBar">
+        </activity>
+
+        <activity
             android:name=".controller.activities.TestActivity"
             android:theme="@style/BraindoTheme.NoActionBar">
         </activity>

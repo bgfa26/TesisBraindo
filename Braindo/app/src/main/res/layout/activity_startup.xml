@@ -18,20 +18,36 @@
         android:id="@+id/tvStartUpWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="200dp"
         android:layout_weight="0.10"
         android:fontFamily="sans-serif-smallcaps"
         android:text="¡Bienvenido a Braindo!"
         android:textAlignment="center"
         android:textColor="@color/braindoGreen"
-        android:textSize="30sp"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStartUpMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="0.10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Hoy es un buen día para comenzar"
+        android:textAlignment="center"
+        android:textColor="@color/braindoLightPurpleMessage"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvStartUpInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="3dp"
         android:layout_weight="0.10"
         android:fontFamily="sans-serif"
         android:text="Presione aquí para continuar"
@@ -43,8 +59,8 @@
     <Button
         android:id="@+id/btnRegistry"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="140dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
         android:layout_marginTop="10dp"
         android:layout_weight="0.07"
         android:background="@color/braindoLightGreen"
@@ -52,5 +68,22 @@
         android:text="Regístrate"
         android:textColor="@color/braindoDarkGreen"
         android:textSize="18sp"
-        android:textStyle="bold" />/> />
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.07"
+        android:background="@color/braindoDarkGreen"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Inicia aquí"
+        android:textColor="@color/braindoLightGreen"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    /> />
+
 </LinearLayout>

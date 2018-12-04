@@ -53,7 +53,7 @@
         android:id="@+id/tvMessageClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="sans-serif"
         android:text="La aplicación se cerrará automáticamente"
         android:textAlignment="center"
