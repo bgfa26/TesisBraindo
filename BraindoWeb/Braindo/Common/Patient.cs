@@ -12,30 +12,42 @@ namespace Braindo.Common
         private String surname;
         private int age;
         private String career;
-        private Place place;
+        private String state;
+        private String municipality;
+        private String parish;
 
         public Patient()
         {
 
         }
 
-        public Patient(int _ID, String _name, String _surname, int _age, String _career, Place _place)
+        public Patient(int _id)
+        {
+            this.ID = _id;
+        }
+
+        public Patient(int _ID, String _name, String _surname, int _age, String _career, String _state, String _municipality, String _parish)
         {
             this.ID = _ID;
             this.name = _name;
             this.surname = _surname;
             this.age = _age;
             this.career = _career;
-            this.place = _place;
+            this.state = _state;
+            this.municipality = _municipality;
+            this.parish = _parish;
         }
 
-        public Patient(String _name, String _surname, int _age, String _career, Place _place)
+        public Patient(String _name, String _surname, int _age, String _career, String _state, String _municipality, String _parish)
         {
             this.name = _name;
             this.surname = _surname;
             this.age = _age;
             this.career = _career;
-            this.place = _place;
+            this.state = _state;
+            this.municipality = _municipality;
+            this.parish = _parish;
+            
         }
 
         public int _ID
@@ -68,10 +80,22 @@ namespace Braindo.Common
             set { career = value; }
         }
 
-        public Place Place
+        public String _State
         {
-            get { return place; }
-            set { place = value; }
+            get { return state; }
+            set { state = value; }
+        }
+
+        public String _Municipality
+        {
+            get { return municipality; }
+            set { municipality = value; }
+        }
+
+        public String _Parish
+        {
+            get { return parish; }
+            set { parish = value; }
         }
 
     }

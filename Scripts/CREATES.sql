@@ -17,10 +17,10 @@ CREATE TABLE PACIENTE(
 	EDAD					INTEGER NOT NULL,
 	CARRERA					VARCHAR(35) NOT NULL, 
 	FK_LUGAR				INTEGER NOT NULL,
-	CONSTRAINT CH_CARRERA CHECK (CARRERA in('Ingeniería Informática','Ingeniería Civil', 
-	'Ingeniería en Telecomunicaciones','Ingeniería Industrial', 'Psicología','Teología',
-	'Filosofía','Letras','Comunicación Social', 'Relaciones Industriales', 'Derecho', 
-	'Administración y Contaduría','Economía', 'Educación')),
+	CONSTRAINT CH_CARRERA CHECK (CARRERA in('Ingenieria Informatica','Ingenieria Civil', 
+	'Ingenieria en Telecomunicaciones','Ingenieria Industrial', 'Psicologia','Teologia',
+	'Filosofia','Letras','Comunicacion Social', 'Relaciones Industriales', 'Derecho', 
+	'Administracion y Contaduria','Economia', 'Educacion')),
 	CONSTRAINT PK_PACIENTE PRIMARY KEY (CI)
 );
 

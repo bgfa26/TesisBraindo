@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Braindo.Controller.PatientModule;
+using Braindo.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +11,31 @@ namespace Braindo.View.PatientModule
 {
     public partial class ConsultPatients : System.Web.UI.Page
     {
+
+        private Patient patient;
+        private Patient patientConsulted;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            int id = 24220210;
+
+            patient = new Patient(id);
+
+            ConsultPatientInformationCommand cmd = new ConsultPatientInformationCommand(patient);
+
+            DeletePatientCommand cmd2 = new DeletePatientCommand(patient);
+
+            try
+            {
+                cmd.execute();
+                patientConsulted = cmd.getAnswer();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
 
         }
     }

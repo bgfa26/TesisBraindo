@@ -22,8 +22,8 @@ namespace Braindo.View.PsychologistModule
             int cedula = 6963282;
             String correo = "darionavas01@gmail.com";
             String clave = "ronald01";
-            String primerNombre = "Jose";
-            String segundoNombre = "Dario";
+            String primerNombre = "Pelon";
+            String segundoNombre = "Dariito";
             String primerApellido = "Navas";
             String segundoApellido = "Fernandez";
             String numeroMatricula = "6963282-1202";

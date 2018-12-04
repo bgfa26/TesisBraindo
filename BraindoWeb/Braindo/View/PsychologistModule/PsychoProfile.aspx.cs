@@ -22,7 +22,7 @@ namespace Braindo.View.PsychologistModule
         {
          
 
-            int id = 20678868;
+            int id = 6963282;
 
             psycho = new Psychologist(id);
 
