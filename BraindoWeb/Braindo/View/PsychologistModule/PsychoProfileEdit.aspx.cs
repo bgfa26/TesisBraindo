@@ -20,13 +20,13 @@ namespace Braindo.View.PsychologistModule
         {
 
             int cedula = 6963282;
-            String correo = "darionavas01@gmail.com";
+            String correo = "dario01@gmail.com";
             String clave = "ronald01";
             String primerNombre = "Pelon";
             String segundoNombre = "Dariito";
             String primerApellido = "Navas";
-            String segundoApellido = "Fernandez";
-            String numeroMatricula = "6963282-1202";
+            String segundoApellido = "Rebolledo";
+            String numeroMatricula = "24220210-2601";
             String fechaNac = "12/02/1996";
 
             DateTime oDate = DateTime.Parse(fechaNac);

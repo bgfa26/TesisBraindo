@@ -22,7 +22,7 @@ namespace Braindo.Model.PsychologistModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_datos(@id, @mail, @name, @secondname, @surname, @secondsurname, @registrationnumber, @birthdate)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_datos(@ID, @MAIL, @NAME, @SECONDNAME, @SURNAME, @SECONDSURNAME, @REGISTRATIONNUMBER, @BIRTHDATE)", conn);
 
 
                 NpgsqlParameter id = new NpgsqlParameter();
@@ -36,14 +36,14 @@ namespace Braindo.Model.PsychologistModule
 
 
 
-                id.ParameterName = "@id";
-                mail.ParameterName = "@mail";
-                name.ParameterName = "@name";
-                secondname.ParameterName = "@secondname";
-                surname.ParameterName = "@surname";
-                secondsurname.ParameterName = "@secondsurname";
-                registrationnumber.ParameterName = "@registrationnumber";
-                birthdate.ParameterName = "@birthdate";
+                id.ParameterName = "@ID";
+                mail.ParameterName = "@MAIL";
+                name.ParameterName = "@NAME";
+                secondname.ParameterName = "@SECONDNAME";
+                surname.ParameterName = "@SURNAME";
+                secondsurname.ParameterName = "@SECONDSURNAME";
+                registrationnumber.ParameterName = "@REGISTRATIONNUMBER";
+                birthdate.ParameterName = "@BIRTHDATE";
 
                 id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 mail.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
@@ -139,14 +139,14 @@ namespace Braindo.Model.PsychologistModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_clave(@id, @pass)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_modificar_clave(@ID, @PASS)", conn);
 
                 NpgsqlParameter id = new NpgsqlParameter();
                 NpgsqlParameter pass = new NpgsqlParameter();
 
 
-                id.ParameterName = "@id";
-                pass.ParameterName = "@pass";
+                id.ParameterName = "@ID";
+                pass.ParameterName = "@PASS";
 
                 id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 pass.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
@@ -219,9 +219,9 @@ namespace Braindo.Model.PsychologistModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("psicologo_consultar(@ci)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_consultar(@CI)", conn);
                 NpgsqlParameter p = new NpgsqlParameter();
-                p.ParameterName = "@ci";
+                p.ParameterName = "@CI";
                 p.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 p.Direction = ParameterDirection.InputOutput;
                 p.Value = _psychologist._ID;

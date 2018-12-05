@@ -24,6 +24,17 @@ namespace Braindo.Common
 
         }
 
+        public Psychologist(String _name, String _surname)
+        {
+            this.name = _name;
+            this.surname = _surname;
+        }
+
+        public Psychologist(String _email)
+        {
+            this.email = _email;
+        }
+
         public Psychologist(int _id)
         {
             this.ID = _id;

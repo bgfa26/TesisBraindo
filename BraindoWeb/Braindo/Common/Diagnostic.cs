@@ -8,21 +8,42 @@ namespace Braindo.Common
     public class Diagnostic
     {
         private int ID;
-        private DateTime date;
+        private DateTime diagnosisDate;
         private String answer;
         private String networkAnswer;
         private Patient patient;
         private Psychologist psychologist;
+        private int error;
 
         public Diagnostic()
         {
 
         }
 
+        public Diagnostic(int _id)
+        {
+            this.ID = _id;
+        }
+
+        public Diagnostic(Patient _patient, Psychologist _psycho)
+        {
+            this.patient = _patient;
+            this.psychologist = _psycho;
+        }
+
         public Diagnostic(int _ID, DateTime _date, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
-            this.date = _date;
+            this.diagnosisDate = _date;
+            this.answer = _answer;
+            this.networkAnswer = _networkAnswer;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+        }
+
+        public Diagnostic(DateTime _date, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        {
+            this.diagnosisDate = _date;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
             this.patient = _patient;
@@ -37,8 +58,8 @@ namespace Braindo.Common
 
         public DateTime _Date
         {
-            get { return date; }
-            set { date = value; }
+            get { return diagnosisDate; }
+            set { diagnosisDate = value; }
         }
 
         public String _Answer
@@ -63,6 +84,12 @@ namespace Braindo.Common
         {
             get { return psychologist; }
             set { psychologist = value; }
+        }
+
+        public int _Error
+        {
+            get { return error; }
+            set { error = value; }
         }
     }
 }

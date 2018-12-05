@@ -115,6 +115,10 @@
     <Compile Include="Common\Place.cs" />
     <Compile Include="Common\Psychologist.cs" />
     <Compile Include="Controller\Command.cs" />
+    <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticCommand.cs" />
+    <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticDetailedCommand.cs" />
+    <Compile Include="Controller\DiagnosisModule\DeleteDiagnosticCommand.cs" />
+    <Compile Include="Controller\DiagnosisModule\RegisterDiagnosticCommand.cs" />
     <Compile Include="Controller\PatientModule\ConsultPatientInformationCommand.cs" />
     <Compile Include="Controller\PatientModule\DeletePatientCommand.cs" />
     <Compile Include="Controller\PatientModule\ModifyPatientInformation.cs" />
@@ -122,6 +126,7 @@
     <Compile Include="Controller\PsychologistModule\ConsultPsychoInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\EditInformationCommand.cs" />
     <Compile Include="Model\DAO.cs" />
+    <Compile Include="Model\DiagnosisModule\DAODiagnosis.cs" />
     <Compile Include="Model\MedicalAppointmentModule\DAOMedicalAppointment.cs" />
     <Compile Include="Model\MentalExamModule\DAOMentalExam.cs" />
     <Compile Include="Model\PatientModule\DAOPatient.cs" />
