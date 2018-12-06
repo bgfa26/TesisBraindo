@@ -4,7 +4,7 @@ INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Estado','Distrito Capital
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Estado','Miranda',1);
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Estado','Vargas',1);
 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Blvno Libertador',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Distrito Capital'));
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Libertador',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Distrito Capital'));
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Guaicaipuro',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Miranda'));
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Acevedo',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Miranda'));
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Andres Bello',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Miranda'));
@@ -29,28 +29,28 @@ INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Zamora',(SELE
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Municipio','Vargas',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Estado' and NOMBRE = 'Vargas'));
 
 /* Parroquias del Estado Dtto Capital */
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','23 de Enero',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Altagracia',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Antimano',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Candelaria',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Caricuao',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Catedral',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Coche',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Junquito',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Paraiso',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Recreo',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Valle',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','La Pastora',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','La Vega',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Macaro',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Agustin',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Bernardino',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Jose',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Juan',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Pedro',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Santa Rosalia',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Santa Teresa',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
-INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Sucre',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Blvno Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','23 de Enero',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Altagracia',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Antimano',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Candelaria',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Caricuao',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Catedral',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Coche',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Junquito',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Paraiso',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Recreo',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','El Valle',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','La Pastora',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','La Vega',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Macaro',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Agustin',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Bernardino',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Jose',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Juan',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','San Pedro',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Santa Rosalia',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Santa Teresa',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
+INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Sucre',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Libertador')); 
 
 /* Parroquias del Estado Miranda */
 /*Parroquias del Municipio Guaicaipuro*/
@@ -143,4 +143,5 @@ INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Maiquetia',(S
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Naiguata',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Vargas'));
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Urimare',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Vargas'));
 
-INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '1234', 'Barbara', 'Gilvania', 'Fernandez', 'Aristeigueta', 121212, '26-01-1995');
+INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '1234', 'Bárbara', 'Gilvania', 'Fernández', 'Aristeigueta', 121212, '26-01-1995');
+INSERT INTO PACIENTE VALUES (24773340, 'Luis', 'Pérez', 22, 'Ingeniería Informática', 36);

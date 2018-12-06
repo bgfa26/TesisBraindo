@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 import common.entities.Patient;
 import common.entities.Test;
 import controller.patient_module.RegistrationPatientCommand;
+import controller.patient_module.ValidatePatientCommand;
 import controller.test_module.RegistrationTestCommand;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -101,6 +102,29 @@ public class BraindoResource {
         } catch (Exception ex) {
             
             Test error = new Test();
+            error.set_error(CODE_FAILED);
+            return gson.toJson(error);
+            
+        }
+    }
+    
+    @GET
+    @Path("patientValidation")
+    @Produces("application/json")
+    
+    public String validatePatient (@QueryParam("patient") String _patient){
+        
+        Gson gson = new GsonBuilder().create();
+        Patient patient = gson.fromJson(_patient, Patient.class);
+        ValidatePatientCommand cmd = new ValidatePatientCommand(patient);
+        
+        try {
+            cmd.execute();
+            return gson.toJson(cmd.getResponse());
+            
+        } catch (Exception ex) {
+            
+            Patient error = new Patient();
             error.set_error(CODE_FAILED);
             return gson.toJson(error);
             
