@@ -19,7 +19,7 @@ namespace Braindo.View.PsychologistModule
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            int id = 6963282;
+            int id = 24220210;
             String password = "dario02";
 
             psycho = new Psychologist(id, password);

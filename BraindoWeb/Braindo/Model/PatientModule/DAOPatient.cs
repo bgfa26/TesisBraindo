@@ -22,7 +22,7 @@ namespace Braindo.Model.PatientModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("paciente_modificar(@id, @firstname, @surname, @age, @career, @state, @municipality, @parish)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("paciente_modificar(@ID, @FIRSTNAME, @SURNAME, @AGE, @CAREER, @STATE, @MUNICIPALITY, @PARISH)", conn);
 
                 NpgsqlParameter id = new NpgsqlParameter();
                 NpgsqlParameter firstname = new NpgsqlParameter();
@@ -33,14 +33,14 @@ namespace Braindo.Model.PatientModule
                 NpgsqlParameter municipality = new NpgsqlParameter();
                 NpgsqlParameter parish = new NpgsqlParameter();
 
-                id.ParameterName = "@id";
-                firstname.ParameterName = "@firstname";
-                surname.ParameterName = "@surname";
-                age.ParameterName = "@age";
-                career.ParameterName = "@career";
-                state.ParameterName = "@state";
-                municipality.ParameterName = "@municipality";
-                parish.ParameterName = "@parish";
+                id.ParameterName = "@ID";
+                firstname.ParameterName = "@FIRSTNAME";
+                surname.ParameterName = "@SURNAME";
+                age.ParameterName = "@AGE";
+                career.ParameterName = "@CAREER";
+                state.ParameterName = "@STATE";
+                municipality.ParameterName = "@MUNICIPALITY";
+                parish.ParameterName = "@PARISH";
 
                 id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 firstname.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
@@ -115,9 +115,9 @@ namespace Braindo.Model.PatientModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("paciente_eliminar(@id)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("paciente_eliminar(@ID)", conn);
                 NpgsqlParameter ci = new NpgsqlParameter();
-                ci.ParameterName = "@id";
+                ci.ParameterName = "@ID";
                 ci.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 ci.Direction = ParameterDirection.InputOutput;
                 ci.Value = _patient._ID;
@@ -169,9 +169,9 @@ namespace Braindo.Model.PatientModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("paciente_consultar(@id)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("paciente_consultar(@ID)", conn);
                 NpgsqlParameter ci = new NpgsqlParameter();
-                ci.ParameterName = "@id";
+                ci.ParameterName = "@ID";
                 ci.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 ci.Direction = ParameterDirection.InputOutput;
                 ci.Value = _patient._ID;

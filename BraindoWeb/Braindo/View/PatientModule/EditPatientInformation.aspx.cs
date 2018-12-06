@@ -19,7 +19,7 @@ namespace Braindo.View.PatientModule
         String name = "Gilvania";
         String surname = "Aristigueta";
         int age = 23;
-        String career = "Ingeniería Civil";
+        String career = "Ingenieria Civil";
         String state = "Miranda";
         String municipality = "Brion";
         String parish = "Higuerote";

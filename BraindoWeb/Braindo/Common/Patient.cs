@@ -26,6 +26,12 @@ namespace Braindo.Common
             this.ID = _id;
         }
 
+        public Patient(String _name, String _surname)
+        {
+            this.name = _name;
+            this.surname = _surname;
+        }
+
         public Patient(int _ID, String _name, String _surname, int _age, String _career, String _state, String _municipality, String _parish)
         {
             this.ID = _ID;
