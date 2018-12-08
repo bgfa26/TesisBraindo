@@ -5,10 +5,6 @@
  */
 package model;
 
-/**
- *
- * @author LuisAlejandro
- */
 public class Registry {
     public static String DB_USER = "tesisbraindo";
     public static String DB_PASSWORD = "barron";
@@ -19,5 +15,7 @@ public class Registry {
     public static int CODE_FAILED = 500;
     public static int CODE_NOTFOUND = 204;
     public static int CODE_RESOURCE_CREATED = 201;
+    public static int CODE_NON_EXISTENT_ID = 400;
+    public static int CODE_NON_EXISTENT_EMAIL = 300;
     
 }

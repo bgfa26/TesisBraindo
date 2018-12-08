@@ -36,6 +36,10 @@ public class Patient implements Serializable {
         _lastname = lastname;
     }
 
+    public Patient(int id, String email){
+        _id = id;
+        _email = email;
+    }
     public Patient(int id, String firstname, String lastname, int age, String career){
         _id = id;
         _firstname = firstname;

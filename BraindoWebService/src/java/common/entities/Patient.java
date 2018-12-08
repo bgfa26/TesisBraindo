@@ -24,6 +24,11 @@ public class Patient {
         _id = id;
         _firstname = firstname;
         _lastname = lastname;
+    }    
+    
+    public Patient(int id, String email){
+        _id = id;
+        _email = email;
     }
     
     public Patient(int id, String firstname, String lastname, int age, String career){
