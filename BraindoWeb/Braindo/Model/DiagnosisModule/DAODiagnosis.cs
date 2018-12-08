@@ -44,10 +44,10 @@ namespace Braindo.Model.DiagnosisModule
                 psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
 
                 date.Direction = ParameterDirection.Input;
-                answer_percentage.Direction = ParameterDirection.InputOutput;
-                answer_red.Direction = ParameterDirection.InputOutput;
-                patient.Direction = ParameterDirection.InputOutput;
-                psycho.Direction = ParameterDirection.InputOutput;
+                answer_percentage.Direction = ParameterDirection.Input;
+                answer_red.Direction = ParameterDirection.Input;
+                patient.Direction = ParameterDirection.Input;
+                psycho.Direction = ParameterDirection.Input;
 
                 date.Value = _diagnostic._Date;
                 answer_percentage.Value = _diagnostic._Answer;

@@ -19,11 +19,11 @@ namespace Braindo.View.PatientModule
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            String fecha = "12/02/1996";
+            String fecha = "13/02/1996";
             DateTime diagDate = DateTime.Parse(fecha);
 
-            String answer_percentage = "90%";
-            String networkAnswer = "155";
+            String answer_percentage = "50%";
+            String networkAnswer = "154";
 
             int idPatient = 24220210;
             String emailPsycho = "dario01@gmail.com";
