@@ -16,13 +16,14 @@ namespace Braindo.Common
         private String mood;
         private String language;
         private String thought;
+        private Appointment appointment;
 
         public MentalExam()
         {
 
         }
 
-        public MentalExam(int _Id, String _behavior, String _attitude, String _attention, String _awareness, String _mood, String _language, String _thought)
+        public MentalExam(int _Id, String _behavior, String _attitude, String _attention, String _awareness, String _mood, String _language, String _thought, Appointment _appointment)
         {
             this.ID = _Id;
             this.behavior = _behavior;
@@ -32,6 +33,19 @@ namespace Braindo.Common
             this.mood = _mood;
             this.language = _language;
             this.thought = _thought;
+            this.appointment = _appointment;
+        }
+
+        public MentalExam(String _behavior, String _attitude, String _attention, String _awareness, String _mood, String _language, String _thought, Appointment _appointment)
+        {
+            this.behavior = _behavior;
+            this.attitude = _attitude;
+            this.attention = _attention;
+            this.awareness = _awareness;
+            this.mood = _mood;
+            this.language = _language;
+            this.thought = _thought;
+            this.appointment = _appointment;
         }
 
         public int _ID
@@ -80,6 +94,12 @@ namespace Braindo.Common
         {
             get { return thought; }
             set { thought = value; }
+        }
+
+        public Appointment _Appointment
+        {
+            get { return appointment; }
+            set { appointment = value; }
         }
     }
 }

@@ -21,6 +21,11 @@ namespace Braindo.Common
 
         }
 
+        public Appointment(int _ID)
+        {
+            this.ID = _ID;
+        }
+
         public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
         {
             this.ID = _ID;

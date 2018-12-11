@@ -22,9 +22,9 @@ namespace Braindo.Model.MentalExamModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("examenmental_regisrar(@BEHAVIOR, @ATTITUDE, @ALERTNESS, @AWARENESS, @MOOD, @LANGUAGE, @THOUGHT)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("examenmental_registrar(@ID, @BEHAVIOR, @ATTITUDE, @ALERTNESS, @AWARENESS, @MOOD, @LANGUAGE, @THOUGHT)", conn);
 
-                
+                NpgsqlParameter id = new NpgsqlParameter();
                 NpgsqlParameter behavior = new NpgsqlParameter();
                 NpgsqlParameter attitude = new NpgsqlParameter();
                 NpgsqlParameter alertness = new NpgsqlParameter();
@@ -33,7 +33,8 @@ namespace Braindo.Model.MentalExamModule
                 NpgsqlParameter language = new NpgsqlParameter();
                 NpgsqlParameter thought = new NpgsqlParameter();
 
-                
+
+                id.ParameterName = "@ID";
                 behavior.ParameterName = "@BEHAVIOR";
                 attitude.ParameterName = "@ATTITUDE";
                 alertness.ParameterName = "@ALERTNESS";
@@ -42,7 +43,7 @@ namespace Braindo.Model.MentalExamModule
                 language.ParameterName = "@LANGUAGE";
                 thought.ParameterName = "@THOUGHT";
 
-                
+                id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 behavior.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
                 attitude.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
                 alertness.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
@@ -51,7 +52,8 @@ namespace Braindo.Model.MentalExamModule
                 language.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
                 thought.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
 
-                
+
+                id.Direction = ParameterDirection.Input;
                 behavior.Direction = ParameterDirection.Input;
                 attitude.Direction = ParameterDirection.Input;
                 alertness.Direction = ParameterDirection.Input;
@@ -60,7 +62,7 @@ namespace Braindo.Model.MentalExamModule
                 language.Direction = ParameterDirection.Input;
                 thought.Direction = ParameterDirection.Input;
 
-                
+                id.Value = _mentalExam._Appointment._ID;
                 behavior.Value = _mentalExam._Behavior;
                 attitude.Value = _mentalExam._Attitude;
                 alertness.Value = _mentalExam._Attention;
@@ -70,6 +72,7 @@ namespace Braindo.Model.MentalExamModule
                 thought.Value = _mentalExam._Thought;
 
 
+                command.Parameters.Add(id);
                 command.Parameters.Add(behavior);
                 command.Parameters.Add(attitude);
                 command.Parameters.Add(alertness);
@@ -81,24 +84,8 @@ namespace Braindo.Model.MentalExamModule
                 command.CommandType = CommandType.StoredProcedure;
                 command.ExecuteNonQuery();
 
-                NpgsqlDataReader dr = command.ExecuteReader();
-
-                try
-                {
-                    while (dr.Read())
-                    {
-                        resp = dr.GetInt32(0);
-                    }
-                    dr.Close();
-                    tran.Commit();
-                    return _mentalExam;
-                }
-                catch (Exception ex)
-                {
-
-                    throw ex;
-                }
-
+                tran.Commit();
+                return _mentalExam;
 
             }
             catch (NpgsqlException ex2)
