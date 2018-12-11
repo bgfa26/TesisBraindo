@@ -151,3 +151,5 @@ INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '1234', 'Barbara', 'Gilva
 INSERT INTO PACIENTE VALUES (24773340, 'Luis', 'Pérez', 22, 'Ingeniería Informática', 36);
 
 INSERT INTO CITA VALUES (nextval('cita_codigo_seq'), '12/10/2018', '22:09', 'Probando', 24773340, 24220210);
+INSERT INTO CITA VALUES (nextval('cita_codigo_seq'), '12/11/2018', '17:19', 'Probando2', 24773340, 24220210, 1);
+INSERT INTO CITA VALUES (nextval('cita_codigo_seq'), '12/11/2018', '18:11', 'Probando3', 24773340, 24220210);

@@ -119,6 +119,7 @@
     <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticDetailedCommand.cs" />
     <Compile Include="Controller\DiagnosisModule\DeleteDiagnosticCommand.cs" />
     <Compile Include="Controller\DiagnosisModule\RegisterDiagnosticCommand.cs" />
+    <Compile Include="Controller\MentalExamModule\ConsultMentalExamCommand.cs" />
     <Compile Include="Controller\MentalExamModule\RegisterMentalExamCommand.cs" />
     <Compile Include="Controller\PatientModule\ConsultPatientInformationCommand.cs" />
     <Compile Include="Controller\PatientModule\DeletePatientCommand.cs" />

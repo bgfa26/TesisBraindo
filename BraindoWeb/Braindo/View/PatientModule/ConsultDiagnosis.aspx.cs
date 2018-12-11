@@ -18,7 +18,7 @@ namespace Braindo.View.PatientModule
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*Para el Registro*/
             String fecha = "02/13/1996";
             DateTime diagDate = Convert.ToDateTime(fecha);
 
@@ -31,10 +31,16 @@ namespace Braindo.View.PatientModule
             Patient patientConsulted = new Patient(idPatient);
             Psychologist psychoConsulted = new Psychologist(emailPsycho);
 
-            diagnosis = new Diagnostic(diagDate, answer_percentage, networkAnswer, patientConsulted, psychoConsulted);
+            /*Para Eliminar y Consultar*/
+
+            int id = 5;
+            diagnosis = new Diagnostic(id);
+            // = new Diagnostic(diagDate, answer_percentage, networkAnswer, patientConsulted, psychoConsulted);
             try
             {
-                RegisterDiagnosticCommand cmd = new RegisterDiagnosticCommand(diagnosis);
+                //RegisterDiagnosticCommand cmd = new RegisterDiagnosticCommand(diagnosis);
+                //DeleteDiagnosticCommand cmd = new DeleteDiagnosticCommand(diagnosis);
+                ConsultDiagnosticDetailedCommand cmd = new ConsultDiagnosticDetailedCommand(diagnosis);
 
                 cmd.execute();
 

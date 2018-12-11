@@ -82,10 +82,26 @@ namespace Braindo.Model.MentalExamModule
                 command.Parameters.Add(thought);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
-                tran.Commit();
-                return _mentalExam;
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        resp = dr.GetInt32(0);
+                    }
+
+                    dr.Close();
+                    tran.Commit();
+                    return _mentalExam;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
 
             }
             catch (NpgsqlException ex2)
@@ -97,6 +113,65 @@ namespace Braindo.Model.MentalExamModule
             {
                 conn.Close();
             }
+        }
+
+        public MentalExam consultMentalExam(MentalExam _mentalExam)
+        {
+            int id;
+            String behavior;
+            String attitude;
+            String alertness;
+            String awareness;
+            String mood;
+            String language;
+            String thought;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("examenmental_consultar(@ID)", conn);
+                NpgsqlParameter ID = new NpgsqlParameter();
+
+                ID.ParameterName = "@ID";
+                ID.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+                ID.Direction = ParameterDirection.Input;
+
+                ID.Value = _mentalExam._ID;
+                command.Parameters.Add(ID);
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        behavior = dr.GetString(1);
+                        attitude = dr.GetString(2);
+                        alertness = dr.GetString(3);
+                        awareness = dr.GetString(4);
+                        mood = dr.GetString(5);
+                        language = dr.GetString(6);
+                        thought = dr.GetString(7);
+                        _mentalExam = new MentalExam(id, behavior, attitude, alertness, awareness, mood, language, thought);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _mentalExam;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+                
+                throw ex2;
+            }
+
         }
     }
 }

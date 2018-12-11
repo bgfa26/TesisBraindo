@@ -62,7 +62,6 @@ namespace Braindo.Model.DiagnosisModule
                 command.Parameters.Add(psycho);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -119,14 +118,13 @@ namespace Braindo.Model.DiagnosisModule
 
                 diagnostic.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                diagnostic.Direction = ParameterDirection.InputOutput;
+                diagnostic.Direction = ParameterDirection.Input;
 
                 diagnostic.Value = _diagnostic._ID;
 
                 command.Parameters.Add(diagnostic);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -189,8 +187,8 @@ namespace Braindo.Model.DiagnosisModule
                 patient.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                patient.Direction = ParameterDirection.InputOutput;
-                psycho.Direction = ParameterDirection.InputOutput;
+                patient.Direction = ParameterDirection.Input;
+                psycho.Direction = ParameterDirection.Input;
 
                 patient.Value = _diagnostic._Patient._ID;
                 psycho.Value = _diagnostic._Psychologist._ID;
@@ -269,7 +267,7 @@ namespace Braindo.Model.DiagnosisModule
 
                 diagnosis.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                diagnosis.Direction = ParameterDirection.InputOutput;
+                diagnosis.Direction = ParameterDirection.Input;
 
                 diagnosis.Value = _diagnostic._ID;
 

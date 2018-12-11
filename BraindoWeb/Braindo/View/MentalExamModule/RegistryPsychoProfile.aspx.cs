@@ -15,15 +15,15 @@ namespace Braindo.View.MentalExamModule
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String behavior = "addasd";
-            String attitude = "asdasdasd";
-            String alertness = "qwqwqeq";
-            String awareness = "gghdfhdfb";
-            String mood = "asfdgasgasd";
-            String language = "aasdcccvv";
-            String thought = "sasdllloasd";
+            String behavior = "ron2";
+            String attitude = "1213";
+            String alertness = "1212";
+            String awareness = "13werrsf";
+            String mood = "sdfgsg";
+            String language = "zxzcxc";
+            String thought = "kgkhjg";
 
-            int id = 1;
+            int id = 4;
 
             appointment = new Appointment(id);
 
