@@ -51,13 +51,13 @@ namespace Braindo.Model.PatientModule
                 municipality.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
                 parish.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
 
-                id.Direction = ParameterDirection.InputOutput;
-                firstname.Direction = ParameterDirection.InputOutput;
-                age.Direction = ParameterDirection.InputOutput;
-                career.Direction = ParameterDirection.InputOutput;
-                state.Direction = ParameterDirection.InputOutput;
-                municipality.Direction = ParameterDirection.InputOutput;
-                parish.Direction = ParameterDirection.InputOutput;
+                id.Direction = ParameterDirection.Input;
+                firstname.Direction = ParameterDirection.Input;
+                age.Direction = ParameterDirection.Input;
+                career.Direction = ParameterDirection.Input;
+                state.Direction = ParameterDirection.Input;
+                municipality.Direction = ParameterDirection.Input;
+                parish.Direction = ParameterDirection.Input;
 
                 id.Value = _patient._ID;
                 firstname.Value = _patient._Name;
@@ -78,7 +78,7 @@ namespace Braindo.Model.PatientModule
                 command.Parameters.Add(parish);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -119,11 +119,11 @@ namespace Braindo.Model.PatientModule
                 NpgsqlParameter ci = new NpgsqlParameter();
                 ci.ParameterName = "@ID";
                 ci.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
-                ci.Direction = ParameterDirection.InputOutput;
+                ci.Direction = ParameterDirection.Input;
                 ci.Value = _patient._ID;
                 command.Parameters.Add(ci);
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
                 try
@@ -173,11 +173,11 @@ namespace Braindo.Model.PatientModule
                 NpgsqlParameter ci = new NpgsqlParameter();
                 ci.ParameterName = "@ID";
                 ci.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
-                ci.Direction = ParameterDirection.InputOutput;
+                ci.Direction = ParameterDirection.Input;
                 ci.Value = _patient._ID;
                 command.Parameters.Add(ci);
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
