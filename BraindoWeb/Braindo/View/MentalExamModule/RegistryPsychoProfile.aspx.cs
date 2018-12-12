@@ -23,7 +23,7 @@ namespace Braindo.View.MentalExamModule
             String language = "zxzcxc";
             String thought = "kgkhjg";
 
-            int id = 4;
+            int id = 2;
 
             appointment = new Appointment(id);
 
