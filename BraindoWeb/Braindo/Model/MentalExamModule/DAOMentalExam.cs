@@ -92,7 +92,14 @@ namespace Braindo.Model.MentalExamModule
                     {
                         resp = dr.GetInt32(0);
                     }
-
+                    if (resp == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        _mentalExam._Error = Registry.RESULTADO_CODIGO_RECURSO_CREADO;
+                    }
+                    else
+                    {
+                        _mentalExam._Error = Registry.RESULTADO_CODIGO_FALLIDO;
+                    }
                     dr.Close();
                     tran.Commit();
                     return _mentalExam;

@@ -88,7 +88,14 @@ namespace Braindo.Model.PatientModule
                     {
                         resp = dr.GetInt32(0);
                     }
-
+                    if (resp == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        _patient._Error = Registry.RESULTADO_CODIGO_RECURSO_CREADO;
+                    }
+                    else
+                    {
+                        _patient._Error = Registry.RESULTADO_CODIGO_FALLIDO;
+                    }
                     dr.Close();
                     tran.Commit();
                     return _patient;
@@ -132,7 +139,14 @@ namespace Braindo.Model.PatientModule
                     {
                         resp = dr.GetInt32(0);
                     }
-
+                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                    {
+                        _patient._Error = Registry.RESULTADO_CODIGO_BIEN;
+                    }
+                    else
+                    {
+                        _patient._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                    }
                     dr.Close();
                     tran.Commit();
                     return _patient;

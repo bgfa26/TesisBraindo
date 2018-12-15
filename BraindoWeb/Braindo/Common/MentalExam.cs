@@ -17,6 +17,7 @@ namespace Braindo.Common
         private String language;
         private String thought;
         private Appointment appointment;
+        private int error;
 
         public MentalExam()
         {
@@ -117,6 +118,12 @@ namespace Braindo.Common
         {
             get { return appointment; }
             set { appointment = value; }
+        }
+
+        public int _Error
+        {
+            get { return error; }
+            set { error = value; }
         }
     }
 }

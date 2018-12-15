@@ -103,7 +103,7 @@ namespace Braindo.Model.PsychologistModule
                     }
                     else
                     {
-                        _psychologist._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                        _psychologist._Error = Registry.RESULTADO_CODIGO_FALLIDO;
                     }
 
                     dr.Close();

@@ -77,7 +77,7 @@ namespace Braindo.Model.DiagnosisModule
                     }
                     else
                     {
-                        _diagnostic._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_FALLIDO;
                     }
                     dr.Close();
                     tran.Commit();
@@ -133,6 +133,14 @@ namespace Braindo.Model.DiagnosisModule
                     while (dr.Read())
                     {
                         resp = dr.GetInt32(0);
+                    }
+                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                    {
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_BIEN;
+                    }
+                    else
+                    {
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
                     }
                     dr.Close();
                     tran.Commit();
