@@ -19,7 +19,7 @@ namespace Braindo.View.PatientModule
         protected void Page_Load(object sender, EventArgs e)
         {
             /*Para el Registro*/
-            String fecha = "02/13/1996";
+            String fecha = "13/02/1996";
             DateTime diagDate = Convert.ToDateTime(fecha);
 
             String answer_percentage = "50%";
