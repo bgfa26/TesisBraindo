@@ -14,6 +14,7 @@ namespace Braindo.View.PatientModule
 
         private Patient patient;
         private Patient patientConsulted;
+        private List<Patient> patientList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,10 +27,12 @@ namespace Braindo.View.PatientModule
 
             DeletePatientCommand cmd2 = new DeletePatientCommand(patient);
 
+            ConsultPatientsCommand cmd3 = new ConsultPatientsCommand();
+
             try
             {
-                cmd.execute();
-                patientConsulted = cmd.getAnswer();
+                cmd3.execute();
+                patientList = cmd3.getAnswer();
             }
             catch (Exception ex)
             {

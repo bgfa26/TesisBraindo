@@ -230,5 +230,67 @@ namespace Braindo.Model.PatientModule
             }
         }
 
+        public List<Patient> consultAllPatients()
+        {
+            int id;
+            String name;
+            String surname;
+            int age;
+            String career;
+            String state;
+            String municipality;
+            String parish;
+
+            Patient _patient;
+            List<Patient> patientList = new List<Patient>();
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("paciente_consultar_todos()", conn);
+                
+                command.CommandType = CommandType.StoredProcedure;
+                //command.ExecuteNonQuery();
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        name = dr.GetString(1);
+                        surname = dr.GetString(2);
+                        age = dr.GetInt32(3);
+                        career = dr.GetString(4);
+                        state = dr.GetString(5);
+                        municipality = dr.GetString(6);
+                        parish = dr.GetString(7);
+                        _patient = new Patient(id, name, surname, age, career, state, municipality, parish);
+
+                        patientList.Add(_patient);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return patientList;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }

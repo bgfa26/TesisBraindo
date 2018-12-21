@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -165,7 +166,7 @@ namespace Braindo.Model.DiagnosisModule
 
         }
 
-        public Diagnostic consultDiagnostic(Diagnostic _diagnostic)
+        public List<Diagnostic> consultDiagnostic(Diagnostic _diagnostic)
         {
             Patient _patient;
             Psychologist _psycho;
@@ -178,6 +179,8 @@ namespace Braindo.Model.DiagnosisModule
             String patientSurname;
             String psychoName;
             String psychoSurname;
+
+            List<Diagnostic> diagnosticList = new List<Diagnostic>();
             
 
             try
@@ -205,7 +208,6 @@ namespace Braindo.Model.DiagnosisModule
                 command.Parameters.Add(psycho);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -226,10 +228,12 @@ namespace Braindo.Model.DiagnosisModule
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
                         _diagnostic = new Diagnostic(id, diagnosisDate, answer, networkAnswer, _patient, _psycho);
+
+                        diagnosticList.Add(_diagnostic);
                     }
                     dr.Close();
                     tran.Commit();
-                    return _diagnostic;
+                    return diagnosticList;
                 }
                 catch (Exception ex)
                 {
@@ -282,7 +286,6 @@ namespace Braindo.Model.DiagnosisModule
                 command.Parameters.Add(diagnosis);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 

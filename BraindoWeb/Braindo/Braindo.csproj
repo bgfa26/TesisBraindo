@@ -128,6 +128,7 @@
     <Compile Include="Controller\MentalExamModule\ConsultMentalExamCommand.cs" />
     <Compile Include="Controller\MentalExamModule\RegisterMentalExamCommand.cs" />
     <Compile Include="Controller\PatientModule\ConsultPatientInformationCommand.cs" />
+    <Compile Include="Controller\PatientModule\ConsultPatientsCommand.cs" />
     <Compile Include="Controller\PatientModule\DeletePatientCommand.cs" />
     <Compile Include="Controller\PatientModule\ModifyPatientInformation.cs" />
     <Compile Include="Controller\PsychologistModule\ChangePasswordCommand.cs" />
