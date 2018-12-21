@@ -60,12 +60,12 @@
         android:theme="?attr/actionBarTheme" />
 
     <EditText
-        android:id="@+id/etRegistrationID"
+        android:id="@+id/etLoginID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
         android:backgroundTint="@android:color/white"
         android:ems="10"
         android:fontFamily="sans-serif"
@@ -77,12 +77,12 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/etRegistrationEmail"
+        android:id="@+id/etLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="0.01"
         android:backgroundTint="@android:color/white"
         android:ems="10"
@@ -95,7 +95,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btnRegistration"
+        android:id="@+id/btnLogin"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="6dp"

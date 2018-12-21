@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 
 
 public class RestCommunication {
-    private String ip = "192.168.0.108";
+    private String ip = "192.168.0.110";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -88,6 +88,24 @@ public class RestCommunication {
             }
             conn.disconnect();
             return _test;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public Patient callMethodPatientLogin(Patient p) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "patientValidation?patient=" + URLEncoder.encode(gson.toJson( p ).toString(), "UTF-8"));
+            String output;
+            Patient _patient = new Patient();
+            while ((output = br.readLine()) != null) {
+                _patient = gson.fromJson(output, Patient.class);
+            }
+            conn.disconnect();
+            return _patient;
         }
         catch (Exception ex){
             throw ex;
