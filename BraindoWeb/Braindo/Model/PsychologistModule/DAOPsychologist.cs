@@ -55,14 +55,14 @@ namespace Braindo.Model.PsychologistModule
                 birthdate.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Date;
 
 
-                id.Direction = ParameterDirection.InputOutput;
-                mail.Direction = ParameterDirection.InputOutput;
-                name.Direction = ParameterDirection.InputOutput;
-                secondname.Direction = ParameterDirection.InputOutput;
-                surname.Direction = ParameterDirection.InputOutput;
-                secondsurname.Direction = ParameterDirection.InputOutput;
-                registrationnumber.Direction = ParameterDirection.InputOutput;
-                birthdate.Direction = ParameterDirection.InputOutput;
+                id.Direction = ParameterDirection.Input;
+                mail.Direction = ParameterDirection.Input;
+                name.Direction = ParameterDirection.Input;
+                secondname.Direction = ParameterDirection.Input;
+                surname.Direction = ParameterDirection.Input;
+                secondsurname.Direction = ParameterDirection.Input;
+                registrationnumber.Direction = ParameterDirection.Input;
+                birthdate.Direction = ParameterDirection.Input;
 
 
                 id.Value = _psychologist._ID;
@@ -86,7 +86,7 @@ namespace Braindo.Model.PsychologistModule
 
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -103,7 +103,7 @@ namespace Braindo.Model.PsychologistModule
                     }
                     else
                     {
-                        _psychologist._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                        _psychologist._Error = Registry.RESULTADO_CODIGO_FALLIDO;
                     }
 
                     dr.Close();
@@ -151,8 +151,8 @@ namespace Braindo.Model.PsychologistModule
                 id.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 pass.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
 
-                id.Direction = ParameterDirection.InputOutput;
-                pass.Direction = ParameterDirection.InputOutput;
+                id.Direction = ParameterDirection.Input;
+                pass.Direction = ParameterDirection.Input;
 
                 id.Value = _psychologist._ID;
                 pass.Value = _psychologist._Password;
@@ -161,7 +161,7 @@ namespace Braindo.Model.PsychologistModule
                 command.Parameters.Add(pass);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -223,11 +223,11 @@ namespace Braindo.Model.PsychologistModule
                 NpgsqlParameter p = new NpgsqlParameter();
                 p.ParameterName = "@CI";
                 p.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
-                p.Direction = ParameterDirection.InputOutput;
+                p.Direction = ParameterDirection.Input;
                 p.Value = _psychologist._ID;
                 command.Parameters.Add(p);
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
                 try

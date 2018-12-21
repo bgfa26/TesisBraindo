@@ -15,6 +15,7 @@ namespace Braindo.Common
         private String state;
         private String municipality;
         private String parish;
+        private int error;
 
         public Patient()
         {
@@ -28,6 +29,13 @@ namespace Braindo.Common
 
         public Patient(String _name, String _surname)
         {
+            this.name = _name;
+            this.surname = _surname;
+        }
+
+        public Patient(int _id, String _name, String _surname)
+        {
+            this.ID = _id;
             this.name = _name;
             this.surname = _surname;
         }
@@ -102,6 +110,12 @@ namespace Braindo.Common
         {
             get { return parish; }
             set { parish = value; }
+        }
+
+        public int _Error
+        {
+            get { return error; }
+            set { error = value; }
         }
 
     }

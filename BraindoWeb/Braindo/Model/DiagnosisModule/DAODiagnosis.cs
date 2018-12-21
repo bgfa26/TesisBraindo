@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -44,10 +45,10 @@ namespace Braindo.Model.DiagnosisModule
                 psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
 
                 date.Direction = ParameterDirection.Input;
-                answer_percentage.Direction = ParameterDirection.InputOutput;
-                answer_red.Direction = ParameterDirection.InputOutput;
-                patient.Direction = ParameterDirection.InputOutput;
-                psycho.Direction = ParameterDirection.InputOutput;
+                answer_percentage.Direction = ParameterDirection.Input;
+                answer_red.Direction = ParameterDirection.Input;
+                patient.Direction = ParameterDirection.Input;
+                psycho.Direction = ParameterDirection.Input;
 
                 date.Value = _diagnostic._Date;
                 answer_percentage.Value = _diagnostic._Answer;
@@ -62,7 +63,6 @@ namespace Braindo.Model.DiagnosisModule
                 command.Parameters.Add(psycho);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -78,7 +78,7 @@ namespace Braindo.Model.DiagnosisModule
                     }
                     else
                     {
-                        _diagnostic._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_FALLIDO;
                     }
                     dr.Close();
                     tran.Commit();
@@ -119,14 +119,13 @@ namespace Braindo.Model.DiagnosisModule
 
                 diagnostic.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                diagnostic.Direction = ParameterDirection.InputOutput;
+                diagnostic.Direction = ParameterDirection.Input;
 
                 diagnostic.Value = _diagnostic._ID;
 
                 command.Parameters.Add(diagnostic);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -135,6 +134,14 @@ namespace Braindo.Model.DiagnosisModule
                     while (dr.Read())
                     {
                         resp = dr.GetInt32(0);
+                    }
+                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                    {
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_BIEN;
+                    }
+                    else
+                    {
+                        _diagnostic._Error = Registry.RESULTADO_CODIGO_NO_ENCONTRADO;
                     }
                     dr.Close();
                     tran.Commit();
@@ -159,7 +166,7 @@ namespace Braindo.Model.DiagnosisModule
 
         }
 
-        public Diagnostic consultDiagnostic(Diagnostic _diagnostic)
+        public List<Diagnostic> consultDiagnostic(Diagnostic _diagnostic)
         {
             Patient _patient;
             Psychologist _psycho;
@@ -172,6 +179,8 @@ namespace Braindo.Model.DiagnosisModule
             String patientSurname;
             String psychoName;
             String psychoSurname;
+
+            List<Diagnostic> diagnosticList = new List<Diagnostic>();
             
 
             try
@@ -189,8 +198,8 @@ namespace Braindo.Model.DiagnosisModule
                 patient.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                patient.Direction = ParameterDirection.InputOutput;
-                psycho.Direction = ParameterDirection.InputOutput;
+                patient.Direction = ParameterDirection.Input;
+                psycho.Direction = ParameterDirection.Input;
 
                 patient.Value = _diagnostic._Patient._ID;
                 psycho.Value = _diagnostic._Psychologist._ID;
@@ -199,7 +208,6 @@ namespace Braindo.Model.DiagnosisModule
                 command.Parameters.Add(psycho);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 
@@ -220,10 +228,12 @@ namespace Braindo.Model.DiagnosisModule
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
                         _diagnostic = new Diagnostic(id, diagnosisDate, answer, networkAnswer, _patient, _psycho);
+
+                        diagnosticList.Add(_diagnostic);
                     }
                     dr.Close();
                     tran.Commit();
-                    return _diagnostic;
+                    return diagnosticList;
                 }
                 catch (Exception ex)
                 {
@@ -269,14 +279,13 @@ namespace Braindo.Model.DiagnosisModule
 
                 diagnosis.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
-                diagnosis.Direction = ParameterDirection.InputOutput;
+                diagnosis.Direction = ParameterDirection.Input;
 
                 diagnosis.Value = _diagnostic._ID;
 
                 command.Parameters.Add(diagnosis);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.ExecuteNonQuery();
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 

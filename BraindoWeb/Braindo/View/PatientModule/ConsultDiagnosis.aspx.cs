@@ -15,30 +15,43 @@ namespace Braindo.View.PatientModule
 
         private Diagnostic diagnosis;
         private Diagnostic diagnosisRegistered;
+        private List<Diagnostic> consultedDiagnostic;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*Para el Registro*/
+            String fecha = "12/20/2018";
+            DateTime diagDate = Convert.ToDateTime(fecha);
 
-            String fecha = "12/02/1996";
-            DateTime diagDate = DateTime.Parse(fecha);
+            String answer_percentage = "70%";
+            String networkAnswer = "254";
 
-            String answer_percentage = "90%";
-            String networkAnswer = "155";
-
-            int idPatient = 24220210;
-            String emailPsycho = "dario01@gmail.com";
+            int idPatient = 24773340;
+            int idPsycho = 24220210;
+            String emailPsycho = "b@gmail.com";
 
             Patient patientConsulted = new Patient(idPatient);
             Psychologist psychoConsulted = new Psychologist(emailPsycho);
+            Psychologist psychoExample = new Psychologist(idPsycho);
 
-            diagnosis = new Diagnostic(diagDate, answer_percentage, networkAnswer, patientConsulted, psychoConsulted);
+            /*Para Eliminar y Consultar*/
+
+            int id = 5;
+            diagnosis = new Diagnostic(patientConsulted, psychoExample);
+            // = new Diagnostic(diagDate, answer_percentage, networkAnswer, patientConsulted, psychoConsulted);
             try
             {
-                RegisterDiagnosticCommand cmd = new RegisterDiagnosticCommand(diagnosis);
+                //RegisterDiagnosticCommand cmd = new RegisterDiagnosticCommand(diagnosis);
+                //DeleteDiagnosticCommand cmd = new DeleteDiagnosticCommand(diagnosis);
+                //ConsultDiagnosticDetailedCommand cmd = new ConsultDiagnosticDetailedCommand(diagnosis);
+                ConsultDiagnosticCommand cmd = new ConsultDiagnosticCommand(diagnosis);
 
                 cmd.execute();
 
-                diagnosisRegistered = cmd.getAnswer();
+                consultedDiagnostic = cmd.getAnswer();
+                foreach(Diagnostic d in consultedDiagnostic){
+
+                }
             }
             catch (Exception ex)
             {

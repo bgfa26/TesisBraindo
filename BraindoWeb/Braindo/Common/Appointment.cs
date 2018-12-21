@@ -15,10 +15,40 @@ namespace Braindo.Common
         private Patient patient;
         private Psychologist psychologist;
         private MentalExam mentalExam;
+        private int error;
 
         public Appointment()
         {
 
+        }
+
+        public Appointment(int _ID)
+        {
+            this.ID = _ID;
+        }
+
+        public Appointment(Patient _patient, Psychologist _psychologist)
+        {
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+        }
+
+        public Appointment(DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
+        {
+            this.date = _date;
+            this.hour = _hour;
+            this.reason = _reason;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+            this.mentalExam = _mentalExam;
+        }
+
+        public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason)
+        {
+            this.ID = _ID;
+            this.date = _date;
+            this.hour = _hour;
+            this.reason = _reason;
         }
 
         public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
@@ -30,6 +60,16 @@ namespace Braindo.Common
             this.patient = _patient;
             this.psychologist = _psychologist;
             this.mentalExam = _mentalExam;
+        }
+
+        public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist)
+        {
+            this.ID = _ID;
+            this.date = _date;
+            this.hour = _hour;
+            this.reason = _reason;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
         }
 
         public int _ID
@@ -72,6 +112,12 @@ namespace Braindo.Common
         {
             get { return mentalExam; }
             set { mentalExam = value; }
+        }
+
+        public int _Error
+        {
+            get { return error; }
+            set { error = value; }
         }
 
     }

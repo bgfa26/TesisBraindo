@@ -23,15 +23,27 @@ namespace Braindo.View.PsychologistModule
          
 
             int id = 24220210;
+            String email = "b@gmail.com";
+            String pass = "1460";
+            String name = "Barbara222";
+            String secondName = "Gilvania222";
+            String surname = "Fernandez222";
+            String secondSurname = "Aristeigueta";
+            String registrationNumber = "121212";
+            String fecha = "02/13/1996";
+            DateTime birthDate = Convert.ToDateTime(fecha);
 
-            psycho = new Psychologist(id);
+            psycho = new Psychologist(id, email, pass, name, secondName, surname, secondSurname, registrationNumber, birthDate);
 
-            ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
+            //ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
+            //ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);
+            EditInformationCommand cmd = new EditInformationCommand(psycho);
+
 
             try
             {
-                psychoConsult.execute();
-                psychoConsulted = psychoConsult.getAnswer();
+                cmd.execute();
+                psychoConsulted = cmd.getAnswer();
                 cedula_txt.Value = Convert.ToString(psychoConsulted._ID);
                 matricula_txt.Value = psychoConsulted._RegistrationNumber;
                 nombreCompleto_txt.Value = psychoConsulted._Name + " " + psychoConsulted._SecondName + " " + psychoConsulted._Surname + " " + psychoConsulted._SecondSurname;
