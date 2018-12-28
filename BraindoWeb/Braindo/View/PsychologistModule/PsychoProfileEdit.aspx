@@ -19,36 +19,34 @@
                                         <div class="panel-body-EditProfile">
                                         <div class="form-group-ProfileEdit">
                                             <label>Primer Nombre</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="name_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Segundo Nombre</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="secondName_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Primer Apellido</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="surname_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Segundo Apellido</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="secondSurname_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Fecha de Nacimiento</label>
-                                            <input id="date" type="date" class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="date" type="date" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Número de Matricula</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="registrationNumber_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Correo Electrónico</label>
-                                            <input class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="email_txt" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
-                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Modificar Datos
-                                            </button>
+                                            <asp:Button ID="btnChangeData" runat="server" Text="Modificar Datos" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
                                         </div>
                                         </div>
                                     </div>     
