@@ -20,19 +20,13 @@
                                 <div class="col-lg-4 col-lg-offset-4">
                                     <div class="panel-EditProfile panel-default">
                                         <div class="panel-body-EditProfile">
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Contraseña Anterior</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>
-                                        <div class="form-group-ProfileEdit">
-                                            <label>Nueva Contraseña</label>
-                                            <input class="form-control-ProfileEdit"/>
-                                        </div>  
-                                        <div class="form-group-ProfileEdit">
-                                            <button type="submit" class="btn btn-lg btn-info-ProfileEdit">
-                                                Cambiar Contraseña
-                                            </button>
-                                        </div>
+                                            <div class="form-group-ProfileEdit">
+                                                <label>Nueva Contraseña</label>
+                                                <input runat="server" id="pass_txt" class="form-control-ProfileEdit"/>
+                                            </div>  
+                                            <div class="form-group-ProfileEdit">
+                                                <asp:Button ID="btnChange" runat="server" Text="Cambiar Contraseña" OnClick = "btnChange_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
+                                            </div>
                                         </div>
                                     </div>     
                                 </div>
