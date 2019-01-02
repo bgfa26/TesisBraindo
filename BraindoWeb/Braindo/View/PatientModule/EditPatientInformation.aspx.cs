@@ -19,19 +19,6 @@ namespace Braindo.View.PatientModule
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*patient = new Patient(id, name, surname, age, career, state, municipality, parish);
-
-            ModifyPatientInformation cmd = new ModifyPatientInformation(patient);
-            try
-            {
-                cmd.execute();
-                patientConsulted = cmd.getAnswer();
-            }
-            catch (Exception ex)
-            {
-                
-                throw ex;
-            }*/
 
         }
 
