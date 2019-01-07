@@ -16,7 +16,19 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <table id="tblData" class="table table-bordered table-striped table-hover boxPatient">          
+                                    <asp:Table ID="tblData" runat="server" CssClass="table table-bordered table-striped boxPatient">
+                                        <asp:TableHeaderRow>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Cédula</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Nombre</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Apellido</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Edad</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Carrera</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Dirección</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Diagnostico</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Opciones</asp:TableHeaderCell>
+                                        </asp:TableHeaderRow>
+                                    </asp:Table> 
+                                    <%--<table id="tblData" class="table table-bordered table-striped table-hover boxPatient">          
                                         <thead>
                                             <tr>
                                                 <th>Cédula</th>
@@ -44,7 +56,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>  
+                                    </table> --%>
                                 </div>   
                             </div>
                         </div>
