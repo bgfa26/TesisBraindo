@@ -48,39 +48,42 @@ namespace Braindo.View.PatientModule
 
         protected void deletePatient_Command(object source, RepeaterCommandEventArgs e)
         {
-            Label id = (Label)listPatients.Items[e.Item.ItemIndex].FindControl("idPatient");
-
-            String idString = id.Text;
-
-            int idInt = Convert.ToInt32(idString);
-
-            Patient patientDelete = new Patient(idInt);
-
-            DeletePatientCommand cmd = new DeletePatientCommand(patientDelete);
-
-            try
+            if (e.CommandName == "delete")
             {
-                cmd.execute();
-                patientDeleted = cmd.getAnswer();
-                if (patientDeleted._Error == Registry.RESULTADO_CODIGO_BIEN)
+                Label id = (Label)listPatients.Items[e.Item.ItemIndex].FindControl("idPatient");
+
+                String idString = id.Text;
+
+                int idInt = Convert.ToInt32(idString);
+
+                Patient patientDelete = new Patient(idInt);
+
+                DeletePatientCommand cmd = new DeletePatientCommand(patientDelete);
+
+                try
                 {
-                    Response.Redirect(Request.RawUrl);
+                    cmd.execute();
+                    patientDeleted = cmd.getAnswer();
+                    if (patientDeleted._Error == Registry.RESULTADO_CODIGO_BIEN)
+                    {
+                        /*Response.Redirect(Request.RawUrl);
    
-                    string script = "alert(\"Se Elimino\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                                            "ServerControlScript", script, true);
-                  
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                string script = "alert(\"No Se Elimino\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                        "ServerControlScript", script, true);
+                        string script = "alert(\"Se Elimino\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);*/
 
-                throw ex;
-            }
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se elimino exitosamente');window.location.href='ConsultPatients.aspx';", true);
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se elimino');window.location.href='ConsultPatients.aspx';", true);
+
+                    throw ex;
+                }
+            }     
         }
     }
 }

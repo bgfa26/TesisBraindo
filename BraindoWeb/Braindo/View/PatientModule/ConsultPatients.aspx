@@ -30,7 +30,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <asp:Repeater ID="listPatients" runat="server" OnItemCommand="deletePatient_Command">
+                                            <asp:Repeater ID="listPatients" runat="server"  OnItemCommand="deletePatient_Command">
                                                 <ItemTemplate>
                                                     <tr id="<%# Eval("_ID") %>">
                                                         <td><asp:Label ID="idPatient" runat="server" Text='<%# Eval("_ID") %>' ReadOnly="True"></asp:Label></td>
