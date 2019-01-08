@@ -1,5 +1,6 @@
 ﻿using Braindo.Controller.PatientModule;
 using Braindo.Common;
+using Braindo.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,61 +15,72 @@ namespace Braindo.View.PatientModule
 
         private Patient patient;
         private Patient patientConsulted;
+        private Patient patientDeleted;
         private List<Patient> patientList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                int id = 24220210;
 
-            int id = 24220210;
-
-            patient = new Patient(id);
+                patient = new Patient(id);
 
 
-            ConsultPatientsCommand cmd = new ConsultPatientsCommand();
+                ConsultPatientsCommand cmd = new ConsultPatientsCommand();
+
+                try
+                {
+                    cmd.execute();
+                    patientList = cmd.getAnswer();
+
+                    listPatients.DataSource = patientList;
+                    listPatients.DataBind();
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+
+        protected void deletePatient_Command(object source, RepeaterCommandEventArgs e)
+        {
+            Label id = (Label)listPatients.Items[e.Item.ItemIndex].FindControl("idPatient");
+
+            String idString = id.Text;
+
+            int idInt = Convert.ToInt32(idString);
+
+            Patient patientDelete = new Patient(idInt);
+
+            DeletePatientCommand cmd = new DeletePatientCommand(patientDelete);
 
             try
             {
                 cmd.execute();
-                patientList = cmd.getAnswer();
-                
-                foreach (Patient example in patientList){
-                    TableRow row = new TableRow();
-
-                    row.Attributes.Add("Class", "aspTableRow");
-
-                    TableCell cellID = new TableCell();
-                    TableCell cellName = new TableCell();
-                    TableCell cellsurName = new TableCell();
-                    TableCell cellAge = new TableCell();
-                    TableCell cellCareer = new TableCell();
-                    TableCell cellAdress = new TableCell();
-                    TableCell cellOptions = new TableCell();
-
-                    String idPatient = example._ID.ToString();
-                    String agePatient = example._Age.ToString();
-
-                    cellID.Text = idPatient;
-                    cellName.Text = example._Name;
-                    cellsurName.Text = example._Surname;
-                    cellAge.Text = agePatient;
-                    cellCareer.Text = example._Career;
-                    cellAdress.Text = example._State + ", " + example._Municipality + ", " + example._Parish;
-
-                    row.Cells.Add(cellID);
-                    row.Cells.Add(cellName);
-                    row.Cells.Add(cellsurName);
-                    row.Cells.Add(cellAge);
-                    row.Cells.Add(cellCareer);
-                    row.Cells.Add(cellAdress);
-                    tblData.Rows.Add(row);
+                patientDeleted = cmd.getAnswer();
+                if (patientDeleted._Error == Registry.RESULTADO_CODIGO_BIEN)
+                {
+                    Response.Redirect(Request.RawUrl);
+   
+                    string script = "alert(\"Se Elimino\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                            "ServerControlScript", script, true);
+                  
                 }
+                
             }
             catch (Exception ex)
             {
-                
+                string script = "alert(\"No Se Elimino\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
+
                 throw ex;
             }
-
         }
     }
 }

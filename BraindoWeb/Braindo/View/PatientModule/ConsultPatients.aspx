@@ -16,19 +16,7 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <asp:Table ID="tblData" runat="server" CssClass="table table-bordered table-striped boxPatient">
-                                        <asp:TableHeaderRow>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Cédula</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Nombre</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Apellido</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Edad</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Carrera</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Dirección</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Diagnostico</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell CssClass="aspTableHeaderCell">Opciones</asp:TableHeaderCell>
-                                        </asp:TableHeaderRow>
-                                    </asp:Table> 
-                                    <%--<table id="tblData" class="table table-bordered table-striped table-hover boxPatient">          
+                                    <table id="tblData" class="table table-bordered table-striped table-hover boxPatient">          
                                         <thead>
                                             <tr>
                                                 <th>Cédula</th>
@@ -42,21 +30,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td runat="server" id="cedula_txt"></td>
-                                                <td runat="server" id="nombre_txt"></td>
-                                                <td runat="server" id="apellido_txt"></td>
-                                                <td runat="server" id="edad_txt"></td>
-                                                <td runat="server" id="carrera_txt"></td>
-                                                <td runat="server" id="direccion_txt"></td>
-                                                <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" onClientClick="window.open('../PatientModule/ConsultDiagnosis.aspx');"/></td>
-                                                <td>
-                                                    <asp:ImageButton ID="Modificar" runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../PatientModule/EditPatientInformation.aspx');" />
-                                                    <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
-                                                </td>
-                                            </tr>
+                                            <asp:Repeater ID="listPatients" runat="server" OnItemCommand="deletePatient_Command">
+                                                <ItemTemplate>
+                                                    <tr id="<%# Eval("_ID") %>">
+                                                        <td><asp:Label ID="idPatient" runat="server" Text='<%# Eval("_ID") %>' ReadOnly="True"></asp:Label></td>
+                                                        <td><%# Eval("_Name") %></td>
+                                                        <td><%# Eval("_Surname") %></td>
+                                                        <td><%# Eval("_Age") %></td>
+                                                        <td><%# Eval("_Career") %></td>
+                                                        <td><%# Eval("_State") %>, <%# Eval("_Municipality") %>, <%# Eval("_Parish") %></td>
+                                                        <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" onClientClick="window.open('../PatientModule/ConsultDiagnosis.aspx');"/></td>
+                                                        <td>
+                                                            <asp:ImageButton ID="Modificar" runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" onClientClick="window.open('../PatientModule/EditPatientInformation.aspx');" />
+                                                            <asp:ImageButton ID="Eliminar" CommandName="delete" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </tbody>
-                                    </table> --%>
+                                    </table> 
                                 </div>   
                             </div>
                         </div>
