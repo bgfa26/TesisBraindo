@@ -12,19 +12,47 @@ namespace Braindo.View.PatientModule
 {
     public partial class EditPatientInformation : System.Web.UI.Page
     {
-
+        private Patient consult;
+        private Patient consulted;
         private Patient patient;
         private Patient patientModified;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                String idPatient = Request.QueryString["patiendID"];
 
+                int idInt = Convert.ToInt32(idPatient);
+
+                consult = new Patient(idInt);
+
+                ConsultPatientInformationCommand command = new ConsultPatientInformationCommand(consult);
+
+                try
+                {
+                    command.execute();
+                    consulted = command.getAnswer();
+
+                    name_txt.Value = consulted._Name;
+                    surname_txt.Value = consulted._Surname;
+                    age_txt.Value = consulted._Age.ToString();
+                    career_txt.Value = consulted._Career;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            } 
         }
 
         protected void btnChangeData_Click(object sender, EventArgs e)
         {
-            int id = 24773340;
+            String idPatient = Request.QueryString["patiendID"];
+
+            int id = Convert.ToInt32(idPatient);
             String name = name_txt.Value;
             String surname = surname_txt.Value;
             int age = Convert.ToInt32(age_txt.Value);
@@ -42,13 +70,18 @@ namespace Braindo.View.PatientModule
                 patientModified = cmd.getAnswer();
                 if (patientModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                 {
-                    String myStringVariable = "Se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    /*String myStringVariable = "Se Cambio";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);*/
+
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Los datos fueron cambiados exitosamente');window.location.href='ConsultPatients.aspx';", true);
+
                 }
                 else
                 {
-                    String myStringVariable = "No se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    /*String myStringVariable = "No se Cambio";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);*/
+
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se realizaron los cambios');window.location.href='ConsultPatients.aspx';", true);
                 }
             }
             catch (Exception ex)

@@ -22,9 +22,9 @@ namespace Braindo.View.PatientModule
         {
             if (!Page.IsPostBack)
             {
-                int id = 24220210;
+                /*int id = 24220210;
 
-                patient = new Patient(id);
+                patient = new Patient(id);*/
 
 
                 ConsultPatientsCommand cmd = new ConsultPatientsCommand();
@@ -46,7 +46,7 @@ namespace Braindo.View.PatientModule
             }
         }
 
-        protected void deletePatient_Command(object source, RepeaterCommandEventArgs e)
+        protected void actionPatient_Command(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "delete")
             {
@@ -83,7 +83,15 @@ namespace Braindo.View.PatientModule
 
                     throw ex;
                 }
-            }     
+            }
+            else if (e.CommandName == "modifyInfo")
+            {
+                Label id = (Label)listPatients.Items[e.Item.ItemIndex].FindControl("idPatient");
+
+                String idString = id.Text;
+
+                Response.Redirect("EditPatientInformation.aspx?patiendID=" + idString);
+            }
         }
     }
 }
