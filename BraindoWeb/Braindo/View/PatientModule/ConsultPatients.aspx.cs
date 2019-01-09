@@ -22,10 +22,6 @@ namespace Braindo.View.PatientModule
         {
             if (!Page.IsPostBack)
             {
-                /*int id = 24220210;
-
-                patient = new Patient(id);*/
-
 
                 ConsultPatientsCommand cmd = new ConsultPatientsCommand();
 
@@ -91,6 +87,15 @@ namespace Braindo.View.PatientModule
                 String idString = id.Text;
 
                 Response.Redirect("EditPatientInformation.aspx?patiendID=" + idString);
+            }
+            else if (e.CommandName == "viewDiagnosis")
+            {
+                Label id = (Label)listPatients.Items[e.Item.ItemIndex].FindControl("idPatient");
+
+                String idString = id.Text;
+
+                Response.Redirect("ConsultDiagnosis.aspx?patiendID=" + idString);
+
             }
         }
     }
