@@ -36,6 +36,8 @@
             app:srcCompat="@drawable/braindocirculo" />
     </RelativeLayout>
 
+
+
     <TextView
         android:id="@+id/tvTestTitle"
         android:layout_width="match_parent"

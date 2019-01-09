@@ -1,9 +1,13 @@
 package com.app.braindo.braindo.controller.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -45,6 +49,7 @@ public class Test3Activity extends AppCompatActivity {
     private Spinner spTestOp39;
     private EditText etTestOp40;
 
+
     public static final String VALID_ANSWER_REGEX = "^((?=[A-Za-zñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
 
     public static boolean validateAnswer(String name) {
@@ -83,6 +88,7 @@ public class Test3Activity extends AppCompatActivity {
             ex.getStackTrace();
         }
     }
+
 
     private void attemptSendTest(){
         if (testTask != null) {
@@ -168,7 +174,7 @@ public class Test3Activity extends AppCompatActivity {
         @Override
         protected void onPostExecute(final Boolean success) {
             testTask = null;
-            //showProgress(false);
+           //showProgress(false);
             View focusView = null;
 
             if (success) {

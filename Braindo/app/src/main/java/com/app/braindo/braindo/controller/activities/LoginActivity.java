@@ -1,10 +1,14 @@
 package com.app.braindo.braindo.controller.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -27,6 +31,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etLoginID;
     private EditText etLoginEmail;
     private Button btnLogin;
+
+    private View progressView;
+    private View loginFormView;
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -54,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
             etLoginID = (EditText) findViewById(R.id.etLoginID);
             etLoginEmail = (EditText) findViewById(R.id.etLoginEmail);
             btnLogin = (Button) findViewById(R.id.btnLogin);
+            loginFormView = findViewById(R.id.login_form);
+            progressView = findViewById(R.id.login_progress);
 
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,6 +76,42 @@ public class LoginActivity extends AppCompatActivity {
 
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    /**
+     * Shows the progress UI and hides the login form.
+     */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
+        // for very easy animations. If available, use these APIs to fade-in
+        // the progress spinner.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            loginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            loginFormView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    loginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            progressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            // The ViewPropertyAnimator APIs are not available, so simply show
+            // and hide the relevant UI components.
+            progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            loginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
@@ -118,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            //showProgress(true);
+            showProgress(true);
             logTask = new LoginActivity.PatientLoginTask(id, email);
             logTask.execute((Void) null);
         }
@@ -154,7 +199,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(final Boolean success) {
             logTask = null;
-            //showProgress(false);
+            showProgress(false);
             View focusView = null;
 
             if (success) {
@@ -192,7 +237,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onCancelled() {
             logTask = null;
-            //showProgress(false);
+            showProgress(false);
             Context context = getApplicationContext();
             CharSequence text = getString(R.string.operation_cancelled);
             int duration = Toast.LENGTH_SHORT;
