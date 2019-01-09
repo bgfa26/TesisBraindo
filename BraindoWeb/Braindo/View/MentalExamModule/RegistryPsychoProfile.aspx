@@ -9,58 +9,56 @@
             <div class="row centerProfileTitle">
                 <h2>Examen Mental</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group form-group-MentalExam-select">
-                        <label>Lista de citas para hoy:</label>
-                        <select class="form-control">
-                            <option>29/10/2018 - Barbara Fernandez</option>
-                            <option>01/10/2018 - Dario Navas</option>
-                            <option>02/10/2018 - Ana Hernandez</option>
-                        </select>
+            <form id="form1" runat="server">
+                <div class="row">
+                    <div class="col-lg-3">
                     </div>
-                    <div class="panel-MentalExam panel-default">
-                        <div class="panel-body-MentalExam">
-                            <div class="form-group-MentalExam">
-                                <label>Comportamiento:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Actitud:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Atención:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Conciencia:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Estado de Ánimo:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Lenguaje:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <label>Pensamiento:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group-MentalExam">
-                                <button type="submit" class="btn btn-lg btn-info-MentalExam">
-                                    Registrar Examen
-                                </button>
+                    <div class="col-lg-6">
+                        <div class="form-group form-group-MentalExam-select">
+                            <label>Lista de citas para hoy:</label>
+                            <asp:DropDownList id="patient_List" runat="server" CssClass="form-control">
+                                <asp:ListItem Value="24773340">24773340 - Luis Perez</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="panel-MentalExam panel-default">
+                            <div class="panel-body-MentalExam">
+                                <div class="form-group-MentalExam">
+                                    <label>Comportamiento:</label>
+                                    <textarea runat="server" id="behavior_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Actitud:</label>
+                                    <textarea runat="server" id="attitude_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Atención:</label>
+                                    <textarea runat="server" id="alertness_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Conciencia:</label>
+                                    <textarea runat="server" id="awareness_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Estado de Ánimo:</label>
+                                    <textarea runat="server" id="mood_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Lenguaje:</label>
+                                    <textarea runat="server" id="language_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <label>Pensamiento:</label>
+                                    <textarea runat="server" id="thought_txt" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group-MentalExam">
+                                    <asp:Button ID="btnModifyAppointment" runat="server" Text="Registrar Examen" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                </div>
-            </div>  
+                    <div class="col-lg-3">
+                    </div>
+                </div>  
+           </form>
         </div>    
  </asp:Content> 

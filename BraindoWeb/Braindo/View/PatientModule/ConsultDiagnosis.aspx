@@ -24,11 +24,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>13/11/2018</td>
-                                                <td>85%</td>
-                                                <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" onClientClick="window.open('../PatientModule/DetailedTest.aspx');" /></td>
-                                            </tr>
+                                            <asp:Repeater ID="listDiagnostics" runat="server">
+                                                <ItemTemplate>
+                                                    <tr id="<%# Eval("_ID") %>">
+                                                        <td><%# Eval("_Date") %></td>
+                                                        <td><%# Eval("_NetworkAnswer") %></td>
+                                                        <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                             </asp:Repeater>
                                         </tbody>
                                     </table>  
                                 </div>   

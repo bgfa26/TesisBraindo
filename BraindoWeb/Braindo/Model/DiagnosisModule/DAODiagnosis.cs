@@ -224,6 +224,10 @@ namespace Braindo.Model.DiagnosisModule
                         psychoName = dr.GetString(6);
                         psychoSurname = dr.GetString(7);
 
+                        /*String diagdateString = diagnosisDate.ToString("dd/MM/yyyy");
+
+                        DateTime correctDate = Convert.ToDateTime(diagdateString);*/
+
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 

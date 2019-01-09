@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Braindo.Controller.PsychologistModule;
 using Braindo.Common;
+using Braindo.Model;
 
 namespace Braindo.View.PsychologistModule
 {
@@ -19,9 +20,11 @@ namespace Braindo.View.PsychologistModule
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        protected void btnChange_Click(object sender, EventArgs e)
+        {
             int id = 24220210;
-            String password = "dario02";
-
+            String password = pass_txt.Value;
             psycho = new Psychologist(id, password);
 
             ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);
@@ -30,15 +33,23 @@ namespace Braindo.View.PsychologistModule
             {
                 cmd.execute();
                 psychoChanged = cmd.getAnswer();
-                String myStringVariable = "Probando";
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                if (psychoChanged._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                {
+                    String myStringVariable = "Se Cambio";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                }
+                else
+                {
+                    String myStringVariable = "No se Cambio";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                }
+
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
-
         }
     }
 }

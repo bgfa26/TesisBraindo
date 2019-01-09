@@ -51,6 +51,16 @@ namespace Braindo.Common
             this.reason = _reason;
         }
 
+        public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist)
+        {
+            this.ID = _ID;
+            this.date = _date;
+            this.hour = _hour;
+            this.reason = _reason;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+        }
+
         public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
         {
             this.ID = _ID;
@@ -62,9 +72,8 @@ namespace Braindo.Common
             this.mentalExam = _mentalExam;
         }
 
-        public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist)
+        public Appointment(DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist)
         {
-            this.ID = _ID;
             this.date = _date;
             this.hour = _hour;
             this.reason = _reason;
