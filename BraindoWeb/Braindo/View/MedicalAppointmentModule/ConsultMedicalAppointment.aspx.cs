@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Braindo.Controller.DiagnosisModule;
+using Braindo.Common;
+using Braindo.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

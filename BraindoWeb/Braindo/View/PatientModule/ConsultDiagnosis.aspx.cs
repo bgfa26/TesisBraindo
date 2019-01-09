@@ -40,7 +40,7 @@ namespace Braindo.View.PatientModule
                 {
                     cmd.execute();
                     consultedDiagnostic = cmd.getAnswer();
-
+                    
                     listDiagnostics.DataSource = consultedDiagnostic;
                     listDiagnostics.DataBind();
 
