@@ -92,6 +92,15 @@ namespace Braindo.View.MedicalAppointmentModule
 
                 Response.Redirect("../MentalExamModule/ConsultMentalExam.aspx?mentalExamID=" + id);
             }
+            else if (e.CommandName == "addExam")
+            {
+
+                string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+                String id = commandArgs[0];
+                String idExam = commandArgs[1];
+
+                Response.Redirect("../MentalExamModule/RegistryPsychoProfile.aspx?appointmentID=" + id + "&examID=" + idExam);
+            }
 
         }
     }

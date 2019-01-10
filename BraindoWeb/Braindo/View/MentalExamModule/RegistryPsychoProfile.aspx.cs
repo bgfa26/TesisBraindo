@@ -16,6 +16,19 @@ namespace Braindo.View.MentalExamModule
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Page.IsPostBack)
+            {
+                String idExam = Request.QueryString["examID"];
+
+                int idInt = Convert.ToInt32(idExam);
+
+                if (idInt != 0)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita ya tiene un examen mental registrado');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                }
+            }
+
             /*String behavior = "ron2";
             String attitude = "1213";
             String alertness = "1212";
