@@ -27,7 +27,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             String hora = hour_appointment.SelectedValue;
             DateTime hourAppointment = new DateTime();
-            hourAppointment = DateTime.ParseExact(hora, "H:m", null);
+            hourAppointment = DateTime.ParseExact(hora, "HH:mm", null);
 
             String reason = reason_txt.Value;
 
@@ -49,13 +49,11 @@ namespace Braindo.View.MedicalAppointmentModule
                 appointmentRegistered = cmd.getAnswer();
                 if (appointmentRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                 {
-                    String myStringVariable = "Se Registro";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                 }
                 else
                 {
-                    String myStringVariable = "No se Registro";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                 }
 
             }

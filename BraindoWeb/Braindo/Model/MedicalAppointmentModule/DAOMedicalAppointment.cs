@@ -239,6 +239,101 @@ namespace Braindo.Model.MedicalAppointmentModule
             }
         }
 
+        public List<Appointment> consultAllAppointment(Appointment _appointment)
+        {
+            int id;
+            DateTime date;
+            DateTime hour;
+            String reason;
+            int idPatient;
+            String namePatient;
+            String surnamePatient;
+            int idPsycho;
+            String namePsycho;
+            String surnamePsycho;
+            int idExam;
+
+            Patient _patient;
+            Psychologist _psycho;
+            MentalExam _exam;
+
+            List<Appointment> _appointmentList = new List<Appointment>();
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("cita_consultar_todos(@PSYCHO)", conn);
+
+                NpgsqlParameter psycho = new NpgsqlParameter();
+
+                psycho.ParameterName = "@PSYCHO";
+
+                psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+
+                psycho.Direction = ParameterDirection.Input;
+
+                psycho.Value = _appointment._Psychologist._ID;
+
+                command.Parameters.Add(psycho);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        date = dr.GetDateTime(1);
+                        hour = dr.GetDateTime(2);
+                        reason = dr.GetString(3);
+                        idPatient = dr.GetInt32(4);
+                        namePatient = dr.GetString(5);
+                        surnamePatient = dr.GetString(6);
+                        idPsycho = dr.GetInt32(7);
+                        namePsycho = dr.GetString(8);
+                        surnamePsycho = dr.GetString(9);
+
+                        if (!dr.IsDBNull(10))
+                        {
+                            idExam = dr.GetInt32(10);
+                        }
+                        else
+                        {
+                            idExam = 0;
+                        }
+
+                        _patient = new Patient(idPatient, namePatient, surnamePatient);
+                        _psycho = new Psychologist(idPsycho, namePsycho, surnamePsycho);
+                        _exam = new MentalExam(idExam);
+
+                        _appointment = new Appointment(id, date, hour, reason, _patient, _psycho, _exam);
+
+                        _appointmentList.Add(_appointment);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _appointmentList;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public Appointment consultAppointment(Appointment _appointment)
         {
             int id;
@@ -299,7 +394,14 @@ namespace Braindo.Model.MedicalAppointmentModule
                         idPsycho = dr.GetInt32(7);
                         namePsycho = dr.GetString(8);
                         surnamePsycho = dr.GetString(9);
-                        idExam = dr.GetInt32(10);
+                        if (!dr.IsDBNull(10))
+                        {
+                            idExam = dr.GetInt32(10);
+                        }
+                        else
+                        {
+                            idExam = 0;
+                        }
 
                         _patient = new Patient(idPatient, namePatient, surnamePatient);
                         _psycho = new Psychologist(idPsycho, namePsycho, surnamePsycho);
@@ -340,7 +442,7 @@ namespace Braindo.Model.MedicalAppointmentModule
             int idPsycho;
             String namePsycho;
             String surnamePsycho;
-            int? idExam;
+            int idExam;
 
             Patient _patient;
             Psychologist _psycho;
@@ -382,13 +484,20 @@ namespace Braindo.Model.MedicalAppointmentModule
                         idPsycho = dr.GetInt32(7);
                         namePsycho = dr.GetString(8);
                         surnamePsycho = dr.GetString(9);
-                        //idExam = dr.GetInt32(10);
+                        if (!dr.IsDBNull(10))
+                        {
+                            idExam = dr.GetInt32(10);
+                        }
+                        else
+                        {
+                            idExam = 0;
+                        }
 
                             _patient = new Patient(idPatient, namePatient, surnamePatient);
                             _psycho = new Psychologist(idPsycho, namePsycho, surnamePsycho);
-                            //_exam = new MentalExam(idExam);
+                            _exam = new MentalExam(idExam);
 
-                            _appointment = new Appointment(id, date, hour, reason, _patient, _psycho);
+                            _appointment = new Appointment(id, date, hour, reason, _patient, _psycho, _exam);
 
                     }
                     dr.Close();

@@ -7,12 +7,12 @@ using System.Web;
 
 namespace Braindo.Controller.MedicalAppointmenModule
 {
-    public class ConsultMedicalAppointment : Command
+    public class ConsultMedicalAppointmentCommand : Command
     {
         private Appointment consultAppointment;
         private Appointment answer;
 
-        public ConsultMedicalAppointment(Appointment _consultAppointment)
+        public ConsultMedicalAppointmentCommand(Appointment _consultAppointment)
         {
             this.consultAppointment = _consultAppointment;
         }

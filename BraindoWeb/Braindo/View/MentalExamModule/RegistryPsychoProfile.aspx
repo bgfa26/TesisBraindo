@@ -51,7 +51,7 @@
                                     <textarea runat="server" id="thought_txt" class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="form-group-MentalExam">
-                                    <asp:Button ID="btnModifyAppointment" runat="server" Text="Registrar Examen" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
+                                    <asp:Button ID="btnRegisterPsychoProfile" runat="server" Text="Registrar Examen" OnClick = "btnRegisterPsychoProfile_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
                                 </div>
                             </div>
                         </div>

@@ -27,6 +27,11 @@ namespace Braindo.Common
             this.ID = _ID;
         }
 
+        public Appointment(Psychologist _psychologist)
+        {
+            this.psychologist = _psychologist;
+        }
+
         public Appointment(Patient _patient, Psychologist _psychologist)
         {
             this.patient = _patient;

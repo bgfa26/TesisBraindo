@@ -7,25 +7,26 @@ using System.Web;
 
 namespace Braindo.Controller.MedicalAppointmenModule
 {
-    public class ConsultDetailedMedicalAppointment : Command
+    public class ConsultAllMedicalAppointmentsCommand : Command
     {
-        private Appointment consultAppointment;
-        private Appointment answer;
+        private Appointment Appointment;
+        private List<Appointment> answer;
 
-        public ConsultDetailedMedicalAppointment(Appointment _consultAppointment)
+        public ConsultAllMedicalAppointmentsCommand(Appointment _Appointment)
         {
-            this.consultAppointment = _consultAppointment;
+            this.Appointment = _Appointment;
         }
 
         public override void execute()
         {
             DAOMedicalAppointment daoappointment = new DAOMedicalAppointment();
-            answer = daoappointment.consultDetailedAppointment(consultAppointment);
+            answer = daoappointment.consultAllAppointment(Appointment);
         }
 
-        public Appointment getAnswer()
+        public List<Appointment> getAnswer()
         {
             return this.answer;
         }
+
     }
 }

@@ -22,13 +22,13 @@ namespace Braindo.View.MedicalAppointmentModule {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// date_appointment control.
+        /// date_appointment_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date_appointment;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date_appointment_txt;
         
         /// <summary>
         /// hour_appointment control.

@@ -46,7 +46,7 @@ namespace Braindo.View.MentalExamModule
 
         }
 
-        protected void btnModifyAppointment_Click(object sender, EventArgs e)
+        protected void btnRegisterPsychoProfile_Click(object sender, EventArgs e)
         {
             String behavior = behavior_txt.Value;
             String attitude = attitude_txt.Value;

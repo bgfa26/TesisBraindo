@@ -120,8 +120,9 @@
     <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticDetailedCommand.cs" />
     <Compile Include="Controller\DiagnosisModule\DeleteDiagnosticCommand.cs" />
     <Compile Include="Controller\DiagnosisModule\RegisterDiagnosticCommand.cs" />
-    <Compile Include="Controller\MedicalAppointmenModule\ConsultDetailedMedicalAppointment.cs" />
-    <Compile Include="Controller\MedicalAppointmenModule\ConsultMedicalAppointment.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\ConsultAllMedicalAppointmentsCommand.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\ConsultDetailedMedicalAppointmentCommand.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\ConsultMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\DeleteMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ModifyMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\RegisterMedicalAppointmentCommand.cs" />

@@ -20,14 +20,14 @@
                                         <div class="panel-body-Medical">
                                             <div class="form-group-Medical">
                                                 <label>Fecha de la Cita</label>
-                                                <input runat="server" id="date_appointment" type="date" class="form-control-Medical"/>
+                                                <input runat="server" id="date_appointment_txt" type="date" class="form-control-Medical"/>
                                             </div>
                                             <div class="form-group-Medical">
                                                 <label>Hora:</label>
                                                 <asp:DropDownList id="hour_appointment" runat="server" CssClass="form-control-Medical">
-                                                    <asp:ListItem Value="7:00">7:00 am</asp:ListItem>
-                                                    <asp:ListItem Value="8:00">8:00 am</asp:ListItem>
-                                                    <asp:ListItem Value="9:00">9:00 am</asp:ListItem>
+                                                    <asp:ListItem Value="07:00">7:00 am</asp:ListItem>
+                                                    <asp:ListItem Value="08:00">8:00 am</asp:ListItem>
+                                                    <asp:ListItem Value="09:00">9:00 am</asp:ListItem>
                                                     <asp:ListItem Value="10:00">10:00 am</asp:ListItem>
                                                     <asp:ListItem Value="11:00">11:00 am</asp:ListItem>
                                                     <asp:ListItem Value="12:00">12:00 pm</asp:ListItem>

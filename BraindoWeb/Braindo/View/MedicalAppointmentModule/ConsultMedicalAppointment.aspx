@@ -21,28 +21,26 @@
                                                 <th>Fecha</th>
                                                 <th>Hora</th>
                                                 <th>Paciente</th>
-                                                <th>Psicólogo</th>
                                                 <th>Motivo</th>
                                                 <th>Examen</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <asp:Repeater ID="listMedicalAppointments" runat="server">
+                                            <asp:Repeater ID="listMedicalAppointments" runat="server" OnItemCommand="actionAppointment_Command">
                                                 <ItemTemplate>
                                                 <tr>
                                                     <td><%# Eval("_Date") %></td>
                                                     <td><%# Eval("_Hour") %></td>
                                                     <td><%# Eval("_Patient._Name") %></td>
-                                                    <td><%# Eval("_Psychologist._Name") %></td>
                                                     <td><%# Eval("_Reason") %></td>
                                                     <td>
                                                         <asp:ImageButton ID="Agregar" runat="server" ImageUrl="~/Content/images/addArrow4.ico" Height="27px" Width="26px"  ToolTip="Agregar Examen Mental" />
                                                         <asp:ImageButton ID="Ver" runat="server" ImageUrl="~/Content/images/search.ico" Height="25px" Width="24px"  ToolTip="Ver Examen Mental" />
                                                     </td>
                                                     <td>
-                                                        <asp:ImageButton ID="Modificar" runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
-                                                        <asp:ImageButton ID="Eliminar" runat="server" ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
+                                                        <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
+                                                        <asp:ImageButton ID="Eliminar" CommandName="delete" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
                                                     </td>
                                                 </tr>
                                                 </ItemTemplate>
