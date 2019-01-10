@@ -86,6 +86,12 @@ namespace Braindo.View.MedicalAppointmentModule
 
                 Response.Redirect("ModifyMedicalAppointment.aspx?appointmentID=" + id);
             }
+            else if (e.CommandName == "viewExam")
+            {
+                String id = e.CommandArgument.ToString();
+
+                Response.Redirect("../MentalExamModule/ConsultMentalExam.aspx?mentalExamID=" + id);
+            }
 
         }
     }

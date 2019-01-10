@@ -35,8 +35,8 @@
                                                     <td><%# Eval("_Patient._Name") %></td>
                                                     <td><%# Eval("_Reason") %></td>
                                                     <td>
-                                                        <asp:ImageButton ID="Agregar" runat="server" ImageUrl="~/Content/images/addArrow4.ico" Height="27px" Width="26px"  ToolTip="Agregar Examen Mental" />
-                                                        <asp:ImageButton ID="Ver" runat="server" ImageUrl="~/Content/images/search.ico" Height="25px" Width="24px"  ToolTip="Ver Examen Mental" />
+                                                        <asp:ImageButton ID="Agregar" CommandName="addExam" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/addArrow4.ico" Height="27px" Width="26px"  ToolTip="Agregar Examen Mental" />
+                                                        <asp:ImageButton ID="Ver" CommandName="viewExam" CommandArgument='<%# Eval("_MentalExam._ID")%>' runat="server" ImageUrl="~/Content/images/search.ico" Height="25px" Width="24px"  ToolTip="Ver Examen Mental" />
                                                     </td>
                                                     <td>
                                                         <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
