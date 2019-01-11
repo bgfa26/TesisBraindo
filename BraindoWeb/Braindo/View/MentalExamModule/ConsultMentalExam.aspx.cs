@@ -23,8 +23,7 @@ namespace Braindo.View.MentalExamModule
 
                 int idInt = Convert.ToInt32(idAppointment);
 
-                if (idInt != 0)
-                {
+
                     mentalExam = new MentalExam(idInt);
 
                     ConsultMentalExamCommand cmd = new ConsultMentalExamCommand(mentalExam);
@@ -47,11 +46,7 @@ namespace Braindo.View.MentalExamModule
 
                         throw ex;
                     }
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-                }
+                
             }
         }
     }

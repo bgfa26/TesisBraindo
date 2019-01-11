@@ -84,13 +84,28 @@ namespace Braindo.View.MedicalAppointmentModule
             {
                 String id = e.CommandArgument.ToString();
 
+                int idInt = Convert.ToInt32(id);
+
                 Response.Redirect("ModifyMedicalAppointment.aspx?appointmentID=" + id);
+
             }
             else if (e.CommandName == "viewExam")
             {
                 String id = e.CommandArgument.ToString();
 
-                Response.Redirect("../MentalExamModule/ConsultMentalExam.aspx?mentalExamID=" + id);
+                int idInt = Convert.ToInt32(id);
+
+                if (idInt != 0)
+                {
+                    Response.Redirect("../MentalExamModule/ConsultMentalExam.aspx?mentalExamID=" + id);
+                }
+                else
+                {
+                    string script = "alert(\"ERROR! Esta cita no tiene examen mental registrado\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                            "ServerControlScript", script, true);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
+                }
             }
             else if (e.CommandName == "addExam")
             {
@@ -99,7 +114,20 @@ namespace Braindo.View.MedicalAppointmentModule
                 String id = commandArgs[0];
                 String idExam = commandArgs[1];
 
-                Response.Redirect("../MentalExamModule/RegistryPsychoProfile.aspx?appointmentID=" + id + "&examID=" + idExam);
+                int idInt = Convert.ToInt32(idExam);
+
+                if (idInt == 0)
+                {
+                    Response.Redirect("../MentalExamModule/RegistryPsychoProfile.aspx?appointmentID=" + id + "&examID=" + idExam);
+                }
+                else
+                {
+                    string script = "alert(\"ERROR! Esta cita ya tiene un examen mental registrado\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                            "ServerControlScript", script, true);
+
+                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita ya tiene un examen mental registrado');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                }      
             }
 
         }

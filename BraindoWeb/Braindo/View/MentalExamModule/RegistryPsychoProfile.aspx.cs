@@ -23,40 +23,7 @@ namespace Braindo.View.MentalExamModule
 
                 int idInt = Convert.ToInt32(idExam);
 
-                if (idInt != 0)
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita ya tiene un examen mental registrado');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-                }
             }
-
-            /*String behavior = "ron2";
-            String attitude = "1213";
-            String alertness = "1212";
-            String awareness = "13werrsf";
-            String mood = "sdfgsg";
-            String language = "zxzcxc";
-            String thought = "kgkhjg";
-
-            int id = 3;
-
-            appointment = new Appointment(id);
-
-            MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
-
-            try
-            {
-                RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
-
-                cmd.execute();
-
-                mentalExamRegistered = cmd.getAnswer();
-            }
-            catch (Exception ex)
-            {
-                
-                throw ex;
-            }*/
-
         }
 
         protected void btnRegisterPsychoProfile_Click(object sender, EventArgs e)
