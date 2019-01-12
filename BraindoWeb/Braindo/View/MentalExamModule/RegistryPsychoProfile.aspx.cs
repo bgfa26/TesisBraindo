@@ -19,10 +19,7 @@ namespace Braindo.View.MentalExamModule
 
             if (!Page.IsPostBack)
             {
-                String idExam = Request.QueryString["examID"];
-
-                int idInt = Convert.ToInt32(idExam);
-
+                
             }
         }
 
@@ -36,9 +33,11 @@ namespace Braindo.View.MentalExamModule
             String language = language_txt.Value;
             String thought = thought_txt.Value;
 
-            int id = 3;
+            String idExamString = Request.QueryString["appointmentID"];
 
-            appointment = new Appointment(id);
+            int idExam = Convert.ToInt32(idExamString);
+
+            appointment = new Appointment(idExam);
 
             MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
 
@@ -51,13 +50,14 @@ namespace Braindo.View.MentalExamModule
                 mentalExamRegistered = cmd.getAnswer();
                 if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                 {
-                    String myStringVariable = "Se Registro";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
                 }
                 else
                 {
-                    String myStringVariable = "No se Registro";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
                 }
             }
             catch (Exception ex)

@@ -111,14 +111,15 @@ namespace Braindo.View.MedicalAppointmentModule
             {
 
                 string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
-                String id = commandArgs[0];
+                String idAppointment = commandArgs[0];
                 String idExam = commandArgs[1];
+                String idPatient = commandArgs[2];
 
                 int idInt = Convert.ToInt32(idExam);
 
                 if (idInt == 0)
                 {
-                    Response.Redirect("../MentalExamModule/RegistryPsychoProfile.aspx?appointmentID=" + id + "&examID=" + idExam);
+                    Response.Redirect("../MentalExamModule/RegistryPsychoProfile.aspx?appointmentID=" + idAppointment);
                 }
                 else
                 {
