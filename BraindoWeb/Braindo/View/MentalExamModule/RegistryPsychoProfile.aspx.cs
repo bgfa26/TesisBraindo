@@ -19,7 +19,15 @@ namespace Braindo.View.MentalExamModule
 
             if (!Page.IsPostBack)
             {
-                
+                String idAppointment = Request.QueryString["appointmentID"];
+
+                int idInt = Convert.ToInt32(idAppointment);
+
+                if (idInt != 0)
+                {
+                    AppointmentList_Tittle.Visible = false;
+                    patient_List.Visible = false;
+                }
             }
         }
 

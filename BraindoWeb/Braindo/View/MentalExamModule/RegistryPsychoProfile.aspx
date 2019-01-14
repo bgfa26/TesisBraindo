@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group form-group-MentalExam-select">
-                            <label>Lista de citas para hoy:</label>
+                            <asp:Label ID="AppointmentList_Tittle" runat="server">Lista de citas para hoy:</asp:Label>
                             <asp:DropDownList id="patient_List" runat="server" CssClass="form-control">
                                 <asp:ListItem Value="24773340">24773340 - Luis Perez</asp:ListItem>
                             </asp:DropDownList>

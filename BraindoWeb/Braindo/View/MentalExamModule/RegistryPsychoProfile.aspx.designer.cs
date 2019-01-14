@@ -22,6 +22,15 @@ namespace Braindo.View.MentalExamModule {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// AppointmentList_Tittle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AppointmentList_Tittle;
+        
+        /// <summary>
         /// patient_List control.
         /// </summary>
         /// <remarks>
