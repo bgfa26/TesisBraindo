@@ -32,8 +32,10 @@ namespace Braindo.Common
             this.psychologist = _psychologist;
         }
 
-        public Appointment(Patient _patient, Psychologist _psychologist)
+        public Appointment(DateTime _date, DateTime _hour, Patient _patient, Psychologist _psychologist)
         {
+            this.date = _date;
+            this.hour = _hour;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }

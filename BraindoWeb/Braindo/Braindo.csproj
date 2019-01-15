@@ -123,6 +123,7 @@
     <Compile Include="Controller\MedicalAppointmenModule\ConsultAllMedicalAppointmentsCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ConsultDetailedMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ConsultMedicalAppointmentCommand.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\ConsultRegisteredAppointmentsCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\DeleteMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ModifyMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\RegisterMedicalAppointmentCommand.cs" />

@@ -334,6 +334,101 @@ namespace Braindo.Model.MedicalAppointmentModule
             }
         }
 
+        public List<Appointment> consultRegisteredAppointments(Appointment _appointment)
+        {
+            int id;
+            DateTime date;
+            DateTime hour;
+            String reason;
+            int idPatient;
+            String namePatient;
+            String surnamePatient;
+            int idPsycho;
+            String namePsycho;
+            String surnamePsycho;
+            int idExam;
+
+            Patient _patient;
+            Psychologist _psycho;
+            MentalExam _exam;
+
+            List<Appointment> _appointmentList = new List<Appointment>();
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("cita_consultar_registro(@PSYCHO)", conn);
+
+                NpgsqlParameter psycho = new NpgsqlParameter();
+
+                psycho.ParameterName = "@PSYCHO";
+
+                psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+
+                psycho.Direction = ParameterDirection.Input;
+
+                psycho.Value = _appointment._Psychologist._ID;
+
+                command.Parameters.Add(psycho);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        date = dr.GetDateTime(1);
+                        hour = dr.GetDateTime(2);
+                        reason = dr.GetString(3);
+                        idPatient = dr.GetInt32(4);
+                        namePatient = dr.GetString(5);
+                        surnamePatient = dr.GetString(6);
+                        idPsycho = dr.GetInt32(7);
+                        namePsycho = dr.GetString(8);
+                        surnamePsycho = dr.GetString(9);
+
+                        if (!dr.IsDBNull(10))
+                        {
+                            idExam = dr.GetInt32(10);
+                        }
+                        else
+                        {
+                            idExam = 0;
+                        }
+
+                        _patient = new Patient(idPatient, namePatient, surnamePatient);
+                        _psycho = new Psychologist(idPsycho, namePsycho, surnamePsycho);
+                        _exam = new MentalExam(idExam);
+
+                        _appointment = new Appointment(id, date, hour, reason, _patient, _psycho, _exam);
+
+                        _appointmentList.Add(_appointment);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _appointmentList;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public Appointment consultAppointment(Appointment _appointment)
         {
             int id;
@@ -356,23 +451,35 @@ namespace Braindo.Model.MedicalAppointmentModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("cita_consultar(@PATIENT, @PSYCHO)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("cita_consultar(@DATEAPPOINTMENT, @TIMEAPPOINTMENT, @PATIENT, @PSYCHO)", conn);
 
+                NpgsqlParameter dateapp = new NpgsqlParameter();
+                NpgsqlParameter hourapp = new NpgsqlParameter();
                 NpgsqlParameter patient = new NpgsqlParameter();
                 NpgsqlParameter psycho = new NpgsqlParameter();
 
+                dateapp.ParameterName = "@DATEAPPOINTMENT";
+                hourapp.ParameterName = "@TIMEAPPOINTMENT";
                 patient.ParameterName = "@PATIENT";
                 psycho.ParameterName = "@PSYCHO";
 
+                dateapp.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Date;
+                hourapp.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Time;
                 patient.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
                 psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
 
+                dateapp.Direction = ParameterDirection.Input;
+                hourapp.Direction = ParameterDirection.Input;
                 patient.Direction = ParameterDirection.Input;
                 psycho.Direction = ParameterDirection.Input;
 
+                dateapp.Value = _appointment._Date;
+                hourapp.Value = _appointment._Hour;
                 patient.Value = _appointment._Patient._ID;
                 psycho.Value = _appointment._Psychologist._ID;
 
+                command.Parameters.Add(dateapp);
+                command.Parameters.Add(hourapp);
                 command.Parameters.Add(patient);
                 command.Parameters.Add(psycho);
 
