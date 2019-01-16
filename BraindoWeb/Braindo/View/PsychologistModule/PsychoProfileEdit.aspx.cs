@@ -16,12 +16,41 @@ namespace Braindo.View.PsychologistModule
     {
 
         private Psychologist psycho;
+        private Psychologist psychoConsulted;
         private Psychologist psychoModified;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (!Page.IsPostBack)
+            {
+                int id = 24220210;
+                psychoConsulted = new Psychologist(id);
 
+                ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psychoConsulted);
+
+                try
+                {
+                    psychoConsult.execute();
+                    psychoConsulted = psychoConsult.getAnswer();
+
+                    name_txt.Value = psychoConsulted._Name;
+                    secondName_txt.Value = psychoConsulted._SecondName;
+                    surname_txt.Value = psychoConsulted._Surname;
+                    secondSurname_txt.Value = psychoConsulted._SecondSurname;
+                    registrationNumber_txt.Value = psychoConsulted._RegistrationNumber;
+                    email_txt.Value = psychoConsulted._Email;
+
+                    DateTime birthdatePsycho = psychoConsulted._Birthdate;
+
+                    date.Value = birthdatePsycho.ToString("yyyy-MM-dd");
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+            }
         }
 
         protected void btnChangeData_Click(object sender, EventArgs e)
@@ -47,13 +76,11 @@ namespace Braindo.View.PsychologistModule
                 psychoModified = cmd.getAnswer();
                 if (psychoModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                 {
-                    String myStringVariable = "Se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambiaron los datos del psicologo');window.location.href='PsychoProfile.aspx';", true);
                 }
                 else
                 {
-                    String myStringVariable = "No se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se cambiaron los datos');window.location.href='PsychoProfile.aspx';", true);
                 }
             }
             catch (Exception ex)

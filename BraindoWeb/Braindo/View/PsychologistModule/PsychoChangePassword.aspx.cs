@@ -35,13 +35,11 @@ namespace Braindo.View.PsychologistModule
                 psychoChanged = cmd.getAnswer();
                 if (psychoChanged._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                 {
-                    String myStringVariable = "Se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambio la contraseña');window.location.href='PsychoProfile.aspx';", true);
                 }
                 else
                 {
-                    String myStringVariable = "No se Cambio";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se hizo el cambio de la contraseña');window.location.href='PsychoProfile.aspx';", true);
                 }
 
             }
