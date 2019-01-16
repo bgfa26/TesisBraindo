@@ -18,8 +18,8 @@
                                 <div class="col-lg-4 col-lg-offset-4">
                                     <div class="form-group form-group-MentalExam-select">
                                         <label>Lista de pacientes:</label>
-                                        <asp:DropDownList id="patient_List" runat="server" CssClass="form-control">
-                                            <asp:ListItem Value="24773340">24773340 - Luis Perez</asp:ListItem>
+                                        <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">
+  
                                         </asp:DropDownList>
                                     </div>
                                     <div class="panel-Medical panel-default">

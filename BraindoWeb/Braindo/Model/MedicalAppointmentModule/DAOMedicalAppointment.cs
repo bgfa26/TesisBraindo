@@ -628,5 +628,72 @@ namespace Braindo.Model.MedicalAppointmentModule
                 conn.Close();
             }
         }
+
+        public Appointment MedicalAppointmentExist(Appointment _appointment)
+        {
+            int resp = 0;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("cita_existe(@DATEAPPOINTMENT, @TIMEAPPOINTMENT)", conn);
+
+                NpgsqlParameter dateAppointment = new NpgsqlParameter();
+                NpgsqlParameter hourAppointment = new NpgsqlParameter();
+
+                dateAppointment.ParameterName = "@DATEAPPOINTMENT";
+                hourAppointment.ParameterName = "@TIMEAPPOINTMENT";
+
+                dateAppointment.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Date;
+                hourAppointment.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Time;
+
+                dateAppointment.Direction = ParameterDirection.Input;
+                hourAppointment.Direction = ParameterDirection.Input;
+
+                dateAppointment.Value = _appointment._Date;
+                hourAppointment.Value = _appointment._Hour;
+
+                command.Parameters.Add(dateAppointment);
+                command.Parameters.Add(hourAppointment);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        resp = dr.GetInt32(0);
+                    }
+                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                    {
+                        _appointment._Error = Registry.RESULTADO_CODIGO_BIEN;
+                    }
+                    else
+                    {
+                        _appointment._Error = Registry.RESULTADO_CODIGO_FALLIDO;
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _appointment;
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+                
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

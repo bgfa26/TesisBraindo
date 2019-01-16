@@ -125,6 +125,7 @@
     <Compile Include="Controller\MedicalAppointmenModule\ConsultMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ConsultRegisteredAppointmentsCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\DeleteMedicalAppointmentCommand.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\MedicalAppointmentExistCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ModifyMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\RegisterMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MentalExamModule\ConsultMentalExamCommand.cs" />

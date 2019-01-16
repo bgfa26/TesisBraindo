@@ -88,6 +88,12 @@ namespace Braindo.Common
             this.psychologist = _psychologist;
         }
 
+        public Appointment(DateTime _date, DateTime _hour)
+        {
+            this.date = _date;
+            this.hour = _hour;
+        }
+
         public int _ID
         {
             get { return ID; }
