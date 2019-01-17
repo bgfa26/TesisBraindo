@@ -85,127 +85,136 @@ namespace Braindo.View.MentalExamModule
         protected void btnRegisterPsychoProfile_Click(object sender, EventArgs e)
         {
 
-            String idAppointment = Request.QueryString["appointmentID"];
-
-            int idInt = Convert.ToInt32(idAppointment);
-
-            if (idInt != 0)
+            if (behavior_txt.Value.Equals("") || attitude_txt.Value.Equals("") || alertness_txt.Value.Equals("") || awareness_txt.Value.Equals("") || mood_txt.Value.Equals("") || language_txt.Value.Equals("") || thought_txt.Value.Equals(""))
             {
-                String behavior = behavior_txt.Value;
-                String attitude = attitude_txt.Value;
-                String alertness = alertness_txt.Value;
-                String awareness = awareness_txt.Value;
-                String mood = mood_txt.Value;
-                String language = language_txt.Value;
-                String thought = thought_txt.Value;
-
-                appointment = new Appointment(idInt);
-
-                MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
-
-                try
-                {
-                    RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
-
-                    cmd.execute();
-
-                    mentalExamRegistered = cmd.getAnswer();
-                    if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
-                    {
-
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
-                    }
-                    else
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    throw ex;
-                }
+                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
             }
             else
             {
-                /*INICIO - Proceso para obtener el ID de la cita*/
-                String selectItem = patient_List.SelectedItem.Text;
+                String idAppointment = Request.QueryString["appointmentID"];
 
-                string[] Args = selectItem.Split(new char[] { ' ' });
+                int idInt = Convert.ToInt32(idAppointment);
 
-                String dateApp = Args[0];
-                String hourApp = Args[1];
-                String idPatientString = Args[2];
-
-                DateTime dateAppointment = Convert.ToDateTime(dateApp);
-                DateTime hourAppointment = new DateTime();
-                hourAppointment = DateTime.ParseExact(hourApp, "HH:mm", null);
-
-                int Patient = Convert.ToInt32(idPatientString);
-                int Psycho = 24220210;
-                int appointmentIDConsulted;
-
-                Patient consultPatient = new Patient(Patient);
-                Psychologist consultPsychologist = new Psychologist(Psycho);
-
-                Appointment checkAppointmentID = new Appointment(dateAppointment, hourAppointment, consultPatient, consultPsychologist);
-
-                try
+                if (idInt != 0)
                 {
-                    ConsultMedicalAppointmentCommand cmd = new ConsultMedicalAppointmentCommand(checkAppointmentID);
+                    String behavior = behavior_txt.Value;
+                    String attitude = attitude_txt.Value;
+                    String alertness = alertness_txt.Value;
+                    String awareness = awareness_txt.Value;
+                    String mood = mood_txt.Value;
+                    String language = language_txt.Value;
+                    String thought = thought_txt.Value;
 
-                    cmd.execute();
+                    appointment = new Appointment(idInt);
 
-                    Appointment _appointment = cmd.getAnswer();
+                    MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
 
-                    appointmentIDConsulted = _appointment._ID;
+                    try
+                    {
+                        RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
 
-                }
-                catch (Exception ex)
-                {
+                        cmd.execute();
 
-                    throw ex;
-                }
+                        mentalExamRegistered = cmd.getAnswer();
+                        if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                        {
 
-                /*FIN - Proceso para obtener el ID de la cita*/
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
-                String behavior = behavior_txt.Value;
-                String attitude = attitude_txt.Value;
-                String alertness = alertness_txt.Value;
-                String awareness = awareness_txt.Value;
-                String mood = mood_txt.Value;
-                String language = language_txt.Value;
-                String thought = thought_txt.Value;
+                        }
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
-                appointment = new Appointment(appointmentIDConsulted);
-
-                MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
-
-                try
-                {
-                    RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
-
-                    cmd.execute();
-
-                    mentalExamRegistered = cmd.getAnswer();
-                    if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                        }
+                    }
+                    catch (Exception ex)
                     {
 
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
-                    }
-                    else
-                    {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
+                        throw ex;
                     }
                 }
-                catch (Exception ex)
+                else
                 {
+                    /*INICIO - Proceso para obtener el ID de la cita*/
+                    String selectItem = patient_List.SelectedItem.Text;
 
-                    throw ex;
+                    string[] Args = selectItem.Split(new char[] { ' ' });
+
+                    String dateApp = Args[0];
+                    String hourApp = Args[1];
+                    String idPatientString = Args[2];
+
+                    DateTime dateAppointment = Convert.ToDateTime(dateApp);
+                    DateTime hourAppointment = new DateTime();
+                    hourAppointment = DateTime.ParseExact(hourApp, "HH:mm", null);
+
+                    int Patient = Convert.ToInt32(idPatientString);
+                    int Psycho = 24220210;
+                    int appointmentIDConsulted;
+
+                    Patient consultPatient = new Patient(Patient);
+                    Psychologist consultPsychologist = new Psychologist(Psycho);
+
+                    Appointment checkAppointmentID = new Appointment(dateAppointment, hourAppointment, consultPatient, consultPsychologist);
+
+                    try
+                    {
+                        ConsultMedicalAppointmentCommand cmd = new ConsultMedicalAppointmentCommand(checkAppointmentID);
+
+                        cmd.execute();
+
+                        Appointment _appointment = cmd.getAnswer();
+
+                        appointmentIDConsulted = _appointment._ID;
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+                    /*FIN - Proceso para obtener el ID de la cita*/
+
+                    String behavior = behavior_txt.Value;
+                    String attitude = attitude_txt.Value;
+                    String alertness = alertness_txt.Value;
+                    String awareness = awareness_txt.Value;
+                    String mood = mood_txt.Value;
+                    String language = language_txt.Value;
+                    String thought = thought_txt.Value;
+
+                    appointment = new Appointment(appointmentIDConsulted);
+
+                    MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
+
+                    try
+                    {
+                        RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
+
+                        cmd.execute();
+
+                        mentalExamRegistered = cmd.getAnswer();
+                        if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                        {
+
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
+                        }
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
         }

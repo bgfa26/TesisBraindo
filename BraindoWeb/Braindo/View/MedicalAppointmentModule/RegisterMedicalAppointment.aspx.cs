@@ -52,86 +52,95 @@ namespace Braindo.View.MedicalAppointmentModule
         protected void btnRegisterAppointment_Click(object sender, EventArgs e)
         {
 
-            String dateString = date_appointment.Value;
-            DateTime dateAppointmentConsult = Convert.ToDateTime(dateString);
-
-            String hourString = hour_appointment.SelectedValue;
-            DateTime hourAppointmentConsult = new DateTime();
-            hourAppointmentConsult = DateTime.ParseExact(hourString, "HH:mm", null);
-
-            Appointment datehourConsult = new Appointment(dateAppointmentConsult, hourAppointmentConsult);
-
-            MedicalAppointmentExistCommand cmdConsult = new MedicalAppointmentExistCommand(datehourConsult);
-
-            try
+            if (date_appointment.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reason_txt.Value.Equals(""))
             {
-                cmdConsult.execute();
-                dateHourAppointment = cmdConsult.getAnswer();
+                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
+            }
+            else
+            {
+                String dateString = date_appointment.Value;
+                DateTime dateAppointmentConsult = Convert.ToDateTime(dateString);
 
-                resp = dateHourAppointment._Error;
+                String hourString = hour_appointment.SelectedValue;
+                DateTime hourAppointmentConsult = new DateTime();
+                hourAppointmentConsult = DateTime.ParseExact(hourString, "HH:mm", null);
 
-                if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                Appointment datehourConsult = new Appointment(dateAppointmentConsult, hourAppointmentConsult);
+
+                MedicalAppointmentExistCommand cmdConsult = new MedicalAppointmentExistCommand(datehourConsult);
+
+                try
                 {
-                    string script = "alert(\"ERROR! La fecha y hora esta registrada en otra cita\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                                            "ServerControlScript", script, true);
-                }
-                else
-                {
-                    String fecha = date_appointment.Value;
-                    DateTime dateAppointment = Convert.ToDateTime(fecha);
+                    cmdConsult.execute();
+                    dateHourAppointment = cmdConsult.getAnswer();
 
-                    String hora = hour_appointment.SelectedValue;
-                    DateTime hourAppointment = new DateTime();
-                    hourAppointment = DateTime.ParseExact(hora, "HH:mm", null);
+                    resp = dateHourAppointment._Error;
 
-                    String reason = reason_txt.Value;
-
-                    String selectItem = patient_List.SelectedItem.Text;
-
-                    string[] Args = selectItem.Split(new char[] { ' ' });
-
-                    String idPatientString = Args[0];
-
-                    int id_patientSelected = Convert.ToInt32(idPatientString);
-
-                    int idPsycho = 24220210;
-
-                    Patient _patient = new Patient(id_patientSelected);
-                    Psychologist _psycho = new Psychologist(idPsycho);
-
-                    appointment = new Appointment(dateAppointment, hourAppointment, reason, _patient, _psycho);
-
-                    try
+                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        RegisterMedicalAppointmentCommand cmd = new RegisterMedicalAppointmentCommand(appointment);
-                        cmd.execute();
+                        string script = "alert(\"ERROR! La fecha y hora esta registrada en otra cita\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+                    }
+                    else
+                    {
+                        String fecha = date_appointment.Value;
+                        DateTime dateAppointment = Convert.ToDateTime(fecha);
 
-                        appointmentRegistered = cmd.getAnswer();
-                        if (appointmentRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                        String hora = hour_appointment.SelectedValue;
+                        DateTime hourAppointment = new DateTime();
+                        hourAppointment = DateTime.ParseExact(hora, "HH:mm", null);
+
+                        String reason = reason_txt.Value;
+
+                        String selectItem = patient_List.SelectedItem.Text;
+
+                        string[] Args = selectItem.Split(new char[] { ' ' });
+
+                        String idPatientString = Args[0];
+
+                        int id_patientSelected = Convert.ToInt32(idPatientString);
+
+                        int idPsycho = 24220210;
+
+                        Patient _patient = new Patient(id_patientSelected);
+                        Psychologist _psycho = new Psychologist(idPsycho);
+
+                        appointment = new Appointment(dateAppointment, hourAppointment, reason, _patient, _psycho);
+
+                        try
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                            RegisterMedicalAppointmentCommand cmd = new RegisterMedicalAppointmentCommand(appointment);
+                            cmd.execute();
+
+                            appointmentRegistered = cmd.getAnswer();
+                            if (appointmentRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                            }
+
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+
+                            throw ex;
                         }
 
                     }
-                    catch (Exception ex)
-                    {
-
-                        throw ex;
-                    }
-
                 }
-            }
-            catch (Exception ex)
-            {
-                
-                throw ex;
-            }
+                catch (Exception ex)
+                {
 
+                    throw ex;
+                }
+
+            }  
         }
     }
 }

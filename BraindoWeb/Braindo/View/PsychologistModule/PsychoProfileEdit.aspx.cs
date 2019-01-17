@@ -55,38 +55,48 @@ namespace Braindo.View.PsychologistModule
 
         protected void btnChangeData_Click(object sender, EventArgs e)
         {
-            int cedula = 24220210;
-            String correo = email_txt.Value;
-            String primerNombre = name_txt.Value;
-            String segundoNombre = secondName_txt.Value;
-            String primerApellido = surname_txt.Value;
-            String segundoApellido = secondSurname_txt.Value;
-            String numeroMatricula = registrationNumber_txt.Value;
-            String fechaNac = date.Value;
 
-            DateTime oDate = DateTime.Parse(fechaNac);
-
-            psycho = new Psychologist(cedula, correo, primerNombre, segundoNombre, primerApellido, segundoApellido, numeroMatricula, oDate);
-
-            EditInformationCommand cmd = new EditInformationCommand(psycho);
-
-            try
+            if (name_txt.Value.Equals("") || secondName_txt.Value.Equals("") || surname_txt.Value.Equals("") || secondSurname_txt.Value.Equals("") || date.Value.Equals("") || registrationNumber_txt.Value.Equals("") || email_txt.Value.Equals(""))
             {
-                cmd.execute();
-                psychoModified = cmd.getAnswer();
-                if (psychoModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambiaron los datos del psicologo');window.location.href='PsychoProfile.aspx';", true);
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se cambiaron los datos');window.location.href='PsychoProfile.aspx';", true);
-                }
+                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
             }
-            catch (Exception ex)
+            else
             {
-                
-                throw ex;
+                int cedula = 24220210;
+                String correo = email_txt.Value;
+                String primerNombre = name_txt.Value;
+                String segundoNombre = secondName_txt.Value;
+                String primerApellido = surname_txt.Value;
+                String segundoApellido = secondSurname_txt.Value;
+                String numeroMatricula = registrationNumber_txt.Value;
+                String fechaNac = date.Value;
+
+                DateTime oDate = DateTime.Parse(fechaNac);
+
+                psycho = new Psychologist(cedula, correo, primerNombre, segundoNombre, primerApellido, segundoApellido, numeroMatricula, oDate);
+
+                EditInformationCommand cmd = new EditInformationCommand(psycho);
+
+                try
+                {
+                    cmd.execute();
+                    psychoModified = cmd.getAnswer();
+                    if (psychoModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambiaron los datos del psicologo');window.location.href='PsychoProfile.aspx';", true);
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se cambiaron los datos');window.location.href='PsychoProfile.aspx';", true);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
     }

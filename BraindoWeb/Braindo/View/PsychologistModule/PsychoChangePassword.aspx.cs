@@ -23,30 +23,40 @@ namespace Braindo.View.PsychologistModule
         }
         protected void btnChange_Click(object sender, EventArgs e)
         {
-            int id = 24220210;
-            String password = pass_txt.Value;
-            psycho = new Psychologist(id, password);
 
-            ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);
-
-            try
+            if (pass_txt.Value.Equals(""))
             {
-                cmd.execute();
-                psychoChanged = cmd.getAnswer();
-                if (psychoChanged._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambio la contraseña');window.location.href='PsychoProfile.aspx';", true);
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se hizo el cambio de la contraseña');window.location.href='PsychoProfile.aspx';", true);
-                }
-
+                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
             }
-            catch (Exception ex)
+            else
             {
+                int id = 24220210;
+                String password = pass_txt.Value;
+                psycho = new Psychologist(id, password);
 
-                throw ex;
+                ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);
+
+                try
+                {
+                    cmd.execute();
+                    psychoChanged = cmd.getAnswer();
+                    if (psychoChanged._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambio la contraseña');window.location.href='PsychoProfile.aspx';", true);
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se hizo el cambio de la contraseña');window.location.href='PsychoProfile.aspx';", true);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
     }
