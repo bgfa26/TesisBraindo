@@ -30,8 +30,8 @@
                                             <asp:Repeater ID="listMedicalAppointments" runat="server" OnItemCommand="actionAppointment_Command">
                                                 <ItemTemplate>
                                                 <tr>
-                                                    <td><%# Eval("_Date") %></td>
-                                                    <td><%# Eval("_Hour") %></td>
+                                                    <td style="text-align:center"><%# Eval("_DateString") %></td>
+                                                    <td style="text-align:center"><%# Eval("_HourString") %></td>
                                                     <td><%# Eval("_Patient._Name") %></td>
                                                     <td><%# Eval("_Reason") %></td>
                                                     <td>

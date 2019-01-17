@@ -34,7 +34,7 @@ namespace Braindo.View.PsychologistModule
                     psychoConsulted = psychoConsult.getAnswer();
 
                     DateTime datePsycho = psychoConsulted._Birthdate;
-                    String datePsychoString = datePsycho.ToString("yyyy-MM-dd");
+                    String datePsychoString = datePsycho.ToString("dd-MM-yyyy");
 
                     cedula_txt.Value = Convert.ToString(psychoConsulted._ID);
                     matricula_txt.Value = psychoConsulted._RegistrationNumber;
