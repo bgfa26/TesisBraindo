@@ -60,8 +60,8 @@ namespace Braindo.View.MentalExamModule
 
                             DateTime dateAppointment = _appointment._Date;
                             DateTime hourAppointment = _appointment._Hour;
-                            String dateApp = dateAppointment.ToString("yyyy-MM-dd");
-                            String hourApp = hourAppointment.ToString("HH:mm");
+                            String dateApp = _appointment._DateString;
+                            String hourApp = _appointment._HourString;
 
                             int idPatient = _appointment._Patient._ID;
                             String PatientName = _appointment._Patient._Name;
@@ -84,7 +84,6 @@ namespace Braindo.View.MentalExamModule
 
         protected void btnRegisterPsychoProfile_Click(object sender, EventArgs e)
         {
-
             if (behavior_txt.Value.Equals("") || attitude_txt.Value.Equals("") || alertness_txt.Value.Equals("") || awareness_txt.Value.Equals("") || mood_txt.Value.Equals("") || language_txt.Value.Equals("") || thought_txt.Value.Equals(""))
             {
                 string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
@@ -145,7 +144,28 @@ namespace Braindo.View.MentalExamModule
 
                     String dateApp = Args[0];
                     String hourApp = Args[1];
-                    String idPatientString = Args[2];
+                    String idPatientString = Args[4];
+
+                        if (hourApp == "01:00")
+                        {
+                            hourApp = "13:00";
+                        }
+                        else if (hourApp == "02:00")
+                        {
+                            hourApp = "14:00";
+                        }
+                        else if (hourApp == "03:00")
+                        {
+                            hourApp = "15:00";
+                        }
+                        else if (hourApp == "04:00")
+                        {
+                            hourApp = "16:00";
+                        }
+                        else if (hourApp == "05:00")
+                        {
+                            hourApp = "17:00";
+                        }
 
                     DateTime dateAppointment = Convert.ToDateTime(dateApp);
                     DateTime hourAppointment = new DateTime();
@@ -179,42 +199,46 @@ namespace Braindo.View.MentalExamModule
 
                     /*FIN - Proceso para obtener el ID de la cita*/
 
-                    String behavior = behavior_txt.Value;
-                    String attitude = attitude_txt.Value;
-                    String alertness = alertness_txt.Value;
-                    String awareness = awareness_txt.Value;
-                    String mood = mood_txt.Value;
-                    String language = language_txt.Value;
-                    String thought = thought_txt.Value;
-
-                    appointment = new Appointment(appointmentIDConsulted);
-
-                    MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
-
-                    try
+                    if (appointmentIDConsulted != 0)
                     {
-                        RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
+                        String behavior = behavior_txt.Value;
+                        String attitude = attitude_txt.Value;
+                        String alertness = alertness_txt.Value;
+                        String awareness = awareness_txt.Value;
+                        String mood = mood_txt.Value;
+                        String language = language_txt.Value;
+                        String thought = thought_txt.Value;
 
-                        cmd.execute();
+                        appointment = new Appointment(appointmentIDConsulted);
 
-                        mentalExamRegistered = cmd.getAnswer();
-                        if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                        MentalExam mentalExamRegister = new MentalExam(behavior, attitude, alertness, awareness, mood, language, thought, appointment);
+
+                        try
+                        {
+                            RegisterMentalExamCommand cmd = new RegisterMentalExamCommand(mentalExamRegister);
+
+                            cmd.execute();
+
+                            mentalExamRegistered = cmd.getAnswer();
+                            if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                            {
+
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
+                            }
+                        }
+                        catch (Exception ex)
                         {
 
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
-                        }
-                        else
-                        {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
-
+                            throw ex;
                         }
                     }
-                    catch (Exception ex)
-                    {
 
-                        throw ex;
-                    }
                 }
             }
         }

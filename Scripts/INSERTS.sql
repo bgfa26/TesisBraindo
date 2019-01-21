@@ -151,7 +151,7 @@ INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '1234', 'Barbara', 'Gilva
 INSERT INTO PACIENTE VALUES (24773340, 'Luis', 'Pérez', 22, 'Ingeniería Informática', 36);
 INSERT INTO PACIENTE VALUES (20678868, 'Ron', 'Navas', 25, 'Psicología', 36);
 
-INSERT INTO DIAGNOSTICO VALUES (nextval('diagnostico_codigo_seq'), '12/10/2018', '11255', '25%', 24773340, 24220210);
+INSERT INTO DIAGNOSTICO VALUES (nextval('diagnostico_codigo_seq'), '16/01/2019', '11255', '25%', 24773340, 24220210);
 
 INSERT INTO CITA VALUES (nextval('cita_codigo_seq'), '17/01/2019', '17:00', 'Probando', 24773340, 24220210);
 INSERT INTO CITA VALUES (nextval('cita_codigo_seq'), '18/01/2019', '09:00', 'Probando2', 24773340, 24220210);

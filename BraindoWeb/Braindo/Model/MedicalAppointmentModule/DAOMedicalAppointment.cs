@@ -360,6 +360,9 @@ namespace Braindo.Model.MedicalAppointmentModule
             Psychologist _psycho;
             MentalExam _exam;
 
+            String dateString;
+            String hourString;
+
             List<Appointment> _appointmentList = new List<Appointment>();
 
             try
@@ -408,11 +411,16 @@ namespace Braindo.Model.MedicalAppointmentModule
                             idExam = 0;
                         }
 
+                        /*Proceso para transformar date a dateString y hour a hourString*/
+
+                        dateString = date.ToString("dd-MM-yyyy");
+                        hourString = hour.ToString("hh:mm tt");
+
                         _patient = new Patient(idPatient, namePatient, surnamePatient);
                         _psycho = new Psychologist(idPsycho, namePsycho, surnamePsycho);
                         _exam = new MentalExam(idExam);
 
-                        _appointment = new Appointment(id, date, hour, reason, _patient, _psycho, _exam);
+                        _appointment = new Appointment(id, dateString, hourString, reason, _patient, _psycho, _exam);
 
                         _appointmentList.Add(_appointment);
                     }
