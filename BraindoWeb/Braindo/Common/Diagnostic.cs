@@ -15,6 +15,8 @@ namespace Braindo.Common
         private Psychologist psychologist;
         private int error;
 
+        private String diagnosisDateString;
+
         public Diagnostic()
         {
 
@@ -35,6 +37,16 @@ namespace Braindo.Common
         {
             this.ID = _ID;
             this.diagnosisDate = _date;
+            this.answer = _answer;
+            this.networkAnswer = _networkAnswer;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+        }
+
+        public Diagnostic(int _ID, String _diagnosisDateString, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        {
+            this.ID = _ID;
+            this.diagnosisDateString = _diagnosisDateString;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
             this.patient = _patient;
@@ -90,6 +102,12 @@ namespace Braindo.Common
         {
             get { return error; }
             set { error = value; }
+        }
+
+        public String _DiagnosisDateString
+        {
+            get { return diagnosisDateString; }
+            set { diagnosisDateString = value; }
         }
     }
 }
