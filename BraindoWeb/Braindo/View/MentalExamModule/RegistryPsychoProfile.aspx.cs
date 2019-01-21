@@ -53,25 +53,31 @@ namespace Braindo.View.MentalExamModule
 
                         consultedRegistered = cmd.getAnswer();
 
-                        foreach (Appointment _appointment in consultedRegistered)
+                        if (consultedRegistered.Count() != 0)
                         {
+                            foreach (Appointment _appointment in consultedRegistered)
+                            {
 
-                            int idApp = _appointment._ID;
+                                int idApp = _appointment._ID;
 
-                            DateTime dateAppointment = _appointment._Date;
-                            DateTime hourAppointment = _appointment._Hour;
-                            String dateApp = _appointment._DateString;
-                            String hourApp = _appointment._HourString;
+                                DateTime dateAppointment = _appointment._Date;
+                                DateTime hourAppointment = _appointment._Hour;
+                                String dateApp = _appointment._DateString;
+                                String hourApp = _appointment._HourString;
 
-                            int idPatient = _appointment._Patient._ID;
-                            String PatientName = _appointment._Patient._Name;
-                            String PatientSurname = _appointment._Patient._Surname;
-                            String Reason = _appointment._Reason;
+                                int idPatient = _appointment._Patient._ID;
+                                String PatientName = _appointment._Patient._Name;
+                                String PatientSurname = _appointment._Patient._Surname;
+                                String Reason = _appointment._Reason;
 
-                            patient_List.Items.Add(dateApp + " " +hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
-                            
+                                patient_List.Items.Add(dateApp + " " + hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
+
+                            }
                         }
-
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No existen citas sin examenes registrados');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                        }
                     }
                     catch (Exception ex)
                     {
