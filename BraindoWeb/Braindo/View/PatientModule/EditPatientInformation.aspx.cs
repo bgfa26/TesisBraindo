@@ -38,7 +38,7 @@ namespace Braindo.View.PatientModule
                     name_txt.Value = consulted._Name;
                     surname_txt.Value = consulted._Surname;
                     age_txt.Value = consulted._Age.ToString();
-                    career_txt.Value = consulted._Career;
+                    career1.SelectedValue = consulted._Career;
                 }
                 catch (Exception ex)
                 {
@@ -51,7 +51,7 @@ namespace Braindo.View.PatientModule
         protected void btnChangeData_Click(object sender, EventArgs e)
         {
 
-            if (name_txt.Value.Equals("") || surname_txt.Value.Equals("") || age_txt.Value.Equals("") || career_txt.Value.Equals("") || state1.SelectedValue.Equals("") || municipality1.SelectedValue.Equals("") || parish1.SelectedValue.Equals(""))
+            if (name_txt.Value.Equals("") || surname_txt.Value.Equals("") || age_txt.Value.Equals("") || career1.SelectedValue.Equals("") || state1.SelectedValue.Equals("") || municipality1.SelectedValue.Equals("") || parish1.SelectedValue.Equals(""))
             {
                 string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
@@ -65,7 +65,7 @@ namespace Braindo.View.PatientModule
                 String name = name_txt.Value;
                 String surname = surname_txt.Value;
                 int age = Convert.ToInt32(age_txt.Value);
-                String career = career_txt.Value;
+                String career = career1.SelectedValue;
                 String state = state1.SelectedValue;
                 String municipality = municipality1.SelectedValue;
                 String parish = parish1.SelectedValue;

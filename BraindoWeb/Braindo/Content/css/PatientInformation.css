@@ -124,6 +124,7 @@ fieldset[disabled] .form-control {
 #tblData{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight: bold;
+    table-layout: fixed;
 }
 
 #tblData th{
@@ -143,8 +144,12 @@ fieldset[disabled] .form-control {
 }
 
 #tblData td{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
     color: #222222;
     text-align: center;
+    font-size: 85%;
+    word-wrap:break-word;
 }
 
 .aspTableRow{
