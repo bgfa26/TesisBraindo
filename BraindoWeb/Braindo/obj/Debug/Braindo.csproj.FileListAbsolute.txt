@@ -10,12 +10,6 @@ C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Brai
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll.config
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.pdb
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
-C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll.config
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.pdb
@@ -26,5 +20,11 @@ C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bi
 C:\Users\Bárbara Fernández\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll.config
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.pdb
 C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
 C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
+C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
