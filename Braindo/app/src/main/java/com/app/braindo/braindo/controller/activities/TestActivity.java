@@ -1,7 +1,9 @@
 package com.app.braindo.braindo.controller.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +17,9 @@ import com.app.braindo.braindo.common.entities.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by LuisAlejandro on 11-10-2018.
@@ -44,12 +49,21 @@ public class TestActivity extends AppCompatActivity {
     private Spinner spTestOp14;
     private Spinner spTestOp15;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
             patient = (Patient) getIntent().getSerializableExtra("patient");
             super.onCreate(savedInstanceState);
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath("fonts/Raleway/Raleway-Regular.ttf")
+                    .setFontAttrId(R.attr.fontPath)
+                    .build()
+            );
             setContentView(R.layout.activity_test);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             spTestOp1 = (Spinner) findViewById(R.id.spTestOp1);
@@ -77,6 +91,9 @@ public class TestActivity extends AppCompatActivity {
                 }
 
             });
+
+            Typeface ralewayBoldFont = Typeface.createFromAsset(getAssets(),"fonts/Raleway/Raleway-Bold.ttf");
+            testButton.setTypeface(ralewayBoldFont);
 
         }catch(Exception ex){
             ex.getStackTrace();

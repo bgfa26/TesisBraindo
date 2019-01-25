@@ -24,7 +24,7 @@ public class DAOTest {
 
     private ResultSet rs;
     
-    public Test registrationTest (Test _test) throws Exception{
+    public Test registrationTest (Test _test, String neuralNetworkAnswers) throws Exception{
         
         Test _testError = new Test();
         CallableStatement cstmt;
@@ -46,7 +46,7 @@ public class DAOTest {
             answers += _test.get_answer40();
             cstmt.setDate(2, sqlDate);
             cstmt.setString(3, answers);
-            cstmt.setString(4, "Respuesta de la Red");
+            cstmt.setString(4, neuralNetworkAnswers);
             cstmt.setInt(5, _test.get_patient().get_id());
             cstmt.setString(6, _test.get_patient().get_email());
             cstmt.execute();

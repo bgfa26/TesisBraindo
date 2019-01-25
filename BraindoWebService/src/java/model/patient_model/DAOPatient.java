@@ -22,7 +22,7 @@ import static model.Registry.CODE_RESOURCE_CREATED;
 
 public class DAOPatient {
     private Connection _dbCon;
-    private static String _sqlPatientRegistration = "{?=call PACIENTE_REGISTRAR(?,?,?,?,?,?,?,?)}";
+    private static String _sqlPatientRegistration = "{?=call PACIENTE_REGISTRAR(?,?,?,?,?,?,?,?,?)}";
     private static String _sqlPatientValidation = "{?=call PACIENTE_EXISTE(?,?)}";
 
     private ResultSet rs;
@@ -49,6 +49,7 @@ public class DAOPatient {
             cstmt.setString(7, _patient.get_state());
             cstmt.setString(8, _patient.get_municipality());
             cstmt.setString(9, _patient.get_parish());
+            cstmt.setString(10, _patient.get_email());
             cstmt.execute();
             response = cstmt.getInt(1);
             
@@ -56,6 +57,11 @@ public class DAOPatient {
                 
                 _patient.set_error(CODE_RESOURCE_CREATED);
                 return _patient;    
+                
+            }else if(response == Registry.CODE_NON_EXISTENT_EMAIL){
+                
+                _patient.set_error(CODE_NON_EXISTENT_EMAIL);
+                return _patient;
                 
             }else{
                 
