@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,9 @@ import com.app.braindo.braindo.model.RestCommunication;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class LoginActivity extends AppCompatActivity {
     private LoginActivity.PatientLoginTask logTask = null;
 
@@ -34,6 +38,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private View progressView;
     private View loginFormView;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -54,6 +63,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         try {
             super.onCreate(savedInstanceState);
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath("fonts/Raleway/Raleway-Regular.ttf")
+                    .setFontAttrId(R.attr.fontPath)
+                    .build()
+            );
             setContentView(R.layout.activity_login);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -73,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
             });
 
             final Activity activity = this;
+            Typeface ralewayBoldFont = Typeface.createFromAsset(getAssets(),"fonts/Raleway/Raleway-Bold.ttf");
+            btnLogin.setTypeface(ralewayBoldFont);
 
         } catch (Exception ex) {
             ex.printStackTrace();

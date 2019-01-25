@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 
 public class RegistrationActivity extends AppCompatActivity{
     private RegistrationActivity.PatientSignUpTask authTask = null;
@@ -37,6 +41,14 @@ public class RegistrationActivity extends AppCompatActivity{
     private Button registrationButton;
 
     // UI references.
+    private TextView tvRegistrationSubtittle1;
+    private TextView tvRegistrationSubtittle2;
+    private TextView tvRegistrationEmail;
+    private TextView tvRegistrationCareer;
+    private TextView tvRegistrationAge;
+    private TextView tvRegistrationState;
+    private TextView tvRegistrationMunicipality;
+    private TextView tvRegistrationParish;
     private EditText etRegistrationID;
     private EditText etRegistrationFirstName;
     private EditText etRegistrationLastName;
@@ -46,6 +58,11 @@ public class RegistrationActivity extends AppCompatActivity{
     private Spinner spRegistrationMunicipality;
     private Spinner spRegistrationParish;
     private EditText etRegistrationEmail;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
@@ -73,10 +90,16 @@ public class RegistrationActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         try{
             super.onCreate(savedInstanceState);
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath("fonts/Raleway/Raleway-Regular.ttf")
+                    .setFontAttrId(R.attr.fontPath)
+                    .build()
+            );
             setContentView(R.layout.activity_registration);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
             // Set up the login form.
+            tvRegistrationSubtittle1 = (TextView) findViewById(R.id.tvRegistrationSubtittle1);
             etRegistrationID = (EditText) findViewById(R.id.etRegistrationID);
             etRegistrationFirstName = (EditText) findViewById(R.id.etRegistrationFirstName);
             etRegistrationLastName = (EditText) findViewById(R.id.etRegistrationLastName);
@@ -127,7 +150,6 @@ public class RegistrationActivity extends AppCompatActivity{
 
                 }
             });
-
 
             spRegistrationMunicipality.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
                 @Override
@@ -199,6 +221,9 @@ public class RegistrationActivity extends AppCompatActivity{
 
                 }
             });
+            Typeface ralewayBoldFont = Typeface.createFromAsset(getAssets(),"fonts/Raleway/Raleway-Bold.ttf");
+            registrationButton.setTypeface(ralewayBoldFont);
+
 
         }catch(Exception ex){
             ex.getStackTrace();
@@ -324,7 +349,6 @@ public class RegistrationActivity extends AppCompatActivity{
             try {
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodPatientRegistration(patientToRegister);
-                //response = patientToRegister;
                 return true;
             } catch (Exception e) {
                 return false;
@@ -348,6 +372,10 @@ public class RegistrationActivity extends AppCompatActivity{
                 }else if(response.get_error() == 500){
                     etRegistrationID.setError(getString(R.string.error_id_registered));
                     focusView = etRegistrationID;
+                    focusView.requestFocus();
+                }else if(response.get_error() == 300){
+                    etRegistrationEmail.setError(getString(R.string.error_not_registered_email));
+                    focusView = etRegistrationEmail;
                     focusView.requestFocus();
                 }else {
                     Context context = getApplicationContext();

@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,9 @@ import com.app.braindo.braindo.model.RestCommunication;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by LuisAlejandro on 30-10-2018.
@@ -49,6 +53,10 @@ public class Test3Activity extends AppCompatActivity {
     private Spinner spTestOp39;
     private EditText etTestOp40;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     public static final String VALID_ANSWER_REGEX = "^((?=[A-Za-zñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
 
@@ -56,11 +64,17 @@ public class Test3Activity extends AppCompatActivity {
         return name.matches(VALID_ANSWER_REGEX);
     }
 
+    private boolean addAnswers = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
             test = (Test) getIntent().getSerializableExtra("test");
             super.onCreate(savedInstanceState);
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath("fonts/Raleway/Raleway-Regular.ttf")
+                    .setFontAttrId(R.attr.fontPath)
+                    .build()
+            );
             setContentView(R.layout.activity_test3);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             spTestOp31 = (Spinner) findViewById(R.id.spTestOp31);
@@ -83,6 +97,9 @@ public class Test3Activity extends AppCompatActivity {
                 }
 
             });
+
+            Typeface ralewayBoldFont = Typeface.createFromAsset(getAssets(),"fonts/Raleway/Raleway-Bold.ttf");
+            testButton.setTypeface(ralewayBoldFont);
 
         } catch (Exception ex) {
             ex.getStackTrace();
@@ -133,16 +150,19 @@ public class Test3Activity extends AppCompatActivity {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             //showProgress(true);
-            test.addAnswer(answer31);
-            test.addAnswer(answer32);
-            test.addAnswer(answer33);
-            test.addAnswer(answer34);
-            test.addAnswer(answer35);
-            test.addAnswer(answer36);
-            test.addAnswer(answer37);
-            test.addAnswer(answer38);
-            test.addAnswer(answer39);
-            test.setAnswer40(etTestOp40.getText().toString());
+            if (addAnswers) {
+                test.addAnswer(answer31);
+                test.addAnswer(answer32);
+                test.addAnswer(answer33);
+                test.addAnswer(answer34);
+                test.addAnswer(answer35);
+                test.addAnswer(answer36);
+                test.addAnswer(answer37);
+                test.addAnswer(answer38);
+                test.addAnswer(answer39);
+                test.setAnswer40(etTestOp40.getText().toString());
+                addAnswers = false;
+            }
             testTask = new Test3Activity.SendTestTask(test);
             testTask.execute((Void) null);
         }

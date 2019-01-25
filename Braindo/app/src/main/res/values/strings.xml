@@ -65,6 +65,7 @@
     <string name="error_id_registered">La cédula utilizada ya se encuentra registrada en el sistema</string>
     <string name="error_id_not_registered">La cédula utilizada no se encuentra registrada en el sistema</string>
     <string name="error_invalid_email">El correo ingresado no es válido</string>
+    <string name="error_not_registered_email">El correo ingresado no se se encuentra registrado</string>
     <string name="error_bad_communication">Se produjo un problema de comunicación. Inténtelo de nuevo</string>
     <string name="operation_cancelled">La operación ha sido cancelada</string>
 </resources>

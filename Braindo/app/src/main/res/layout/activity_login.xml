@@ -111,7 +111,7 @@
                 android:backgroundTint="@android:color/white"
                 android:ems="10"
                 android:fontFamily="sans-serif"
-                android:hint="Correo Electrónico"
+                android:hint="Correo Electrónico del Psicólogo"
                 android:inputType="textEmailAddress"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
                 android:textColor="@color/white"
