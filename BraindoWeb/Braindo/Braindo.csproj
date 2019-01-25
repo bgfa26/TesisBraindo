@@ -117,6 +117,7 @@
     <Compile Include="Common\Psychologist.cs" />
     <Compile Include="Controller\Command.cs" />
     <Compile Include="Controller\PlaceModule\ConsultMunicipalityCommand.cs" />
+    <Compile Include="Controller\PlaceModule\ConsultMunicipalityIDCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultParishCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultStateCommand.cs" />
     <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticCommand.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Controller\MedicalAppointmenModule\DeleteMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\MedicalAppointmentExistCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ModifyMedicalAppointmentCommand.cs" />
+    <Compile Include="Controller\PlaceModule\ConsultStateIDCommand.cs" />
     <Compile Include="Controller\PsychologistModule\RegisterMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MentalExamModule\ConsultMentalExamCommand.cs" />
     <Compile Include="Controller\MentalExamModule\RegisterMentalExamCommand.cs" />

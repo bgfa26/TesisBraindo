@@ -186,5 +186,121 @@ namespace Braindo.Model.PlaceModule
                 conn.Close();
             }
         }
+
+        public Place consultStateID(Place _place)
+        {
+            int id;
+            String name;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("estado_consultar_codigo(@NAME)", conn);
+
+                NpgsqlParameter nameState = new NpgsqlParameter();
+
+                nameState.ParameterName = "@NAME";
+
+                nameState.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+
+                nameState.Direction = ParameterDirection.Input;
+
+                nameState.Value = _place._Name;
+
+                command.Parameters.Add(nameState);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        name = dr.GetString(1);
+
+                        _place = new Place(id, name);
+
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _place;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+                
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public Place consultMunicipalityID(Place _place)
+        {
+            int id;
+            String name;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("municipio_consultar_codigo(@NAME)", conn);
+
+                NpgsqlParameter nameState = new NpgsqlParameter();
+
+                nameState.ParameterName = "@NAME";
+
+                nameState.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+
+                nameState.Direction = ParameterDirection.Input;
+
+                nameState.Value = _place._Name;
+
+                command.Parameters.Add(nameState);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        name = dr.GetString(1);
+
+                        _place = new Place(id, name);
+
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _place;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

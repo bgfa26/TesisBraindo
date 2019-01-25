@@ -49,22 +49,20 @@
                                         </div>
                                          <div class="form-group-Patient">
                                             <label>Estado</label>
-                                            <asp:DropDownList id="state1" runat="server" CssClass="form-control-Patient">
-                                                <asp:ListItem Value="Distrito Capital">Distrito Capital</asp:ListItem>
-                                                <asp:ListItem Value="Vargas">Vargas</asp:ListItem>
-                                                <asp:ListItem Value="Miranda">Miranda</asp:ListItem>
+                                            <asp:DropDownList id="state1" runat="server" CssClass="form-control-Patient" AppendDataBoundItems="true"  AutoPostBack="True" OnSelectedIndexChanged ="State_SelectedIndex">
+                                    
                                             </asp:DropDownList>
                                         </div>
                                         <div class="form-group-Patient">
                                             <label>Municipio</label>
-                                            <asp:DropDownList id="municipality1" runat="server" CssClass="form-control-Patient">
-                                                <asp:ListItem Value="Libertador">Libertador</asp:ListItem>
+                                            <asp:DropDownList id="municipality1" runat="server" CssClass="form-control-Patient" AppendDataBoundItems="true"  AutoPostBack="True" OnSelectedIndexChanged ="Municipality_SelectedIndex">
+                                                
                                             </asp:DropDownList>
                                         </div>
                                         <div class="form-group-Patient">
                                             <label>Parroquia</label>
-                                            <asp:DropDownList id="parish1" runat="server" CssClass="form-control-Patient">
-                                                <asp:ListItem Value="El Recreo">El Recreo</asp:ListItem>
+                                            <asp:DropDownList id="parish1" runat="server" CssClass="form-control-Patient" AppendDataBoundItems="true"   AutoPostBack="True">
+                                                
                                             </asp:DropDownList>
                                         </div>
                                         <div class="form-group-Patient">

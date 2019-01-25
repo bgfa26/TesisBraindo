@@ -10,6 +10,7 @@ namespace Braindo.Common
         private int ID;
         private String type;
         private String name;
+        private int foreignID;
 
         public Place()
         {
@@ -19,6 +20,12 @@ namespace Braindo.Common
         public Place(String _name)
         {
             this.name = _name;
+        }
+
+        public Place(String _name, int _foreignID)
+        {
+            this.name = _name;
+            this.foreignID = _foreignID;
         }
 
         public Place(int _ID, String _name)
@@ -52,5 +59,10 @@ namespace Braindo.Common
             set { name = value; }
         }
 
+        public int _ForeignID
+        {
+            get { return foreignID; }
+            set { foreignID = value; }
+        }
     }
 }
