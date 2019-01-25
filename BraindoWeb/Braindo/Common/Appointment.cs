@@ -17,6 +17,9 @@ namespace Braindo.Common
         private MentalExam mentalExam;
         private int error;
 
+        private String dateString;
+        private String hourString;
+
         public Appointment()
         {
 
@@ -27,8 +30,15 @@ namespace Braindo.Common
             this.ID = _ID;
         }
 
-        public Appointment(Patient _patient, Psychologist _psychologist)
+        public Appointment(Psychologist _psychologist)
         {
+            this.psychologist = _psychologist;
+        }
+
+        public Appointment(DateTime _date, DateTime _hour, Patient _patient, Psychologist _psychologist)
+        {
+            this.date = _date;
+            this.hour = _hour;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }
@@ -51,14 +61,15 @@ namespace Braindo.Common
             this.reason = _reason;
         }
 
-        public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist)
+        public Appointment(int _ID, String _dateString, String _hourString, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
         {
             this.ID = _ID;
-            this.date = _date;
-            this.hour = _hour;
+            this.dateString = _dateString;
+            this.hourString = _hourString;
             this.reason = _reason;
             this.patient = _patient;
             this.psychologist = _psychologist;
+            this.mentalExam = _mentalExam;
         }
 
         public Appointment(int _ID, DateTime _date, DateTime _hour, String _reason, Patient _patient, Psychologist _psychologist, MentalExam _mentalExam)
@@ -79,6 +90,12 @@ namespace Braindo.Common
             this.reason = _reason;
             this.patient = _patient;
             this.psychologist = _psychologist;
+        }
+
+        public Appointment(DateTime _date, DateTime _hour)
+        {
+            this.date = _date;
+            this.hour = _hour;
         }
 
         public int _ID
@@ -127,6 +144,18 @@ namespace Braindo.Common
         {
             get { return error; }
             set { error = value; }
+        }
+
+        public String _DateString
+        {
+            get { return dateString; }
+            set { dateString = value; }
+        }
+
+        public String _HourString
+        {
+            get { return hourString; }
+            set { hourString = value; }
         }
 
     }

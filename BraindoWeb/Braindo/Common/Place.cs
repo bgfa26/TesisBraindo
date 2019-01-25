@@ -16,6 +16,17 @@ namespace Braindo.Common
 
         }
 
+        public Place(String _name)
+        {
+            this.name = _name;
+        }
+
+        public Place(int _ID, String _name)
+        {
+            this.ID = _ID;
+            this.name = _name;
+        }
+
         public Place(int _ID, String _type, String _name)
         {
             this.ID = _ID;

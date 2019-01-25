@@ -137,15 +137,17 @@ namespace Braindo.Model.MentalExamModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("examenmental_consultar(@ID)", conn);
-                NpgsqlParameter ID = new NpgsqlParameter();
+                NpgsqlCommand command = new NpgsqlCommand("EXAMENMENTAL_CONSULTAR(@ID)", conn);
+                NpgsqlParameter idMental = new NpgsqlParameter();
 
-                ID.ParameterName = "@ID";
-                ID.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
-                ID.Direction = ParameterDirection.Input;
+                idMental.ParameterName = "@ID";
+                idMental.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+                idMental.Direction = ParameterDirection.Input;
 
-                ID.Value = _mentalExam._ID;
-                command.Parameters.Add(ID);
+                idMental.Value = _mentalExam._ID;
+                command.Parameters.Add(idMental);
+
+                command.CommandType = CommandType.StoredProcedure;
 
                 NpgsqlDataReader dr = command.ExecuteReader();
 

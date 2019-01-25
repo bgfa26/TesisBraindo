@@ -30,7 +30,22 @@
                                         </div>
                                         <div class="form-group-Patient">
                                             <label>Carrera</label>
-                                            <input runat="server" id="career_txt" class="form-control-Patient"/>
+                                            <asp:DropDownList id="career1" runat="server" CssClass="form-control-Patient">
+                                                <asp:ListItem Value="Ingeniería Informática">Ingeniería Informática</asp:ListItem>
+                                                <asp:ListItem Value="Ingeniería Civil">Ingeniería Civil</asp:ListItem>
+                                                <asp:ListItem Value="Ingeniería en Telecomunicaciones">Ingeniería en Telecomunicaciones</asp:ListItem>
+                                                <asp:ListItem Value="Ingeniería Industrial">Ingeniería Industrial</asp:ListItem>
+                                                <asp:ListItem Value="Psicología">Psicología</asp:ListItem>
+                                                <asp:ListItem Value="Teología">Teología</asp:ListItem>
+                                                <asp:ListItem Value="Filosofía">Filosofía</asp:ListItem>
+                                                <asp:ListItem Value="Letras">Letras</asp:ListItem>
+                                                <asp:ListItem Value="Comunicación Social">Comunicación Social</asp:ListItem>
+                                                <asp:ListItem Value="Relaciones Industriales">Relaciones Industriales</asp:ListItem>
+                                                <asp:ListItem Value="Derecho">Derecho</asp:ListItem>
+                                                <asp:ListItem Value="Administración y Contaduría">Administración y Contaduría</asp:ListItem>
+                                                <asp:ListItem Value="Economía">Economía</asp:ListItem>
+                                                <asp:ListItem Value="Educación">Educación</asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                          <div class="form-group-Patient">
                                             <label>Estado</label>

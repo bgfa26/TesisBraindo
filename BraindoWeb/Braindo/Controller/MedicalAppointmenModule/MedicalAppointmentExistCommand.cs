@@ -7,20 +7,20 @@ using System.Web;
 
 namespace Braindo.Controller.MedicalAppointmenModule
 {
-    public class ConsultDetailedMedicalAppointment : Command
+    public class MedicalAppointmentExistCommand : Command
     {
-        private Appointment consultAppointment;
+        private Appointment consultDateHour;
         private Appointment answer;
 
-        public ConsultDetailedMedicalAppointment(Appointment _consultAppointment)
+        public MedicalAppointmentExistCommand(Appointment _consultDateHour)
         {
-            this.consultAppointment = _consultAppointment;
+            this.consultDateHour = _consultDateHour;
         }
 
         public override void execute()
         {
             DAOMedicalAppointment daoappointment = new DAOMedicalAppointment();
-            answer = daoappointment.consultDetailedAppointment(consultAppointment);
+            answer = daoappointment.MedicalAppointmentExist(consultDateHour);
         }
 
         public Appointment getAnswer()

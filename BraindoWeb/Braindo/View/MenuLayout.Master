@@ -52,7 +52,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="../MedicalAppointmentModule/ConsultMedicalAppointment.aspx"><i class="fa fa-font"></i> Consultar Citas</a></li>
                             <li><a href="../MedicalAppointmentModule/RegisterMedicalAppointment.aspx"><i class="fa fa-font"></i> Registrar Cita</a></li>
-                            <li><a href="../MedicalAppointmentModule/ModifyMedicalAppointment.aspx"><i class="fa fa-font"></i> Modificar Cita</a></li>
                         </ul>
                     </li>            
                 </ul>

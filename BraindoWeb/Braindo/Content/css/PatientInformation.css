@@ -124,6 +124,7 @@ fieldset[disabled] .form-control {
 #tblData{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight: bold;
+    table-layout: fixed;
 }
 
 #tblData th{
@@ -143,8 +144,12 @@ fieldset[disabled] .form-control {
 }
 
 #tblData td{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
     color: #222222;
     text-align: center;
+    font-size: 85%;
+    word-wrap:break-word;
 }
 
 .aspTableRow{
@@ -227,5 +232,22 @@ fieldset[disabled] .form-control {
   cursor: not-allowed;
   background-color: #adafae;
   opacity: 1;
+}
+
+#tblData tbody{
+    display: block;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#tblData thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#tblData thead {
+  width: calc( 100% - 1.1em );
 }
 

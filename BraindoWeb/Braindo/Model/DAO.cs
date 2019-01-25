@@ -30,9 +30,9 @@ namespace Braindo.Model
         public static NpgsqlConnection getConnection()
         {
             string connstring = String.Format("Server={0};Port={1};" +
-                    "User Id={2};Password={3};Database={4};",
+                    "User Id={2};Password={3};Database={4};Encoding={5};",
                     "localhost", "5432", "tesisbraindo",
-                    "barron", "braindo");
+                    "barron", "braindo", "Unicode");
 
             try
             {

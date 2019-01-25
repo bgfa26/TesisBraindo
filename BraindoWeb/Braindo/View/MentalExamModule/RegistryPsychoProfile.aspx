@@ -15,9 +15,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group form-group-MentalExam-select">
-                            <label>Lista de citas para hoy:</label>
-                            <asp:DropDownList id="patient_List" runat="server" CssClass="form-control">
-                                <asp:ListItem Value="24773340">24773340 - Luis Perez</asp:ListItem>
+                            <asp:Label ID="AppointmentList_Tittle" runat="server">Lista de citas:</asp:Label>
+                            <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">    
                             </asp:DropDownList>
                         </div>
                         <div class="panel-MentalExam panel-default">
@@ -51,7 +50,7 @@
                                     <textarea runat="server" id="thought_txt" class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="form-group-MentalExam">
-                                    <asp:Button ID="btnModifyAppointment" runat="server" Text="Registrar Examen" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
+                                    <asp:Button ID="btnRegisterPsychoProfile" runat="server" Text="Registrar Examen" OnClick = "btnRegisterPsychoProfile_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
                                 </div>
                             </div>
                         </div>

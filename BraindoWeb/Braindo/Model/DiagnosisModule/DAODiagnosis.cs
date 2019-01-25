@@ -181,7 +181,8 @@ namespace Braindo.Model.DiagnosisModule
             String psychoSurname;
 
             List<Diagnostic> diagnosticList = new List<Diagnostic>();
-            
+
+            String DiagnosisDateString;
 
             try
             {
@@ -224,14 +225,12 @@ namespace Braindo.Model.DiagnosisModule
                         psychoName = dr.GetString(6);
                         psychoSurname = dr.GetString(7);
 
-                        /*String diagdateString = diagnosisDate.ToString("dd/MM/yyyy");
-
-                        DateTime correctDate = Convert.ToDateTime(diagdateString);*/
+                        DiagnosisDateString = diagnosisDate.ToString("dd-MM-yyyy");
 
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, diagnosisDate, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, DiagnosisDateString, answer, networkAnswer, _patient, _psycho);
 
                         diagnosticList.Add(_diagnostic);
                     }
