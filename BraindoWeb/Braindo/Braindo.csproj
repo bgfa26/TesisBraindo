@@ -88,8 +88,11 @@
     <Content Include="Content\images\LogoLetrasMin.png" />
     <Content Include="Content\images\LogoSoloMin.png" />
     <Content Include="Content\images\search.ico" />
+    <Content Include="Content\js\AlphanumericValidation.js" />
     <Content Include="Content\js\gridData.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\js\OnlyNumbersValidation.js" />
+    <Content Include="Content\js\OnlyLettersValidation.js" />
     <Content Include="Content\js\shieldui-all.min.js" />
     <Content Include="lib\mono.security.dll" />
     <Content Include="lib\npgsql.dll" />

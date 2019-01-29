@@ -52,7 +52,7 @@ namespace Braindo.View.MedicalAppointmentModule
         protected void btnRegisterAppointment_Click(object sender, EventArgs e)
         {
 
-            if (date_appointment.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reason_txt.Value.Equals(""))
+            if (date_appointment.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reasonTXT.Text.Equals(""))
             {
                 string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
@@ -93,7 +93,7 @@ namespace Braindo.View.MedicalAppointmentModule
                         DateTime hourAppointment = new DateTime();
                         hourAppointment = DateTime.ParseExact(hora, "HH:mm", null);
 
-                        String reason = reason_txt.Value;
+                        String reason = reasonTXT.Text;
 
                         String selectItem = patient_List.SelectedItem.Text;
 

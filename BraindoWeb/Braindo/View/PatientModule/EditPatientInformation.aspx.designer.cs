@@ -22,31 +22,31 @@ namespace Braindo.View.PatientModule {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// name_txt control.
+        /// nameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_txt;
+        protected global::System.Web.UI.WebControls.TextBox nameTXT;
         
         /// <summary>
-        /// surname_txt control.
+        /// surnameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText surname_txt;
+        protected global::System.Web.UI.WebControls.TextBox surnameTXT;
         
         /// <summary>
-        /// age_txt control.
+        /// ageTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText age_txt;
+        protected global::System.Web.UI.WebControls.TextBox ageTXT;
         
         /// <summary>
         /// career1 control.

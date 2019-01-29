@@ -22,40 +22,40 @@ namespace Braindo.View.PsychologistModule {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// name_txt control.
+        /// nameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_txt;
+        protected global::System.Web.UI.WebControls.TextBox nameTXT;
         
         /// <summary>
-        /// secondName_txt control.
+        /// secondNameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText secondName_txt;
+        protected global::System.Web.UI.WebControls.TextBox secondNameTXT;
         
         /// <summary>
-        /// surname_txt control.
+        /// surnameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText surname_txt;
+        protected global::System.Web.UI.WebControls.TextBox surnameTXT;
         
         /// <summary>
-        /// secondSurname_txt control.
+        /// secondSurnameTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText secondSurname_txt;
+        protected global::System.Web.UI.WebControls.TextBox secondSurnameTXT;
         
         /// <summary>
         /// date control.
@@ -67,13 +67,13 @@ namespace Braindo.View.PsychologistModule {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date;
         
         /// <summary>
-        /// registrationNumber_txt control.
+        /// registrationNumberTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText registrationNumber_txt;
+        protected global::System.Web.UI.WebControls.TextBox registrationNumberTXT;
         
         /// <summary>
         /// email_txt control.
@@ -82,7 +82,7 @@ namespace Braindo.View.PsychologistModule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email_txt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email_txt;
         
         /// <summary>
         /// btnChangeData control.

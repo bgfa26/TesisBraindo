@@ -24,7 +24,7 @@ namespace Braindo.View.PsychologistModule
         protected void btnChange_Click(object sender, EventArgs e)
         {
 
-            if (pass_txt.Value.Equals(""))
+            if (passTXT.Text.Equals(""))
             {
                 string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
@@ -33,7 +33,7 @@ namespace Braindo.View.PsychologistModule
             else
             {
                 int id = 24220210;
-                String password = pass_txt.Value;
+                String password = passTXT.Text;
                 psycho = new Psychologist(id, password);
 
                 ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);

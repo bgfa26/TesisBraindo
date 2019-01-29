@@ -33,11 +33,11 @@ namespace Braindo.View.PsychologistModule
                     psychoConsult.execute();
                     psychoConsulted = psychoConsult.getAnswer();
 
-                    name_txt.Value = psychoConsulted._Name;
-                    secondName_txt.Value = psychoConsulted._SecondName;
-                    surname_txt.Value = psychoConsulted._Surname;
-                    secondSurname_txt.Value = psychoConsulted._SecondSurname;
-                    registrationNumber_txt.Value = psychoConsulted._RegistrationNumber;
+                    nameTXT.Text = psychoConsulted._Name;
+                    secondNameTXT.Text = psychoConsulted._SecondName;
+                    surnameTXT.Text = psychoConsulted._Surname;
+                    secondSurnameTXT.Text = psychoConsulted._SecondSurname;
+                    registrationNumberTXT.Text = psychoConsulted._RegistrationNumber;
                     email_txt.Value = psychoConsulted._Email;
 
                     DateTime birthdatePsycho = psychoConsulted._Birthdate;
@@ -56,7 +56,7 @@ namespace Braindo.View.PsychologistModule
         protected void btnChangeData_Click(object sender, EventArgs e)
         {
 
-            if (name_txt.Value.Equals("") || secondName_txt.Value.Equals("") || surname_txt.Value.Equals("") || secondSurname_txt.Value.Equals("") || date.Value.Equals("") || registrationNumber_txt.Value.Equals("") || email_txt.Value.Equals(""))
+            if (nameTXT.Text.Equals("") || secondNameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || secondSurnameTXT.Text.Equals("") || date.Value.Equals("") || registrationNumberTXT.Text.Equals("") || email_txt.Value.Equals(""))
             {
                 string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
@@ -66,11 +66,11 @@ namespace Braindo.View.PsychologistModule
             {
                 int cedula = 24220210;
                 String correo = email_txt.Value;
-                String primerNombre = name_txt.Value;
-                String segundoNombre = secondName_txt.Value;
-                String primerApellido = surname_txt.Value;
-                String segundoApellido = secondSurname_txt.Value;
-                String numeroMatricula = registrationNumber_txt.Value;
+                String primerNombre = nameTXT.Text;
+                String segundoNombre = secondNameTXT.Text;
+                String primerApellido = surnameTXT.Text;
+                String segundoApellido = secondSurnameTXT.Text;
+                String numeroMatricula = registrationNumberTXT.Text;
                 String fechaNac = date.Value;
 
                 DateTime oDate = DateTime.Parse(fechaNac);

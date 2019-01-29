@@ -2,6 +2,8 @@
 
 <asp:Content ID="ContentPsychoEdit" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
+    <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
+    <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
 </asp:Content>
 
 <asp:Content ID="ContentPsychoEdit2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
@@ -19,31 +21,36 @@
                                         <div class="panel-body-EditProfile">
                                         <div class="form-group-ProfileEdit">
                                             <label>Primer Nombre</label>
-                                            <input runat="server" id="name_txt" class="form-control-ProfileEdit"/>
+                                            <asp:TextBox runat="server" id="nameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                            </asp:TextBox>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Segundo Nombre</label>
-                                            <input runat="server" id="secondName_txt" class="form-control-ProfileEdit"/>
+                                            <asp:TextBox runat="server" id="secondNameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                            </asp:TextBox>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Primer Apellido</label>
-                                            <input runat="server" id="surname_txt" class="form-control-ProfileEdit"/>
+                                            <asp:TextBox runat="server" id="surnameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                            </asp:TextBox>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Segundo Apellido</label>
-                                            <input runat="server" id="secondSurname_txt" class="form-control-ProfileEdit"/>
+                                            <asp:TextBox runat="server" id="secondSurnameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                            </asp:TextBox>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Fecha de Nacimiento</label>
-                                            <input runat="server" id="date" type="date" class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="date" type="date" required="required" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Número de Matricula</label>
-                                            <input runat="server" id="registrationNumber_txt" class="form-control-ProfileEdit"/>
+                                            <asp:TextBox runat="server" id="registrationNumberTXT" onkeypress="return AllowAlphaNumeric(event)" CssClass="form-control-ProfileEdit">
+                                            </asp:TextBox>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <label>Correo Electrónico</label>
-                                            <input runat="server" id="email_txt" class="form-control-ProfileEdit"/>
+                                            <input runat="server" id="email_txt" type="email" class="form-control-ProfileEdit"/>
                                         </div>
                                         <div class="form-group-ProfileEdit">
                                             <asp:Button ID="btnChangeData" runat="server" Text="Modificar Datos" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>

@@ -3,6 +3,7 @@
 <asp:Content ID="ContentPsychoChange" ContentPlaceHolderID="head" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
+    <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
 
 </asp:Content>
 
@@ -22,7 +23,8 @@
                                         <div class="panel-body-EditProfile">
                                             <div class="form-group-ProfileEdit">
                                                 <label>Nueva Contraseña</label>
-                                                <input runat="server" id="pass_txt" class="form-control-ProfileEdit"/>
+                                                <asp:TextBox runat="server" id="passTXT" onkeypress="return AllowAlphaNumeric(event)" CssClass="form-control-ProfileEdit">
+                                                </asp:TextBox>
                                             </div>  
                                             <div class="form-group-ProfileEdit">
                                                 <asp:Button ID="btnChange" runat="server" Text="Cambiar Contraseña" OnClick = "btnChange_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>

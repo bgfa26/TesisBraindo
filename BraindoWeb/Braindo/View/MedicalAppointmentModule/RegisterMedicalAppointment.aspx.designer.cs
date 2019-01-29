@@ -49,13 +49,13 @@ namespace Braindo.View.MedicalAppointmentModule {
         protected global::System.Web.UI.WebControls.DropDownList hour_appointment;
         
         /// <summary>
-        /// reason_txt control.
+        /// reasonTXT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText reason_txt;
+        protected global::System.Web.UI.WebControls.TextBox reasonTXT;
         
         /// <summary>
         /// btnRegisterAppointment control.

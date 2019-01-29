@@ -3,6 +3,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" type="text/css" href="/Content/css/MedicalAppointment.css" />
+        <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
+        <script type="text/javascript" src="/Content/js/OnlyNumbersValidation.js"></script>
+        <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
 </asp:Content>
 
 
@@ -40,7 +43,8 @@
                                             </div>
                                             <div class="form-group-Medical">
                                                 <label>Motivo</label>
-                                                <input runat="server" id="reason_txt" class="form-control-Medical"/>
+                                                <asp:TextBox runat="server" id="reasonTXT" CssClass="form-control-Medical">
+                                                </asp:TextBox>
                                             </div>                           
                                             <div class="form-group-Medical">
                                                 <asp:Button ID="btnModifyAppointment" runat="server" Text="Modificar Cita" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-Medical"></asp:Button>
