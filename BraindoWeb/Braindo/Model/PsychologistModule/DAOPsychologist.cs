@@ -266,6 +266,83 @@ namespace Braindo.Model.PsychologistModule
                 conn.Close();
             }
         }
+
+        public Psychologist loginPsychologist(Psychologist _psychologist)
+        {
+            int id;
+            String email;
+            String pass;
+            String name;
+            String secondName;
+            String surname;
+            String secondSurname;
+            String registrationNumber;
+            DateTime birthdate;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("psicologo_iniciarsesion(@PSYCHOEMAIL, @PSYCHOPASS)", conn);
+
+                NpgsqlParameter _email = new NpgsqlParameter();
+                NpgsqlParameter _pass = new NpgsqlParameter();
+
+                _email.ParameterName = "@PSYCHOEMAIL";
+                _pass.ParameterName = "@PSYCHOPASS";
+
+                _email.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+                _pass.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
+
+                _email.Direction = ParameterDirection.Input;
+                _pass.Direction = ParameterDirection.Input;
+
+                _email.Value = _psychologist._Email;
+                _pass.Value = _psychologist._Password;
+
+                command.Parameters.Add(_email);
+                command.Parameters.Add(_pass);
+
+                command.CommandType = CommandType.StoredProcedure;
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        email = dr.GetString(1);
+                        pass = dr.GetString(2);
+                        name = dr.GetString(3);
+                        secondName = dr.GetString(4);
+                        surname = dr.GetString(5);
+                        secondSurname = dr.GetString(6);
+                        registrationNumber = dr.GetString(7);
+                        birthdate = dr.GetDateTime(8);
+                        _psychologist = new Psychologist(id, email, pass, name, secondName, surname, secondSurname, registrationNumber, birthdate);
+
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return _psychologist;
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw ex;
+                }
+
+            }
+            catch (NpgsqlException ex2)
+            {
+                
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         
     }
 }
