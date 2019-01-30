@@ -11,7 +11,10 @@ namespace Braindo.View.IndexModule
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["USER_ID"] == null)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='LoginTest.aspx';", true);
+            }
         }
     }
 }

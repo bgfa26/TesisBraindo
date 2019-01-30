@@ -33,8 +33,18 @@ namespace Braindo.View.IndexModule
             {
                 cmd.execute();
                 _psychologistConsulted = cmd.getAnswer();
-                String emailTest = _psychologistConsulted._Email;
-                String passTest = _psychologistConsulted._Password;
+
+                if (_psychologistConsulted._ID == 0)
+                {
+                    String myStringVariable = "ERROR! No existe la cuenta, verificar datos";
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
+                }
+                else
+                {
+                    Session["USER_ID"] = _psychologistConsulted._ID;
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicio de sesion exitoso, Bienvenido');window.location.href='../IndexModule/index.aspx';", true);
+                }
+                
             }
             catch (Exception ex)
             {

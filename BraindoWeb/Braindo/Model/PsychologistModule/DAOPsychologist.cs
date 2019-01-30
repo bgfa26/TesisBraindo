@@ -319,6 +319,7 @@ namespace Braindo.Model.PsychologistModule
                         secondSurname = dr.GetString(6);
                         registrationNumber = dr.GetString(7);
                         birthdate = dr.GetDateTime(8);
+
                         _psychologist = new Psychologist(id, email, pass, name, secondName, surname, secondSurname, registrationNumber, birthdate);
 
                     }

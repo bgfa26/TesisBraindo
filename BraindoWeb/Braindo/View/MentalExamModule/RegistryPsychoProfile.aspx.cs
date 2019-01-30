@@ -25,66 +25,74 @@ namespace Braindo.View.MentalExamModule
 
             if (!Page.IsPostBack)
             {
-                String idAppointment = Request.QueryString["appointmentID"];
-
-                int idInt = Convert.ToInt32(idAppointment);
-
-                if (idInt != 0)
+                if (Session["USER_ID"] == null)
                 {
-                    AppointmentList_Tittle.Visible = false;
-                    patient_List.Visible = false;
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
                 else
                 {
-                    AppointmentList_Tittle.Visible = true;
-                    patient_List.Visible = true;
+                    String idAppointment = Request.QueryString["appointmentID"];
 
-                    int idPsycho = 24220210;
+                    int idInt = Convert.ToInt32(idAppointment);
 
-                    psycho = new Psychologist(idPsycho);
-
-                    consultRegistered = new Appointment(psycho);
-
-                    try
+                    if (idInt != 0)
                     {
-                        ConsultRegisteredAppointmentsCommand cmd = new ConsultRegisteredAppointmentsCommand(consultRegistered);
+                        AppointmentList_Tittle.Visible = false;
+                        patient_List.Visible = false;
+                    }
+                    else
+                    {
+                        AppointmentList_Tittle.Visible = true;
+                        patient_List.Visible = true;
 
-                        cmd.execute();
+                        String idSession = Session["USER_ID"].ToString();
+                        int idPsycho = Convert.ToInt32(idSession);
 
-                        consultedRegistered = cmd.getAnswer();
+                        psycho = new Psychologist(idPsycho);
 
-                        if (consultedRegistered.Count() != 0)
+                        consultRegistered = new Appointment(psycho);
+
+                        try
                         {
-                            foreach (Appointment _appointment in consultedRegistered)
+                            ConsultRegisteredAppointmentsCommand cmd = new ConsultRegisteredAppointmentsCommand(consultRegistered);
+
+                            cmd.execute();
+
+                            consultedRegistered = cmd.getAnswer();
+
+                            if (consultedRegistered.Count() != 0)
                             {
+                                foreach (Appointment _appointment in consultedRegistered)
+                                {
 
-                                int idApp = _appointment._ID;
+                                    int idApp = _appointment._ID;
 
-                                DateTime dateAppointment = _appointment._Date;
-                                DateTime hourAppointment = _appointment._Hour;
-                                String dateApp = _appointment._DateString;
-                                String hourApp = _appointment._HourString;
+                                    DateTime dateAppointment = _appointment._Date;
+                                    DateTime hourAppointment = _appointment._Hour;
+                                    String dateApp = _appointment._DateString;
+                                    String hourApp = _appointment._HourString;
 
-                                int idPatient = _appointment._Patient._ID;
-                                String PatientName = _appointment._Patient._Name;
-                                String PatientSurname = _appointment._Patient._Surname;
-                                String Reason = _appointment._Reason;
+                                    int idPatient = _appointment._Patient._ID;
+                                    String PatientName = _appointment._Patient._Name;
+                                    String PatientSurname = _appointment._Patient._Surname;
+                                    String Reason = _appointment._Reason;
 
-                                patient_List.Items.Add(dateApp + " " + hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
+                                    patient_List.Items.Add(dateApp + " " + hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
 
+                                }
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No existen citas sin examenes registrados');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
                             }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No existen citas sin examenes registrados');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+
+                            throw ex;
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        
-                        throw ex;
-                    }
-                }
+                } 
             }
         }
 
@@ -178,7 +186,9 @@ namespace Braindo.View.MentalExamModule
                     hourAppointment = DateTime.ParseExact(hourApp, "HH:mm", null);
 
                     int Patient = Convert.ToInt32(idPatientString);
-                    int Psycho = 24220210;
+
+                    String idSession = Session["USER_ID"].ToString();
+                    int Psycho = Convert.ToInt32(idSession);
                     int appointmentIDConsulted;
 
                     Patient consultPatient = new Patient(Patient);

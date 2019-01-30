@@ -24,27 +24,35 @@ namespace Braindo.View.MedicalAppointmentModule
         {
             if (!Page.IsPostBack)
             {
-                ConsultPatientsCommand cmd = new ConsultPatientsCommand();
 
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    listOfPatientsConsulted = cmd.getAnswer();
-
-                    foreach (Patient _patient in listOfPatientsConsulted)
-                    {
-                        int idPatient = _patient._ID;
-                        String patientName = _patient._Name;
-                        String patientSurname = _patient._Surname;
-
-
-                        patient_List.Items.Add(idPatient + " " + patientName + " " + patientSurname);
-                    }
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
-                    
-                    throw ex;
+                    ConsultPatientsCommand cmd = new ConsultPatientsCommand();
+
+                    try
+                    {
+                        cmd.execute();
+                        listOfPatientsConsulted = cmd.getAnswer();
+
+                        foreach (Patient _patient in listOfPatientsConsulted)
+                        {
+                            int idPatient = _patient._ID;
+                            String patientName = _patient._Name;
+                            String patientSurname = _patient._Surname;
+
+
+                            patient_List.Items.Add(idPatient + " " + patientName + " " + patientSurname);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
         }
@@ -103,7 +111,8 @@ namespace Braindo.View.MedicalAppointmentModule
 
                         int id_patientSelected = Convert.ToInt32(idPatientString);
 
-                        int idPsycho = 24220210;
+                        String idSession = Session["USER_ID"].ToString();
+                        int idPsycho = Convert.ToInt32(idSession);
 
                         Patient _patient = new Patient(id_patientSelected);
                         Psychologist _psycho = new Psychologist(idPsycho);

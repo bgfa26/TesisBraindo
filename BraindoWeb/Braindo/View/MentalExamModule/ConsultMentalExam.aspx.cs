@@ -19,9 +19,15 @@ namespace Braindo.View.MentalExamModule
 
             if (!Page.IsPostBack)
             {
-                String idAppointment = Request.QueryString["mentalExamID"];
+                if (Session["USER_ID"] == null)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
+                }
+                else
+                {
+                    String idAppointment = Request.QueryString["mentalExamID"];
 
-                int idInt = Convert.ToInt32(idAppointment);
+                    int idInt = Convert.ToInt32(idAppointment);
 
 
                     mentalExam = new MentalExam(idInt);
@@ -46,7 +52,7 @@ namespace Braindo.View.MentalExamModule
 
                         throw ex;
                     }
-                
+                }           
             }
         }
     }

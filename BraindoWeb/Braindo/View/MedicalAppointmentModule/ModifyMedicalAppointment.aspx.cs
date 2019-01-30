@@ -24,35 +24,43 @@ namespace Braindo.View.MedicalAppointmentModule
         {
             if (!Page.IsPostBack)
             {
-                String idAppointment = Request.QueryString["appointmentID"];
 
-                int idInt = Convert.ToInt32(idAppointment);
-
-                appointmentConsult = new Appointment(idInt);
-
-                ConsultDetailedMedicalAppointmentCommand cmd = new ConsultDetailedMedicalAppointmentCommand(appointmentConsult);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    appointmentConsulted = cmd.getAnswer();
-
-                    DateTime dateAppointment = appointmentConsulted._Date;
-
-                    date_appointment_txt.Value = dateAppointment.ToString("yyyy-MM-dd");
-
-                    DateTime hourAppointment = appointmentConsulted._Hour;
-
-                    hour_appointment.SelectedValue = hourAppointment.ToString("HH:mm");
-
-                    reasonTXT.Text = appointmentConsulted._Reason;
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
-                    
-                    throw ex;
-                }
+                    String idAppointment = Request.QueryString["appointmentID"];
+
+                    int idInt = Convert.ToInt32(idAppointment);
+
+                    appointmentConsult = new Appointment(idInt);
+
+                    ConsultDetailedMedicalAppointmentCommand cmd = new ConsultDetailedMedicalAppointmentCommand(appointmentConsult);
+
+                    try
+                    {
+                        cmd.execute();
+                        appointmentConsulted = cmd.getAnswer();
+
+                        DateTime dateAppointment = appointmentConsulted._Date;
+
+                        date_appointment_txt.Value = dateAppointment.ToString("yyyy-MM-dd");
+
+                        DateTime hourAppointment = appointmentConsulted._Hour;
+
+                        hour_appointment.SelectedValue = hourAppointment.ToString("HH:mm");
+
+                        reasonTXT.Text = appointmentConsulted._Reason;
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }     
             }
         }
 
