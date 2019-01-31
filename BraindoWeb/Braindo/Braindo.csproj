@@ -97,6 +97,7 @@
     <Content Include="lib\mono.security.dll" />
     <Content Include="lib\npgsql.dll" />
     <Content Include="View\IndexModule\LoginTest.aspx" />
+    <Content Include="View\IndexModule\Register.aspx" />
     <Content Include="View\MedicalAppointmentModule\ModifyMedicalAppointment.aspx" />
     <Content Include="View\MentalExamModule\ConsultMentalExam.aspx" />
     <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
@@ -147,6 +148,7 @@
     <Compile Include="Controller\PsychologistModule\ConsultPsychoInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\EditInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\LoginPsychologistCommandcs.cs" />
+    <Compile Include="Controller\PsychologistModule\RegisterPsychologistCommand.cs" />
     <Compile Include="Model\DAO.cs" />
     <Compile Include="Model\PlaceModule\DAOPlace.cs" />
     <Compile Include="Model\DiagnosisModule\DAODiagnosis.cs" />
@@ -162,6 +164,13 @@
     </Compile>
     <Compile Include="View\IndexModule\LoginTest.aspx.designer.cs">
       <DependentUpon>LoginTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\IndexModule\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\IndexModule\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\MedicalAppointmentModule\ModifyMedicalAppointment.aspx.cs">
       <DependentUpon>ModifyMedicalAppointment.aspx</DependentUpon>
