@@ -40,8 +40,11 @@ public class RegistrationTestCommand extends Command{
         for (double[] neuralNetworkResponse : neuralNetworkResponses) {
             neuralNetworkAnswers += neuralNetworkResponse[0] + "/";
         }
+        TextAnalyzerCommand pdCmd = new TextAnalyzerCommand(testToRegister.get_answer40());
+        pdCmd.execute();
+        ArrayList<String> parallelDotsAnswers = pdCmd.getResponses();
         DAOTest daoTest = new DAOTest();
-        response = daoTest.registrationTest(testToRegister, neuralNetworkAnswers);
+        response = daoTest.registrationTest(testToRegister, neuralNetworkAnswers, parallelDotsAnswers.get(0), parallelDotsAnswers.get(1));
         
     }
     

@@ -13,16 +13,12 @@ public class Test implements Serializable {
     public Test(){}
 
     public Test(Patient _patient){
-        setAnswers();
+        answers = new ArrayList<Integer>();
         setPatient(_patient);
     }
 
     public ArrayList<Integer> getAnswers() {
         return answers;
-    }
-
-    public void setAnswers() {
-        this.answers = new ArrayList<Integer>();
     }
 
     public Patient getPatient() {
@@ -34,7 +30,7 @@ public class Test implements Serializable {
     }
 
     public void addAnswer(int answer){
-        answers.add(answer);
+        getAnswers().add(answer);
     }
 
     public String getAnswer40() {
@@ -53,4 +49,7 @@ public class Test implements Serializable {
         this._error = _error;
     }
 
+    public void setAnswers(ArrayList<Integer> answers) {
+        this.answers = answers;
+    }
 }

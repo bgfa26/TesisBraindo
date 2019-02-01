@@ -56,6 +56,14 @@ public class Test2Activity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        Intent myintent = new Intent(Test2Activity.this, TestActivity.class);
+        myintent.putExtra("test", test);
+        finish();
+        startActivity(myintent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
             test = (Test) getIntent().getSerializableExtra("test");
@@ -101,40 +109,62 @@ public class Test2Activity extends AppCompatActivity {
         }
     }
     private void moveToTest(){
-        int answer16 = spTestOp16.getSelectedItemPosition() + 1;
-        int answer17 = spTestOp17.getSelectedItemPosition() + 1;
-        int answer18 = spTestOp18.getSelectedItemPosition() + 1;
-        int answer19 = spTestOp19.getSelectedItemPosition() + 1;
-        int answer20 = spTestOp20.getSelectedItemPosition() + 1;
-        int answer21 = spTestOp21.getSelectedItemPosition() + 1;
-        int answer22 = spTestOp22.getSelectedItemPosition() + 1;
-        int answer23 = spTestOp23.getSelectedItemPosition() + 1;
-        int answer24 = spTestOp24.getSelectedItemPosition() + 1;
-        int answer25 = spTestOp25.getSelectedItemPosition() + 1;
-        int answer26 = spTestOp26.getSelectedItemPosition() + 1;
-        int answer27 = spTestOp27.getSelectedItemPosition() + 1;
-        int answer28 = spTestOp28.getSelectedItemPosition() + 1;
-        int answer29 = spTestOp29.getSelectedItemPosition() + 1;
-        int answer30 = spTestOp30.getSelectedItemPosition() + 1;
+        try {
+            int answer16 = spTestOp16.getSelectedItemPosition() + 1;
+            int answer17 = spTestOp17.getSelectedItemPosition() + 1;
+            int answer18 = spTestOp18.getSelectedItemPosition() + 1;
+            int answer19 = spTestOp19.getSelectedItemPosition() + 1;
+            int answer20 = spTestOp20.getSelectedItemPosition() + 1;
+            int answer21 = spTestOp21.getSelectedItemPosition() + 1;
+            int answer22 = spTestOp22.getSelectedItemPosition() + 1;
+            int answer23 = spTestOp23.getSelectedItemPosition() + 1;
+            int answer24 = spTestOp24.getSelectedItemPosition() + 1;
+            int answer25 = spTestOp25.getSelectedItemPosition() + 1;
+            int answer26 = spTestOp26.getSelectedItemPosition() + 1;
+            int answer27 = spTestOp27.getSelectedItemPosition() + 1;
+            int answer28 = spTestOp28.getSelectedItemPosition() + 1;
+            int answer29 = spTestOp29.getSelectedItemPosition() + 1;
+            int answer30 = spTestOp30.getSelectedItemPosition() + 1;
 
-        test.addAnswer(answer16);
-        test.addAnswer(answer17);
-        test.addAnswer(answer18);
-        test.addAnswer(answer19);
-        test.addAnswer(answer20);
-        test.addAnswer(answer21);
-        test.addAnswer(answer22);
-        test.addAnswer(answer23);
-        test.addAnswer(answer24);
-        test.addAnswer(answer25);
-        test.addAnswer(answer26);
-        test.addAnswer(answer27);
-        test.addAnswer(answer28);
-        test.addAnswer(answer29);
-        test.addAnswer(answer30);
-        Intent myintent = new Intent (Test2Activity.this, Test3Activity.class);
-        myintent.putExtra("test", test);
-        finish();
-        startActivity(myintent);
+            if (test.getAnswers().size() >= 30) {
+                test.getAnswers().set(15, answer16);
+                test.getAnswers().set(16, answer17);
+                test.getAnswers().set(17, answer18);
+                test.getAnswers().set(18, answer19);
+                test.getAnswers().set(19, answer20);
+                test.getAnswers().set(20, answer21);
+                test.getAnswers().set(21, answer22);
+                test.getAnswers().set(22, answer23);
+                test.getAnswers().set(23, answer24);
+                test.getAnswers().set(24, answer25);
+                test.getAnswers().set(25, answer26);
+                test.getAnswers().set(26, answer27);
+                test.getAnswers().set(27, answer28);
+                test.getAnswers().set(28, answer29);
+                test.getAnswers().set(29, answer30);
+            }else{
+                test.addAnswer(answer16);
+                test.addAnswer(answer17);
+                test.addAnswer(answer18);
+                test.addAnswer(answer19);
+                test.addAnswer(answer20);
+                test.addAnswer(answer21);
+                test.addAnswer(answer22);
+                test.addAnswer(answer23);
+                test.addAnswer(answer24);
+                test.addAnswer(answer25);
+                test.addAnswer(answer26);
+                test.addAnswer(answer27);
+                test.addAnswer(answer28);
+                test.addAnswer(answer29);
+                test.addAnswer(answer30);
+            }
+            Intent myintent = new Intent(Test2Activity.this, Test3Activity.class);
+            myintent.putExtra("test", test);
+            finish();
+            startActivity(myintent);
+        }catch(Exception ex){
+            ex.getStackTrace();
+        }
     }
 }

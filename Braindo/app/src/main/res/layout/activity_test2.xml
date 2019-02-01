@@ -58,7 +58,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="403dp"
+        android:layout_height="404dp"
         android:layout_weight="0.69">
 
         <LinearLayout
@@ -496,12 +496,13 @@
 
                 <Spinner
                     android:id="@+id/spTestOp23"
+                    android:singleLine="false"
                     android:layout_width="260dp"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:entries="@array/answer2_arrays"
                     android:prompt="@string/answer_prompt"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:textSize="14dp" />
 
                 <LinearLayout

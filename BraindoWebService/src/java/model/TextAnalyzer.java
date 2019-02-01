@@ -20,7 +20,22 @@ public class TextAnalyzer {
         try {
             Translator translate = new Translator();
             String translatedText = translate.translate("es", "en", text);
-            return pd.emotion(translatedText);
+            String emotion = pd.emotion(translatedText);
+            if (emotion.contains("200")){
+                emotion = emotion.replace("\"", "");
+                emotion = emotion.replace("{code: 200, emotion: {probabilities: {Fear: ", "");
+                emotion = emotion.replace("}, emotion: ", "%");
+                emotion = emotion.split("%")[0];
+                emotion = emotion.replace(" Sad: ", "");
+                emotion = emotion.replace(" Happy: ", "");
+                emotion = emotion.replace(" Angry: ", "");
+                emotion = emotion.replace(" Excited: ", "");
+                emotion = emotion.replace(" Bored: ", "");
+                emotion = emotion.replace(",", ";");
+                return emotion;
+            }else{
+                return "NotAnalyzedEmotions";
+            }
         } catch (Exception ex) {
             return "NotAnalyzedEmotions";
         }
@@ -30,9 +45,23 @@ public class TextAnalyzer {
         try {
             Translator translate = new Translator();
             String translatedText = translate.translate("es", "en", text);
-            return pd.sentiment(translatedText);
+            String sentiment = pd.sentiment(translatedText);
+            if (sentiment.contains("\"code\":200")){
+                sentiment = sentiment.replace("},\"code\":200}", "");
+                sentiment = sentiment.replace("\"probabilities\"", "\"%probabilities\"");
+                sentiment = sentiment.split("%")[1];
+                sentiment = sentiment.replace("probabilities\":{", "");
+                sentiment = sentiment.replace("\"negative\":", "");
+                sentiment = sentiment.replace("\"neutral\":", "");
+                sentiment = sentiment.replace("\"positive\":", "");
+                sentiment = sentiment.replace(",", ";");
+                sentiment = sentiment.replace("\"", "");
+                return sentiment;
+            }else{
+                return "NotAnalyzedSentiments";
+            }
         } catch (Exception ex) {
-            return " ";
+            return "NotAnalyzedSentiments";
         }
     }
 }

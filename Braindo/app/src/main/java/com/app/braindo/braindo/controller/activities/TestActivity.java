@@ -55,6 +55,13 @@ public class TestActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        Intent myintent = new Intent(TestActivity.this, LoginActivity.class);
+        finish();
+        startActivity(myintent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
             patient = (Patient) getIntent().getSerializableExtra("patient");

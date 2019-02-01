@@ -20,11 +20,11 @@ import static model.Registry.CODE_RESOURCE_CREATED;
 
 public class DAOTest {
     private Connection _dbCon;
-    private static String _sqlTestRegistration = "{?=call DIAGNOSTICO_REGISTRAR(?,?,?,?,?)}";
+    private static String _sqlTestRegistration = "{?=call DIAGNOSTICO_REGISTRAR(?,?,?,?,?,?,?)}";
 
     private ResultSet rs;
     
-    public Test registrationTest (Test _test, String neuralNetworkAnswers) throws Exception{
+    public Test registrationTest (Test _test, String neuralNetworkAnswers, String emotions, String sentiments) throws Exception{
         
         Test _testError = new Test();
         CallableStatement cstmt;
@@ -45,10 +45,12 @@ public class DAOTest {
             }
             answers += _test.get_answer40();
             cstmt.setDate(2, sqlDate);
-            cstmt.setString(3, answers);
-            cstmt.setString(4, neuralNetworkAnswers);
-            cstmt.setInt(5, _test.get_patient().get_id());
-            cstmt.setString(6, _test.get_patient().get_email());
+            cstmt.setString(3, sentiments);
+            cstmt.setString(4, emotions);
+            cstmt.setString(5, answers);
+            cstmt.setString(6, neuralNetworkAnswers);
+            cstmt.setInt(7, _test.get_patient().get_id());
+            cstmt.setString(8, _test.get_patient().get_email());
             cstmt.execute();
             response = cstmt.getInt(1);
             

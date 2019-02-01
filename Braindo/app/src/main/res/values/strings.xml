@@ -51,15 +51,15 @@
     <string name="answer2_prompt">Elige una opción</string>
     <string-array name="answer2_arrays">
         <item>No me molesta ser evaluado de ninguna manera</item>
-        <item>A veces, me siento más seguro porque tengo tiempo para pensar qué responder</item>
-        <item>Ambas opciones son iguales para mi, a veces me incomodan</item>
-        <item>Si, porque solo el profesor lee lo que escribo y nadie más</item>
+        <item>A veces porque me siento más seguro</item>
+        <item>Ambas opciones a veces me incomodan</item>
+        <item>Si, porque sólo el profesor lee lo que escribo</item>
         <item>No me gusta ser evaluado en ningún caso</item>
     </string-array>
 
     <!-- Strings related to register -->
     <string name="error_field_required">Este campo es requerido</string>
-    <string name="error_special_char">Este campo no puede contener caracteres especiales</string>
+    <string name="error_special_char">Este campo no puede contener caracteres especiales diferentes a coma, punto o punto y coma</string>
     <string name="error_invalid_space_char">Este campo no puede contener caracteres especiales o espacios</string>
     <string name="error_starts_with_space">Este campo no puede empezar con un espacio</string>
     <string name="error_id_registered">La cédula utilizada ya se encuentra registrada en el sistema</string>

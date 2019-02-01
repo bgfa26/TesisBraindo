@@ -1,11 +1,15 @@
 package com.app.braindo.braindo.controller.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -58,6 +62,8 @@ public class RegistrationActivity extends AppCompatActivity{
     private Spinner spRegistrationMunicipality;
     private Spinner spRegistrationParish;
     private EditText etRegistrationEmail;
+    private View progressView;
+    private View regFormView;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -110,6 +116,9 @@ public class RegistrationActivity extends AppCompatActivity{
             spRegistrationParish = (Spinner) findViewById(R.id.spRegistrationParish);
             etRegistrationEmail = (EditText) findViewById(R.id.etRegistrationEmail);
             registrationButton = (Button) findViewById(R.id.btnRegistration);
+
+            regFormView = findViewById(R.id.reg_form);
+            progressView = findViewById(R.id.reg_progress);
 
             registrationButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -230,6 +239,40 @@ public class RegistrationActivity extends AppCompatActivity{
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
+        // for very easy animations. If available, use these APIs to fade-in
+        // the progress spinner.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            regFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            regFormView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    regFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            progressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            // The ViewPropertyAnimator APIs are not available, so simply show
+            // and hide the relevant UI components.
+            progressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            regFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+        }
+    }
+
+
     private void attemptSignUp() {
         if (authTask != null) {
             return;
@@ -319,7 +362,7 @@ public class RegistrationActivity extends AppCompatActivity{
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            //showProgress(true);
+            showProgress(true);
             String state = spRegistrationState.getSelectedItem().toString();
             /*String municipality = spRegistrationMunicipality.getSelectedItem().toString();
             String parish = spRegistrationParish.getSelectedItem().toString();*/
@@ -359,7 +402,7 @@ public class RegistrationActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(final Boolean success) {
             authTask = null;
-            //showProgress(false);
+            showProgress(false);
             View focusView = null;
 
             if (success) {
@@ -397,7 +440,7 @@ public class RegistrationActivity extends AppCompatActivity{
         @Override
         protected void onCancelled() {
             authTask = null;
-            //showProgress(false);
+            showProgress(false);
             Context context = getApplicationContext();
             CharSequence text = getString(R.string.operation_cancelled);
             int duration = Toast.LENGTH_SHORT;
