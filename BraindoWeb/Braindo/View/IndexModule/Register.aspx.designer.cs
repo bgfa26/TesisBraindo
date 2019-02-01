@@ -7,73 +7,100 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View.PatientModule {
+namespace Braindo.View.IndexModule {
     
     
-    public partial class EditPatientInformation {
+    public partial class Register {
         
         /// <summary>
-        /// nameTXT control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTXT;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// surnameTXT control.
+        /// cedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox surnameTXT;
+        protected global::System.Web.UI.WebControls.TextBox cedula;
         
         /// <summary>
-        /// ageTXT control.
+        /// correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ageTXT;
+        protected global::System.Web.UI.WebControls.TextBox correo;
         
         /// <summary>
-        /// career1 control.
+        /// pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList career1;
+        protected global::System.Web.UI.WebControls.TextBox pass;
         
         /// <summary>
-        /// state1 control.
+        /// primerNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList state1;
+        protected global::System.Web.UI.WebControls.TextBox primerNombre;
         
         /// <summary>
-        /// municipality1 control.
+        /// segundoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList municipality1;
+        protected global::System.Web.UI.WebControls.TextBox segundoNombre;
         
         /// <summary>
-        /// parish1 control.
+        /// primerApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList parish1;
+        protected global::System.Web.UI.WebControls.TextBox primerApellido;
+        
+        /// <summary>
+        /// segundoApellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox segundoApellido;
+        
+        /// <summary>
+        /// registro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox registro;
+        
+        /// <summary>
+        /// date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date;
         
         /// <summary>
         /// btnChangeData control.

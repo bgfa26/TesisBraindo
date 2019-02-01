@@ -37,10 +37,6 @@ namespace Braindo.Common
             this.surname = _surname;
         }
 
-        public Psychologist(String _email)
-        {
-            this.email = _email;
-        }
 
         public Psychologist(int _id)
         {
@@ -59,17 +55,6 @@ namespace Braindo.Common
             this.registrationNumber = _registrationNumber;
             this.birthdate = _birthdate;
             
-        }
-
-        public Psychologist(String _email, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)
-        {
-            this.email = _email;
-            this.name = _name;
-            this.secondName = _secondName;
-            this.surname = _surname;
-            this.secondSurname = _secondSurname;
-            this.registrationNumber = _registrationNumber;
-            this.birthdate = _birthdate;
         }
 
         public Psychologist(int _id, String _email, String _name, String _secondName, String _surname, String _secondSurname, String _registrationNumber, DateTime _birthdate)

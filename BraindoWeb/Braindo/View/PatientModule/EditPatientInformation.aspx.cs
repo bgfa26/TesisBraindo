@@ -37,87 +37,23 @@ namespace Braindo.View.PatientModule
         {
             if (!Page.IsPostBack)
             {
-
-                ConsultStateCommand consultState = new ConsultStateCommand();
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    consultState.execute();
-                    stateConsultList = consultState.getAnswer();
-
-                    foreach (Place _place1 in stateConsultList)
-                    {
-                        state1.Items.Add(_place1._Name);
-                        String test = _place1._Name;
-                    }
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception stateEx)
+                else
                 {
-                    
-                    throw stateEx;
-                }
-
-
-                String idPatient = Request.QueryString["patiendID"];
-
-                int idInt = Convert.ToInt32(idPatient);
-
-                consult = new Patient(idInt);
-
-                ConsultPatientInformationCommand command = new ConsultPatientInformationCommand(consult);
-
-                try
-                {
-                    command.execute();
-                    consulted = command.getAnswer();
-
-                    nameTXT.Text = consulted._Name;
-                    surnameTXT.Text = consulted._Surname;
-                    ageTXT.Text = consulted._Age.ToString();
-                    career1.SelectedValue = consulted._Career;
-
-                    foreach (Place _searchState in stateConsultList)
-                    {
-                        if (_searchState._Name == consulted._State)
-                        {
-                            state1.SelectedValue = consulted._State;
-                        }
-                    }
-
-                    //MUNICIPIOS
-
-                    String nameState = consulted._State;
-
-                    Place consultstateID = new Place(nameState);
-
-                    ConsultStateIDCommand consultIDState = new ConsultStateIDCommand(consultstateID);
+                    ConsultStateCommand consultState = new ConsultStateCommand();
 
                     try
                     {
-                        consultIDState.execute();
-                        _state = consultIDState.getAnswer();
-                        idState = _state._ID;
+                        consultState.execute();
+                        stateConsultList = consultState.getAnswer();
 
-                        test2 = idState;
-
-                        ConsultMunicipalityCommand cmd = new ConsultMunicipalityCommand(_state);
-
-                        cmd.execute();
-                        municipalityConsultList = cmd.getAnswer();
-
-                        foreach (Place _municipality in municipalityConsultList)
+                        foreach (Place _place1 in stateConsultList)
                         {
-                            municipality1.Items.Add(_municipality._Name);
-                            _probando = _municipality;
-                        }
-
-                        foreach (Place _searchMunicipality in municipalityConsultList)
-                        {
-                            if (_searchMunicipality._Name == consulted._Municipality)
-                            {
-                                municipality1.SelectedValue = consulted._Municipality;
-                            }
+                            state1.Items.Add(_place1._Name);
+                            String test = _place1._Name;
                         }
 
                     }
@@ -127,51 +63,121 @@ namespace Braindo.View.PatientModule
                         throw stateEx;
                     }
 
-                    //PARROQUIAS
 
-                    String nameMunicipality = consulted._Municipality;
+                    String idPatient = Request.QueryString["patiendID"];
 
-                    Place consultmunicipalityID = new Place(nameMunicipality);
+                    int idInt = Convert.ToInt32(idPatient);
 
-                    ConsultMunicipalityIDCommand consultIDMunicipality = new ConsultMunicipalityIDCommand(consultmunicipalityID);
+                    consult = new Patient(idInt);
+
+                    ConsultPatientInformationCommand command = new ConsultPatientInformationCommand(consult);
 
                     try
                     {
-                        consultIDMunicipality.execute();
-                        _municipality = consultIDMunicipality.getAnswer();
-                        idMunicipality = _municipality._ID;
+                        command.execute();
+                        consulted = command.getAnswer();
 
-                        ConsultParishCommand cmd = new ConsultParishCommand(_municipality);
+                        nameTXT.Text = consulted._Name;
+                        surnameTXT.Text = consulted._Surname;
+                        ageTXT.Text = consulted._Age.ToString();
+                        career1.SelectedValue = consulted._Career;
 
-                        cmd.execute();
-                        parishConsultList = cmd.getAnswer();
-
-                        foreach (Place _parish in parishConsultList)
+                        foreach (Place _searchState in stateConsultList)
                         {
-                            parish1.Items.Add(_parish._Name);
-                        }
-
-                        foreach (Place _searchParish in parishConsultList)
-                        {
-                            if (_searchParish._Name == consulted._Parish)
+                            if (_searchState._Name == consulted._State)
                             {
-                                parish1.SelectedValue = consulted._Parish;
+                                state1.SelectedValue = consulted._State;
                             }
                         }
 
+                        //MUNICIPIOS
+
+                        String nameState = consulted._State;
+
+                        Place consultstateID = new Place(nameState);
+
+                        ConsultStateIDCommand consultIDState = new ConsultStateIDCommand(consultstateID);
+
+                        try
+                        {
+                            consultIDState.execute();
+                            _state = consultIDState.getAnswer();
+                            idState = _state._ID;
+
+                            test2 = idState;
+
+                            ConsultMunicipalityCommand cmd = new ConsultMunicipalityCommand(_state);
+
+                            cmd.execute();
+                            municipalityConsultList = cmd.getAnswer();
+
+                            foreach (Place _municipality in municipalityConsultList)
+                            {
+                                municipality1.Items.Add(_municipality._Name);
+                                _probando = _municipality;
+                            }
+
+                            foreach (Place _searchMunicipality in municipalityConsultList)
+                            {
+                                if (_searchMunicipality._Name == consulted._Municipality)
+                                {
+                                    municipality1.SelectedValue = consulted._Municipality;
+                                }
+                            }
+
+                        }
+                        catch (Exception stateEx)
+                        {
+
+                            throw stateEx;
+                        }
+
+                        //PARROQUIAS
+
+                        String nameMunicipality = consulted._Municipality;
+
+                        Place consultmunicipalityID = new Place(nameMunicipality);
+
+                        ConsultMunicipalityIDCommand consultIDMunicipality = new ConsultMunicipalityIDCommand(consultmunicipalityID);
+
+                        try
+                        {
+                            consultIDMunicipality.execute();
+                            _municipality = consultIDMunicipality.getAnswer();
+                            idMunicipality = _municipality._ID;
+
+                            ConsultParishCommand cmd = new ConsultParishCommand(_municipality);
+
+                            cmd.execute();
+                            parishConsultList = cmd.getAnswer();
+
+                            foreach (Place _parish in parishConsultList)
+                            {
+                                parish1.Items.Add(_parish._Name);
+                            }
+
+                            foreach (Place _searchParish in parishConsultList)
+                            {
+                                if (_searchParish._Name == consulted._Parish)
+                                {
+                                    parish1.SelectedValue = consulted._Parish;
+                                }
+                            }
+
+
+                        }
+                        catch (Exception municipalityEx)
+                        {
+
+                            throw municipalityEx;
+                        }
 
                     }
-                    catch (Exception municipalityEx)
+                    catch (Exception ex)
                     {
 
-                        throw municipalityEx;
+                        throw ex;
                     }
-
-                }
-                catch (Exception ex)
-                {
-
-                    throw ex;
                 }
             } 
         }

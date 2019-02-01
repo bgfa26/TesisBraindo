@@ -13,5 +13,12 @@ namespace Braindo.View
         {
 
         }
+
+        protected void logout_click(object sender, EventArgs e)
+        {
+            Session.Remove("USER_ID");
+            Session.RemoveAll();
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se ha cerrado la sesion');window.location.href='../IndexModule/LoginTest.aspx';", true);
+        }
     }
 }

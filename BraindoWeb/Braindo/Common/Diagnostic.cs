@@ -9,6 +9,8 @@ namespace Braindo.Common
     {
         private int ID;
         private DateTime diagnosisDate;
+        private String feelings;
+        private String emotions;
         private String answer;
         private String networkAnswer;
         private Patient patient;
@@ -33,20 +35,24 @@ namespace Braindo.Common
             this.psychologist = _psycho;
         }
 
-        public Diagnostic(int _ID, DateTime _date, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        public Diagnostic(int _ID, DateTime _date, String _feelings, String _emotions, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
             this.diagnosisDate = _date;
+            this.feelings = _feelings;
+            this.emotions = _emotions;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }
 
-        public Diagnostic(int _ID, String _diagnosisDateString, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _emotions, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
             this.diagnosisDateString = _diagnosisDateString;
+            this.feelings = _feelings;
+            this.emotions = _emotions;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
             this.patient = _patient;
@@ -72,6 +78,18 @@ namespace Braindo.Common
         {
             get { return diagnosisDate; }
             set { diagnosisDate = value; }
+        }
+
+        public String _Feelings
+        {
+            get { return feelings; }
+            set { feelings = value; }
+        }
+
+        public String _Emotions
+        {
+            get { return emotions; }
+            set { emotions = value; }
         }
 
         public String _Answer

@@ -23,32 +23,40 @@ namespace Braindo.View.PatientModule
         {
             if (!Page.IsPostBack)
             {
-                String idPatient = Request.QueryString["patiendID"];
-
-                int idPatientInt = Convert.ToInt32(idPatient);
-
-                int idPsycho = 24220210;
-
-                patient = new Patient(idPatientInt);
-                psycho = new Psychologist(idPsycho);
-
-                diagnosis = new Diagnostic(patient, psycho);
-
-                ConsultDiagnosticCommand cmd = new ConsultDiagnosticCommand(diagnosis);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    consultedDiagnostic = cmd.getAnswer();
-                    
-                    listDiagnostics.DataSource = consultedDiagnostic;
-                    listDiagnostics.DataBind();
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
-                    
-                    throw ex;
+                    String idPatient = Request.QueryString["patiendID"];
+
+                    int idPatientInt = Convert.ToInt32(idPatient);
+
+                    String idSession = Session["USER_ID"].ToString();
+                    int idPsycho = Convert.ToInt32(idSession);
+
+                    patient = new Patient(idPatientInt);
+                    psycho = new Psychologist(idPsycho);
+
+                    diagnosis = new Diagnostic(patient, psycho);
+
+                    ConsultDiagnosticCommand cmd = new ConsultDiagnosticCommand(diagnosis);
+
+                    try
+                    {
+                        cmd.execute();
+                        consultedDiagnostic = cmd.getAnswer();
+
+                        listDiagnostics.DataSource = consultedDiagnostic;
+                        listDiagnostics.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
         }

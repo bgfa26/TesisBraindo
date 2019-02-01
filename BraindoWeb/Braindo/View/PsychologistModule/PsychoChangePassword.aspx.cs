@@ -19,7 +19,10 @@ namespace Braindo.View.PsychologistModule
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["USER_ID"] == null)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
+            }
         }
         protected void btnChange_Click(object sender, EventArgs e)
         {
@@ -32,7 +35,8 @@ namespace Braindo.View.PsychologistModule
             }
             else
             {
-                int id = 24220210;
+                String idSession = Session["USER_ID"].ToString();
+                int id = Convert.ToInt32(idSession);
                 String password = passTXT.Text;
                 psycho = new Psychologist(id, password);
 

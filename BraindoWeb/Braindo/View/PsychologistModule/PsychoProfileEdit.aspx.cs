@@ -23,33 +23,40 @@ namespace Braindo.View.PsychologistModule
         {
             if (!Page.IsPostBack)
             {
-                int id = 24220210;
-                psychoConsulted = new Psychologist(id);
-
-                ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psychoConsulted);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    psychoConsult.execute();
-                    psychoConsulted = psychoConsult.getAnswer();
-
-                    nameTXT.Text = psychoConsulted._Name;
-                    secondNameTXT.Text = psychoConsulted._SecondName;
-                    surnameTXT.Text = psychoConsulted._Surname;
-                    secondSurnameTXT.Text = psychoConsulted._SecondSurname;
-                    registrationNumberTXT.Text = psychoConsulted._RegistrationNumber;
-                    email_txt.Value = psychoConsulted._Email;
-
-                    DateTime birthdatePsycho = psychoConsulted._Birthdate;
-
-                    date.Value = birthdatePsycho.ToString("yyyy-MM-dd");
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
+                    psychoConsulted = new Psychologist(id);
 
-                    throw ex;
+                    ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psychoConsulted);
+
+                    try
+                    {
+                        psychoConsult.execute();
+                        psychoConsulted = psychoConsult.getAnswer();
+
+                        nameTXT.Text = psychoConsulted._Name;
+                        secondNameTXT.Text = psychoConsulted._SecondName;
+                        surnameTXT.Text = psychoConsulted._Surname;
+                        secondSurnameTXT.Text = psychoConsulted._SecondSurname;
+                        registrationNumberTXT.Text = psychoConsulted._RegistrationNumber;
+                        email_txt.Value = psychoConsulted._Email;
+
+                        DateTime birthdatePsycho = psychoConsulted._Birthdate;
+
+                        date.Value = birthdatePsycho.ToString("yyyy-MM-dd");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
-
             }
         }
 
@@ -64,7 +71,8 @@ namespace Braindo.View.PsychologistModule
             }
             else
             {
-                int cedula = 24220210;
+                String idSession = Session["USER_ID"].ToString();
+                int cedula = Convert.ToInt32(idSession);
                 String correo = email_txt.Value;
                 String primerNombre = nameTXT.Text;
                 String segundoNombre = secondNameTXT.Text;

@@ -96,6 +96,8 @@
     <Content Include="Content\js\shieldui-all.min.js" />
     <Content Include="lib\mono.security.dll" />
     <Content Include="lib\npgsql.dll" />
+    <Content Include="View\IndexModule\LoginTest.aspx" />
+    <Content Include="View\IndexModule\Register.aspx" />
     <Content Include="View\MedicalAppointmentModule\ModifyMedicalAppointment.aspx" />
     <Content Include="View\MentalExamModule\ConsultMentalExam.aspx" />
     <Content Include="View\MedicalAppointmentModule\ConsultMedicalAppointment.aspx" />
@@ -135,7 +137,7 @@
     <Compile Include="Controller\MedicalAppointmenModule\MedicalAppointmentExistCommand.cs" />
     <Compile Include="Controller\MedicalAppointmenModule\ModifyMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultStateIDCommand.cs" />
-    <Compile Include="Controller\PsychologistModule\RegisterMedicalAppointmentCommand.cs" />
+    <Compile Include="Controller\MedicalAppointmenModule\RegisterMedicalAppointmentCommand.cs" />
     <Compile Include="Controller\MentalExamModule\ConsultMentalExamCommand.cs" />
     <Compile Include="Controller\MentalExamModule\RegisterMentalExamCommand.cs" />
     <Compile Include="Controller\PatientModule\ConsultPatientInformationCommand.cs" />
@@ -145,6 +147,8 @@
     <Compile Include="Controller\PsychologistModule\ChangePasswordCommand.cs" />
     <Compile Include="Controller\PsychologistModule\ConsultPsychoInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\EditInformationCommand.cs" />
+    <Compile Include="Controller\PsychologistModule\LoginPsychologistCommandcs.cs" />
+    <Compile Include="Controller\PsychologistModule\RegisterPsychologistCommand.cs" />
     <Compile Include="Model\DAO.cs" />
     <Compile Include="Model\PlaceModule\DAOPlace.cs" />
     <Compile Include="Model\DiagnosisModule\DAODiagnosis.cs" />
@@ -154,6 +158,20 @@
     <Compile Include="Model\PsychologistModule\DAOPsychologist.cs" />
     <Compile Include="Model\Registry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\IndexModule\LoginTest.aspx.cs">
+      <DependentUpon>LoginTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\IndexModule\LoginTest.aspx.designer.cs">
+      <DependentUpon>LoginTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\IndexModule\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\IndexModule\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\MedicalAppointmentModule\ModifyMedicalAppointment.aspx.cs">
       <DependentUpon>ModifyMedicalAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

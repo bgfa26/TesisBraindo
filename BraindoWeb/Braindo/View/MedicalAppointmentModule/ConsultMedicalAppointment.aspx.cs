@@ -22,28 +22,36 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (!Page.IsPostBack)
             {
-                int id = 24220210;
-
-                psychologist = new Psychologist(id);
-
-                consultAppointment = new Appointment(psychologist);
-
-                ConsultAllMedicalAppointmentsCommand cmd = new ConsultAllMedicalAppointmentsCommand(consultAppointment);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    consultedAppointment = cmd.getAnswer();
-
-                    listMedicalAppointments.DataSource = consultedAppointment;
-                    listMedicalAppointments.DataBind();
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
 
-                    throw ex;
+                    psychologist = new Psychologist(id);
+
+                    consultAppointment = new Appointment(psychologist);
+
+                    ConsultAllMedicalAppointmentsCommand cmd = new ConsultAllMedicalAppointmentsCommand(consultAppointment);
+
+                    try
+                    {
+                        cmd.execute();
+                        consultedAppointment = cmd.getAnswer();
+
+                        listMedicalAppointments.DataSource = consultedAppointment;
+                        listMedicalAppointments.DataBind();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
                 }
-
             }
         }
 

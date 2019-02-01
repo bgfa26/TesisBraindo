@@ -22,22 +22,28 @@ namespace Braindo.View.PatientModule
         {
             if (!Page.IsPostBack)
             {
-
-                ConsultPatientsCommand cmd = new ConsultPatientsCommand();
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    patientList = cmd.getAnswer();
-
-                    listPatients.DataSource = patientList;
-                    listPatients.DataBind();
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
+                    ConsultPatientsCommand cmd = new ConsultPatientsCommand();
 
-                    throw ex;
+                    try
+                    {
+                        cmd.execute();
+                        patientList = cmd.getAnswer();
+
+                        listPatients.DataSource = patientList;
+                        listPatients.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
         }

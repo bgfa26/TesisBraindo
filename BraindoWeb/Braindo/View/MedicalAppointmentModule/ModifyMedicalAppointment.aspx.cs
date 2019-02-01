@@ -24,35 +24,43 @@ namespace Braindo.View.MedicalAppointmentModule
         {
             if (!Page.IsPostBack)
             {
-                String idAppointment = Request.QueryString["appointmentID"];
 
-                int idInt = Convert.ToInt32(idAppointment);
-
-                appointmentConsult = new Appointment(idInt);
-
-                ConsultDetailedMedicalAppointmentCommand cmd = new ConsultDetailedMedicalAppointmentCommand(appointmentConsult);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    cmd.execute();
-                    appointmentConsulted = cmd.getAnswer();
-
-                    DateTime dateAppointment = appointmentConsulted._Date;
-
-                    date_appointment_txt.Value = dateAppointment.ToString("yyyy-MM-dd");
-
-                    DateTime hourAppointment = appointmentConsulted._Hour;
-
-                    hour_appointment.SelectedValue = hourAppointment.ToString("HH:mm");
-
-                    reasonTXT.Text = appointmentConsulted._Reason;
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
-                    
-                    throw ex;
-                }
+                    String idAppointment = Request.QueryString["appointmentID"];
+
+                    int idInt = Convert.ToInt32(idAppointment);
+
+                    appointmentConsult = new Appointment(idInt);
+
+                    ConsultDetailedMedicalAppointmentCommand cmd = new ConsultDetailedMedicalAppointmentCommand(appointmentConsult);
+
+                    try
+                    {
+                        cmd.execute();
+                        appointmentConsulted = cmd.getAnswer();
+
+                        DateTime dateAppointment = appointmentConsulted._Date;
+
+                        date_appointment_txt.Value = dateAppointment.ToString("yyyy-MM-dd");
+
+                        DateTime hourAppointment = appointmentConsulted._Hour;
+
+                        hour_appointment.SelectedValue = hourAppointment.ToString("HH:mm");
+
+                        reasonTXT.Text = appointmentConsulted._Reason;
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }     
             }
         }
 
@@ -68,6 +76,16 @@ namespace Braindo.View.MedicalAppointmentModule
             else
             {
 
+                /*consultar cita*/
+                String AppointmentInfoID = Request.QueryString["appointmentID"];
+
+                int idInt = Convert.ToInt32(AppointmentInfoID);
+
+                appointmentConsult = new Appointment(idInt);
+
+                ConsultDetailedMedicalAppointmentCommand cmdCheckInfo = new ConsultDetailedMedicalAppointmentCommand(appointmentConsult);
+
+                /*csonultar disponibilidad de fecha y hora*/
                 String dateString = date_appointment_txt.Value;
                 DateTime dateAppointmentConsult = Convert.ToDateTime(dateString);
 
@@ -81,12 +99,60 @@ namespace Braindo.View.MedicalAppointmentModule
 
                 try
                 {
+                    /*comando para consultar datos de la cita*/
+                    cmdCheckInfo.execute();
+                    appointmentConsulted = cmdCheckInfo.getAnswer();
+
+                    DateTime dateAppointmentConsulted = appointmentConsulted._Date;
+                    String dateAppointmentConsultedString = dateAppointmentConsulted.ToString("yyyy-MM-dd");
+
+                    DateTime hourAppointmentConsulted = appointmentConsulted._Hour;
+                    String hourAppointmentConsultedString = hourAppointmentConsulted.ToString("HH:mm");
+
+                    /*comando para consultar fecha y hora disponible*/
                     cmdConsult.execute();
                     dateHourAppointment = cmdConsult.getAnswer();
 
                     resp = dateHourAppointment._Error;
 
-                    if (resp == Registry.RESULTADO_CODIGO_BIEN)
+                    if ((date_appointment_txt.Value == dateAppointmentConsultedString) && (hour_appointment.SelectedValue == hourAppointmentConsultedString))
+                    {
+                        String fecha = date_appointment_txt.Value;
+                        DateTime dateAppointment = Convert.ToDateTime(fecha);
+
+                        String hora = hour_appointment.SelectedValue;
+                        DateTime hourAppointment = new DateTime();
+                        hourAppointment = DateTime.ParseExact(hora, "HH:mm", null);
+
+                        String reason = reasonTXT.Text;
+
+                        String idAppointment = Request.QueryString["appointmentID"];
+
+                        int idExam = Convert.ToInt32(idAppointment);
+
+                        appointment = new Appointment(idExam, dateAppointment, hourAppointment, reason);
+                        try
+                        {
+                            ModifyMedicalAppointmentCommand cmd = new ModifyMedicalAppointmentCommand(appointment);
+                            cmd.execute();
+                            appointmentModified = cmd.getAnswer();
+
+                            if (appointmentModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cambios realizados');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+                    else if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
                         string script = "alert(\"ERROR! La fecha y hora esta registrada en otra cita\");";
                         ScriptManager.RegisterStartupScript(this, GetType(),

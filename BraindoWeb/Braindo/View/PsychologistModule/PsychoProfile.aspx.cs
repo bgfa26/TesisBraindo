@@ -23,29 +23,38 @@ namespace Braindo.View.PsychologistModule
 
             if (!Page.IsPostBack)
             {
-                int id = 24220210;
-                psycho = new Psychologist(id);
 
-                ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
-
-                try
+                if (Session["USER_ID"] == null)
                 {
-                    psychoConsult.execute();
-                    psychoConsulted = psychoConsult.getAnswer();
-
-                    DateTime datePsycho = psychoConsulted._Birthdate;
-                    String datePsychoString = datePsycho.ToString("dd-MM-yyyy");
-
-                    cedula_txt.Value = Convert.ToString(psychoConsulted._ID);
-                    matricula_txt.Value = psychoConsulted._RegistrationNumber;
-                    nombreCompleto_txt.Value = psychoConsulted._Name + " " + psychoConsulted._SecondName + " " + psychoConsulted._Surname + " " + psychoConsulted._SecondSurname;
-                    fechaNac_txt.Value = datePsychoString;
-                    correo_txt.Value = psychoConsulted._Email;
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
                 }
-                catch (Exception ex)
+                else
                 {
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
+                    psycho = new Psychologist(id);
 
-                    throw ex;
+                    ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
+
+                    try
+                    {
+                        psychoConsult.execute();
+                        psychoConsulted = psychoConsult.getAnswer();
+
+                        DateTime datePsycho = psychoConsulted._Birthdate;
+                        String datePsychoString = datePsycho.ToString("dd-MM-yyyy");
+
+                        cedula_txt.Value = Convert.ToString(psychoConsulted._ID);
+                        matricula_txt.Value = psychoConsulted._RegistrationNumber;
+                        nombreCompleto_txt.Value = psychoConsulted._Name + " " + psychoConsulted._SecondName + " " + psychoConsulted._Surname + " " + psychoConsulted._SecondSurname;
+                        fechaNac_txt.Value = datePsychoString;
+                        correo_txt.Value = psychoConsulted._Email;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
         }

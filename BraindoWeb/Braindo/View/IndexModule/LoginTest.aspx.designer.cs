@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Braindo.View.MedicalAppointmentModule {
+namespace Braindo.View.IndexModule {
     
     
-    public partial class ModifyMedicalAppointment {
+    public partial class LoginTest {
         
         /// <summary>
-        /// date_appointment_txt control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date_appointment_txt;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hour_appointment control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList hour_appointment;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// reasonTXT control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reasonTXT;
+        protected global::System.Web.UI.WebControls.TextBox password;
         
         /// <summary>
-        /// btnModifyAppointment control.
+        /// btnChangeData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModifyAppointment;
+        protected global::System.Web.UI.WebControls.Button btnChangeData;
     }
 }

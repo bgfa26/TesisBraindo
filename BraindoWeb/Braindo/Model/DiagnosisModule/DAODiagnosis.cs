@@ -173,6 +173,8 @@ namespace Braindo.Model.DiagnosisModule
 
             int id;
             DateTime diagnosisDate;
+            String feelings;
+            String emotions;
             String answer;
             String networkAnswer;
             String patientName;
@@ -218,19 +220,21 @@ namespace Braindo.Model.DiagnosisModule
                     {
                         id = dr.GetInt32(0);
                         diagnosisDate = dr.GetDateTime(1);
-                        answer = dr.GetString(2);
-                        networkAnswer = dr.GetString(3);
-                        patientName = dr.GetString(4);
-                        patientSurname = dr.GetString(5);
-                        psychoName = dr.GetString(6);
-                        psychoSurname = dr.GetString(7);
+                        feelings = dr.GetString(2);
+                        emotions = dr.GetString(3);
+                        answer = dr.GetString(4);
+                        networkAnswer = dr.GetString(5);
+                        patientName = dr.GetString(6);
+                        patientSurname = dr.GetString(7);
+                        psychoName = dr.GetString(8);
+                        psychoSurname = dr.GetString(9);
 
                         DiagnosisDateString = diagnosisDate.ToString("dd-MM-yyyy");
 
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, DiagnosisDateString, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, _patient, _psycho);
 
                         diagnosticList.Add(_diagnostic);
                     }
@@ -263,6 +267,8 @@ namespace Braindo.Model.DiagnosisModule
 
             int id;
             DateTime diagnosisDate;
+            String feelings;
+            String emotions;
             String answer;
             String networkAnswer;
             String patientName;
@@ -298,17 +304,19 @@ namespace Braindo.Model.DiagnosisModule
                     {
                         id = dr.GetInt32(0);
                         diagnosisDate = dr.GetDateTime(1);
-                        answer = dr.GetString(2);
-                        networkAnswer = dr.GetString(3);
-                        patientName = dr.GetString(4);
-                        patientSurname = dr.GetString(5);
-                        psychoName = dr.GetString(6);
-                        psychoSurname = dr.GetString(7);
+                        feelings = dr.GetString(2);
+                        emotions = dr.GetString(3);
+                        answer = dr.GetString(4);
+                        networkAnswer = dr.GetString(5);
+                        patientName = dr.GetString(6);
+                        patientSurname = dr.GetString(7);
+                        psychoName = dr.GetString(8);
+                        psychoSurname = dr.GetString(9);
 
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, diagnosisDate, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, diagnosisDate, feelings, emotions, answer, networkAnswer, _patient, _psycho);
                     }
                     dr.Close();
                     tran.Commit();
