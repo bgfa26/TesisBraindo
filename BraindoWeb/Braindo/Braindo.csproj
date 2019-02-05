@@ -121,6 +121,7 @@
     <Compile Include="Common\Place.cs" />
     <Compile Include="Common\Psychologist.cs" />
     <Compile Include="Controller\Command.cs" />
+    <Compile Include="Controller\DiagnosisModule\ConsultDiagnosticIDPsychoCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultMunicipalityCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultMunicipalityIDCommand.cs" />
     <Compile Include="Controller\PlaceModule\ConsultParishCommand.cs" />

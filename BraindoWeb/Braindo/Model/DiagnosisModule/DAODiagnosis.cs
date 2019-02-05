@@ -285,7 +285,7 @@ namespace Braindo.Model.DiagnosisModule
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("diagnostico_consultar(@PSYCHO)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("diagnostico_consultar_idpsycho(@PSYCHO)", conn);
 
                 NpgsqlParameter psycho = new NpgsqlParameter();
 
