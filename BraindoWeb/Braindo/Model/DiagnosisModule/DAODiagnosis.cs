@@ -259,6 +259,97 @@ namespace Braindo.Model.DiagnosisModule
             }
         }
 
+        public List<Diagnostic> consultDiagnosticIDPsycho(Diagnostic _diagnostic)
+        {
+            Patient _patient;
+            Psychologist _psycho;
+
+            int id;
+            DateTime diagnosisDate;
+            String feelings;
+            String emotions;
+            String answer;
+            String networkAnswer;
+            int ciPatient;
+            String patientName;
+            String patientSurname;
+            int ciPsycho;
+            String psychoName;
+            String psychoSurname;
+
+            List<Diagnostic> diagnosticList = new List<Diagnostic>();
+
+            String DiagnosisDateString;
+
+            try
+            {
+                conn = DAO.getConnection();
+                NpgsqlTransaction tran = conn.BeginTransaction();
+                NpgsqlCommand command = new NpgsqlCommand("diagnostico_consultar(@PSYCHO)", conn);
+
+                NpgsqlParameter psycho = new NpgsqlParameter();
+
+                psycho.ParameterName = "@PSYCHO";
+
+                psycho.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+
+                psycho.Direction = ParameterDirection.Input;
+
+                psycho.Value = _diagnostic._Psychologist._ID;
+
+                command.Parameters.Add(psycho);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                NpgsqlDataReader dr = command.ExecuteReader();
+
+                try
+                {
+                    while (dr.Read())
+                    {
+                        id = dr.GetInt32(0);
+                        diagnosisDate = dr.GetDateTime(1);
+                        feelings = dr.GetString(2);
+                        emotions = dr.GetString(3);
+                        answer = dr.GetString(4);
+                        networkAnswer = dr.GetString(5);
+                        ciPatient = dr.GetInt32(6);
+                        patientName = dr.GetString(7);
+                        patientSurname = dr.GetString(8);
+                        ciPsycho = dr.GetInt32(9);
+                        psychoName = dr.GetString(10);
+                        psychoSurname = dr.GetString(11);
+
+                        DiagnosisDateString = diagnosisDate.ToString("dd-MM-yyyy");
+
+                        _patient = new Patient(ciPatient, patientName, patientSurname);
+                        _psycho = new Psychologist(ciPsycho, psychoName, psychoSurname);
+
+                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, _patient, _psycho);
+
+                        diagnosticList.Add(_diagnostic);
+                    }
+                    dr.Close();
+                    tran.Commit();
+                    return diagnosticList;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+            catch (NpgsqlException ex2)
+            {
+
+                throw ex2;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public Diagnostic consultDiagnosticDetailed(Diagnostic _diagnostic)
         {
 
