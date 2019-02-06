@@ -1,4 +1,5 @@
 ﻿using Braindo.Controller.PatientModule;
+using Braindo.Controller.DiagnosisModule;
 using Braindo.Common;
 using Braindo.Model;
 using System;
@@ -12,11 +13,15 @@ namespace Braindo.View.PatientModule
 {
     public partial class ConsultPatients : System.Web.UI.Page
     {
-
+        private Psychologist psychoConsult;
         private Patient patient;
         private Patient patientConsulted;
         private Patient patientDeleted;
         private List<Patient> patientList;
+        List<Patient> patientListConfirmed = new List<Patient>();
+        private Diagnostic diagnosticConsult;
+        private List<Diagnostic> diagnosticList;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,14 +33,37 @@ namespace Braindo.View.PatientModule
                 }
                 else
                 {
-                    ConsultPatientsCommand cmd = new ConsultPatientsCommand();
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
+                    psychoConsult = new Psychologist(id);
+
+                    diagnosticConsult = new Diagnostic(psychoConsult);
+
+                    ConsultDiagnosticIDPsychoCommand cmdDiagnostic = new ConsultDiagnosticIDPsychoCommand(diagnosticConsult);
+                    ConsultPatientsCommand cmdPatient = new ConsultPatientsCommand();
 
                     try
                     {
-                        cmd.execute();
-                        patientList = cmd.getAnswer();
+                        cmdPatient.execute();
+                        patientList = cmdPatient.getAnswer();
 
-                        listPatients.DataSource = patientList;
+                        cmdDiagnostic.execute();
+                        diagnosticList = cmdDiagnostic.getAnswer();
+
+                        foreach (Diagnostic _diagnostic in diagnosticList)
+                        {
+                            int patientFK = _diagnostic._Patient._ID;
+
+                            foreach (Patient _patient in patientList)
+                            {
+                                if (patientFK == _patient._ID)
+                                {
+                                    patientListConfirmed.Add(_patient);
+                                }
+                            }
+                        }
+
+                        listPatients.DataSource = patientListConfirmed;
                         listPatients.DataBind();
 
                     }

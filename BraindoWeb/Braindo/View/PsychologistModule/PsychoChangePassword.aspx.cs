@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using Braindo.Controller.PsychologistModule;
 using Braindo.Common;
 using Braindo.Model;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Braindo.View.PsychologistModule
 {
@@ -24,6 +26,26 @@ namespace Braindo.View.PsychologistModule
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
             }
         }
+
+        public static String GenerateSHA256String(string inputString)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(inputString);
+            byte[] hash = sha256.ComputeHash(bytes);
+            return GetStringFromHash(hash);
+        }
+
+        private static string GetStringFromHash(byte[] hash)
+        {
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                result.Append(hash[i].ToString("X2"));
+            }
+            return result.ToString();
+        }
+
         protected void btnChange_Click(object sender, EventArgs e)
         {
 
@@ -37,7 +59,7 @@ namespace Braindo.View.PsychologistModule
             {
                 String idSession = Session["USER_ID"].ToString();
                 int id = Convert.ToInt32(idSession);
-                String password = passTXT.Text;
+                String password = GenerateSHA256String(passTXT.Text);
                 psycho = new Psychologist(id, password);
 
                 ChangePasswordCommand cmd = new ChangePasswordCommand(psycho);
