@@ -17,31 +17,38 @@ namespace Braindo.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String idSession = Session["USER_ID"].ToString();
-            int id = Convert.ToInt32(idSession);
-            psycho = new Psychologist(id);
-
-            ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
-
-            try
-            {
-                psychoConsult.execute();
-                psychoConsulted = psychoConsult.getAnswer();
-
-                String name = psychoConsulted._Name;
-                String surname = psychoConsulted._Surname;
-
-                //anchorPsycho.Attributes["data-toggle"] = "dropdown";
-                //anchorPsycho.Attributes.Add("class", "dropdown-toggle");
-                anchorPsycho.InnerText = name + " " + surname;
-
-
-
-            }
-            catch (Exception ex)
+            if (!Page.IsPostBack)
             {
 
-                throw ex;
+                if (Session["USER_ID"] != null)
+                {
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
+                    psycho = new Psychologist(id);
+
+                    ConsultPsychoInformationCommand psychoConsult = new ConsultPsychoInformationCommand(psycho);
+
+                    try
+                    {
+                        psychoConsult.execute();
+                        psychoConsulted = psychoConsult.getAnswer();
+
+                        String name = psychoConsulted._Name;
+                        String surname = psychoConsulted._Surname;
+
+                        //anchorPsycho.Attributes["data-toggle"] = "dropdown";
+                        //anchorPsycho.Attributes.Add("class", "dropdown-toggle");
+                        anchorPsycho.InnerText = name + " " + surname;
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }
             }
         }
 

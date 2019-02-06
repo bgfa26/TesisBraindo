@@ -50,6 +50,21 @@ namespace Braindo.View.PatientModule
                         cmdDiagnostic.execute();
                         diagnosticList = cmdDiagnostic.getAnswer();
 
+                        //foreach (Patient _patient in patientList)
+                        //{
+
+                        //    int patientFK = _patient._ID;
+
+                        //    foreach (Diagnostic _diagnostic in diagnosticList)
+                        //    {
+                        //        if (patientFK == _diagnostic._Patient._ID)
+                        //        {
+                        //            patientListConfirmed.Add(_patient);
+                        //        }
+                        //    }
+                        
+                        //}
+
                         foreach (Diagnostic _diagnostic in diagnosticList)
                         {
                             int patientFK = _diagnostic._Patient._ID;
