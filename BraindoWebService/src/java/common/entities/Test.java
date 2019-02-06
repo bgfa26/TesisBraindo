@@ -11,49 +11,49 @@ import java.util.ArrayList;
 public class Test {
     private ArrayList<Integer> answers;
     private String answer40;
-    private Patient patient;
+    private EncryptedPatient patient;
     private int _error;
 
     public Test(){}
 
-    public Test(Patient _patient){
-        set_answers();
-        set_patient(_patient);
+    public Test(EncryptedPatient _patient){
+        answers = new ArrayList<Integer>();
+        setPatient(_patient);
     }
 
-    public ArrayList<Integer> get_answers() {
+    public ArrayList<Integer> getAnswers() {
         return answers;
     }
 
-    public void set_answers() {
-        this.answers = new ArrayList<Integer>();
-    }
-
-    public Patient get_patient() {
+    public EncryptedPatient getPatient() {
         return patient;
     }
 
-    public void set_patient(Patient patient) {
+    public void setPatient(EncryptedPatient patient) {
         this.patient = patient;
     }
 
-    public void add_answer(int answer){
-        answers.add(answer);
+    public void addAnswer(int answer){
+        getAnswers().add(answer);
     }
 
-    public String get_answer40() {
+    public String getAnswer40() {
         return answer40;
     }
 
-    public void set_answer40(String answer40) {
+    public void setAnswer40(String answer40) {
         this.answer40 = answer40;
     }
-    
+
     public int get_error() {
         return _error;
     }
 
     public void set_error(int _error) {
         this._error = _error;
+    }
+
+    public void setAnswers(ArrayList<Integer> answers) {
+        this.answers = answers;
     }
 }

@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -19,14 +20,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.braindo.braindo.R;
+import com.app.braindo.braindo.common.entities.EncryptedPatient;
 import com.app.braindo.braindo.common.entities.Patient;
 import com.app.braindo.braindo.model.RestCommunication;
 
+import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import ve.com.phoenix.shieldvault.ShieldVault;
 
 public class LoginActivity extends AppCompatActivity {
     private LoginActivity.PatientLoginTask logTask = null;
@@ -180,6 +184,7 @@ public class LoginActivity extends AppCompatActivity {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
+
             logTask = new LoginActivity.PatientLoginTask(id, email);
             logTask.execute((Void) null);
         }
@@ -190,11 +195,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public class PatientLoginTask extends AsyncTask<Void, Void, Boolean> {
-        private final Patient patientToLogin;
-        private Patient response;
+        private EncryptedPatient patientToLoginEncrypted;
+        private EncryptedPatient response;
 
         PatientLoginTask(String id, String email) {
-            patientToLogin = new Patient(Integer.valueOf(id), email);
+            try {
+                ShieldVault crypto = new ShieldVault();
+                AssetManager assetManager = getAssets();
+                String[] files = assetManager.list("");
+                InputStream key = assetManager.open("publickey.dat");
+                InputStream key1 = assetManager.open("publickey.dat");
+                patientToLoginEncrypted = new EncryptedPatient(crypto.encriptadoMovilPublicaRSA(id, key),
+                                                               crypto.encriptadoMovilPublicaRSA(email, key1));
+            }catch (Exception ex){
+                patientToLoginEncrypted = new EncryptedPatient();
+            }
         }
 
         @Override
@@ -203,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
 
             try {
                 RestCommunication con = new RestCommunication();
-                response = con.callMethodPatientLogin(patientToLogin);
+                response = con.callMethodPatientLogin(patientToLoginEncrypted);
                 //response = patientToRegister;
                 return true;
             } catch (Exception e) {

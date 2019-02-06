@@ -1,5 +1,6 @@
 package com.app.braindo.braindo.model;
 
+import com.app.braindo.braindo.common.entities.EncryptedPatient;
 import com.app.braindo.braindo.common.entities.Patient;
 import com.app.braindo.braindo.common.entities.Test;
 import com.google.gson.Gson;
@@ -14,7 +15,7 @@ import java.net.URLEncoder;
 
 
 public class RestCommunication {
-    private String ip = "192.168.0.101";
+    private String ip = "192.168.0.102";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -58,15 +59,15 @@ public class RestCommunication {
         }
     }
 
-    public Patient callMethodPatientRegistration(Patient p) throws Exception {
+    public EncryptedPatient callMethodPatientRegistration(EncryptedPatient p) throws Exception {
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "patientRegistration?patient=" + URLEncoder.encode(gson.toJson( p ).toString(), "UTF-8"));
             String output;
-            Patient _patient = new Patient();
+            EncryptedPatient _patient = new EncryptedPatient();
             while ((output = br.readLine()) != null) {
-                _patient = gson.fromJson(output, Patient.class);
+                _patient = gson.fromJson(output, EncryptedPatient.class);
             }
             conn.disconnect();
             return _patient;
@@ -94,15 +95,15 @@ public class RestCommunication {
         }
     }
 
-    public Patient callMethodPatientLogin(Patient p) throws Exception {
+    public EncryptedPatient callMethodPatientLogin(EncryptedPatient p) throws Exception {
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "patientValidation?patient=" + URLEncoder.encode(gson.toJson( p ).toString(), "UTF-8"));
             String output;
-            Patient _patient = new Patient();
+            EncryptedPatient _patient = new EncryptedPatient();
             while ((output = br.readLine()) != null) {
-                _patient = gson.fromJson(output, Patient.class);
+                _patient = gson.fromJson(output, EncryptedPatient.class);
             }
             conn.disconnect();
             return _patient;

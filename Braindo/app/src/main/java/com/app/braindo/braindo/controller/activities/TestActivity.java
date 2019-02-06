@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.app.braindo.braindo.R;
+import com.app.braindo.braindo.common.entities.EncryptedPatient;
 import com.app.braindo.braindo.common.entities.Patient;
 import com.app.braindo.braindo.common.entities.Test;
 
@@ -29,7 +30,7 @@ public class TestActivity extends AppCompatActivity {
     public static List<Integer> itemPositionStacks = new ArrayList<>();
     public TextView status_message;
     static String str_result = "";
-    private Patient patient;
+    private EncryptedPatient patient;
     private Button testButton;
 
     // UI references.
@@ -64,7 +65,7 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
-            patient = (Patient) getIntent().getSerializableExtra("patient");
+            patient = (EncryptedPatient) getIntent().getSerializableExtra("patient");
             super.onCreate(savedInstanceState);
             CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                     .setDefaultFontPath("fonts/Raleway/Raleway-Regular.ttf")

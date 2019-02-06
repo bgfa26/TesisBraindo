@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class Test implements Serializable {
     private ArrayList<Integer> answers;
     private String answer40;
-    private Patient patient;
+    private EncryptedPatient patient;
     private int _error;
 
     public Test(){}
 
-    public Test(Patient _patient){
+    public Test(EncryptedPatient _patient){
         answers = new ArrayList<Integer>();
         setPatient(_patient);
     }
@@ -21,11 +21,11 @@ public class Test implements Serializable {
         return answers;
     }
 
-    public Patient getPatient() {
+    public EncryptedPatient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(EncryptedPatient patient) {
         this.patient = patient;
     }
 

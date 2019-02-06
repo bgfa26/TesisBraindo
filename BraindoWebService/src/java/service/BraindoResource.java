@@ -7,6 +7,7 @@ package service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import common.entities.EncryptedPatient;
 import common.entities.Patient;
 import common.entities.Test;
 import controller.patient_module.RegistrationPatientCommand;
@@ -22,6 +23,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
 import static model.Registry.CODE_FAILED;
+import common.ShieldVault;
 
 /**
  * REST Web Service
@@ -69,16 +71,27 @@ public class BraindoResource {
     public String addPatient (@QueryParam("patient") String _patient){
         
         Gson gson = new GsonBuilder().create();
-        Patient patient = gson.fromJson(_patient, Patient.class);
-        RegistrationPatientCommand cmd = new RegistrationPatientCommand(patient);
-        
+
         try {
+            EncryptedPatient encryptedPatient = gson.fromJson(_patient, EncryptedPatient.class);
+            //privatekey.dat
+            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            ShieldVault crypto = new ShieldVault();
+            
+            Patient patient = new Patient(Integer.parseInt(crypto.desencriptadoPrivadaRSA(encryptedPatient.get_id(), key)), crypto.desencriptadoPrivadaRSA(encryptedPatient.get_firstname(), key),
+                                          crypto.desencriptadoPrivadaRSA(encryptedPatient.get_lastname(), key), Integer.parseInt(crypto.desencriptadoPrivadaRSA(encryptedPatient.get_age(), key)),
+                                          crypto.desencriptadoPrivadaRSA(encryptedPatient.get_career(), key), crypto.desencriptadoPrivadaRSA(encryptedPatient.get_state(), key),
+                                          crypto.desencriptadoPrivadaRSA(encryptedPatient.get_municipality(), key), crypto.desencriptadoPrivadaRSA(encryptedPatient.get_parish(), key),
+                                          crypto.desencriptadoPrivadaRSA(encryptedPatient.get_email(), key));
+            RegistrationPatientCommand cmd = new RegistrationPatientCommand(patient);
             cmd.execute();
-            return gson.toJson(cmd.getResponse());
+            patient = cmd.getResponse();
+            encryptedPatient.set_error(patient.get_error());
+            return gson.toJson(encryptedPatient);
             
         } catch (Exception ex) {
             
-            Patient error = new Patient();
+            EncryptedPatient error = new EncryptedPatient();
             error.set_error(CODE_FAILED);
             return gson.toJson(error);
             
@@ -115,19 +128,29 @@ public class BraindoResource {
     public String validatePatient (@QueryParam("patient") String _patient){
         
         Gson gson = new GsonBuilder().create();
-        Patient patient = gson.fromJson(_patient, Patient.class);
-        ValidatePatientCommand cmd = new ValidatePatientCommand(patient);
         
         try {
+            EncryptedPatient encryptedPatient = gson.fromJson(_patient, EncryptedPatient.class);
+            //privatekey.dat
+            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            ShieldVault crypto = new ShieldVault();
+            
+            Patient patient = new Patient(Integer.parseInt(crypto.desencriptadoPrivadaRSA(encryptedPatient.get_id(), key)), 
+                                          crypto.desencriptadoPrivadaRSA(encryptedPatient.get_email(), key));
+            ValidatePatientCommand cmd = new ValidatePatientCommand(patient);
             cmd.execute();
-            return gson.toJson(cmd.getResponse());
+            patient = cmd.getResponse();
+            encryptedPatient.set_error(patient.get_error());
+            return gson.toJson(encryptedPatient);
             
         } catch (Exception ex) {
             
-            Patient error = new Patient();
+            EncryptedPatient error = new EncryptedPatient();
             error.set_error(CODE_FAILED);
             return gson.toJson(error);
             
         }
+        
     }
 }
+

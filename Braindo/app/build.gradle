@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets{
+        main{
+            resources.includes = [ '**/llavepublica.dat' ]
+        }
+    }
 }
 
 dependencies {
@@ -29,4 +34,5 @@ dependencies {
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
     testCompile 'junit:junit:4.12'
     compile files('libs/gson-2.8.0.jar')
+    compile files('libs/commons-codec-1.11.jar')
 }

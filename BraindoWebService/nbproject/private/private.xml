@@ -3,8 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/model/TextAnalyzer.java</file>
-            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/model/Translator.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/common/entities/Test.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/common/entities/EncryptedPatient.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/controller/patient_module/RegistrationPatientCommand.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/controller/test_module/TextAnalyzerCommand.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/controller/test_module/RegistrationTestCommand.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/model/patient_model/DAOPatient.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/service/BraindoResource.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/model/test_model/DAOTest.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/common/entities/Patient.java</file>
+            <file>file:/C:/Users/LuisAlejandro/Documents/GitHub/TesisBraindo/BraindoWebService/src/java/common/ShieldVault.java</file>
         </group>
     </open-files>
 </project-private>

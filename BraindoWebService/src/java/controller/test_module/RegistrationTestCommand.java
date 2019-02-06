@@ -21,26 +21,26 @@ public class RegistrationTestCommand extends Command{
     }
     @Override
     public void execute() throws Exception {
-        NeuralNetworkTestCommand annCmd = new NeuralNetworkTestCommand(testToRegister.get_answers().get(0), testToRegister.get_answers().get(1), testToRegister.get_answers().get(2), 
-                                                                       testToRegister.get_answers().get(3), testToRegister.get_answers().get(4), testToRegister.get_answers().get(5), 
-                                                                       testToRegister.get_answers().get(6), testToRegister.get_answers().get(7), testToRegister.get_answers().get(8), 
-                                                                       testToRegister.get_answers().get(9), testToRegister.get_answers().get(10), testToRegister.get_answers().get(11), 
-                                                                       testToRegister.get_answers().get(12), testToRegister.get_answers().get(13), testToRegister.get_answers().get(14), 
-                                                                       testToRegister.get_answers().get(15), testToRegister.get_answers().get(16), testToRegister.get_answers().get(17), 
-                                                                       testToRegister.get_answers().get(18), testToRegister.get_answers().get(19), testToRegister.get_answers().get(20), 
-                                                                       testToRegister.get_answers().get(21), testToRegister.get_answers().get(22), testToRegister.get_answers().get(23), 
-                                                                       testToRegister.get_answers().get(24), testToRegister.get_answers().get(25), testToRegister.get_answers().get(26), 
-                                                                       testToRegister.get_answers().get(27), testToRegister.get_answers().get(28), testToRegister.get_answers().get(29), 
-                                                                       testToRegister.get_answers().get(30), testToRegister.get_answers().get(31), testToRegister.get_answers().get(32), 
-                                                                       testToRegister.get_answers().get(33), testToRegister.get_answers().get(34), testToRegister.get_answers().get(35), 
-                                                                       testToRegister.get_answers().get(36), testToRegister.get_answers().get(37), testToRegister.get_answers().get(38));
+        NeuralNetworkTestCommand annCmd = new NeuralNetworkTestCommand(testToRegister.getAnswers().get(0), testToRegister.getAnswers().get(1), testToRegister.getAnswers().get(2), 
+                                                                       testToRegister.getAnswers().get(3), testToRegister.getAnswers().get(4), testToRegister.getAnswers().get(5), 
+                                                                       testToRegister.getAnswers().get(6), testToRegister.getAnswers().get(7), testToRegister.getAnswers().get(8), 
+                                                                       testToRegister.getAnswers().get(9), testToRegister.getAnswers().get(10), testToRegister.getAnswers().get(11), 
+                                                                       testToRegister.getAnswers().get(12), testToRegister.getAnswers().get(13), testToRegister.getAnswers().get(14), 
+                                                                       testToRegister.getAnswers().get(15), testToRegister.getAnswers().get(16), testToRegister.getAnswers().get(17), 
+                                                                       testToRegister.getAnswers().get(18), testToRegister.getAnswers().get(19), testToRegister.getAnswers().get(20), 
+                                                                       testToRegister.getAnswers().get(21), testToRegister.getAnswers().get(22), testToRegister.getAnswers().get(23), 
+                                                                       testToRegister.getAnswers().get(24), testToRegister.getAnswers().get(25), testToRegister.getAnswers().get(26), 
+                                                                       testToRegister.getAnswers().get(27), testToRegister.getAnswers().get(28), testToRegister.getAnswers().get(29), 
+                                                                       testToRegister.getAnswers().get(30), testToRegister.getAnswers().get(31), testToRegister.getAnswers().get(32), 
+                                                                       testToRegister.getAnswers().get(33), testToRegister.getAnswers().get(34), testToRegister.getAnswers().get(35), 
+                                                                       testToRegister.getAnswers().get(36), testToRegister.getAnswers().get(37), testToRegister.getAnswers().get(38));
         annCmd.execute();
         ArrayList<double[]> neuralNetworkResponses = annCmd.getResponses();
         String neuralNetworkAnswers = "";
         for (double[] neuralNetworkResponse : neuralNetworkResponses) {
             neuralNetworkAnswers += neuralNetworkResponse[0] + "/";
         }
-        TextAnalyzerCommand pdCmd = new TextAnalyzerCommand(testToRegister.get_answer40());
+        TextAnalyzerCommand pdCmd = new TextAnalyzerCommand(testToRegister.getAnswer40());
         pdCmd.execute();
         ArrayList<String> parallelDotsAnswers = pdCmd.getResponses();
         DAOTest daoTest = new DAOTest();

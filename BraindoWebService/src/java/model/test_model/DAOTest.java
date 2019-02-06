@@ -5,6 +5,7 @@
  */
 package model.test_model;
 
+import common.ShieldVault;
 import common.entities.Patient;
 import common.entities.Test;
 import java.sql.CallableStatement;
@@ -40,17 +41,21 @@ public class DAOTest {
             Date date = new Date();
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             String answers = "";
-            for (int answer : _test.get_answers()){
+            for (int answer : _test.getAnswers()){
                 answers += answer + ",";
             }
-            answers += _test.get_answer40();
+            answers += _test.getAnswer40();
             cstmt.setDate(2, sqlDate);
             cstmt.setString(3, sentiments);
             cstmt.setString(4, emotions);
             cstmt.setString(5, answers);
             cstmt.setString(6, neuralNetworkAnswers);
-            cstmt.setInt(7, _test.get_patient().get_id());
-            cstmt.setString(8, _test.get_patient().get_email());
+            ShieldVault crypto = new ShieldVault();
+            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            String email = crypto.desencriptadoPrivadaRSA(_test.getPatient().get_email(), key);
+            int id = Integer.parseInt(crypto.desencriptadoPrivadaRSA(_test.getPatient().get_id(), key));
+            cstmt.setInt(7, id);
+            cstmt.setString(8, email);
             cstmt.execute();
             response = cstmt.getInt(1);
             

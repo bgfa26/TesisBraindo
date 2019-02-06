@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -23,11 +24,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.braindo.braindo.R;
+import com.app.braindo.braindo.common.entities.EncryptedPatient;
 import com.app.braindo.braindo.common.entities.Municipality;
 import com.app.braindo.braindo.common.entities.Parish;
-import com.app.braindo.braindo.common.entities.Patient;
 import com.app.braindo.braindo.model.RestCommunication;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -35,6 +37,7 @@ import java.util.regex.Pattern;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import ve.com.phoenix.shieldvault.ShieldVault;
 
 
 public class RegistrationActivity extends AppCompatActivity{
@@ -378,11 +381,36 @@ public class RegistrationActivity extends AppCompatActivity{
     }
 
     public class PatientSignUpTask extends AsyncTask<Void, Void, Boolean> {
-        private final Patient patientToRegister;
-        private Patient response;
+        //private final Patient patientToRegister;
+        //private Patient response;
+        private EncryptedPatient patientToRegisterEncrypted;
+        private EncryptedPatient response;
 
         PatientSignUpTask(String id, String firstname, String lastname, String age, String career, String state, String municipality, String parish, String email) {
-            patientToRegister = new Patient(Integer.valueOf(id), firstname, lastname, Integer.valueOf(age), career, state, municipality, parish, email);
+            //patientToRegister = new Patient(Integer.valueOf(id), firstname, lastname, Integer.valueOf(age), career, state, municipality, parish, email);
+            try {
+                ShieldVault crypto = new ShieldVault();
+                AssetManager assetManager = getAssets();
+                String[] files = assetManager.list("");
+                InputStream key = assetManager.open("publickey.dat");
+                InputStream key1 = assetManager.open("publickey.dat");
+                InputStream key2 = assetManager.open("publickey.dat");
+                InputStream key3 = assetManager.open("publickey.dat");
+                InputStream key4 = assetManager.open("publickey.dat");
+                InputStream key5 = assetManager.open("publickey.dat");
+                InputStream key6 = assetManager.open("publickey.dat");
+                InputStream key7 = assetManager.open("publickey.dat");
+                InputStream key8 = assetManager.open("publickey.dat");
+                patientToRegisterEncrypted = new EncryptedPatient(crypto.encriptadoMovilPublicaRSA(id, key), crypto.encriptadoMovilPublicaRSA(firstname, key1),
+                                                                  crypto.encriptadoMovilPublicaRSA(lastname, key2), crypto.encriptadoMovilPublicaRSA(age, key3),
+                                                                  crypto.encriptadoMovilPublicaRSA(career, key4), crypto.encriptadoMovilPublicaRSA(state, key5),
+                                                                  crypto.encriptadoMovilPublicaRSA(municipality, key6), crypto.encriptadoMovilPublicaRSA(parish, key7),
+                                                                  crypto.encriptadoMovilPublicaRSA(email, key8));
+                //patientToRegisterEncrypted = new EncryptedPatient();
+
+            }catch(Exception ex){
+                patientToRegisterEncrypted = new EncryptedPatient();
+            }
         }
 
         @Override
@@ -391,7 +419,7 @@ public class RegistrationActivity extends AppCompatActivity{
 
             try {
                 RestCommunication con = new RestCommunication();
-                response = con.callMethodPatientRegistration(patientToRegister);
+                response = con.callMethodPatientRegistration(patientToRegisterEncrypted);
                 return true;
             } catch (Exception e) {
                 return false;
