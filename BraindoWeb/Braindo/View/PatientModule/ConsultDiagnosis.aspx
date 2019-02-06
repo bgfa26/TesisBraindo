@@ -28,7 +28,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <asp:Repeater ID="listDiagnostics" runat="server">
+                                    <asp:Repeater ID="listDiagnostics" runat="server" OnItemCommand="actionDiagnostic_Command">
                                         <ItemTemplate>
                                             <tr id="<%# Eval("_ID") %>">
                                                 <td><%# Eval("_DiagnosisDateString") %></td>
@@ -38,7 +38,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td><%# Eval("_NetworkAnswer") %></td>
-                                                <td><asp:ImageButton ID="VerDiagnostico" runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
+                                                <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDetailedInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
                                             </tr>
                                         </ItemTemplate>
                                         </asp:Repeater>

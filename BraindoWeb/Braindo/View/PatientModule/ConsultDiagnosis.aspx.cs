@@ -47,7 +47,6 @@ namespace Braindo.View.PatientModule
                     {
                         cmd.execute();
                         consultedDiagnostic = cmd.getAnswer();
-
                         listDiagnostics.DataSource = consultedDiagnostic;
                         listDiagnostics.DataBind();
 
@@ -58,6 +57,16 @@ namespace Braindo.View.PatientModule
                         throw ex;
                     }
                 }
+            }
+        }
+
+        protected void actionDiagnostic_Command(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "viewDetailedInfo")
+            {
+                String idString = e.CommandArgument.ToString();
+
+                Response.Redirect("DetailedTest.aspx?diagnosticID=" + idString);
             }
         }
     }

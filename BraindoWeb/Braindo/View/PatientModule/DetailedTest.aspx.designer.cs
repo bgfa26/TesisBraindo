@@ -13,354 +13,363 @@ namespace Braindo.View.PatientModule {
     public partial class DetailedTest {
         
         /// <summary>
-        /// Text1 control.
+        /// question1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.WebControls.DropDownList question1;
         
         /// <summary>
-        /// Text3 control.
+        /// question2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text3;
+        protected global::System.Web.UI.WebControls.DropDownList question2;
         
         /// <summary>
-        /// Text4 control.
+        /// question3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text4;
+        protected global::System.Web.UI.WebControls.DropDownList question3;
         
         /// <summary>
-        /// Text7 control.
+        /// question4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text7;
+        protected global::System.Web.UI.WebControls.DropDownList question4;
         
         /// <summary>
-        /// Text8 control.
+        /// question5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text8;
+        protected global::System.Web.UI.WebControls.DropDownList question5;
         
         /// <summary>
-        /// Text9 control.
+        /// question6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text9;
+        protected global::System.Web.UI.WebControls.DropDownList question6;
         
         /// <summary>
-        /// Text10 control.
+        /// question7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text10;
+        protected global::System.Web.UI.WebControls.DropDownList question7;
         
         /// <summary>
-        /// Text11 control.
+        /// question8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text11;
+        protected global::System.Web.UI.WebControls.DropDownList question8;
         
         /// <summary>
-        /// Text12 control.
+        /// question9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text12;
+        protected global::System.Web.UI.WebControls.DropDownList question9;
         
         /// <summary>
-        /// Text13 control.
+        /// question10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text13;
+        protected global::System.Web.UI.WebControls.DropDownList question10;
         
         /// <summary>
-        /// Text14 control.
+        /// question11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text14;
+        protected global::System.Web.UI.WebControls.DropDownList question11;
         
         /// <summary>
-        /// Text15 control.
+        /// question12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text15;
+        protected global::System.Web.UI.WebControls.DropDownList question12;
         
         /// <summary>
-        /// Text16 control.
+        /// question13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text16;
+        protected global::System.Web.UI.WebControls.DropDownList question13;
         
         /// <summary>
-        /// Text17 control.
+        /// question14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text17;
+        protected global::System.Web.UI.WebControls.DropDownList question14;
         
         /// <summary>
-        /// Text18 control.
+        /// question15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text18;
+        protected global::System.Web.UI.WebControls.DropDownList question15;
         
         /// <summary>
-        /// Text19 control.
+        /// question16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text19;
+        protected global::System.Web.UI.WebControls.DropDownList question16;
         
         /// <summary>
-        /// Text20 control.
+        /// question17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text20;
+        protected global::System.Web.UI.WebControls.DropDownList question17;
         
         /// <summary>
-        /// Text21 control.
+        /// question18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text21;
+        protected global::System.Web.UI.WebControls.DropDownList question18;
         
         /// <summary>
-        /// Text22 control.
+        /// question19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text22;
+        protected global::System.Web.UI.WebControls.DropDownList question19;
         
         /// <summary>
-        /// Text23 control.
+        /// question20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text23;
+        protected global::System.Web.UI.WebControls.DropDownList question20;
         
         /// <summary>
-        /// Text2 control.
+        /// question21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
+        protected global::System.Web.UI.WebControls.DropDownList question21;
         
         /// <summary>
-        /// Text5 control.
+        /// question22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text5;
+        protected global::System.Web.UI.WebControls.DropDownList question22;
         
         /// <summary>
-        /// Text6 control.
+        /// question23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text6;
+        protected global::System.Web.UI.WebControls.TextBox question23;
         
         /// <summary>
-        /// Text24 control.
+        /// question24 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text24;
+        protected global::System.Web.UI.WebControls.DropDownList question24;
         
         /// <summary>
-        /// Text25 control.
+        /// question25 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text25;
+        protected global::System.Web.UI.WebControls.DropDownList question25;
         
         /// <summary>
-        /// Text26 control.
+        /// question26 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text26;
+        protected global::System.Web.UI.WebControls.DropDownList question26;
         
         /// <summary>
-        /// Text27 control.
+        /// question27 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text27;
+        protected global::System.Web.UI.WebControls.DropDownList question27;
         
         /// <summary>
-        /// Text28 control.
+        /// question28 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text28;
+        protected global::System.Web.UI.WebControls.DropDownList question28;
         
         /// <summary>
-        /// Text29 control.
+        /// question29 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text29;
+        protected global::System.Web.UI.WebControls.DropDownList question29;
         
         /// <summary>
-        /// Text30 control.
+        /// question30 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text30;
+        protected global::System.Web.UI.WebControls.DropDownList question30;
         
         /// <summary>
-        /// Text31 control.
+        /// question31 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text31;
+        protected global::System.Web.UI.WebControls.DropDownList question31;
         
         /// <summary>
-        /// Text32 control.
+        /// question32 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text32;
+        protected global::System.Web.UI.WebControls.DropDownList question32;
         
         /// <summary>
-        /// Text33 control.
+        /// question33 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text33;
+        protected global::System.Web.UI.WebControls.DropDownList question33;
         
         /// <summary>
-        /// Text34 control.
+        /// question34 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text34;
+        protected global::System.Web.UI.WebControls.DropDownList question34;
         
         /// <summary>
-        /// Text35 control.
+        /// question35 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text35;
+        protected global::System.Web.UI.WebControls.DropDownList question35;
         
         /// <summary>
-        /// Text36 control.
+        /// question36 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text36;
+        protected global::System.Web.UI.WebControls.DropDownList question36;
         
         /// <summary>
-        /// Text37 control.
+        /// question37 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text37;
+        protected global::System.Web.UI.WebControls.DropDownList question37;
         
         /// <summary>
-        /// Text38 control.
+        /// question38 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text38;
+        protected global::System.Web.UI.WebControls.DropDownList question38;
         
         /// <summary>
-        /// Text39 control.
+        /// question39 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text39;
+        protected global::System.Web.UI.WebControls.DropDownList question39;
+        
+        /// <summary>
+        /// question40 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox question40;
     }
 }
