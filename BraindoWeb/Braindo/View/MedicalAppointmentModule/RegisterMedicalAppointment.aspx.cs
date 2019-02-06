@@ -1,5 +1,6 @@
 ﻿using Braindo.Controller.MedicalAppointmenModule;
 using Braindo.Controller.PatientModule;
+using Braindo.Controller.DiagnosisModule;
 using Braindo.Common;
 using Braindo.Model;
 using System;
@@ -14,9 +15,17 @@ namespace Braindo.View.MedicalAppointmentModule
     public partial class RegisterMedicalAppointment : System.Web.UI.Page
     {
         private List<Patient> listOfPatientsConsulted;
+        List<Patient> patientListConfirmed = new List<Patient>();
+
         private Appointment appointmentRegistered;
         private Appointment appointment;
         private Appointment dateHourAppointment;
+
+        private Diagnostic diagnosticConsult;
+        private List<Diagnostic> diagnosticList;
+
+        private Psychologist psychoConsult;
+
 
         int resp = 0;
 
@@ -31,6 +40,14 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
+
+                    String idSession = Session["USER_ID"].ToString();
+                    int id = Convert.ToInt32(idSession);
+                    psychoConsult = new Psychologist(id);
+
+                    diagnosticConsult = new Diagnostic(psychoConsult);
+
+                    ConsultDiagnosticIDPsychoCommand cmdDiagnostic = new ConsultDiagnosticIDPsychoCommand(diagnosticConsult);
                     ConsultPatientsCommand cmd = new ConsultPatientsCommand();
 
                     try
@@ -38,7 +55,24 @@ namespace Braindo.View.MedicalAppointmentModule
                         cmd.execute();
                         listOfPatientsConsulted = cmd.getAnswer();
 
-                        foreach (Patient _patient in listOfPatientsConsulted)
+                        cmdDiagnostic.execute();
+                        diagnosticList = cmdDiagnostic.getAnswer();
+
+                        foreach (Diagnostic _diagnostic in diagnosticList)
+                        {
+                            int patientFK = _diagnostic._Patient._ID;
+
+                            foreach (Patient _patient in listOfPatientsConsulted)
+                            {
+                                if (patientFK == _patient._ID)
+                                {
+                                    patientListConfirmed.Add(_patient);
+                                }
+                            }
+                        }
+
+
+                        foreach (Patient _patient in patientListConfirmed)
                         {
                             int idPatient = _patient._ID;
                             String patientName = _patient._Name;
