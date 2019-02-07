@@ -8,7 +8,7 @@
 <asp:Content ID="ContentConsultDiagnosis2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
-                <h2>Lista de Diagnosticos del paciente</h2>
+                <h2>Diagnosticos del paciente</h2>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -18,12 +18,9 @@
                                 <thead>
                                     <tr>
                                         <th>Fecha</th>
-                                        <th>Fusión</th>
-                                        <th>Experiencia</th>
-                                        <th>Evitación</th>
-                                        <th>Rigidez</th>
-                                        <th>Flexibilidad</th>
-                                        <th>Respuesta</th>
+                                        <th>Sentimientos</th>
+                                        <th>Emociones</th>
+                                        <th>Ansiedad Social</th>
                                         <th>Detalle</th>
                                     </tr>
                                 </thead>
@@ -32,11 +29,8 @@
                                         <ItemTemplate>
                                             <tr id="<%# Eval("_ID") %>">
                                                 <td><%# Eval("_DiagnosisDateString") %></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><%# Eval("_Feelings") %></td>
+                                                <td><%# Eval("_Emotions") %></td>
                                                 <td><%# Eval("_NetworkAnswer") %></td>
                                                 <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDetailedInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
                                             </tr>

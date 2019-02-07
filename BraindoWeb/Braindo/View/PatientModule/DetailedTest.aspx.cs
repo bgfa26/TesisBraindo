@@ -64,7 +64,6 @@ namespace Braindo.View.PatientModule
 
                         question21.SelectedValue = answerArgs[20];
                         question22.SelectedValue = answerArgs[21];
-                        //question23.SelectedValue = answerArgs[22];
                         question24.SelectedValue = answerArgs[23];
                         question25.SelectedValue = answerArgs[24];
                         question26.SelectedValue = answerArgs[25];
