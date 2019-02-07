@@ -10,7 +10,9 @@ namespace Braindo.Common
         private int ID;
         private DateTime diagnosisDate;
         private String feelings;
+        private String otherFeelings;
         private String emotions;
+        private String otherEmotions;
         private String answer;
         private String networkAnswer;
         private Patient patient;
@@ -64,6 +66,19 @@ namespace Braindo.Common
             this.psychologist = _psychologist;
         }
 
+        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _otherFeelings, String _emotions, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        {
+            this.ID = _ID;
+            this.diagnosisDateString = _diagnosisDateString;
+            this.feelings = _feelings;
+            this.otherFeelings = _otherFeelings;
+            this.emotions = _emotions;
+            this.answer = _answer;
+            this.networkAnswer = _networkAnswer;
+            this.patient = _patient;
+            this.psychologist = _psychologist;
+        }
+
         public Diagnostic(DateTime _date, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
         {
             this.diagnosisDate = _date;
@@ -91,10 +106,22 @@ namespace Braindo.Common
             set { feelings = value; }
         }
 
+        public String _OtherFeelings
+        {
+            get { return otherFeelings; }
+            set { otherFeelings = value; }
+        }
+
         public String _Emotions
         {
             get { return emotions; }
             set { emotions = value; }
+        }
+
+        public String _OtherEmotions
+        {
+            get { return otherEmotions; }
+            set { otherEmotions = value; }
         }
 
         public String _Answer

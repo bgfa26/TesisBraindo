@@ -29,7 +29,7 @@
                                         <ItemTemplate>
                                             <tr id="<%# Eval("_ID") %>">
                                                 <td><%# Eval("_DiagnosisDateString") %></td>
-                                                <td><%# Eval("_Feelings") %></td>
+                                                <td  title ="<%# Eval("_OtherFeelings") %>"><%# Eval("_Feelings") %></td>
                                                 <td><%# Eval("_Emotions") %></td>
                                                 <td><%# Eval("_NetworkAnswer") %></td>
                                                 <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDetailedInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
