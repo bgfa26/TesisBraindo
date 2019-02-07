@@ -49,6 +49,10 @@ namespace Braindo.View
                         throw ex;
                     }
                 }
+                else
+                {
+                    Response.Redirect("~/View/Home/index.aspx", false);
+                }
             }
         }
 
@@ -56,7 +60,7 @@ namespace Braindo.View
         {
             Session.Remove("USER_ID");
             Session.RemoveAll();
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se ha cerrado la sesion');window.location.href='../IndexModule/LoginTest.aspx';", true);
+            Response.Redirect("~/View/Home/index.aspx", false);
         }
     }
 }

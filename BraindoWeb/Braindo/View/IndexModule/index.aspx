@@ -417,11 +417,8 @@
                 {
                     Source: "Internal", Amount: 111, Change: 78, Percent: 12, Target: 345
                 }];
-
-
             $("#shieldui-chart1").shieldChart({
                 theme: "dark",
-
                 primaryHeader: {
                     text: "Visitors"
                 },
@@ -435,7 +432,6 @@
                     data: performance
                 }]
             });
-
             $("#shieldui-chart2").shieldChart({
                 theme: "dark",
                 primaryHeader: {
@@ -451,7 +447,6 @@
                     data: visits
                 }]
             });
-
             $("#shieldui-grid1").shieldGrid({
                 dataSource: {
                     data: traffic

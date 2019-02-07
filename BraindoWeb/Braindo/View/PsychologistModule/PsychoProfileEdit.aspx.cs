@@ -25,7 +25,7 @@ namespace Braindo.View.PsychologistModule
             {
                 if (Session["USER_ID"] == null)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='../IndexModule/LoginTest.aspx';", true);
+                    Response.Redirect("~/View/Home/index.aspx", false);
                 }
                 else
                 {

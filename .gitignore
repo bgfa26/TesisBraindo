@@ -64,3 +64,5 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 /BraindoWebService/dist/
+/BraindoWeb/Braindo/bin/
+/BraindoWeb/Braindo/obj/Debug/
