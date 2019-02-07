@@ -73,6 +73,5 @@ fastlane/readme.md
 /BraindoWeb/Braindo/obj/Debug/Braindo.dll
 /BraindoWeb/Braindo/obj/Debug/Braindo.pdb
 *.suo
-*.dll
 *.csproj
 BraindoWeb/Braindo/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
