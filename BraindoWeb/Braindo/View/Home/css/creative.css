@@ -25,7 +25,7 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  color: #000;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -101,7 +101,7 @@ img::-moz-selection {
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
-  color: #F05F40;
+  color: rgba(0, 0, 0, 0.5);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -314,6 +314,6 @@ header.masthead p {
 }
 
 .btn-primary:active, .btn-primary:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
-  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(69, 183, 128, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(69, 183, 128, 0.5) !important;
 }

@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>Home | Braindo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,6 +51,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button onclick="document.getElementById('login_modal').style.display='block'" style="width:auto; height:20px; text-align:center; line-height: 0px; margin-top: 2px; margin-left: 15px;background-color:#69f0ae" class="btn btn-primary btn-xl js-scroll-trigger">Iniciar sesión</button>
           </li>
         </ul>
       </div>
@@ -257,6 +260,198 @@
       </div>
     </div>
   </section>
+    
+  
+  
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #45b780;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Set a style for all buttons */
+    .buttonLog {
+      background-color: #45b780;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+    .buttonLog:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #7127a0;
+      border-radius: 8px;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+  
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+  </style>
+  
+
+  <div id="login_modal" class="modal">
+  
+    <form id="formlogin" class="modal-content animate" runat="server">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('login_modal').style.display='none'" class="close" title="Cerrar">&times;</span>
+        <h1><strong>Inicio de sesión</strong></h1>
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Correo electrónico</b></label>
+        <input type="text" placeholder="Introduzca el correo" name="mail" required oninvalid="alert('El campo de correo electrónico no puede estar vacío');">
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Introduzca la contraseña" name="psw" required oninvalid="alert('El campo de contraseña no puede estar vacío')">
+        <asp:ScriptManager runat="server" ID="sm">
+        </asp:ScriptManager>
+        <asp:updatepanel runat="server">
+            <ContentTemplate>
+                 <asp:Button ID="aceptar" runat="server" Text="Ingresar" class="buttonLog" OnClick="aceptar_Click" />
+            </ContentTemplate>
+        </asp:updatepanel>
+
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1;width:100%;height:80%">
+        <button type="button" onclick="document.getElementById('login_modal').style.display='none'" class="cancelbtn">Cancelar</button>
+        <span class="psw">Regístrese <a href="../Registration/Registration.aspx">aquí</a></span>
+      </div>
+    </form>
+  </div>
+
+    
+  <!-- Modal  -->
+  <script>
+    // Get the modal
+    var modal = document.getElementById('login_modal');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+  </script>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
