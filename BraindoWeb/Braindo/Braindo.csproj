@@ -113,7 +113,6 @@
     <Content Include="View\Home\img\portfolio\thumbnails\5.jpg" />
     <Content Include="View\Home\img\portfolio\thumbnails\6.jpg" />
     <Content Include="View\Home\index.aspx" />
-    <Content Include="View\Home\index.html" />
     <Content Include="View\Home\js\creative.js" />
     <Content Include="View\Home\js\creative.min.js" />
     <Content Include="View\Home\postlogin.aspx" />
@@ -1684,10 +1683,8 @@
     <Content Include="View\Registration\images\signup-bg.jpg" />
     <Content Include="View\Registration\images\1signup-bg.jpg" />
     <Content Include="View\Registration\images\unchecked.gif" />
-    <Content Include="View\Registration\index.html" />
     <Content Include="View\Registration\js\main.js" />
     <Content Include="View\Registration\readme.txt" />
-    <Content Include="View\Registration\Register.aspx" />
     <Content Include="View\Registration\Registration.aspx" />
     <Content Include="View\Registration\vendor\jquery\jquery-ui.min.js" />
     <Content Include="View\Registration\vendor\jquery\jquery.min.js" />
@@ -1771,13 +1768,6 @@
     </Compile>
     <Compile Include="View\IndexModule\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Registration\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Registration\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\MedicalAppointmentModule\ModifyMedicalAppointment.aspx.cs">
       <DependentUpon>ModifyMedicalAppointment.aspx</DependentUpon>
