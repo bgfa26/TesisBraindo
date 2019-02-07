@@ -28,3 +28,11 @@ C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braind
 C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
 C:\Users\Ronald\Documents\Tesis\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
 C:\Users\LuisAlejandro\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll.config
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.dll
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\Braindo.pdb
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\mono.security.dll
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\bin\npgsql.dll
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.csprojResolveAssemblyReference.cache
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.dll
+C:\Users\LAPGrock\Documents\GitHub\TesisBraindo\BraindoWeb\Braindo\obj\Debug\Braindo.pdb
