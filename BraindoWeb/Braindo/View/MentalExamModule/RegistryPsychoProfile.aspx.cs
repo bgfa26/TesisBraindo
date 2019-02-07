@@ -158,7 +158,7 @@ namespace Braindo.View.MentalExamModule
 
                     String dateApp = Args[0];
                     String hourApp = Args[1];
-                    String idPatientString = Args[4];
+                    String idPatientString = Args[3];
 
                         if (hourApp == "01:00")
                         {

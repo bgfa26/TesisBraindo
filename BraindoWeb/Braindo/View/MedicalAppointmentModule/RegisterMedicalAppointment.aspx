@@ -18,10 +18,16 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group form-group-MentalExam-select">
+                            <div class="form-group form-group-MentalExam-select" runat="server" id="NoRecord" visible="false">
+                                <label>Lista de pacientes:</label>
+                                <asp:DropDownList id="NoRecordList" runat="server" AutoPostBack="true" CssClass="form-control">
+                                        <asp:ListItem>No tiene pacientes registrados</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group form-group-MentalExam-select" runat="server" id="Record">
                                 <label>Lista de pacientes:</label>
                                 <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">
-  
+                                        
                                 </asp:DropDownList>
                             </div>
                             <div class="panel-Medical panel-default">

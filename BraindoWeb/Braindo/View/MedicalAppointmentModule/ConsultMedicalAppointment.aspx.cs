@@ -44,6 +44,13 @@ namespace Braindo.View.MedicalAppointmentModule
 
                         listMedicalAppointments.DataSource = consultedAppointment;
                         listMedicalAppointments.DataBind();
+
+                        if (listMedicalAppointments.Items.Count < 1)
+                        {
+                            listMedicalAppointments.Visible = false;
+                            NoRecord.Visible = true;
+                        }
+
                     }
                     catch (Exception ex)
                     {

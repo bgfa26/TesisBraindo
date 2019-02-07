@@ -15,6 +15,7 @@ namespace Braindo.View.MedicalAppointmentModule
     public partial class RegisterMedicalAppointment : System.Web.UI.Page
     {
         private List<Patient> listOfPatientsConsulted;
+        List<Patient> patientListDuplicates = new List<Patient>();
         List<Patient> patientListConfirmed = new List<Patient>();
 
         private Appointment appointmentRegistered;
@@ -66,20 +67,34 @@ namespace Braindo.View.MedicalAppointmentModule
                             {
                                 if (patientFK == _patient._ID)
                                 {
-                                    patientListConfirmed.Add(_patient);
+                                    patientListDuplicates.Add(_patient);
                                 }
                             }
                         }
 
+                        patientListConfirmed = patientListDuplicates.GroupBy(i => i._ID).Select(g => g.First()).ToList();
 
-                        foreach (Patient _patient in patientListConfirmed)
+                        if (patientListConfirmed.Count < 1)
                         {
-                            int idPatient = _patient._ID;
-                            String patientName = _patient._Name;
-                            String patientSurname = _patient._Surname;
+                            NoRecord.Visible = true;
+                            NoRecordList.Enabled = false;
+                            Record.Visible = false;
+                            date_appointment.Disabled = true;
+                            hour_appointment.Enabled = false;
+                            reasonTXT.Enabled = false;
+                            btnRegisterAppointment.Enabled = false;
+                        }
+                        else
+                        {
+                            foreach (Patient _patient in patientListConfirmed)
+                            {
+                                int idPatient = _patient._ID;
+                                String patientName = _patient._Name;
+                                String patientSurname = _patient._Surname;
 
 
-                            patient_List.Items.Add(idPatient + " " + patientName + " " + patientSurname);
+                                patient_List.Items.Add(idPatient + " " + patientName + " " + patientSurname);
+                            }
                         }
                     }
                     catch (Exception ex)

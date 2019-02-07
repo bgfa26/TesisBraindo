@@ -26,6 +26,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr runat ="server" id="NoRecord" visible="false">
+                                        <td>No tiene citas registradas</td>
+                                    </tr>
                                     <asp:Repeater ID="listMedicalAppointments" runat="server" OnItemCommand="actionAppointment_Command">
                                         <ItemTemplate>
                                         <tr>

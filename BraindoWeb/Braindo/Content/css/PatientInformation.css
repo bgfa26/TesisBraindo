@@ -273,3 +273,9 @@ tbody tr {
   width: calc( 100% - 1.1em );
 }
 
+
+.customInfoIcon{
+    color:black;
+    width: 20px !important;
+    font-size: 15px !important;
+}

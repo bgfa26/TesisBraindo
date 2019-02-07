@@ -29,6 +29,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr runat ="server" id="NoRecord" visible="false">
+                                        <td>No tiene pacientes registrados</td>
+                                    </tr>
                                     <asp:Repeater ID="listPatients" runat="server"  OnItemCommand="actionPatient_Command">
                                         <ItemTemplate>
                                             <tr id="<%# Eval("_ID") %>">

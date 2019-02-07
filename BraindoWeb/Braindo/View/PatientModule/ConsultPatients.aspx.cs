@@ -18,6 +18,7 @@ namespace Braindo.View.PatientModule
         private Patient patientConsulted;
         private Patient patientDeleted;
         private List<Patient> patientList;
+        List<Patient> patientListDuplicates = new List<Patient>();
         List<Patient> patientListConfirmed = new List<Patient>();
         private Diagnostic diagnosticConsult;
         private List<Diagnostic> diagnosticList;
@@ -56,15 +57,25 @@ namespace Braindo.View.PatientModule
 
                             foreach (Patient _patient in patientList)
                             {
+                                int patientID = _patient._ID;
+
                                 if (patientFK == _patient._ID)
                                 {
-                                    patientListConfirmed.Add(_patient);
+                                    patientListDuplicates.Add(_patient);
                                 }
                             }
                         }
 
+                        patientListConfirmed = patientListDuplicates.GroupBy(i => i._ID).Select(g => g.First()).ToList();
                         listPatients.DataSource = patientListConfirmed;
                         listPatients.DataBind();
+
+                        if (listPatients.Items.Count < 1)
+                        {
+                            listPatients.Visible = false;
+                            NoRecord.Visible = true;
+                        }
+
 
                     }
                     catch (Exception ex)
@@ -96,11 +107,6 @@ namespace Braindo.View.PatientModule
                     patientDeleted = cmd.getAnswer();
                     if (patientDeleted._Error == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        /*Response.Redirect(Request.RawUrl);
-   
-                        string script = "alert(\"Se Elimino\");";
-                        ScriptManager.RegisterStartupScript(this, GetType(),
-                                                "ServerControlScript", script, true);*/
 
                         ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se elimino exitosamente');window.location.href='ConsultPatients.aspx';", true);
 

@@ -24,7 +24,9 @@ namespace Braindo.View.PatientModule
         String highestValueFeelings;
         String othersValuesFeelings;
         String highestValueEmotions;
+        String othersValuesEmotions;
         String networkAnxiety;
+        String othersValuesNetworkAnxiety;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -71,17 +73,17 @@ namespace Braindo.View.PatientModule
                             if (negativeInt > neutralInt && negativeInt > positiveInt)
                             {
                                 highestValueFeelings = negativeInt.ToString() + "%" + " " + "Negativo";
-                                othersValuesFeelings = neutralInt.ToString() + "%" + " " + "Neutral" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo";
+                                othersValuesFeelings = "Otros Sentimientos:" + "\n" + neutralInt.ToString() + "%" + " " + "Neutral" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo" + "  ";
                             }
                             else if (neutralInt > negativeInt && neutralInt > positiveInt)
                             {
                                 highestValueFeelings = neutralInt.ToString() + "%" + " " + "Neutral";
-                                othersValuesFeelings = negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo";
+                                othersValuesFeelings = "Otros Sentimientos:" + "\n" + negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo" + "  ";
                             }
                             else
                             {
                                 highestValueFeelings = positiveInt.ToString() + "%" + " " + "Positivo";
-                                othersValuesFeelings = negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + neutralInt.ToString() + "%" + " " + "Neutral";
+                                othersValuesFeelings = "Otros Sentimientos:" + "\n" + negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + neutralInt.ToString() + "%" + " " + "Neutral" + "  ";
                             }
 
                             /*SECCION EMOCIONES*/
@@ -103,37 +105,63 @@ namespace Braindo.View.PatientModule
                             if (fearInt > sadInt && fearInt > happyInt && fearInt > angryInt && fearInt > excitedInt && fearInt > boredInt)
                             {
                                 highestValueEmotions = fearInt.ToString() + "%" + " " + "Miedo";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + sadInt.ToString() + "%" + " " + "Tristeza" + "\n" + happyInt.ToString() + "%" + " " + "Felicidad" + "\n" + angryInt.ToString() + "%" + " " + "Enojo" + "\n" + excitedInt.ToString() + "%" + " " + "Emocion" + "\n" + boredInt.ToString() + "%" + " " + "Aburrido" + "  ";
+
                             }
                             else if (sadInt > fearInt && sadInt > happyInt && sadInt > angryInt && sadInt > excitedInt && sadInt > boredInt)
                             {
                                 highestValueEmotions = sadInt.ToString() + "%" + " " + "Tristeza";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + fearInt.ToString() + "%" + " " + "Miedo" + "\n" + happyInt.ToString() + "%" + " " + "Felicidad" + "\n" + angryInt.ToString() + "%" + " " + "Enojo" + "\n" + excitedInt.ToString() + "%" + " " + "Emocion" + "\n" + boredInt.ToString() + "%" + " " + "Aburrido" + "  ";
                             }
                             else if (happyInt > fearInt && happyInt > sadInt && happyInt > angryInt && happyInt > excitedInt && happyInt > boredInt)
                             {
                                 highestValueEmotions = happyInt.ToString() + "%" + " " + "Felicidad";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + fearInt.ToString() + "%" + " " + "Miedo" + "\n" + sadInt.ToString() + "%" + " " + "Tristeza" + "\n" + angryInt.ToString() + "%" + " " + "Enojo" + "\n" + excitedInt.ToString() + "%" + " " + "Emocion" + "\n" + boredInt.ToString() + "%" + " " + "Aburrido" + "  ";
+
                             }
                             else if (angryInt > fearInt && angryInt > sadInt && angryInt > happyInt && angryInt > excitedInt && angryInt > boredInt)
                             {
                                 highestValueEmotions = angryInt.ToString() + "%" + " " + "Enojo";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + fearInt.ToString() + "%" + " " + "Miedo" + "\n" + sadInt.ToString() + "%" + " " + "Tristeza" + "\n" + happyInt.ToString() + "%" + " " + "Felicidad" + "\n" + excitedInt.ToString() + "%" + " " + "Emocion" + "\n" + boredInt.ToString() + "%" + " " + "Aburrido" + "  ";
+
                             }
                             else if (excitedInt > fearInt && excitedInt > sadInt && excitedInt > happyInt && excitedInt > angryInt && excitedInt > boredInt)
                             {
                                 highestValueEmotions = excitedInt.ToString() + "%" + " " + "Emocion";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + fearInt.ToString() + "%" + " " + "Miedo" + "\n" + sadInt.ToString() + "%" + " " + "Tristeza" + "\n" + happyInt.ToString() + "%" + " " + "Felicidad" + "\n" + angryInt.ToString() + "%" + " " + "Enojo" + "\n" + boredInt.ToString() + "%" + " " + "Aburrido" + "  ";
+
                             }
                             else
                             {
                                 highestValueEmotions = boredInt.ToString() + "%" + " " + "Aburrimiento";
+                                othersValuesEmotions = "Otras Emociones:" + "\n" + fearInt.ToString() + "%" + " " + "Miedo" + "\n" + sadInt.ToString() + "%" + " " + "Tristeza" + "\n" + happyInt.ToString() + "%" + " " + "Felicidad" + "\n" + angryInt.ToString() + "%" + " " + "Enojo" + "\n" + excitedInt.ToString() + "%" + " " + "Emocion" + "  ";
+
                             }
 
                             /*SECCION RESPUESTA RED*/
 
                             string[] networkAnswerArgs = _diagnostic._NetworkAnswer.Split(new char[] { '/' });
-                            String answer = networkAnswerArgs[5].Substring(0, 5);
-                            Double netAnswer = Convert.ToDouble(answer) / 10;
 
-                            networkAnxiety = netAnswer.ToString() + "%";
+                            String answer0 = networkAnswerArgs[0].Substring(0, 5);
+                            String answer1 = networkAnswerArgs[1].Substring(0, 5);
+                            String answer2 = networkAnswerArgs[2].Substring(0, 5);
+                            String answer3 = networkAnswerArgs[3].Substring(0, 5);
+                            String answer4 = networkAnswerArgs[4].Substring(0, 5);
+                            String answer5 = networkAnswerArgs[5].Substring(0, 5);
 
-                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, othersValuesFeelings, highestValueEmotions, _diagnostic._Answer, networkAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
+
+                            Double AvoidanceDouble = Convert.ToDouble(answer0) / 10;
+                            Double ExperienceDouble = Convert.ToDouble(answer1) / 10;
+                            Double FlexibilityDouble = Convert.ToDouble(answer2) / 10;
+                            Double FusionDouble = Convert.ToDouble(answer3) / 10;
+                            Double RigidityDouble = Convert.ToDouble(answer4) / 10;
+                            Double netAnswerDouble = Convert.ToDouble(answer5) / 10;
+
+
+                            networkAnxiety = netAnswerDouble.ToString() + "%";
+                            othersValuesNetworkAnxiety = "Resultados por Factor:" + "\n" + AvoidanceDouble.ToString() + "%" + " " + "Evitacion" + "\n" + ExperienceDouble.ToString() + "%" + " " + "Experiencia" + "\n" + FlexibilityDouble.ToString() + "%" + " " + "Flexibilidad" + "\n" + FusionDouble.ToString() + "%" + " " + "Fusion" + "\n" + RigidityDouble.ToString() + "%" + " " + "Rigidez" + "\n";
+
+                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, othersValuesFeelings, highestValueEmotions, othersValuesEmotions, _diagnostic._Answer, networkAnxiety, othersValuesNetworkAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
 
                             diagnosticListConfirmed.Add(diagnosisFixed);
 

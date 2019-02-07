@@ -13,6 +13,33 @@ namespace Braindo.View.MedicalAppointmentModule {
     public partial class RegisterMedicalAppointment {
         
         /// <summary>
+        /// NoRecord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NoRecord;
+        
+        /// <summary>
+        /// NoRecordList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList NoRecordList;
+        
+        /// <summary>
+        /// Record control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Record;
+        
+        /// <summary>
         /// patient_List control.
         /// </summary>
         /// <remarks>
