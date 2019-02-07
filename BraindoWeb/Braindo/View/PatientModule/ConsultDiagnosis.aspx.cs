@@ -22,6 +22,7 @@ namespace Braindo.View.PatientModule
         List<Diagnostic> diagnosticListConfirmed = new List<Diagnostic>();
 
         String highestValueFeelings;
+        String othersValuesFeelings;
         String highestValueEmotions;
         String networkAnxiety;
 
@@ -70,14 +71,17 @@ namespace Braindo.View.PatientModule
                             if (negativeInt > neutralInt && negativeInt > positiveInt)
                             {
                                 highestValueFeelings = negativeInt.ToString() + "%" + " " + "Negativo";
+                                othersValuesFeelings = neutralInt.ToString() + "%" + " " + "Neutral" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo";
                             }
                             else if (neutralInt > negativeInt && neutralInt > positiveInt)
                             {
                                 highestValueFeelings = neutralInt.ToString() + "%" + " " + "Neutral";
+                                othersValuesFeelings = negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + positiveInt.ToString() + "%" + " " + "Positivo";
                             }
                             else
                             {
                                 highestValueFeelings = positiveInt.ToString() + "%" + " " + "Positivo";
+                                othersValuesFeelings = negativeInt.ToString() + "%" + " " + "Negativo" + "\n" + neutralInt.ToString() + "%" + " " + "Neutral";
                             }
 
                             /*SECCION EMOCIONES*/
@@ -129,9 +133,10 @@ namespace Braindo.View.PatientModule
 
                             networkAnxiety = netAnswer.ToString() + "%";
 
-                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, highestValueEmotions, _diagnostic._Answer, networkAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
+                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, othersValuesFeelings, highestValueEmotions, _diagnostic._Answer, networkAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
 
                             diagnosticListConfirmed.Add(diagnosisFixed);
+
 
                         }
 

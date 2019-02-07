@@ -66,3 +66,6 @@ fastlane/readme.md
 /BraindoWebService/dist/
 /BraindoWeb/Braindo/bin/
 /BraindoWeb/Braindo/obj/Debug/
+BraindoWeb/Braindo.v12.suo
+BraindoWeb/Braindo/obj/Debug/Braindo.dll
+BraindoWeb/Braindo/obj/Debug/Braindo.pdb
