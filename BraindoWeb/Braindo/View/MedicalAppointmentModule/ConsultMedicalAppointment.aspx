@@ -34,7 +34,7 @@
                                         <tr>
                                             <td style="text-align:center"><%# Eval("_DateString") %></td>
                                             <td style="text-align:center"><%# Eval("_HourString") %></td>
-                                            <td><%# Eval("_Patient._Name") %></td>
+                                            <td><%# String.Format("{0} {1}", Eval("_Patient._Name"), Eval("_Patient._Surname")) %></td>
                                             <td><%# Eval("_Reason") %></td>
                                             <td>
                                                 <asp:ImageButton ID="Agregar" CommandName="addExam" CommandArgument='<%# Eval("_ID")+","+ Eval("_MentalExam._ID")+","+ Eval("_Patient._ID")%>' runat="server" ImageUrl="~/Content/images/addArrow4.ico" Height="27px" Width="26px"  ToolTip="Agregar Examen Mental" />
