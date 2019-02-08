@@ -83,7 +83,17 @@ namespace Braindo.View.MentalExamModule
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No existen citas sin examenes registrados');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                                NoRecord.Visible = true;
+                                NoRecordList.Enabled = false;
+                                Record.Visible = false;
+                                behavior_txt.Disabled = true;
+                                attitude_txt.Disabled = true;
+                                alertness_txt.Disabled = true;
+                                awareness_txt.Disabled = true;
+                                mood_txt.Disabled = true;
+                                language_txt.Disabled = true;
+                                thought_txt.Disabled = true;
+                                btnRegisterPsychoProfile.Enabled = false;
                             }
                         }
                         catch (Exception ex)

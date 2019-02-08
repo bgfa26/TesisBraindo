@@ -13,7 +13,13 @@
                 <div class="col-lg-3">
                 </div>
                 <div class="col-lg-6">
-                    <div class="form-group form-group-MentalExam-select">
+                    <div class="form-group form-group-MentalExam-select" runat="server" id="NoRecord" visible="false">
+                        <asp:Label ID="Label1" runat="server">Lista de citas:</asp:Label>
+                        <asp:DropDownList id="NoRecordList" runat="server" AutoPostBack="true" CssClass="form-control">
+                            <asp:ListItem>No tiene citas registradas</asp:ListItem>    
+                        </asp:DropDownList>
+                    </div>
+                    <div class="form-group form-group-MentalExam-select" runat="server" id="Record">
                         <asp:Label ID="AppointmentList_Tittle" runat="server">Lista de citas:</asp:Label>
                         <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">    
                         </asp:DropDownList>
