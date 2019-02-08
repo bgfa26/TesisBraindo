@@ -207,6 +207,7 @@ namespace Braindo.Model.PatientModule
                         state = dr.GetString(5);
                         municipality = dr.GetString(6);
                         parish = dr.GetString(7);
+
                         _patient = new Patient(id, name, surname, age, career, state, municipality, parish);
                     }
                     dr.Close();
@@ -267,6 +268,16 @@ namespace Braindo.Model.PatientModule
                         state = dr.GetString(5);
                         municipality = dr.GetString(6);
                         parish = dr.GetString(7);
+
+                        if (career == "Administración y Contaduría")
+                        {
+                            career = "Admin. y Contaduría";
+                        }
+                        else if (career == "Ingeniería en Telecomunicaciones")
+                        {
+                            career = "Ingeniería en Telecom.";
+                        }
+
                         _patient = new Patient(id, name, surname, age, career, state, municipality, parish);
 
                         patientList.Add(_patient);

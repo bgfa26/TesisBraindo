@@ -20,6 +20,7 @@ namespace Braindo.View.PatientModule
         private List<Patient> patientList;
         List<Patient> patientListDuplicates = new List<Patient>();
         List<Patient> patientListConfirmed = new List<Patient>();
+        List<Patient> patientListFixed = new List<Patient>();
         private Diagnostic diagnosticConsult;
         private List<Diagnostic> diagnosticList;
 

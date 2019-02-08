@@ -24,7 +24,7 @@
                                         <th>Edad</th>
                                         <th>Carrera</th>
                                         <th>Dirección</th>
-                                        <th>Diagnostico</th>
+                                        <th>Diagnóstico</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
