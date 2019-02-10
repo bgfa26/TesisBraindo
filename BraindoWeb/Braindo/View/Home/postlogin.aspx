@@ -42,13 +42,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">¿Qué es la ansiedad?</a>
+            <a class="nav-link js-scroll-trigger" href="#about">¿Qué es la fobia social?</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">¿Qué hacer?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Braindo: Versión Móvil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -66,12 +66,11 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong>Conoce sobre trastorno de ansiedad social</strong>
+            <strong>Conoce sobre trastorno de fobia social</strong>
           </h1>
           <hr style="border-color:#69f0ae" />
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5">Braindo es un sistema blah blah blah</p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about" style="background-color:#69f0ae">Descubre más</a>
         </div>
       </div>
@@ -82,9 +81,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading text-white">¿Qué es la ansiedad social?</h2>
+          <h2 class="section-heading text-white">¿Qué es la fobia social?</h2>
           <hr class="light my-4">
-          <p class="text-faded mb-4">El trastorno de ansiedad social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de ansiedad social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
+          <p class="text-faded mb-4">El trastorno de fobia social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de fobia social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Iniciemos</a>
         </div>
       </div> 
@@ -134,102 +133,20 @@
     </div>
   </section>
 
-  <section class="p-0" id="portfolio">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters popup-gallery">
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
+  <section class="bg-dark" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">Braindo: Versión Móvil ¿Qué es?
+          </h2>
+          <hr class="my-4" style="border-color:#69f0ae" />
+          <p class="text-faded mb-4">Braindo: Versión Móvil es una aplicación para dispositivos con sistema operativo Android que permite a sus usuarios realizar un test que será enviado a su psicólogo tratante* luego de ser procesado por una red neuronal y un analizador de texto que determinan el porcentaje de fobia social que el paciente padece y los sentimientos y emociones presentes en sus respuestas escritas </p>
+          <p class="text-faded mb-4"><i>* El psicólogo tratante debe estar registrado en la versión web de Braindo</i></p>
+          <img src="img/google.png" alt="Disponible en Google Play" width="200" height="80"/>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      </div> 
     </div>
-  </section>
+  </section>   
 
   <section class="bg-dark text-white">
     <div class="container text-center">
