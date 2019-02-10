@@ -177,6 +177,7 @@ namespace Braindo.Model.DiagnosisModule
             String emotions;
             String answer;
             String networkAnswer;
+            double totalAnxiety;
             String patientName;
             String patientSurname;
             String psychoName;
@@ -224,17 +225,18 @@ namespace Braindo.Model.DiagnosisModule
                         emotions = dr.GetString(3);
                         answer = dr.GetString(4);
                         networkAnswer = dr.GetString(5);
-                        patientName = dr.GetString(6);
-                        patientSurname = dr.GetString(7);
-                        psychoName = dr.GetString(8);
-                        psychoSurname = dr.GetString(9);
+                        totalAnxiety = dr.GetDouble(6);
+                        patientName = dr.GetString(7);
+                        patientSurname = dr.GetString(8);
+                        psychoName = dr.GetString(9);
+                        psychoSurname = dr.GetString(10);
 
                         DiagnosisDateString = diagnosisDate.ToString("dd-MM-yyyy");
 
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, totalAnxiety, _patient, _psycho);
 
                         diagnosticList.Add(_diagnostic);
                     }
@@ -270,6 +272,7 @@ namespace Braindo.Model.DiagnosisModule
             String emotions;
             String answer;
             String networkAnswer;
+            double totalAnxiety;
             int ciPatient;
             String patientName;
             String patientSurname;
@@ -313,19 +316,20 @@ namespace Braindo.Model.DiagnosisModule
                         emotions = dr.GetString(3);
                         answer = dr.GetString(4);
                         networkAnswer = dr.GetString(5);
-                        ciPatient = dr.GetInt32(6);
-                        patientName = dr.GetString(7);
-                        patientSurname = dr.GetString(8);
-                        ciPsycho = dr.GetInt32(9);
-                        psychoName = dr.GetString(10);
-                        psychoSurname = dr.GetString(11);
+                        totalAnxiety = dr.GetDouble(6);
+                        ciPatient = dr.GetInt32(7);
+                        patientName = dr.GetString(8);
+                        patientSurname = dr.GetString(9);
+                        ciPsycho = dr.GetInt32(10);
+                        psychoName = dr.GetString(11);
+                        psychoSurname = dr.GetString(12);
 
                         DiagnosisDateString = diagnosisDate.ToString("dd-MM-yyyy");
 
                         _patient = new Patient(ciPatient, patientName, patientSurname);
                         _psycho = new Psychologist(ciPsycho, psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, DiagnosisDateString, feelings, emotions, answer, networkAnswer, totalAnxiety, _patient, _psycho);
 
                         diagnosticList.Add(_diagnostic);
                     }
@@ -362,6 +366,7 @@ namespace Braindo.Model.DiagnosisModule
             String emotions;
             String answer;
             String networkAnswer;
+            Double totalAnxiety;
             String patientName;
             String patientSurname;
             String psychoName;
@@ -399,15 +404,16 @@ namespace Braindo.Model.DiagnosisModule
                         emotions = dr.GetString(3);
                         answer = dr.GetString(4);
                         networkAnswer = dr.GetString(5);
-                        patientName = dr.GetString(6);
-                        patientSurname = dr.GetString(7);
-                        psychoName = dr.GetString(8);
-                        psychoSurname = dr.GetString(9);
+                        totalAnxiety = dr.GetDouble(6);
+                        patientName = dr.GetString(7);
+                        patientSurname = dr.GetString(8);
+                        psychoName = dr.GetString(9);
+                        psychoSurname = dr.GetString(10);
 
                         _patient = new Patient(patientName, patientSurname);
                         _psycho = new Psychologist(psychoName, psychoSurname);
 
-                        _diagnostic = new Diagnostic(id, diagnosisDate, feelings, emotions, answer, networkAnswer, _patient, _psycho);
+                        _diagnostic = new Diagnostic(id, diagnosisDate, feelings, emotions, answer, networkAnswer, totalAnxiety, _patient, _psycho);
                     }
                     dr.Close();
                     tran.Commit();
