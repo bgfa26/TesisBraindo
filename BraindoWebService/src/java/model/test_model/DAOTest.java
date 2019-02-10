@@ -21,7 +21,7 @@ import static model.Registry.CODE_RESOURCE_CREATED;
 
 public class DAOTest {
     private Connection _dbCon;
-    private static String _sqlTestRegistration = "{?=call DIAGNOSTICO_REGISTRAR(?,?,?,?,?,?,?)}";
+    private static String _sqlTestRegistration = "{?=call DIAGNOSTICO_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     private ResultSet rs;
     
@@ -50,12 +50,15 @@ public class DAOTest {
             cstmt.setString(4, emotions);
             cstmt.setString(5, answers);
             cstmt.setString(6, neuralNetworkAnswers);
+            String totalanx = neuralNetworkAnswers.split(";")[5];
+            float totalAnxiety = Float.parseFloat(totalanx);
+            cstmt.setFloat(7, totalAnxiety);
             ShieldVault crypto = new ShieldVault();
             String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
             String email = crypto.desencriptadoPrivadaRSA(_test.getPatient().get_email(), key);
             int id = Integer.parseInt(crypto.desencriptadoPrivadaRSA(_test.getPatient().get_id(), key));
-            cstmt.setInt(7, id);
-            cstmt.setString(8, email);
+            cstmt.setInt(8, id);
+            cstmt.setString(9, email);
             cstmt.execute();
             response = cstmt.getInt(1);
             
