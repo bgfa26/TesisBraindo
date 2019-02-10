@@ -161,7 +161,7 @@ namespace Braindo.View.PatientModule
                             networkAnxiety = netAnswerDouble.ToString() + "%";
                             othersValuesNetworkAnxiety = "Resultados por Factor:" + "\n" + AvoidanceDouble.ToString() + "%" + " " + "Evitación" + "\n" + ExperienceDouble.ToString() + "%" + " " + "Experiencia" + "\n" + FlexibilityDouble.ToString() + "%" + " " + "Flexibilidad" + "\n" + FusionDouble.ToString() + "%" + " " + "Fusión" + "\n" + RigidityDouble.ToString() + "%" + " " + "Rigidez" + "\n";
 
-                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, othersValuesFeelings, highestValueEmotions, othersValuesEmotions, _diagnostic._Answer, networkAnxiety, othersValuesNetworkAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
+                            Diagnostic diagnosisFixed = new Diagnostic(_diagnostic._ID, _diagnostic._DiagnosisDateString, highestValueFeelings, othersValuesFeelings, highestValueEmotions, othersValuesEmotions, _diagnostic._Answer, networkAnxiety, othersValuesNetworkAnxiety, _diagnostic._TotalAnxiety, _diagnostic._Patient, _diagnostic._Psychologist);
 
                             diagnosticListConfirmed.Add(diagnosisFixed);
 

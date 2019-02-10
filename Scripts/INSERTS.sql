@@ -144,7 +144,7 @@ INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Naiguata',(SE
 INSERT INTO LUGAR VALUES (nextval('lugar_codigo_seq'),'Parroquia','Urimare',(SELECT CODIGO FROM LUGAR WHERE TIPO = 'Municipio' and NOMBRE = 'Vargas'));
 
 
-INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4', 'Bárbara', 'Gilvania', 'Fernández', 'Aristeigueta', 121212, '26-01-1995'); /*pass 1234*/
+INSERT INTO PSICOLOGO VALUES (24220210, 'b@gmail.com', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4', 'Bárbara', 'Gilvania', 'Fernández', 'Aristeigueta', '121212', '26-01-1995'); /*pass 1234*/
 
 INSERT INTO PACIENTE VALUES (24773340, 'Luis', 'Pérez', 22, 'Ingeniería Informática', 36);
 INSERT INTO PACIENTE VALUES (20678868, 'Ron', 'Navas', 25, 'Psicología', 36);

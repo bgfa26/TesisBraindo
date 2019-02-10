@@ -16,6 +16,7 @@ namespace Braindo.Common
         private String answer;
         private String networkAnswer;
         private String otherNetworkAnswer;
+        private double totalAnxiety;
         private Patient patient;
         private Psychologist psychologist;
         private int error;
@@ -43,7 +44,7 @@ namespace Braindo.Common
             this.psychologist = _psycho;
         }
 
-        public Diagnostic(int _ID, DateTime _date, String _feelings, String _emotions, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        public Diagnostic(int _ID, DateTime _date, String _feelings, String _emotions, String _answer, String _networkAnswer, double _totalAnxiety, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
             this.diagnosisDate = _date;
@@ -51,11 +52,12 @@ namespace Braindo.Common
             this.emotions = _emotions;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
+            this.totalAnxiety = _totalAnxiety;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }
 
-        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _emotions, String _answer, String _networkAnswer, Patient _patient, Psychologist _psychologist)
+        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _emotions, String _answer, String _networkAnswer, double _totalAnxiety, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
             this.diagnosisDateString = _diagnosisDateString;
@@ -63,11 +65,12 @@ namespace Braindo.Common
             this.emotions = _emotions;
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
+            this.totalAnxiety = _totalAnxiety;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }
 
-        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _otherFeelings, String _emotions, String _otherEmotions, String _answer, String _networkAnswer, String _otherNetworkAnswer, Patient _patient, Psychologist _psychologist)
+        public Diagnostic(int _ID, String _diagnosisDateString, String _feelings, String _otherFeelings, String _emotions, String _otherEmotions, String _answer, String _networkAnswer, String _otherNetworkAnswer, double _totalAnxiety, Patient _patient, Psychologist _psychologist)
         {
             this.ID = _ID;
             this.diagnosisDateString = _diagnosisDateString;
@@ -78,6 +81,7 @@ namespace Braindo.Common
             this.answer = _answer;
             this.networkAnswer = _networkAnswer;
             this.otherNetworkAnswer = _otherNetworkAnswer;
+            this.totalAnxiety = _totalAnxiety;
             this.patient = _patient;
             this.psychologist = _psychologist;
         }
@@ -143,6 +147,12 @@ namespace Braindo.Common
         {
             get { return otherNetworkAnswer; }
             set { otherNetworkAnswer = value; }
+        }
+
+        public double _TotalAnxiety
+        {
+            get { return totalAnxiety; }
+            set { totalAnxiety = value; }
         }
 
         public Patient _Patient
