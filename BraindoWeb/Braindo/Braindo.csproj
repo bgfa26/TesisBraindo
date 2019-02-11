@@ -1739,6 +1739,7 @@
     <Compile Include="Controller\PsychologistModule\EditInformationCommand.cs" />
     <Compile Include="Controller\PsychologistModule\LoginPsychologistCommand.cs" />
     <Compile Include="Controller\PsychologistModule\RegisterPsychologistCommand.cs" />
+    <Compile Include="Controller\StatiticsModule\PublicStatistics\PublicStatisticsCommand.cs" />
     <Compile Include="Model\DAO.cs" />
     <Compile Include="Model\PlaceModule\DAOPlace.cs" />
     <Compile Include="Model\DiagnosisModule\DAODiagnosis.cs" />
@@ -1747,6 +1748,7 @@
     <Compile Include="Model\PatientModule\DAOPatient.cs" />
     <Compile Include="Model\PsychologistModule\DAOPsychologist.cs" />
     <Compile Include="Model\Registry.cs" />
+    <Compile Include="Model\StatiticsModule\PublicStatistics\DAOStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Home\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
