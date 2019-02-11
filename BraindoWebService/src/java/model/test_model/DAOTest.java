@@ -50,7 +50,7 @@ public class DAOTest {
             cstmt.setString(4, emotions);
             cstmt.setString(5, answers);
             cstmt.setString(6, neuralNetworkAnswers);
-            String totalanx = neuralNetworkAnswers.split(";")[5];
+            String totalanx = neuralNetworkAnswers.split("/")[5];
             float totalAnxiety = Float.parseFloat(totalanx);
             cstmt.setFloat(7, totalAnxiety);
             ShieldVault crypto = new ShieldVault();
