@@ -6,6 +6,7 @@
         <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
         <script type="text/javascript" src="/Content/js/OnlyNumbersValidation.js"></script>
         <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
+        <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
 </asp:Content>
 
 
@@ -42,7 +43,7 @@
                                     </div>
                                     <div class="form-group-Medical">
                                         <label>Motivo</label>
-                                        <asp:TextBox runat="server" id="reasonTXT" CssClass="form-control-Medical">
+                                        <asp:TextBox runat="server" id="reasonTXT" onkeypress="lengthValidationAlert(event, this.value, 'medicalAppointment');" CssClass="form-control-Medical">
                                         </asp:TextBox>
                                     </div>                           
                                     <div class="form-group-Medical">

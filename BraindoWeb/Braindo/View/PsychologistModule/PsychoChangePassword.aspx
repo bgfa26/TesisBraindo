@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
     <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
-
+    <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
 </asp:Content>
 
 <asp:Content ID="ContentPsychoChange2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,7 +21,7 @@
                                 <div class="panel-body-EditProfile">
                                     <div class="form-group-ProfileEdit">
                                         <label>Nueva Contraseña</label>
-                                        <asp:TextBox runat="server" id="passTXT" onkeypress="return AllowAlphaNumeric(event)" CssClass="form-control-ProfileEdit">
+                                        <asp:TextBox runat="server" id="passTXT" TextMode="Password" onkeypress="lengthValidationAlert(event, this.value, 'pass');" CssClass="form-control-ProfileEdit">
                                         </asp:TextBox>
                                     </div>  
                                     <div class="form-group-ProfileEdit">

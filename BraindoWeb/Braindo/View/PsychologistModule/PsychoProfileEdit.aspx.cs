@@ -93,7 +93,7 @@ namespace Braindo.View.PsychologistModule
                     psychoModified = cmd.getAnswer();
                     if (psychoModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambiaron los datos del psicologo');window.location.href='PsychoProfile.aspx';", true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambiaron los datos del psicólogo');window.location.href='PsychoProfile.aspx';", true);
                     }
                     else
                     {

@@ -2,6 +2,7 @@
 
 <asp:Content ID="ContentRegisterExam" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />
+    <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
 </asp:Content>
 
 <asp:Content ID="ContentRegisterExam2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
@@ -28,31 +29,31 @@
                         <div class="panel-body-MentalExam">
                             <div class="form-group-MentalExam">
                                 <label>Comportamiento:</label>
-                                <textarea runat="server" id="behavior_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="behavior_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Actitud:</label>
-                                <textarea runat="server" id="attitude_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="attitude_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Atención:</label>
-                                <textarea runat="server" id="alertness_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="alertness_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Conciencia:</label>
-                                <textarea runat="server" id="awareness_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="awareness_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Estado de Ánimo:</label>
-                                <textarea runat="server" id="mood_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="mood_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Lenguaje:</label>
-                                <textarea runat="server" id="language_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="language_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <label>Pensamiento:</label>
-                                <textarea runat="server" id="thought_txt" class="form-control" rows="3"></textarea>
+                                <textarea runat="server" id="thought_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
                                 <asp:Button ID="btnRegisterPsychoProfile" runat="server" Text="Registrar Examen" OnClick = "btnRegisterPsychoProfile_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>

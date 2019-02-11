@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />
     <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
     <script type="text/javascript" src="/Content/js/OnlyNumbersValidation.js"></script>
+    <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
 </asp:Content>
 
 <asp:Content ID="ContentEditPatient2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
@@ -19,12 +20,12 @@
                                 <div class="panel-body-Patient">
                                 <div class="form-group-Patient">
                                     <label>Primer Nombre</label>
-                                    <asp:TextBox runat="server" id="nameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-Patient">
+                                    <asp:TextBox runat="server" id="nameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'name'); return b" CssClass="form-control-Patient">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-Patient">
                                     <label>Primer Apellido</label>
-                                    <asp:TextBox runat="server" id="surnameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-Patient">
+                                    <asp:TextBox runat="server" id="surnameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'surname'); return b" CssClass="form-control-Patient">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-Patient">

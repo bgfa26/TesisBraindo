@@ -81,11 +81,11 @@ namespace Braindo.View.MedicalAppointmentModule
                     deletedAppointment = cmd.getAnswer();
                     if (deletedAppointment._Error == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se elimino exitosamente');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se eliminó exitosamente');window.location.href='ConsultMedicalAppointment.aspx';", true);
                     }
                     else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! no se elimino');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! no pudo eliminarse la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                     }
 
                 }

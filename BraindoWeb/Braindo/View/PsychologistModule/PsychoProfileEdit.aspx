@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfileEdit.css" />
     <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
     <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
+    <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
 </asp:Content>
 
 <asp:Content ID="ContentPsychoEdit2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
@@ -19,22 +20,22 @@
                                 <div class="panel-body-EditProfile">
                                 <div class="form-group-ProfileEdit">
                                     <label>Primer Nombre</label>
-                                    <asp:TextBox runat="server" id="nameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                    <asp:TextBox runat="server" id="nameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'name'); return b" CssClass="form-control-ProfileEdit">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-ProfileEdit">
                                     <label>Segundo Nombre</label>
-                                    <asp:TextBox runat="server" id="secondNameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                    <asp:TextBox runat="server" id="secondNameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'name'); return b" CssClass="form-control-ProfileEdit">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-ProfileEdit">
                                     <label>Primer Apellido</label>
-                                    <asp:TextBox runat="server" id="surnameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                    <asp:TextBox runat="server" id="surnameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'surname'); return b" CssClass="form-control-ProfileEdit">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-ProfileEdit">
                                     <label>Segundo Apellido</label>
-                                    <asp:TextBox runat="server" id="secondSurnameTXT" onkeypress="return AllowAlphabet(event)" CssClass="form-control-ProfileEdit">
+                                    <asp:TextBox runat="server" id="secondSurnameTXT" onkeypress="var b = AllowAlphabet(event);lengthValidationAlert(event, this.value, 'surname'); return b" CssClass="form-control-ProfileEdit">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-ProfileEdit">
@@ -43,7 +44,7 @@
                                 </div>
                                 <div class="form-group-ProfileEdit">
                                     <label>Número de Matricula</label>
-                                    <asp:TextBox runat="server" id="registrationNumberTXT" onkeypress="return AllowAlphaNumeric(event)" CssClass="form-control-ProfileEdit">
+                                    <asp:TextBox runat="server" id="registrationNumberTXT" onkeypress="var b = AllowAlphaNumeric(event);lengthValidationAlert(event, this.value, 'registration'); return b" CssClass="form-control-ProfileEdit">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-ProfileEdit">
