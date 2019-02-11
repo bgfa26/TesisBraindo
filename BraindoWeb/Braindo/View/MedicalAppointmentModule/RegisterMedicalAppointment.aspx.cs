@@ -176,11 +176,11 @@ namespace Braindo.View.MedicalAppointmentModule
                             appointmentRegistered = cmd.getAnswer();
                             if (appointmentRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registro la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
 
                         }

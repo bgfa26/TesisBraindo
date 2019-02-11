@@ -144,12 +144,12 @@ namespace Braindo.View.MentalExamModule
                         if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                         {
 
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                         }
                         else
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró el examen');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                         }
                     }
