@@ -51,7 +51,11 @@ h6 {
   background-color: #212529 !important;
 }
 
-.text-faded {
+.bg-purple {
+  background-color: #7127a0 !important;
+}
+
+s.text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
 

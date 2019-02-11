@@ -27,6 +27,14 @@
   <!-- Custom styles for this template -->
   <link href="css/creative.css" rel="stylesheet">
 
+  <!-- Resources -->
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -51,10 +59,10 @@
             <a class="nav-link js-scroll-trigger" href="#portfolio">Braindo: Versión Móvil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Estadísticas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="../IndexModule/index.aspx">Administración</a>
+            <a class="nav-link" href="#" onclick="redirect()">Administración</a>
           </li>
         </ul>
       </div>
@@ -77,7 +85,7 @@
     </div>
   </header>
 
- <section class="bg-primary" id="about" style="background-color:#45b780!important">
+  <section class="bg-primary" id="about" style="background-color:#45b780!important">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
@@ -133,7 +141,7 @@
     </div>
   </section>
 
-  <section class="bg-dark" id="portfolio">
+  <section style="background-color: #7127a0" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
@@ -148,37 +156,253 @@
     </div>
   </section>   
 
-  <section class="bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
-    </div>
-  </section>
-
-  <section id="contact">
+  <section id="contact" class="bg-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Let's Get In Touch!</h2>
-          <hr class="my-4">
-          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <h2 class="section-heading" style="color:white">Estadísticas</h2>
+          <hr class="my-4" style="border-color:#69f0ae" />
+          <p class="mb-5"  style="color:white">A continuación se podrán observar estadísticas realizadas por el sistema de Braindo para poder hacer mejores estudios sobre la fobia social</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <p>123-456-6789</p>
+        <div class="col-lg-6 ml-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por estado</p>
+            <div id="chartdiv" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-          <p>
-            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-          </p>
+        <div class="col-lg-6 mr-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por carrera (%)</p>
+            <div id="piediv" class="wow fadeInDown" style="margin-top:-50px"></div> 
+        </div>
+      </div>
+      <div class="row text-center" style="margin-top:50px">
+        <div class="col-lg-12 ml-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por carrera</p>
+            <div id="chartdiv2" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
       </div>
     </div>
   </section>
+  <style>
+        #chartdiv {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }	
+        
+        #piediv {
+	        width		: 110%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }	
+        #chartdiv2 {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }	
+        
+        #piediv2 {
+	        width		: 110%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }		
+  </style>
+
+
     
+  
+  
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #45b780;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Set a style for all buttons */
+    .buttonLog {
+      background-color: #45b780;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+    .buttonLog:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #7127a0;
+      border-radius: 8px;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+  
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+  </style>
+  
+
+  <div id="login_modal" class="modal">
+  
+    <form id="formlogin" class="modal-content animate" runat="server">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('login_modal').style.display='none'" class="close" title="Cerrar">&times;</span>
+        <h1><strong>Inicio de sesión</strong></h1>
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Correo electrónico</b></label>
+        <input type="text" placeholder="Introduzca el correo" name="mail" required oninvalid="alert('El campo de correo electrónico no puede estar vacío');">
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Introduzca la contraseña" name="psw" required oninvalid="alert('El campo de contraseña no puede estar vacío')">
+        <asp:ScriptManager runat="server" ID="sm">
+        </asp:ScriptManager>
+        <asp:updatepanel runat="server">
+            <ContentTemplate>
+                 <asp:Button ID="aceptar" runat="server" Text="Ingresar" class="buttonLog" />
+            </ContentTemplate>
+        </asp:updatepanel>
+
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1;width:100%;height:80%">
+        <button type="button" onclick="document.getElementById('login_modal').style.display='none'" class="cancelbtn">Cancelar</button>
+        <span class="psw">Regístrese <a href="../Registration/Registration.aspx">aquí</a></span>
+      </div>
+    </form>
+  </div>
+
+  
+  <!-- Modal  -->
+  <script>
+      // Get the modal
+      var modal = document.getElementById('login_modal');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+
+  </script>
 
 
   <!-- Bootstrap core JavaScript -->
@@ -192,8 +416,236 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          //PageMethods.GetStatistics("", onSuccess);
+          var dataValue = { "nullParameter": "" };
+          $.ajax({
+              type: "POST",
+              url: "index.aspx/GetStatistics",
+              data: {},
+              contentType: "application/json; charset=utf-8",
+              dataType: "text",
+              success: function (msg) {
+                  var response = msg.replace('{"d":"', '');
+                  response = response.replace('"}', '');
+                  if ((response != "error")) {
+                      AmCharts.addInitHandler(function (chart) {
+                          // check if there are graphs with autoColor: true set
+                          for (var i = 0; i < chart.graphs.length; i++) {
+                              var graph = chart.graphs[i];
+                              if (graph.autoColor !== true)
+                                  continue;
+                              var colorKey = "autoColor-" + i;
+                              graph.lineColorField = colorKey;
+                              graph.fillColorsField = colorKey;
+                              for (var x = 0; x < chart.dataProvider.length; x++) {
+                                  var color = chart.colors[23]
+                                  chart.dataProvider[x][colorKey] = color;
+                              }
+                          }
+
+                      }, ["serial"]);
+                      var careers = response.split("/")[0].split(",");
+                      var states = response.split("/")[1].split(",");
+                      var careerChart = AmCharts.makeChart("chartdiv2", {
+                          "type": "serial",
+                          "theme": "light",
+                          "dataProvider": [{
+                              "title": "Ing. \n Informática",
+                              "value": careers[0]
+                          }, {
+                              "title": "Ing. Civil",
+                              "value": careers[1]
+                          }, {
+                              "title": "Ing. \n Telecomuni- \n caciones",
+                              "value": careers[2]
+                          }, {
+                              "title": "Ing. \n Industrial",
+                              "value": careers[3]
+                          }, {
+                              "title": "Psicología",
+                              "value": careers[4]
+                          }, {
+                              "title": "Teología",
+                              "value": careers[5]
+                          }, {
+                              "title": "Filosofía",
+                              "value": careers[6]
+                          }, {
+                              "title": "Letras",
+                              "value": careers[7]
+                          }, {
+                              "title": "Com. \n Social",
+                              "value": careers[8]
+                          }, {
+                              "title": "Relaciones \n Industriales",
+                              "value": careers[9]
+                          }, {
+                              "title": "Derecho",
+                              "value": careers[10]
+                          }, {
+                              "title": "Adm. \n y Contaduría",
+                              "value": careers[11]
+                          }, {
+                              "title": "Economía",
+                              "value": careers[12]
+                          }, {
+                              "title": "Educación",
+                              "value": careers[13]
+                          }],
+                          "valueAxes": [{
+                              "gridColor": "#FFFFFF",
+                              "gridAlpha": 0.2,
+                              "dashLength": 0,
+                              "color": "#FFFFFF"
+                          }],
+                          "gridAboveGraphs": true,
+                          "startDuration": 1,
+                          "graphs": [{
+                              "balloonText": "[[category]]: <b>[[value]]</b>",
+                              "fillColors": "#45b780",
+                              "fillAlphas": 0.8,
+                              "lineAlpha": 0.2,
+                              "type": "column",
+                              "valueField": "value",
+                              "autoColor": true,
+                          }],
+                          "chartCursor": {
+                              "categoryBalloonEnabled": false,
+                              "cursorAlpha": 0,
+                              "zoomable": false
+                          },
+                          "categoryField": "title",
+                          "categoryAxis": {
+                              "gridPosition": "start",
+                              "gridAlpha": 0,
+                              "tickPosition": "start",
+                              "tickLength": 20,
+                              "color": "#FFFFFF"
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+
+                      });
+                      var stateChart = AmCharts.makeChart("chartdiv", {
+                          "type": "serial",
+                          "theme": "light",
+                          "dataProvider": [{
+                              "title": "Distrito Capital",
+                              "value": states[0]
+                          }, {
+                              "title": "Miranda",
+                              "value": states[1]
+                          }, {
+                              "title": "Vargas",
+                              "value": states[2]
+                          }],
+                          "valueAxes": [{
+                              "gridColor": "#FFFFFF",
+                              "gridAlpha": 0.2,
+                              "dashLength": 0,
+                              "color": "#FFFFFF"
+                          }],
+                          "gridAboveGraphs": true,
+                          "startDuration": 1,
+                          "graphs": [{
+                              "balloonText": "[[category]]: <b>[[value]]</b>",
+                              "fillColors": "#45b780",
+                              "fillAlphas": 0.8,
+                              "lineAlpha": 0.2,
+                              "type": "column",
+                              "valueField": "value",
+                              "autoColor": true,
+                          }],
+                          "chartCursor": {
+                              "categoryBalloonEnabled": false,
+                              "cursorAlpha": 0,
+                              "zoomable": false
+                          },
+                          "categoryField": "title",
+                          "categoryAxis": {
+                              "gridPosition": "start",
+                              "gridAlpha": 0,
+                              "tickPosition": "start",
+                              "tickLength": 20,
+                              "color": "#FFFFFF"
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+
+                      });
+                      var pieChart = AmCharts.makeChart("piediv", {
+                          "type": "pie",
+                          "radius": 100,
+                          "theme": "black",
+                          "dataProvider": [{
+                              "title": "Ingeniería Informática",
+                              "value": careers[0]
+                          }, {
+                              "title": "Ingeniería Civil",
+                              "value": careers[1]
+                          }, {
+                              "title": "Ingeniería en Telecomunicaciones",
+                              "value": careers[2]
+                          }, {
+                              "title": "Ingeniería Industrial",
+                              "value": careers[3]
+                          }, {
+                              "title": "Psicología",
+                              "value": careers[4]
+                          }, {
+                              "title": "Teología",
+                              "value": careers[5]
+                          }, {
+                              "title": "Filosofía",
+                              "value": careers[6]
+                          }, {
+                              "title": "Letras",
+                              "value": careers[7]
+                          }, {
+                              "title": "Comunicación Social",
+                              "value": careers[8]
+                          }, {
+                              "title": "Relaciones Industriales",
+                              "value": careers[9]
+                          }, {
+                              "title": "Derecho",
+                              "value": careers[10]
+                          }, {
+                              "title": "Administración y Contaduría",
+                              "value": careers[11]
+                          }, {
+                              "title": "Economía",
+                              "value": careers[12]
+                          }, {
+                              "title": "Educación",
+                              "value": careers[13]
+                          }],
+                          "valueField": "value",
+                          "titleField": "title",
+                          "colorField": "color",
+                          "balloon": {
+                              "fixedPosition": true
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+                      });
+                  }
+              }
+          });
+
+      });
+
+      function redirect() {
+          window.location.replace("../IndexModule/index.aspx");
+      }
+  </script>	
 
 </body>
 
 </html>
-

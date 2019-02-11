@@ -26,6 +26,14 @@
   <!-- Custom styles for this template -->
   <link href="css/creative.css" rel="stylesheet">
 
+  <!-- Resources -->
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -50,7 +58,7 @@
             <a class="nav-link js-scroll-trigger" href="#portfolio">Braindo: Versión Móvil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Estadísticas</a>
           </li>
           <li class="nav-item">
             <button onclick="document.getElementById('login_modal').style.display='block'" style="width:auto; height:20px; text-align:center; line-height: 0px; margin-top: 2px; margin-left: 15px;background-color:#69f0ae" class="btn btn-primary btn-xl js-scroll-trigger">Iniciar sesión</button>
@@ -132,7 +140,7 @@
     </div>
   </section>
 
-  <section class="bg-dark" id="portfolio">
+  <section style="background-color: #7127a0" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
@@ -147,29 +155,61 @@
     </div>
   </section>   
 
-  <section id="contact">
+  <section id="contact" class="bg-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Let's Get In Touch!</h2>
-          <hr class="my-4">
-          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <h2 class="section-heading" style="color:white">Estadísticas</h2>
+          <hr class="my-4" style="border-color:#69f0ae" />
+          <p class="mb-5"  style="color:white">A continuación se podrán observar estadísticas realizadas por el sistema de Braindo para poder hacer mejores estudios sobre la fobia social</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <p>123-456-6789</p>
+        <div class="col-lg-6 ml-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por estado</p>
+            <div id="chartdiv" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-          <p>
-            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-          </p>
+        <div class="col-lg-6 mr-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por carrera (%)</p>
+            <div id="piediv" class="wow fadeInDown" style="margin-top:-50px"></div> 
+        </div>
+      </div>
+      <div class="row text-center" style="margin-top:50px">
+        <div class="col-lg-12 ml-auto text-center">
+            <p class="mb-5"  style="color:white">Fobia social por carrera</p>
+            <div id="chartdiv2" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
       </div>
     </div>
   </section>
+  <style>
+        #chartdiv {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }	
+        
+        #piediv {
+	        width		: 110%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }	
+        #chartdiv2 {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }	
+        
+        #piediv2 {
+	        width		: 110%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }		
+  </style>
+
+
     
   
   
@@ -348,7 +388,7 @@
     </form>
   </div>
 
-    
+  
   <!-- Modal  -->
   <script>
     // Get the modal
@@ -360,6 +400,7 @@
             modal.style.display = "none";
         }
     }
+
   </script>
 
 
@@ -374,6 +415,231 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+          //PageMethods.GetStatistics("", onSuccess);
+          var dataValue = { "nullParameter": "" };
+          $.ajax({
+              type: "POST",
+              url: "index.aspx/GetStatistics",
+              data: {},
+              contentType: "application/json; charset=utf-8",
+              dataType: "text",
+              success: function (msg) {
+                  var response = msg.replace('{"d":"', '');
+                  response = response.replace('"}', '');
+                  if ((response != "error")) {
+                      AmCharts.addInitHandler(function (chart) {
+                          // check if there are graphs with autoColor: true set
+                          for (var i = 0; i < chart.graphs.length; i++) {
+                              var graph = chart.graphs[i];
+                              if (graph.autoColor !== true)
+                                  continue;
+                              var colorKey = "autoColor-" + i;
+                              graph.lineColorField = colorKey;
+                              graph.fillColorsField = colorKey;
+                              for (var x = 0; x < chart.dataProvider.length; x++) {
+                                  var color = chart.colors[23]
+                                  chart.dataProvider[x][colorKey] = color;
+                              }
+                          }
+
+                      }, ["serial"]);
+                      var careers = response.split("/")[0].split(",");
+                      var states = response.split("/")[1].split(",");
+                      var careerChart = AmCharts.makeChart("chartdiv2", {
+                          "type": "serial",
+                          "theme": "light",
+                          "dataProvider": [{
+                              "title": "Ing. \n Informática",
+                              "value": careers[0]
+                          }, {
+                              "title": "Ing. Civil",
+                              "value": careers[1]
+                          }, {
+                              "title": "Ing. \n Telecomuni- \n caciones",
+                              "value": careers[2]
+                          }, {
+                              "title": "Ing. \n Industrial",
+                              "value": careers[3]
+                          }, {
+                              "title": "Psicología",
+                              "value": careers[4]
+                          }, {
+                              "title": "Teología",
+                              "value": careers[5]
+                          }, {
+                              "title": "Filosofía",
+                              "value": careers[6]
+                          }, {
+                              "title": "Letras",
+                              "value": careers[7]
+                          }, {
+                              "title": "Com. \n Social",
+                              "value": careers[8]
+                          }, {
+                              "title": "Relaciones \n Industriales",
+                              "value": careers[9]
+                          }, {
+                              "title": "Derecho",
+                              "value": careers[10]
+                          }, {
+                              "title": "Adm. \n y Contaduría",
+                              "value": careers[11]
+                          }, {
+                              "title": "Economía",
+                              "value": careers[12]
+                          }, {
+                              "title": "Educación",
+                              "value": careers[13]
+                          }],
+                          "valueAxes": [{
+                              "gridColor": "#FFFFFF",
+                              "gridAlpha": 0.2,
+                              "dashLength": 0,
+                              "color": "#FFFFFF"
+                          }],
+                          "gridAboveGraphs": true,
+                          "startDuration": 1,
+                          "graphs": [{
+                              "balloonText": "[[category]]: <b>[[value]]</b>",
+                              "fillColors": "#45b780",
+                              "fillAlphas": 0.8,
+                              "lineAlpha": 0.2,
+                              "type": "column",
+                              "valueField": "value",
+                              "autoColor": true,
+                          }],
+                          "chartCursor": {
+                              "categoryBalloonEnabled": false,
+                              "cursorAlpha": 0,
+                              "zoomable": false
+                          },
+                          "categoryField": "title",
+                          "categoryAxis": {
+                              "gridPosition": "start",
+                              "gridAlpha": 0,
+                              "tickPosition": "start",
+                              "tickLength": 20,
+                              "color": "#FFFFFF"
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+
+                      });
+                      var stateChart = AmCharts.makeChart("chartdiv", {
+                          "type": "serial",
+                          "theme": "light",
+                          "dataProvider": [{
+                              "title": "Distrito Capital",
+                              "value": states[0]
+                          }, {
+                              "title": "Miranda",
+                              "value": states[1]
+                          }, {
+                              "title": "Vargas",
+                              "value": states[2]
+                          }],
+                          "valueAxes": [{
+                              "gridColor": "#FFFFFF",
+                              "gridAlpha": 0.2,
+                              "dashLength": 0,
+                              "color": "#FFFFFF"
+                          }],
+                          "gridAboveGraphs": true,
+                          "startDuration": 1,
+                          "graphs": [{
+                              "balloonText": "[[category]]: <b>[[value]]</b>",
+                              "fillColors": "#45b780",
+                              "fillAlphas": 0.8,
+                              "lineAlpha": 0.2,
+                              "type": "column",
+                              "valueField": "value",
+                              "autoColor": true,
+                          }],
+                          "chartCursor": {
+                              "categoryBalloonEnabled": false,
+                              "cursorAlpha": 0,
+                              "zoomable": false
+                          },
+                          "categoryField": "title",
+                          "categoryAxis": {
+                              "gridPosition": "start",
+                              "gridAlpha": 0,
+                              "tickPosition": "start",
+                              "tickLength": 20,
+                              "color": "#FFFFFF"
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+
+                      });
+                      var pieChart = AmCharts.makeChart("piediv", {
+                          "type": "pie",
+                          "radius": 100,
+                          "theme": "black",
+                          "dataProvider": [{
+                              "title": "Ingeniería Informática",
+                              "value": careers[0]
+                          }, {
+                              "title": "Ingeniería Civil",
+                              "value": careers[1]
+                          }, {
+                              "title": "Ingeniería en Telecomunicaciones",
+                              "value": careers[2]
+                          }, {
+                              "title": "Ingeniería Industrial",
+                              "value": careers[3]
+                          }, {
+                              "title": "Psicología",
+                              "value": careers[4]
+                          }, {
+                              "title": "Teología",
+                              "value": careers[5]
+                          }, {
+                              "title": "Filosofía",
+                              "value": careers[6]
+                          }, {
+                              "title": "Letras",
+                              "value": careers[7]
+                          }, {
+                              "title": "Comunicación Social",
+                              "value": careers[8]
+                          }, {
+                              "title": "Relaciones Industriales",
+                              "value": careers[9]
+                          }, {
+                              "title": "Derecho",
+                              "value": careers[10]
+                          }, {
+                              "title": "Administración y Contaduría",
+                              "value": careers[11]
+                          }, {
+                              "title": "Economía",
+                              "value": careers[12]
+                          }, {
+                              "title": "Educación",
+                              "value": careers[13]
+                          }],
+                          "valueField": "value",
+                          "titleField": "title",
+                          "colorField": "color",
+                          "balloon": {
+                              "fixedPosition": true
+                          },
+                          "export": {
+                              "enabled": true
+                          }
+                      });
+                  }
+              }
+          });
+
+      });
+  </script>	
 
 </body>
 

@@ -15,6 +15,7 @@ namespace Braindo.Common
         private String state;
         private String municipality;
         private String parish;
+        private float totalAnxiety;
         private int error;
 
         public Patient()
@@ -61,7 +62,16 @@ namespace Braindo.Common
             this.state = _state;
             this.municipality = _municipality;
             this.parish = _parish;
-            
+
+        }
+
+        public Patient(int _age, String _career, String _state, float _totalAnxiety)
+        {
+            this.age = _age;
+            this.career = _career;
+            this.state = _state;
+            this.totalAnxiety = _totalAnxiety;
+
         }
 
         public int _ID
