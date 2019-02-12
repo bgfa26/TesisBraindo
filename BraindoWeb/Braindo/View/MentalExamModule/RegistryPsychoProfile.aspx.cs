@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 namespace Braindo.View.MentalExamModule
 {
     public partial class RegistryPsychoProfile : System.Web.UI.Page
@@ -77,7 +78,10 @@ namespace Braindo.View.MentalExamModule
                                     String PatientSurname = _appointment._Patient._Surname;
                                     String Reason = _appointment._Reason;
 
-                                    patient_List.Items.Add(dateApp + " " + hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
+
+                                    patient_List.Items.Add(idPatient + " " + PatientName + " " + PatientSurname + " / " + "Fecha y hora:" + " " + dateApp + " " + hourApp);
+
+                                    //patient_List.Items.Add(dateApp + " " + hourApp + " " + idPatient + " " + PatientName + " " + PatientSurname + " " + Reason);
 
                                 }
                             }
@@ -164,11 +168,22 @@ namespace Braindo.View.MentalExamModule
                     /*INICIO - Proceso para obtener el ID de la cita*/
                     String selectItem = patient_List.SelectedItem.Text;
 
-                    string[] Args = selectItem.Split(new char[] { ' ' });
+                    //string[] Args = selectItem.Split(' / ');
 
-                    String dateApp = Args[0];
-                    String hourApp = Args[1];
-                    String idPatientString = Args[3];
+                    string[] Args = Regex.Split(selectItem, " / ");
+
+                    String firstHalf = Args[0];
+                    String secondHalf = Args[1];
+
+                    string[] firstHalfArgs = firstHalf.Split(' ');
+                    string[] secondHalfArgs = secondHalf.Split(' ');
+
+                    
+                    String idPatientString = firstHalfArgs[0];
+                    String dateApp = secondHalfArgs[3];
+                    String hourApp = secondHalfArgs[4];
+
+                    int i = 1;
 
                         if (hourApp == "01:00")
                         {

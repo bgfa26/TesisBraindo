@@ -19,7 +19,6 @@ namespace Braindo.View.MedicalAppointmentModule
         private List<Appointment> consultedAppointment;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!Page.IsPostBack)
             {
                 if (Session["USER_ID"] == null)
@@ -116,10 +115,7 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
-                    string script = "alert(\"ERROR! Esta cita no tiene examen mental registrado\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                                            "ServerControlScript", script, true);
-                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
                 }
             }
             else if (e.CommandName == "addExam")
@@ -138,6 +134,7 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
+
                     string script = "alert(\"ERROR! Esta cita ya tiene un examen mental registrado\");";
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                             "ServerControlScript", script, true);
