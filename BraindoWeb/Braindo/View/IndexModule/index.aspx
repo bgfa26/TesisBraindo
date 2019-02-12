@@ -7,127 +7,37 @@
 
     <script type="text/javascript" src="/Content/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="/Content/js/gridData.js"></script>
+
+    <%--<style>
+        #shieldui-chart2{
+            width		: 50%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }
+    </style>--%>
+
 </asp:Content>
 
 <asp:Content ID="ContentIndex2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Dashboard <small>Statistics and more</small></h1>
-                    <div class="alert alert-dismissable alert-warning">
-                        <button data-dismiss="alert" class="close" type="button">&times;</button>
-                        Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
-                        <br />
-                        This theme uses the <a href="https://www.shieldui.com">ShieldUI</a> JavaScript library for the 
-                        additional data visualization and presentation functionality illustrated here.
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Visits Based on a 10 days data</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estadísticas por estado</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-chart1"></div>
+                            <div id="shieldui-chart2"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-rss"></i> Feed</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estadísticas por fecha</h3>
                         </div>
-                        <div class="panel-body feed">
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-comment"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        <a href="#">John Doe</a> commented on <a href="#">What Makes Good Code Good</a>.
-                                    </div>
-                                    <div class="time pull-left">
-                                        3 h
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-check"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        <a href="#">Merge request #42</a> has been approved by <a href="#">Jessica Lori</a>.
-                                    </div>
-                                    <div class="time pull-left">
-                                        10 h
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-plus-square-o"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        New user <a href="#">Greg Wilson</a> registered.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Today
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-bolt"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        Server fail level raises above normal. <a href="#">See logs</a> for details.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Yesterday
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-archive"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        <a href="#">Database usage report</a> is ready.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Yesterday
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        <a href="#">Order #233985</a> needs additional processing.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Wednesday
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="feed-item">
-                                <div class="icon pull-left">
-                                    <i class="fa fa-arrow-down"></i>
-                                </div>
-                                <div class="feed-item-body">
-                                    <div class="text">
-                                        <a href="#">Load more...</a>
-                                    </div>
-                                </div>
-                            </section>
+                        <div class="panel-body">
+                            <div id="shieldui-chart3"></div>
                         </div>
                     </div>
                 </div>
@@ -144,14 +54,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Logins per week</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-chart2"></div>
+                            <div id="shieldui-chart1"></div>
                         </div>
                     </div>
                 </div>
@@ -395,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
     <script type="text/javascript">
         jQuery(function ($) {
@@ -435,7 +345,22 @@
             $("#shieldui-chart2").shieldChart({
                 theme: "dark",
                 primaryHeader: {
-                    text: "Traffic Per week"
+                    text: "Estadisticas por estado"
+                },
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                dataSeries: [{
+                    seriesType: "pie",
+                    collectionAlias: "traffic",
+                    data: visits
+                }]
+            });
+            $("#shieldui-chart3").shieldChart({
+                theme: "dark",
+                primaryHeader: {
+                    text: "Estadisticas por fecha"
                 },
                 exportOptions: {
                     image: false,
