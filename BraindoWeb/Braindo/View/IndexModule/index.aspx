@@ -22,17 +22,10 @@
 	        height		: 500px;
 	        font-size	: 11px;
             
-        }
-        
-        #chartdiv2 {
-	        width		: 100%;
-	        height		: 500px;
-	        font-size	: 11px;
-            
         }	
 
         #piediv {
-	        width		: 110%;
+	        width		: 100%;
 	        height		: 500px;
 	        font-size	: 11px;
         }	
@@ -54,14 +47,14 @@
                     </div>
                 </div>
             </div>
-        <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por edad</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="chartdiv2"></div>
+                            <div id="piediv"></div>
                         </div>
                     </div>
                 </div>
@@ -216,9 +209,10 @@
                         }, ["serial"]);
                         var age = response.split("-");
                         console.log(age);
-                        var pieChart = AmCharts.makeChart("chartdiv2", {
-                            "type": "serial",
-                            "theme": "light",
+                        var pieChart = AmCharts.makeChart("piediv", {
+                            "type": "pie",
+                            "radius": 100,
+                            "theme": "black",
                             "dataProvider": [{
                                 "title": "19 años",
                                 "value": age[0].replace(",", ".")
@@ -241,44 +235,21 @@
                                 "title": "25 años",
                                 "value": age[6].replace(",", ".")
                             }],
-                            "valueAxes": [{
-                                "gridColor": "#FFFFFF",
-                                "gridAlpha": 0.2,
-                                "dashLength": 0,
-                                "color": "#FFFFFF"
-                            }],
-                            "gridAboveGraphs": true,
-                            "startDuration": 1,
-                            "graphs": [{
-                                "balloonText": "[[category]]: <b>[[value]]</b>",
-                                "fillColors": "#45b780",
-                                "fillAlphas": 0.8,
-                                "lineAlpha": 0.2,
-                                "type": "column",
-                                "valueField": "value",
-                                "autoColor": true,
-                            }],
-                            "chartCursor": {
-                                "categoryBalloonEnabled": false,
-                                "cursorAlpha": 0,
-                                "zoomable": false
-                            },
-                            "categoryField": "title",
-                            "categoryAxis": {
-                                "gridPosition": "start",
-                                "gridAlpha": 0,
-                                "tickPosition": "start",
-                                "tickLength": 20,
-                                "color": "#FFFFFF"
+                            "valueField": "value",
+                            "titleField": "title",
+                            "colorField": "color",
+                            "balloon": {
+                                "fixedPosition": true
                             },
                             "export": {
                                 "enabled": true
                             }
-
                         });
                     }
                 }
             });
+
+
 
         });
     </script>
