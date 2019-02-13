@@ -8,386 +8,278 @@
     <script type="text/javascript" src="/Content/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="/Content/js/gridData.js"></script>
 
-    <%--<style>
-        #shieldui-chart2{
-            width		: 50%;
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+
+    <style>
+
+        #chartdiv {
+	        width		: 100%;
 	        height		: 500px;
 	        font-size	: 11px;
+            
         }
-    </style>--%>
+        
+        #chartdiv2 {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }	
+
+        #piediv {
+	        width		: 110%;
+	        height		: 500px;
+	        font-size	: 11px;
+        }	
+    </style>
 
 </asp:Content>
 
 <asp:Content ID="ContentIndex2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estadísticas por estado</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="shieldui-chart2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estadísticas por fecha</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="shieldui-chart3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Sources One month tracking </h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por carrera</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-grid1"></div>
+                            <div id="chartdiv"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <%--<div class="row">
-                <div class="col-lg-4">
+        <div class="row">
+                <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Logins per week</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por edad</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-chart1"></div>
+                            <div id="chartdiv2"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-magnet"></i> Server Overview</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul class="server-stats">
-                                <li>
-                                    <div class="key pull-right">CPU</div>
-                                    <div class="stat">
-                                        <div class="info">60% / 37°C / 3.3 Ghz</div>
-                                        <div class="progress progress-small">
-                                            <div style="width: 70%;" class="progress-bar progress-bar-danger"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="key pull-right">Mem</div>
-                                    <div class="stat">
-                                        <div class="info">29% / 4GB (16 GB)</div>
-                                        <div class="progress progress-small">
-                                            <div style="width: 29%;" class="progress-bar"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="key pull-right">LAN</div>
-                                    <div class="stat">
-                                        <div class="info">6 Mb/s <i class="fa fa-caret-down"></i>&nbsp; 3 Mb/s <i class="fa fa-caret-up"></i></div>
-                                        <div class="progress progress-small">
-                                            <div style="width: 48%;" class="progress-bar progress-bar-inverse"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4">
-                    <header>
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a data-toggle="tab" href="#stats">Users</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#report">Favorites</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#dropdown1">Commenters</a>
-                            </li>
-                        </ul>
-                    </header>
-                    <div class="body tab-content">
-                        <div class="tab-pane clearfix active" id="stats">
-                            <h5 class="tab-header"><i class="fa fa-calendar-o fa-2x"></i> Last logged-in users</h5>
-                            <ul class="news-list">
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Ivan Gorge</a></div>
-                                        <div class="position">Software Engineer</div>
-                                        <div class="time">Last logged-in: Mar 12, 11:11</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Roman Novak</a></div>
-                                        <div class="position">Product Designer</div>
-                                        <div class="time">Last logged-in: Mar 12, 19:02</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Teras Uotul</a></div>
-                                        <div class="position">Chief Officer</div>
-                                        <div class="time">Last logged-in: Jun 16, 2:34</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Deral Ferad</a></div>
-                                        <div class="position">Financial Assistant</div>
-                                        <div class="time">Last logged-in: Jun 18, 4:20</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Konrad Polerd</a></div>
-                                        <div class="position">Sales Manager</div>
-                                        <div class="time">Last logged-in: Jun 18, 5:13</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane" id="report">
-                            <h5 class="tab-header"><i class="fa fa-star fa-2x"></i> Popular contacts</h5>
-                            <ul class="news-list news-list-no-hover">
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Pol Johnsson</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Terry Garel</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Eruos Forkal</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Remus Reier</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Lover Lund</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane" id="dropdown1">
-                            <h5 class="tab-header"><i class="fa fa-comments fa-2x"></i> Top Commenters</h5>
-                            <ul class="news-list">
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Edin Garey</a></div>
-                                        <div class="comment">
-                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
-                                            aut odit aut fugit,sed quia
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Firel Lund</a></div>
-                                        <div class="comment">
-                                            Duis aute irure dolor in reprehenderit in voluptate velit
-                                             esse cillum dolore eu fugiat.
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Jessica Desingter</a></div>
-                                        <div class="comment">
-                                            Excepteur sint occaecat cupidatat non proident, sunt in
-                                             culpa qui officia deserunt.
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Novel Forel</a></div>
-                                        <div class="comment">
-                                            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque.
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Wedol Reier</a></div>
-                                        <div class="comment">
-                                            Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis
-                                            et quasi.
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
+            </div>
         </div>
     <script type="text/javascript">
-        jQuery(function ($) {
-            var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
-                visits = [123, 323, 443, 32],
-                traffic = [
-                {
-                    Source: "Direct", Amount: 323, Change: 53, Percent: 23, Target: 600
-                },
-                {
-                    Source: "Refer", Amount: 345, Change: 34, Percent: 45, Target: 567
-                },
-                {
-                    Source: "Social", Amount: 567, Change: 67, Percent: 23, Target: 456
-                },
-                {
-                    Source: "Search", Amount: 234, Change: 23, Percent: 56, Target: 890
-                },
-                {
-                    Source: "Internal", Amount: 111, Change: 78, Percent: 12, Target: 345
-                }];
-            $("#shieldui-chart1").shieldChart({
-                theme: "dark",
-                primaryHeader: {
-                    text: "Visitors"
-                },
-                exportOptions: {
-                    image: false,
-                    print: false
-                },
-                dataSeries: [{
-                    seriesType: "area",
-                    collectionAlias: "Q Data",
-                    data: performance
-                }]
+        $(document).ready(function () {
+
+            //PageMethods.GetCareerStatistics("", onSuccess);
+            var dataValue = { "nullParameter": "" };
+            $.ajax({
+                type: "POST",
+                url: "index.aspx/GetCareerStatistics",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (msg) {
+                    var response = msg.replace('{"d":"', '');
+                    response = response.replace('"}', '');
+                    if ((response != "error")) {
+                        AmCharts.addInitHandler(function (chart) {
+                            // check if there are graphs with autoColor: true set
+                            for (var i = 0; i < chart.graphs.length; i++) {
+                                var graph = chart.graphs[i];
+                                if (graph.autoColor !== true)
+                                    continue;
+                                var colorKey = "autoColor-" + i;
+                                graph.lineColorField = colorKey;
+                                graph.fillColorsField = colorKey;
+                                for (var x = 0; x < chart.dataProvider.length; x++) {
+                                    var color = chart.colors[23]
+                                    chart.dataProvider[x][colorKey] = color;
+                                }
+                            }
+
+                        }, ["serial"]);
+                        var careers = response.split("-");
+                        console.log(careers);
+                        var pieChart = AmCharts.makeChart("chartdiv", {
+                            "type": "serial",
+                            "theme": "light",
+                            "dataProvider": [{
+                                "title": "Ing. \n Informática",
+                                "value": careers[0].replace(",", ".")
+                            }, {
+                                "title": "Ing. Civil",
+                                "value": careers[1].replace(",", ".")
+                            }, {
+                                "title": "Ing. \n Telecomuni- \n caciones",
+                                "value": careers[2].replace(",", ".")
+                            }, {
+                                "title": "Ing. \n Industrial",
+                                "value": careers[3].replace(",", ".")
+                            }, {
+                                "title": "Psicología",
+                                "value": careers[4].replace(",", ".")
+                            }, {
+                                "title": "Teología",
+                                "value": careers[5].replace(",", ".")
+                            }, {
+                                "title": "Filosofía",
+                                "value": careers[6].replace(",", ".")
+                            }, {
+                                "title": "Letras",
+                                "value": careers[7].replace(",", ".")
+                            }, {
+                                "title": "Com. \n Social",
+                                "value": careers[8].replace(",", ".")
+                            }, {
+                                "title": "Relaciones \n Industriales",
+                                "value": careers[9].replace(",", ".")
+                            }, {
+                                "title": "Derecho",
+                                "value": careers[10].replace(",", ".")
+                            }, {
+                                "title": "Adm. \n y Contaduría",
+                                "value": careers[11].replace(",", ".")
+                            }, {
+                                "title": "Economía",
+                                "value": careers[12].replace(",", ".")
+                            }, {
+                                "title": "Educación",
+                                "value": careers[13].replace(",", ".")
+                            }],
+                            "valueAxes": [{
+                                "gridColor": "#FFFFFF",
+                                "gridAlpha": 0.2,
+                                "dashLength": 0,
+                                "color": "#FFFFFF"
+                            }],
+                            "gridAboveGraphs": true,
+                            "startDuration": 1,
+                            "graphs": [{
+                                "balloonText": "[[category]]: <b>[[value]]</b>",
+                                "fillColors": "#45b780",
+                                "fillAlphas": 0.8,
+                                "lineAlpha": 0.2,
+                                "type": "column",
+                                "valueField": "value",
+                                "autoColor": true,
+                            }],
+                            "chartCursor": {
+                                "categoryBalloonEnabled": false,
+                                "cursorAlpha": 0,
+                                "zoomable": false
+                            },
+                            "categoryField": "title",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "gridAlpha": 0,
+                                "tickPosition": "start",
+                                "tickLength": 20,
+                                "color": "#FFFFFF"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    }
+                }
             });
-            $("#shieldui-chart2").shieldChart({
-                theme: "dark",
-                primaryHeader: {
-                    text: "Estadisticas por estado"
-                },
-                exportOptions: {
-                    image: false,
-                    print: false
-                },
-                dataSeries: [{
-                    seriesType: "pie",
-                    collectionAlias: "traffic",
-                    data: visits
-                }]
+
+
+            //PageMethods.GetAgeStatistics("", onSuccess);
+            var dataValue = { "nullParameter": "" };
+            $.ajax({
+                type: "POST",
+                url: "index.aspx/GetAgeStatistics",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (msg) {
+                    var response = msg.replace('{"d":"', '');
+                    response = response.replace('"}', '');
+                    if ((response != "error")) {
+                        AmCharts.addInitHandler(function (chart) {
+                            // check if there are graphs with autoColor: true set
+                            for (var i = 0; i < chart.graphs.length; i++) {
+                                var graph = chart.graphs[i];
+                                if (graph.autoColor !== true)
+                                    continue;
+                                var colorKey = "autoColor-" + i;
+                                graph.lineColorField = colorKey;
+                                graph.fillColorsField = colorKey;
+                                for (var x = 0; x < chart.dataProvider.length; x++) {
+                                    var color = chart.colors[23]
+                                    chart.dataProvider[x][colorKey] = color;
+                                }
+                            }
+
+                        }, ["serial"]);
+                        var age = response.split("-");
+                        console.log(age);
+                        var pieChart = AmCharts.makeChart("chartdiv2", {
+                            "type": "serial",
+                            "theme": "light",
+                            "dataProvider": [{
+                                "title": "19 años",
+                                "value": age[0].replace(",", ".")
+                            }, {
+                                "title": "20 años",
+                                "value": age[1].replace(",", ".")
+                            }, {
+                                "title": "21 años",
+                                "value": age[2].replace(",", ".")
+                            }, {
+                                "title": "22 años",
+                                "value": age[3].replace(",", ".")
+                            }, {
+                                "title": "23 años",
+                                "value": age[4].replace(",", ".")
+                            }, {
+                                "title": "24 años",
+                                "value": age[5].replace(",", ".")
+                            }, {
+                                "title": "25 años",
+                                "value": age[6].replace(",", ".")
+                            }],
+                            "valueAxes": [{
+                                "gridColor": "#FFFFFF",
+                                "gridAlpha": 0.2,
+                                "dashLength": 0,
+                                "color": "#FFFFFF"
+                            }],
+                            "gridAboveGraphs": true,
+                            "startDuration": 1,
+                            "graphs": [{
+                                "balloonText": "[[category]]: <b>[[value]]</b>",
+                                "fillColors": "#45b780",
+                                "fillAlphas": 0.8,
+                                "lineAlpha": 0.2,
+                                "type": "column",
+                                "valueField": "value",
+                                "autoColor": true,
+                            }],
+                            "chartCursor": {
+                                "categoryBalloonEnabled": false,
+                                "cursorAlpha": 0,
+                                "zoomable": false
+                            },
+                            "categoryField": "title",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "gridAlpha": 0,
+                                "tickPosition": "start",
+                                "tickLength": 20,
+                                "color": "#FFFFFF"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    }
+                }
             });
-            $("#shieldui-chart3").shieldChart({
-                theme: "dark",
-                primaryHeader: {
-                    text: "Estadisticas por fecha"
-                },
-                exportOptions: {
-                    image: false,
-                    print: false
-                },
-                dataSeries: [{
-                    seriesType: "pie",
-                    collectionAlias: "traffic",
-                    data: visits
-                }]
-            });
-            $("#shieldui-grid1").shieldGrid({
-                dataSource: {
-                    data: traffic
-                },
-                sorting: {
-                    multiple: true
-                },
-                rowHover: false,
-                paging: false,
-                columns: [
-                { field: "Source", width: "170px", title: "Source" },
-                { field: "Amount", title: "Amount" },
-                { field: "Percent", title: "Percent", format: "{0} %" },
-                { field: "Target", title: "Target" },
-                ]
-            });
+
         });
     </script>
 </asp:Content>

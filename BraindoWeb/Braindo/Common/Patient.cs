@@ -16,10 +16,6 @@ namespace Braindo.Common
         private String municipality;
         private String parish;
         private float totalAnxiety;
-        private DateTime initialDate;
-        private DateTime endingDate;
-        private float month;
-        private float year;
         private int error;
 
         public Patient()
@@ -91,34 +87,7 @@ namespace Braindo.Common
 
         }
 
-        public Patient(int _age, float _totalAnxiety)
-        {
-            this.age = _age;
-            this.totalAnxiety = _totalAnxiety;
-
-        }
-
-        public Patient(String _career, float _totalAnxiety)
-        {
-            this.career = _career;
-            this.totalAnxiety = _totalAnxiety;
-
-        }
-
-        public Patient(DateTime _initialDate, DateTime _endingDate)
-        {
-            this.initialDate = _initialDate;
-            this.endingDate = _endingDate;
-        }
-
-        public Patient(float _month, float _year, float _totalAnxiety)
-        {
-            this.month = _month;
-            this.year = _year;
-            this.totalAnxiety = _totalAnxiety;
-        }
-
-
+       
         public int _ID
         {
             get { return ID; }
@@ -165,18 +134,6 @@ namespace Braindo.Common
         {
             get { return parish; }
             set { parish = value; }
-        }
-
-        public DateTime _InitialDate
-        {
-            get { return initialDate; }
-            set { initialDate = value; }
-        }
-
-        public DateTime _EndingDate
-        {
-            get { return endingDate; }
-            set { endingDate = value; }
         }
 
         public int _Error
