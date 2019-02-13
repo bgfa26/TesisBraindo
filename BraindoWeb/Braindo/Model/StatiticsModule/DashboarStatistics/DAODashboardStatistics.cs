@@ -12,13 +12,13 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
     {
         private NpgsqlConnection conn;
 
-        public List<Patient> GetDateStatistics(Patient _patient)
+        public List<Statistics> GetDateStatistics(Statistics _statistics)
         {
             float month;
             float year;
             float totalAnxiety;
-            Patient patient;
-            List<Patient> dateList = new List<Patient>();
+            Statistics statistic;
+            List<Statistics> dateList = new List<Statistics>();
             try
             {
                 conn = DAO.getConnection();
@@ -37,8 +37,8 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                 initDateConsult.Direction = ParameterDirection.Input;
                 endDateConsult.Direction = ParameterDirection.Input;
 
-                initDateConsult.Value = _patient._InitialDate;
-                endDateConsult.Value = _patient._EndingDate;
+                initDateConsult.Value = _statistics._InitialDate;
+                endDateConsult.Value = _statistics._EndingDate;
 
                 command.Parameters.Add(initDateConsult);
                 command.Parameters.Add(endDateConsult);
@@ -53,11 +53,11 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                     {
                         month = dr.GetFloat(0);
                         year = dr.GetFloat(1);
-                        totalAnxiety = dr.GetFloat(2);
+                        totalAnxiety = (float) dr.GetDouble(2);
 
-                        patient = new Patient(month, year, totalAnxiety);
+                        statistic = new Statistics(month, year, totalAnxiety);
 
-                        dateList.Add(patient);
+                        dateList.Add(statistic);
                     }
                     dr.Close();
                     tran.Commit();
@@ -79,13 +79,13 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
             }
         }
 
-        public List<Patient> GetMunicipalityStatistics(Patient _patient)
+        public List<Statistics> GetStateStatistics(Statistics _statistics)
         {
             String state;
             String municipality;
             float totalAnxiety;
-            Patient patient;
-            List<Patient> municipalityList = new List<Patient>();
+            Statistics statistic;
+            List<Statistics> municipalityList = new List<Statistics>();
             try
             {
                 conn = DAO.getConnection();
@@ -100,7 +100,7 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
 
                 stateConsult.Direction = ParameterDirection.Input;
 
-                stateConsult.Value = _patient._State;
+                stateConsult.Value = _statistics._State;
 
                 command.Parameters.Add(stateConsult);
 
@@ -112,13 +112,13 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                 {
                     while (dr.Read())
                     {
-                        state = _patient._State;
+                        state = _statistics._State;
                         municipality = dr.GetString(0);
-                        totalAnxiety = dr.GetFloat(1);
+                        totalAnxiety = (float) dr.GetDouble(1);
 
-                        patient = new Patient(state, municipality, totalAnxiety);
+                        statistic = new Statistics(state, municipality, totalAnxiety);
 
-                        municipalityList.Add(patient);
+                        municipalityList.Add(statistic);
                     }
                     dr.Close();
                     tran.Commit();
@@ -140,12 +140,12 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
             }
         }
 
-        public List<Patient> GetAgeStatistics()
+        public List<Statistics> GetAgeStatistics()
         {
             int age;
             float totalAnxiety;
-            Patient patient;
-            List<Patient> ageList = new List<Patient>();
+            Statistics statistic;
+            List<Statistics> ageList = new List<Statistics>();
 
             try
             {
@@ -161,10 +161,10 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                     while (dr.Read())
                     {
                         age = dr.GetInt32(0);
-                        totalAnxiety = dr.GetFloat(1);
+                        totalAnxiety = (float)dr.GetDouble(1);
 
-                        patient = new Patient(age, totalAnxiety);
-                        ageList.Add(patient);
+                        statistic = new Statistics(age, totalAnxiety);
+                        ageList.Add(statistic);
                     }
                     dr.Close();
                     tran.Commit();
@@ -186,12 +186,12 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
             }
         }
 
-        public List<Patient> GetCareerStatistics()
+        public List<Statistics> GetCareerStatistics()
         {
             String career;
             float totalAnxiety;
-            Patient patient;
-            List<Patient> ageList = new List<Patient>();
+            Statistics statistic;
+            List<Statistics> careerList = new List<Statistics>();
 
             try
             {
@@ -207,14 +207,14 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                     while (dr.Read())
                     {
                         career = dr.GetString(0);
-                        totalAnxiety = dr.GetFloat(1);
+                        totalAnxiety = (float)dr.GetDouble(1);
 
-                        patient = new Patient(career, totalAnxiety);
-                        ageList.Add(patient);
+                        statistic = new Statistics(career, totalAnxiety);
+                        careerList.Add(statistic);
                     }
                     dr.Close();
                     tran.Commit();
-                    return ageList;
+                    return careerList;
                 }
                 catch (Exception ex)
                 {

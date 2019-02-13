@@ -10,10 +10,10 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
     public class MunicipalityStatisticsCommand : Command
     {
 
-        private Patient municipalityStatistics;
-        private List<Patient> answer;
+        private Statistics municipalityStatistics;
+        private List<Statistics> answer;
 
-        public MunicipalityStatisticsCommand(Patient _municipalityStatistics)
+        public MunicipalityStatisticsCommand(Statistics _municipalityStatistics)
         {
             this.municipalityStatistics = _municipalityStatistics;
         }
@@ -23,7 +23,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             try
             {
                 DAODashboardStatistics dao = new DAODashboardStatistics();
-                answer = dao.GetMunicipalityStatistics(municipalityStatistics);
+                answer = dao.GetStateStatistics(municipalityStatistics);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             }
         }
 
-        public List<Patient> GetAnswer()
+        public List<Statistics> GetAnswer()
         {
             return answer;
         }

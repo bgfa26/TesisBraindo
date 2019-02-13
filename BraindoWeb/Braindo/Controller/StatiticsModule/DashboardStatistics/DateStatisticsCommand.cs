@@ -9,10 +9,10 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
 {
     public class DateStatisticsCommand : Command
     {
-        private Patient dateStatistics;
-        private List<Patient> answer;
+        private Statistics dateStatistics;
+        private List<Statistics> answer;
 
-        public DateStatisticsCommand(Patient _dateStatistics)
+        public DateStatisticsCommand(Statistics _dateStatistics)
         {
             this.dateStatistics = _dateStatistics;
         }
@@ -30,7 +30,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             }
         }
 
-        public List<Patient> GetAnswer()
+        public List<Statistics> GetAnswer()
         {
             return answer;
         }

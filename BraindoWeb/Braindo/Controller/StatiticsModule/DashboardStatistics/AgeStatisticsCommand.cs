@@ -9,7 +9,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
 {
     public class AgeStatisticsCommand : Command
     {
-        private List<Patient> answer;
+        private List<Statistics> answer;
 
         public AgeStatisticsCommand()
         {
@@ -29,7 +29,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             }
         }
 
-        public List<Patient> GetAnswer()
+        public List<Statistics> GetAnswer()
         {
             return answer;
         }
