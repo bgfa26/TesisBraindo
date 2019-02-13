@@ -22,6 +22,11 @@ namespace Braindo.Common
 
         }
 
+        public Statistics(String _state)
+        {
+            this.state = _state;
+        }
+
         public Statistics(String _state, String _municipality, float _totalAnxiety)
         {
             this.state = _state;

@@ -23,7 +23,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             try
             {
                 DAODashboardStatistics dao = new DAODashboardStatistics();
-                answer = dao.GetMunicipalityStatistics(municipalityStatistics);
+                answer = dao.GetStateStatistics(municipalityStatistics);
             }
             catch (Exception ex)
             {

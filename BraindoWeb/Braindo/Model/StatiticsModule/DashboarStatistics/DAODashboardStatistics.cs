@@ -79,7 +79,7 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
             }
         }
 
-        public List<Statistics> GetMunicipalityStatistics(Statistics _statistics)
+        public List<Statistics> GetStateStatistics(Statistics _statistics)
         {
             String state;
             String municipality;
