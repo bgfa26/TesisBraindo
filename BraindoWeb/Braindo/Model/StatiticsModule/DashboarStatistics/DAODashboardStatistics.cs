@@ -79,44 +79,30 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
             }
         }
 
-        public List<Statistics> GetStateStatistics(Statistics _statistics)
+        public List<Statistics> GetStateStatistics()
         {
             String state;
-            String municipality;
-            float totalAnxiety;
+            long totalPatients;
             Statistics statistic;
             List<Statistics> municipalityList = new List<Statistics>();
             try
             {
                 conn = DAO.getConnection();
                 NpgsqlTransaction tran = conn.BeginTransaction();
-                NpgsqlCommand command = new NpgsqlCommand("estadistica_estados(@estado)", conn);
+                NpgsqlCommand command = new NpgsqlCommand("estadistica_estados()", conn);
 
                 NpgsqlParameter stateConsult = new NpgsqlParameter();
-
-                stateConsult.ParameterName = "@estado";
-
-                stateConsult.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
-
-                stateConsult.Direction = ParameterDirection.Input;
-
-                stateConsult.Value = _statistics._State;
-
-                command.Parameters.Add(stateConsult);
-
                 command.CommandType = CommandType.StoredProcedure;
-
                 NpgsqlDataReader dr = command.ExecuteReader();
 
                 try
                 {
                     while (dr.Read())
                     {
-                        state = _statistics._State;
-                        municipality = dr.GetString(0);
-                        totalAnxiety = (float) dr.GetDouble(1);
+                        state = dr.GetString(0);
+                        totalPatients = dr.GetInt64(1);
 
-                        statistic = new Statistics(state, municipality, totalAnxiety);
+                        statistic = new Statistics(state, totalPatients);
 
                         municipalityList.Add(statistic);
                     }

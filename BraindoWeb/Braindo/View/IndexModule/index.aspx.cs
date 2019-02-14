@@ -21,6 +21,45 @@ namespace Braindo.View.IndexModule
         }
 
         [System.Web.Services.WebMethod]
+        public static String GetStateStatistics()
+        {
+            long DttoCapital = 0;
+            long Vargas = 0;
+            long Miranda = 0;
+            String answer = "";
+            StateStatisticsCommand stateCMD = new StateStatisticsCommand();
+
+            try
+            {
+                stateCMD.execute();
+                List<Statistics> statisticsList = stateCMD.GetAnswer();
+                foreach (Statistics _statistics in statisticsList)
+                {
+                    if (_statistics._State.Equals("Distrito Capital"))
+                    {
+                        DttoCapital = _statistics._TotalPatients;
+                    }
+                    if (_statistics._State.Equals("Vargas"))
+                    {
+                        Vargas = _statistics._TotalPatients;
+                    }
+                    if (_statistics._State.Equals("Miranda"))
+                    {
+                        Miranda = _statistics._TotalPatients;
+                    }
+                }
+
+                answer = DttoCapital + "-" + Vargas + "-" + Miranda;
+            }
+            catch (Exception ex)
+            {
+
+                answer = "error";
+            }
+            return answer;
+        }
+
+        [System.Web.Services.WebMethod]
         public static String GetAgeStatistics()
         {
             float age19 = 0;

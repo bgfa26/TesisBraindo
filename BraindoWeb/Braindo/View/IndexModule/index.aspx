@@ -22,10 +22,17 @@
 	        height		: 500px;
 	        font-size	: 11px;
             
+        }
+        
+        #chartdiv2 {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
         }	
 
         #piediv {
-	        width		: 100%;
+	        width		: 110%;
 	        height		: 500px;
 	        font-size	: 11px;
         }	
@@ -55,6 +62,18 @@
                         </div>
                         <div class="panel-body">
                             <div id="piediv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen Fobia Social por estado</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chartdiv2"></div>
                         </div>
                     </div>
                 </div>
@@ -138,6 +157,88 @@
                             }, {
                                 "title": "Educación",
                                 "value": careers[13].replace(",", ".")
+                            }],
+                            "valueAxes": [{
+                                "gridColor": "#FFFFFF",
+                                "gridAlpha": 0.2,
+                                "dashLength": 0,
+                                "color": "#FFFFFF"
+                            }],
+                            "gridAboveGraphs": true,
+                            "startDuration": 1,
+                            "graphs": [{
+                                "balloonText": "[[category]]: <b>[[value]]</b>",
+                                "fillColors": "#45b780",
+                                "fillAlphas": 0.8,
+                                "lineAlpha": 0.2,
+                                "type": "column",
+                                "valueField": "value",
+                                "autoColor": true,
+                            }],
+                            "chartCursor": {
+                                "categoryBalloonEnabled": false,
+                                "cursorAlpha": 0,
+                                "zoomable": false
+                            },
+                            "categoryField": "title",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "gridAlpha": 0,
+                                "tickPosition": "start",
+                                "tickLength": 20,
+                                "color": "#FFFFFF"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    }
+                }
+            });
+
+            //PageMethods.GetStateStatistics("", onSuccess);
+            var dataValue = { "nullParameter": "" };
+            $.ajax({
+                type: "POST",
+                url: "index.aspx/GetStateStatistics",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (msg) {
+                    var response = msg.replace('{"d":"', '');
+                    response = response.replace('"}', '');
+                    if ((response != "error")) {
+                        AmCharts.addInitHandler(function (chart) {
+                            // check if there are graphs with autoColor: true set
+                            for (var i = 0; i < chart.graphs.length; i++) {
+                                var graph = chart.graphs[i];
+                                if (graph.autoColor !== true)
+                                    continue;
+                                var colorKey = "autoColor-" + i;
+                                graph.lineColorField = colorKey;
+                                graph.fillColorsField = colorKey;
+                                for (var x = 0; x < chart.dataProvider.length; x++) {
+                                    var color = chart.colors[23]
+                                    chart.dataProvider[x][colorKey] = color;
+                                }
+                            }
+
+                        }, ["serial"]);
+                        var states = response.split("-");
+                        console.log(states);
+                        var pieChart = AmCharts.makeChart("chartdiv2", {
+                            "type": "serial",
+                            "theme": "light",
+                            "dataProvider": [{
+                                "title": "Distrito Capital",
+                                "value": states[0]
+                            }, {
+                                "title": "Vargas",
+                                "value": states[1]
+                            }, {
+                                "title": "Miranda",
+                                "value": states[2]
                             }],
                             "valueAxes": [{
                                 "gridColor": "#FFFFFF",

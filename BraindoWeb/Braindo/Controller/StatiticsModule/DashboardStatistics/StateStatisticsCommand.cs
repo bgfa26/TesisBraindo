@@ -7,15 +7,13 @@ using System.Web;
 
 namespace Braindo.Controller.StatiticsModule.DashboardStatistics
 {
-    public class MunicipalityStatisticsCommand : Command
+    public class StateStatisticsCommand : Command
     {
-
-        private Statistics municipalityStatistics;
         private List<Statistics> answer;
 
-        public MunicipalityStatisticsCommand(Statistics _municipalityStatistics)
+        public StateStatisticsCommand()
         {
-            this.municipalityStatistics = _municipalityStatistics;
+            
         }
 
         public override void execute()
@@ -23,7 +21,7 @@ namespace Braindo.Controller.StatiticsModule.DashboardStatistics
             try
             {
                 DAODashboardStatistics dao = new DAODashboardStatistics();
-                answer = dao.GetStateStatistics(municipalityStatistics);
+                answer = dao.GetStateStatistics();
             }
             catch (Exception ex)
             {

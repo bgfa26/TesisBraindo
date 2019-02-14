@@ -1744,7 +1744,7 @@
     <Compile Include="Controller\StatiticsModule\DashboardStatistics\AgeStatisticsCommand.cs" />
     <Compile Include="Controller\StatiticsModule\DashboardStatistics\CareerStatisticsCommand.cs" />
     <Compile Include="Controller\StatiticsModule\DashboardStatistics\DateStatisticsCommand.cs" />
-    <Compile Include="Controller\StatiticsModule\DashboardStatistics\MunicipalityStatisticsCommand.cs" />
+    <Compile Include="Controller\StatiticsModule\DashboardStatistics\StateStatisticsCommand.cs" />
     <Compile Include="Controller\StatiticsModule\PublicStatistics\PublicStatisticsCommand.cs" />
     <Compile Include="Model\DAO.cs" />
     <Compile Include="Model\PlaceModule\DAOPlace.cs" />

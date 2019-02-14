@@ -12,6 +12,7 @@ namespace Braindo.Common
         private String state;
         private String municipality;
         private float totalAnxiety;
+        private long totalPatients;
         private DateTime initialDate;
         private DateTime endingDate;
         private float month;
@@ -27,11 +28,10 @@ namespace Braindo.Common
             this.state = _state;
         }
 
-        public Statistics(String _state, String _municipality, float _totalAnxiety)
+        public Statistics(String _state, long _totalPatients)
         {
             this.state = _state;
-            this.municipality = _municipality;
-            this.totalAnxiety = _totalAnxiety;
+            this.totalPatients = _totalPatients;
 
         }
 
@@ -90,6 +90,12 @@ namespace Braindo.Common
         {
             get { return totalAnxiety; }
             set { totalAnxiety = value; }
+        }
+
+        public long _TotalPatients
+        {
+            get { return totalPatients; }
+            set { totalPatients = value; }
         }
 
         public DateTime _InitialDate
