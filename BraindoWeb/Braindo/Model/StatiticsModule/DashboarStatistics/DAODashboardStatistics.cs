@@ -51,8 +51,8 @@ namespace Braindo.Model.StatiticsModule.DashboarStatistics
                 {
                     while (dr.Read())
                     {
-                        month = dr.GetFloat(0);
-                        year = dr.GetFloat(1);
+                        month = (float) dr.GetDouble(0);
+                        year = (float) dr.GetDouble(1);
                         totalAnxiety = (float) dr.GetDouble(2);
 
                         statistic = new Statistics(month, year, totalAnxiety);

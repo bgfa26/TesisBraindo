@@ -109,5 +109,17 @@ namespace Braindo.Common
             get { return endingDate; }
             set { endingDate = value; }
         }
+
+        public float _Month
+        {
+            get { return month; }
+            set { month = value; }
+        }
+
+        public float _Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
     }
 }

@@ -31,6 +31,13 @@
             
         }	
 
+        #chartdiv3 {
+	        width		: 100%;
+	        height		: 500px;
+	        font-size	: 11px;
+            
+        }
+
         #piediv {
 	        width		: 110%;
 	        height		: 500px;
@@ -74,6 +81,18 @@
                         </div>
                         <div class="panel-body">
                             <div id="chartdiv2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen Fobia Social por fecha</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="chartdiv3"></div>
                         </div>
                     </div>
                 </div>
@@ -350,7 +369,157 @@
                 }
             });
 
+            //PageMethods.GetDateStatistics("", onSuccess);
+            var dataValue = { "nullParameter": "" };
+            $.ajax({
+                type: "POST",
+                url: "index.aspx/GetDateStatistics",
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (msg) {
+                    var response = msg.replace('{"d":"', '');
+                    response = response.replace('"}', '');
+                    if ((response != "error")) {
+                        AmCharts.addInitHandler(function (chart) {
+                            // check if there are graphs with autoColor: true set
+                            for (var i = 0; i < chart.graphs.length; i++) {
+                                var graph = chart.graphs[i];
+                                if (graph.autoColor !== true)
+                                    continue;
+                                var colorKey = "autoColor-" + i;
+                                graph.lineColorField = colorKey;
+                                graph.fillColorsField = colorKey;
+                                for (var x = 0; x < chart.dataProvider.length; x++) {
+                                    var color = chart.colors[23]
+                                    chart.dataProvider[x][colorKey] = color;
+                                }
+                            }
 
+                        }, ["serial"]);
+                        var date = response.split("-");
+                        console.log(date);
+                        var chart = AmCharts.makeChart("chartdiv3", {
+                            "type": "serial",
+                            "theme": "none",
+                            "marginRight": 40,
+                            "marginLeft": 40,
+                            "autoMarginOffset": 20,
+                            "mouseWheelZoomEnabled": true,
+                            "dataDateFormat": "YYYY-MM",
+                            "valueAxes": [{
+                                "id": "v1",
+                                "axisAlpha": 0,
+                                "position": "left",
+                                "ignoreAxisWidth": true
+                            }],
+                            "balloon": {
+                                "borderThickness": 1,
+                                "shadowAlpha": 0
+                            },
+                            "graphs": [{
+                                "id": "g1",
+                                "balloon": {
+                                    "drop": true,
+                                    "adjustBorderColor": false,
+                                    "color": "#ffffff"
+                                },
+                                "bullet": "round",
+                                "bulletBorderAlpha": 1,
+                                "bulletColor": "#FFFFFF",
+                                "bulletSize": 5,
+                                "hideBulletsCount": 50,
+                                "lineThickness": 2,
+                                "title": "red line",
+                                "useLineColorForBulletBorder": true,
+                                "valueField": "value",
+                                "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+                            }],
+                            "chartScrollbar": {
+                                "graph": "g1",
+                                "oppositeAxis": false,
+                                "offset": 30,
+                                "scrollbarHeight": 80,
+                                "backgroundAlpha": 0,
+                                "selectedBackgroundAlpha": 0.1,
+                                "selectedBackgroundColor": "#888888",
+                                "graphFillAlpha": 0,
+                                "graphLineAlpha": 0.5,
+                                "selectedGraphFillAlpha": 0,
+                                "selectedGraphLineAlpha": 1,
+                                "autoGridCount": true,
+                                "color": "#AAAAAA"
+                            },
+                            "chartCursor": {
+                                "pan": true,
+                                "valueLineEnabled": true,
+                                "valueLineBalloonEnabled": true,
+                                "cursorAlpha": 1,
+                                "cursorColor": "#258cbb",
+                                "limitToGraph": "g1",
+                                "valueLineAlpha": 0.2,
+                                "valueZoomable": true
+                            },
+                            "valueScrollbar": {
+                                "oppositeAxis": false,
+                                "offset": 50,
+                                "scrollbarHeight": 10
+                            },
+                            "categoryField": "date",
+                            "categoryAxis": {
+                                "parseDates": true,
+                                "dashLength": 1,
+                                "minorGridEnabled": true
+                            },
+                            "export": {
+                                "enabled": true
+                            },
+                            "dataProvider": [{
+                                "date": "2012-05",
+                                "value": 0
+                            },
+                            {
+                                "date": "2012-06",
+                                "value": 0
+                            }, {
+                                "date": "2012-07",
+                                "value": 30
+                            }, {
+                                "date": "2012-08",
+                                "value": 35
+                            }, {
+                                "date": "2012-09",
+                                "value": 45
+                            }, {
+                                "date": "2012-10",
+                                "value": 55
+                            }, {
+                                "date": "2012-11",
+                                "value": 60
+                            }, {
+                                "date": "2012-12",
+                                "value": 40
+                            }, {
+                                "date": "2013-01",
+                                "value": 60
+                            }, {
+                                "date": "2013-02",
+                                "value": 50
+                            }, {
+                                "date": "2013-03",
+                                "value": 45
+                            }]
+                        });
+                        chart.addListener("rendered", zoomChart);
+
+                        zoomChart();
+
+                        function zoomChart() {
+                            chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
+                        }
+                    }
+                }
+            });
 
         });
     </script>

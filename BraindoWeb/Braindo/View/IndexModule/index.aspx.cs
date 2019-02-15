@@ -21,6 +21,97 @@ namespace Braindo.View.IndexModule
         }
 
         [System.Web.Services.WebMethod]
+        public static String GetDateStatistics()
+        {
+            float Enero = 0;
+            float Febrero = 0;
+            float Marzo = 0;
+            float Abril = 0;
+            float Mayo = 0;
+            float Junio = 0;
+            float Julio = 0;
+            float Agosto = 0;
+            float Septiembre = 0;
+            float Octubre = 0;
+            float Noviembre = 0;
+            float Diciembre = 0;
+            String answer = "";
+
+            String fechaInicial = "2019-02-05";
+            String fechaFinal = "2019-09-05";
+            DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
+            DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
+
+            Statistics stats = new Statistics(fechaInicialDT, fechaFinalDT);
+
+            DateStatisticsCommand dateCMD = new DateStatisticsCommand(stats);
+
+            try
+            {
+                dateCMD.execute();
+                List<Statistics> statisticsList = dateCMD.GetAnswer();
+                foreach (Statistics _statistics in statisticsList)
+                {
+                    if (_statistics._Month.Equals(1))
+                    {
+                        Enero = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(2))
+                    {
+                        Febrero = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(3))
+                    {
+                        Marzo = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(4))
+                    {
+                        Abril = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(5))
+                    {
+                        Mayo = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(6))
+                    {
+                        Junio = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(7))
+                    {
+                        Julio = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(8))
+                    {
+                        Agosto = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(9))
+                    {
+                        Septiembre = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(10))
+                    {
+                        Octubre = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(11))
+                    {
+                        Noviembre = _statistics._TotalAnxiety * 100;
+                    }
+                    if (_statistics._Month.Equals(12))
+                    {
+                        Diciembre = _statistics._TotalAnxiety * 100;
+                    }
+                }
+                answer = Enero.ToString("0.00") + "-" + Febrero.ToString("0.00") + "-" + Marzo.ToString("0.00") + "-" + Abril.ToString("0.00") + "-" + Mayo.ToString("0.00") + "-" + Junio.ToString("0.00") + "-" + Julio.ToString("0.00") + "-" + Agosto.ToString("0.00") + "-" + Septiembre.ToString("0.00") + "-" + Octubre.ToString("0.00") + "-" + Noviembre.ToString("0.00") + "-" + Diciembre.ToString("0.00");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return answer;
+        }
+
+        [System.Web.Services.WebMethod]
         public static String GetStateStatistics()
         {
             long DttoCapital = 0;
