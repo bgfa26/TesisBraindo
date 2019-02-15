@@ -402,6 +402,7 @@
                         var chart = AmCharts.makeChart("chartdiv3", {
                             "type": "serial",
                             "theme": "none",
+                            "language": "es",
                             "marginRight": 40,
                             "marginLeft": 40,
                             "autoMarginOffset": 20,
@@ -411,7 +412,8 @@
                                 "id": "v1",
                                 "axisAlpha": 0,
                                 "position": "left",
-                                "ignoreAxisWidth": true
+                                "ignoreAxisWidth": true,
+                                "color": "#FFFFFF"
                             }],
                             "balloon": {
                                 "borderThickness": 1,
@@ -433,7 +435,9 @@
                                 "title": "red line",
                                 "useLineColorForBulletBorder": true,
                                 "valueField": "value",
-                                "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+                                "balloonText": "<span style='font-size:18px;'>[[value]]</span>",
+                                "fillColors": "#542d89",
+                                "lineColor": "#45b780"
                             }],
                             "chartScrollbar": {
                                 "graph": "g1",
@@ -469,45 +473,49 @@
                             "categoryAxis": {
                                 "parseDates": true,
                                 "dashLength": 1,
+                                "color": "#FFFFFF",
                                 "minorGridEnabled": true
                             },
                             "export": {
                                 "enabled": true
                             },
                             "dataProvider": [{
-                                "date": "2012-05",
-                                "value": 0
+                                "date": date[12] + "-01",
+                                "value": date[0].replace(",", ".")
                             },
                             {
-                                "date": "2012-06",
-                                "value": 0
+                                "date": date[12] + "-02",
+                                "value": date[1].replace(",", ".")
                             }, {
-                                "date": "2012-07",
-                                "value": 30
+                                "date": date[12] + "-03",
+                                "value": date[2].replace(",", ".")
                             }, {
-                                "date": "2012-08",
-                                "value": 35
+                                "date": date[12] + "-04",
+                                "value": date[3].replace(",", ".")
                             }, {
-                                "date": "2012-09",
-                                "value": 45
+                                "date": date[12] + "-05",
+                                "value": date[4].replace(",", ".")
                             }, {
-                                "date": "2012-10",
-                                "value": 55
+                                "date": date[12] + "-06",
+                                "value": date[5].replace(",", ".")
                             }, {
-                                "date": "2012-11",
-                                "value": 60
+                                "date": date[12] + "-07",
+                                "value": date[6].replace(",", ".")
                             }, {
-                                "date": "2012-12",
-                                "value": 40
+                                "date": date[12] + "-08",
+                                "value": date[7].replace(",", ".")
                             }, {
-                                "date": "2013-01",
-                                "value": 60
+                                "date": date[12] + "-09",
+                                "value": date[8].replace(",", ".")
                             }, {
-                                "date": "2013-02",
-                                "value": 50
+                                "date": date[12] + "-10",
+                                "value": date[9].replace(",", ".")
                             }, {
-                                "date": "2013-03",
-                                "value": 45
+                                "date": date[12] + "-11",
+                                "value": date[10].replace(",", ".")
+                            }, {
+                                "date": date[12] + "-12",
+                                "value": date[11].replace(",", ".")
                             }]
                         });
                         chart.addListener("rendered", zoomChart);

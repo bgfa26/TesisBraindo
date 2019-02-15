@@ -23,18 +23,19 @@ namespace Braindo.View.IndexModule
         [System.Web.Services.WebMethod]
         public static String GetDateStatistics()
         {
-            float Enero = 0;
-            float Febrero = 0;
-            float Marzo = 0;
-            float Abril = 0;
-            float Mayo = 0;
-            float Junio = 0;
-            float Julio = 0;
-            float Agosto = 0;
-            float Septiembre = 0;
-            float Octubre = 0;
-            float Noviembre = 0;
-            float Diciembre = 0;
+            float janAVG = 0;
+            float febAVG = 0;
+            float marAVG = 0;
+            float aprAVG = 0;
+            float mayAVG = 0;
+            float junAVG = 0;
+            float julAVG = 0;
+            float agoAVG = 0;
+            float sepAVG = 0;
+            float octAVG = 0;
+            float novAVG = 0;
+            float decAVG = 0;
+            float year = 0;
             String answer = "";
 
             String fechaInicial = "2019-02-05";
@@ -54,54 +55,56 @@ namespace Braindo.View.IndexModule
                 {
                     if (_statistics._Month.Equals(1))
                     {
-                        Enero = _statistics._TotalAnxiety * 100;
+                        janAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(2))
                     {
-                        Febrero = _statistics._TotalAnxiety * 100;
+                        febAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(3))
                     {
-                        Marzo = _statistics._TotalAnxiety * 100;
+                        marAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(4))
                     {
-                        Abril = _statistics._TotalAnxiety * 100;
+                        aprAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(5))
                     {
-                        Mayo = _statistics._TotalAnxiety * 100;
+                        mayAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(6))
                     {
-                        Junio = _statistics._TotalAnxiety * 100;
+                        junAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(7))
                     {
-                        Julio = _statistics._TotalAnxiety * 100;
+                        julAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(8))
                     {
-                        Agosto = _statistics._TotalAnxiety * 100;
+                        agoAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(9))
                     {
-                        Septiembre = _statistics._TotalAnxiety * 100;
+                        sepAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(10))
                     {
-                        Octubre = _statistics._TotalAnxiety * 100;
+                        octAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(11))
                     {
-                        Noviembre = _statistics._TotalAnxiety * 100;
+                        novAVG = _statistics._TotalAnxiety * 100;
                     }
                     if (_statistics._Month.Equals(12))
                     {
-                        Diciembre = _statistics._TotalAnxiety * 100;
+                        decAVG = _statistics._TotalAnxiety * 100;
                     }
+
+                    year = _statistics._Year;
                 }
-                answer = Enero.ToString("0.00") + "-" + Febrero.ToString("0.00") + "-" + Marzo.ToString("0.00") + "-" + Abril.ToString("0.00") + "-" + Mayo.ToString("0.00") + "-" + Junio.ToString("0.00") + "-" + Julio.ToString("0.00") + "-" + Agosto.ToString("0.00") + "-" + Septiembre.ToString("0.00") + "-" + Octubre.ToString("0.00") + "-" + Noviembre.ToString("0.00") + "-" + Diciembre.ToString("0.00");
+                answer = janAVG.ToString("0.00") + "-" + febAVG.ToString("0.00") + "-" + marAVG.ToString("0.00") + "-" + aprAVG.ToString("0.00") + "-" + mayAVG.ToString("0.00") + "-" + junAVG.ToString("0.00") + "-" + julAVG.ToString("0.00") + "-" + agoAVG.ToString("0.00") + "-" + sepAVG.ToString("0.00") + "-" + octAVG.ToString("0.00") + "-" + novAVG.ToString("0.00") + "-" + decAVG.ToString("0.00") + "-" + year;
             }
             catch (Exception ex)
             {
