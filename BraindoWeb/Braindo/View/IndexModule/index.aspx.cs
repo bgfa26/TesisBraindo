@@ -40,76 +40,100 @@ namespace Braindo.View.IndexModule
 
             String fechaInicial = initDate;
             String fechaFinal = endingDate;
-            DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
-            DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
 
-            Statistics stats = new Statistics(fechaInicialDT, fechaFinalDT);
+            string[] initDateArgs = fechaInicial.Split('-');
+            String yearInit = initDateArgs[0];
 
-            DateStatisticsCommand dateCMD = new DateStatisticsCommand(stats);
+            string[] endDateArgs = fechaFinal.Split('-');
+            String yearEnd = endDateArgs[0];
 
-            try
+            int compare = string.Compare(yearInit, yearEnd);
+
+            if (compare != 0)
             {
-                dateCMD.execute();
-                List<Statistics> statisticsList = dateCMD.GetAnswer();
-                foreach (Statistics _statistics in statisticsList)
-                {
-                    if (_statistics._Month.Equals(1))
-                    {
-                        janAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(2))
-                    {
-                        febAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(3))
-                    {
-                        marAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(4))
-                    {
-                        aprAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(5))
-                    {
-                        mayAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(6))
-                    {
-                        junAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(7))
-                    {
-                        julAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(8))
-                    {
-                        agoAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(9))
-                    {
-                        sepAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(10))
-                    {
-                        octAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(11))
-                    {
-                        novAVG = _statistics._TotalAnxiety * 100;
-                    }
-                    if (_statistics._Month.Equals(12))
-                    {
-                        decAVG = _statistics._TotalAnxiety * 100;
-                    }
-
-                    year = _statistics._Year;
-                }
-                answer = janAVG.ToString("0.00") + "-" + febAVG.ToString("0.00") + "-" + marAVG.ToString("0.00") + "-" + aprAVG.ToString("0.00") + "-" + mayAVG.ToString("0.00") + "-" + junAVG.ToString("0.00") + "-" + julAVG.ToString("0.00") + "-" + agoAVG.ToString("0.00") + "-" + sepAVG.ToString("0.00") + "-" + octAVG.ToString("0.00") + "-" + novAVG.ToString("0.00") + "-" + decAVG.ToString("0.00") + "-" + year;
+                answer = "Los años son diferentes, deben ser el mismo año";
             }
-            catch (Exception ex)
+            else
             {
+                DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
+                DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
 
-                throw ex;
+                Statistics stats = new Statistics(fechaInicialDT, fechaFinalDT);
+
+                DateStatisticsCommand dateCMD = new DateStatisticsCommand(stats);
+
+                try
+                {
+                    dateCMD.execute();
+                    List<Statistics> statisticsList = dateCMD.GetAnswer();
+
+                    if (statisticsList.Count == 0)
+                    {
+                        answer = "En la fecha consultada no existen registros";
+                    }
+                    else
+                    {
+                        foreach (Statistics _statistics in statisticsList)
+                        {
+                            if (_statistics._Month.Equals(1))
+                            {
+                                janAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(2))
+                            {
+                                febAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(3))
+                            {
+                                marAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(4))
+                            {
+                                aprAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(5))
+                            {
+                                mayAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(6))
+                            {
+                                junAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(7))
+                            {
+                                julAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(8))
+                            {
+                                agoAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(9))
+                            {
+                                sepAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(10))
+                            {
+                                octAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(11))
+                            {
+                                novAVG = _statistics._TotalAnxiety * 100;
+                            }
+                            if (_statistics._Month.Equals(12))
+                            {
+                                decAVG = _statistics._TotalAnxiety * 100;
+                            }
+
+                            year = _statistics._Year;
+                        }
+                        answer = janAVG.ToString("0.00") + "-" + febAVG.ToString("0.00") + "-" + marAVG.ToString("0.00") + "-" + aprAVG.ToString("0.00") + "-" + mayAVG.ToString("0.00") + "-" + junAVG.ToString("0.00") + "-" + julAVG.ToString("0.00") + "-" + agoAVG.ToString("0.00") + "-" + sepAVG.ToString("0.00") + "-" + octAVG.ToString("0.00") + "-" + novAVG.ToString("0.00") + "-" + decAVG.ToString("0.00") + "-" + year;
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
             return answer;
         }
