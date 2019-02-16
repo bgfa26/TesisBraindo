@@ -40,7 +40,7 @@
         }
 
         #piediv {
-	        width		: 110%;
+	        width		: 100%;
 	        height		: 500px;
 	        font-size	: 11px;
         }	
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por edad</h3>
@@ -75,9 +75,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen Fobia Social por estado</h3>
@@ -89,27 +87,26 @@
                 </div>
             </div>
         <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen Fobia Social por fecha</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="inline">
-                                <div>
-                                    <label>Desde</label>
-                                    <input runat="server" id="initDate" type="date" class="form-control-DashboardInput"/>
-                                </div>
-                                <div>
-                                    <label>Hasta</label>
-                                    <input runat="server" id="endDate" type="date" class="form-control-DashboardInput"/>
-                                </div>
-                                <div>
-                                    <input type="button" value="Aceptar" onclick="CargarFecha()"/>
-                                </div>                              
-                             </div>
-                            <div id="chartdiv3"></div>
-                        </div>
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Estudiantes que padecen Fobia Social por fecha</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="inline center">
+                            <div>
+                                <label>Desde: </label>
+                                <input runat="server" id="initDate" type="date" class="form-control-DashboardInput"/>
+                            </div>
+                            <div>
+                                <label>Hasta: </label>
+                                <input runat="server" id="endDate" type="date" class="form-control-DashboardInput"/>
+                            </div>
+                            <div>
+                                <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
+                            </div>                              
+                            </div>
+                        <div id="chartdiv3"></div>
                     </div>
                 </div>
             </div>
