@@ -72,6 +72,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\dark-bootstrap\all.min.css" />
     <Content Include="Content\css\DropDownEffect.css" />
+    <Content Include="Content\css\IndexDashboard.css" />
     <Content Include="Content\css\light-bootstrap\all.min.css" />
     <Content Include="Content\css\MedicalAppointment.css" />
     <Content Include="Content\css\PatientInformation.css" />

@@ -21,7 +21,7 @@ namespace Braindo.View.IndexModule
         }
 
         [System.Web.Services.WebMethod]
-        public static String GetDateStatistics()
+        public static String GetDateStatistics(String initDate, String endingDate)
         {
             float janAVG = 0;
             float febAVG = 0;
@@ -38,8 +38,8 @@ namespace Braindo.View.IndexModule
             float year = 0;
             String answer = "";
 
-            String fechaInicial = "2019-02-05";
-            String fechaFinal = "2019-09-05";
+            String fechaInicial = initDate;
+            String fechaFinal = endingDate;
             DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
             DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
 
@@ -113,6 +113,100 @@ namespace Braindo.View.IndexModule
             }
             return answer;
         }
+
+        //[System.Web.Services.WebMethod]
+        //public static String GetDateStatistics()
+        //{
+        //    float janAVG = 0;
+        //    float febAVG = 0;
+        //    float marAVG = 0;
+        //    float aprAVG = 0;
+        //    float mayAVG = 0;
+        //    float junAVG = 0;
+        //    float julAVG = 0;
+        //    float agoAVG = 0;
+        //    float sepAVG = 0;
+        //    float octAVG = 0;
+        //    float novAVG = 0;
+        //    float decAVG = 0;
+        //    float year = 0;
+        //    String answer = "";
+
+        //    String fechaInicial = "2019-02-05";
+        //    String fechaFinal = "2019-09-05";
+        //    DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
+        //    DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
+
+        //    Statistics stats = new Statistics(fechaInicialDT, fechaFinalDT);
+
+        //    DateStatisticsCommand dateCMD = new DateStatisticsCommand(stats);
+
+        //    try
+        //    {
+        //        dateCMD.execute();
+        //        List<Statistics> statisticsList = dateCMD.GetAnswer();
+        //        foreach (Statistics _statistics in statisticsList)
+        //        {
+        //            if (_statistics._Month.Equals(1))
+        //            {
+        //                janAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(2))
+        //            {
+        //                febAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(3))
+        //            {
+        //                marAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(4))
+        //            {
+        //                aprAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(5))
+        //            {
+        //                mayAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(6))
+        //            {
+        //                junAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(7))
+        //            {
+        //                julAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(8))
+        //            {
+        //                agoAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(9))
+        //            {
+        //                sepAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(10))
+        //            {
+        //                octAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(11))
+        //            {
+        //                novAVG = _statistics._TotalAnxiety * 100;
+        //            }
+        //            if (_statistics._Month.Equals(12))
+        //            {
+        //                decAVG = _statistics._TotalAnxiety * 100;
+        //            }
+
+        //            year = _statistics._Year;
+        //        }
+        //        answer = janAVG.ToString("0.00") + "-" + febAVG.ToString("0.00") + "-" + marAVG.ToString("0.00") + "-" + aprAVG.ToString("0.00") + "-" + mayAVG.ToString("0.00") + "-" + junAVG.ToString("0.00") + "-" + julAVG.ToString("0.00") + "-" + agoAVG.ToString("0.00") + "-" + sepAVG.ToString("0.00") + "-" + octAVG.ToString("0.00") + "-" + novAVG.ToString("0.00") + "-" + decAVG.ToString("0.00") + "-" + year;
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //    return answer;
+        //}
 
         [System.Web.Services.WebMethod]
         public static String GetStateStatistics()
