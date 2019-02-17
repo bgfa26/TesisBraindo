@@ -56,4 +56,10 @@
                 </div>
             </div>
         </div>
+     <script>
+
+         var today = new Date().toISOString().split('T')[0];
+         document.getElementById('<%= date_appointment_txt.ClientID %>').setAttribute('min', today);
+        
+    </script>
 </asp:Content>

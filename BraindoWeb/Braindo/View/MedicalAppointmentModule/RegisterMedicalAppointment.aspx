@@ -35,7 +35,7 @@
                                 <div class="panel-body-Medical">
                                     <div class="form-group-Medical">
                                         <label>Fecha de la Cita</label>
-                                        <input runat="server" id="date_appointment" type="date" class="form-control-Medical"/>
+                                        <input runat="server" name="dateApp" id="date_appointment" type="date" class="form-control-Medical"/>
                                     </div>
                                     <div class="form-group-Medical">
                                         <label>Hora:</label>
@@ -68,4 +68,10 @@
                 </div>
             </div>
         </div>
+    <script>
+
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('<%= date_appointment.ClientID %>').setAttribute('min', today);
+        
+    </script>
  </asp:Content>
