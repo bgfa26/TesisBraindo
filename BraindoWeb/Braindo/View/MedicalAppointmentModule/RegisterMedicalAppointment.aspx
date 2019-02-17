@@ -35,7 +35,7 @@
                                 <div class="panel-body-Medical">
                                     <div class="form-group-Medical">
                                         <label>Fecha de la Cita</label>
-                                        <input runat="server" name="dateApp" id="date_appointment" type="date" class="form-control-Medical"/>
+                                        <input runat="server" name="dateApp" id="date_appointment" required="required" type="date" class="form-control-Medical"/>
                                     </div>
                                     <div class="form-group-Medical">
                                         <label>Hora:</label>

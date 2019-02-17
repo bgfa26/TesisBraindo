@@ -96,11 +96,11 @@
                         <div class="inline center">
                             <div>
                                 <label>Desde: </label>
-                                <input runat="server" id="initDate" type="date" class="form-control-DashboardInput"/>
+                                <input runat="server" id="initDate" type="date" required="required" class="form-control-DashboardInput"/>
                             </div>
                             <div>
                                 <label>Hasta: </label>
-                                <input runat="server" id="endDate" type="date" class="form-control-DashboardInput"/>
+                                <input runat="server" id="endDate" type="date" required="required" class="form-control-DashboardInput"/>
                             </div>
                             <div>
                                 <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
