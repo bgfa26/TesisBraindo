@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Npgsql;
+using System.Globalization;
 
 namespace Braindo.View.PatientModule
 {
@@ -66,9 +67,11 @@ namespace Braindo.View.PatientModule
                             String neutral = feelingsArgs[1];
                             String positive = feelingsArgs[2];
 
-                            Double negativeInt = Convert.ToDouble(negative)/10;
-                            Double neutralInt = Convert.ToDouble(neutral)/10;
-                            Double positiveInt = Convert.ToDouble(positive)/10;
+                            float n = (float)Convert.ToDouble(negative, CultureInfo.GetCultureInfo("en-us"));
+
+                            Double negativeInt = Convert.ToDouble(negative, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double neutralInt = Convert.ToDouble(neutral, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double positiveInt = Convert.ToDouble(positive, CultureInfo.GetCultureInfo("en-us")) * 100;
 
                             if (negativeInt > neutralInt && negativeInt > positiveInt)
                             {
@@ -95,12 +98,12 @@ namespace Braindo.View.PatientModule
                             String excited = emotionsArgs[4].Substring(0, 5);
                             String bored = emotionsArgs[5].Substring(0, 5);
 
-                            Double fearInt = Convert.ToDouble(fear) / 10;
-                            Double sadInt = Convert.ToDouble(sad) / 10;
-                            Double happyInt = Convert.ToDouble(happy) / 10;
-                            Double angryInt = Convert.ToDouble(angry) / 10;
-                            Double excitedInt = Convert.ToDouble(excited) / 10;
-                            Double boredInt = Convert.ToDouble(bored) / 10;
+                            Double fearInt = Convert.ToDouble(fear, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double sadInt = Convert.ToDouble(sad, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double happyInt = Convert.ToDouble(happy, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double angryInt = Convert.ToDouble(angry, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double excitedInt = Convert.ToDouble(excited, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double boredInt = Convert.ToDouble(bored, CultureInfo.GetCultureInfo("en-us")) * 100;
 
                             if (fearInt > sadInt && fearInt > happyInt && fearInt > angryInt && fearInt > excitedInt && fearInt > boredInt)
                             {
@@ -150,12 +153,12 @@ namespace Braindo.View.PatientModule
                             String answer5 = networkAnswerArgs[5].Substring(0, 5);
 
 
-                            Double AvoidanceDouble = Convert.ToDouble(answer0) / 10;
-                            Double ExperienceDouble = Convert.ToDouble(answer1) / 10;
-                            Double FlexibilityDouble = Convert.ToDouble(answer2) / 10;
-                            Double FusionDouble = Convert.ToDouble(answer3) / 10;
-                            Double RigidityDouble = Convert.ToDouble(answer4) / 10;
-                            Double netAnswerDouble = Convert.ToDouble(answer5) / 10;
+                            Double AvoidanceDouble = Convert.ToDouble(answer0, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double ExperienceDouble = Convert.ToDouble(answer1, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double FlexibilityDouble = Convert.ToDouble(answer2, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double FusionDouble = Convert.ToDouble(answer3, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double RigidityDouble = Convert.ToDouble(answer4, CultureInfo.GetCultureInfo("en-us")) * 100;
+                            Double netAnswerDouble = Convert.ToDouble(answer5, CultureInfo.GetCultureInfo("en-us")) * 100;
 
 
                             networkAnxiety = netAnswerDouble.ToString() + "%";
