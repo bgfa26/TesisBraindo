@@ -8,20 +8,20 @@
 <asp:Content ID="ContentRegisterExam2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
         <div id="page-wrapper-MentalExam">
             <div class="row centerProfileTitle">
-                <h2>Examen Mental</h2>
+                <h3>Examen Mental</h3>
             </div>
             <div class="row">
                 <div class="col-lg-3">
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group form-group-MentalExam-select" runat="server" id="NoRecord" visible="false">
-                        <asp:Label ID="Label1" runat="server">Lista de citas:</asp:Label>
+                        <label id="Label1" runat="server" style="font-size:16px">Lista de citas:</label>
                         <asp:DropDownList id="NoRecordList" runat="server" AutoPostBack="true" CssClass="form-control">
                             <asp:ListItem>No tiene citas registradas</asp:ListItem>    
                         </asp:DropDownList>
                     </div>
                     <div class="form-group form-group-MentalExam-select" runat="server" id="Record">
-                        <asp:Label ID="AppointmentList_Tittle" runat="server">Lista de citas:</asp:Label>
+                        <label id="AppointmentList_Tittle" runat="server" style="font-size:16px">Lista de citas:</label>
                         <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">    
                         </asp:DropDownList>
                     </div>

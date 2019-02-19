@@ -28,7 +28,7 @@ namespace Braindo.View.MentalExamModule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label1;
         
         /// <summary>
         /// NoRecordList control.
@@ -55,7 +55,7 @@ namespace Braindo.View.MentalExamModule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AppointmentList_Tittle;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AppointmentList_Tittle;
         
         /// <summary>
         /// patient_List control.

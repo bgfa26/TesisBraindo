@@ -10,7 +10,7 @@
 <asp:Content ID="ContentEditPatient2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
         <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
-                <h2>Editar Datos Personales del Paciente</h2>
+                <h3>Editar Datos Personales del Paciente</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

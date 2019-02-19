@@ -13,7 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper-Medical">
             <div class="row centerProfileTitle">
-                <h2>Modificar Cita</h2>
+                <h3>Modificar Cita</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

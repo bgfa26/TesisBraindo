@@ -10,7 +10,7 @@
 
         <div id="page-wrapper-Psychologist">
             <div class="centerProfileTitle">
-                <h2>Perfil del Psicólogo</h2>
+                <h3>Perfil del Psicólogo</h3>
             </div>
 
             <div class="row">

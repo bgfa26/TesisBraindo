@@ -7,7 +7,7 @@
 <asp:Content ID="ContentDetailedTest2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper-Psychologist">
             <div class="centerProfileTitle">
-                <h2 runat="server" id="tittle_Test"></h2>
+                <h3 runat="server" id="tittle_Test"></h3>
             </div>
 
             <div class="row">

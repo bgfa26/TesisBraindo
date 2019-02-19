@@ -10,7 +10,7 @@
 <asp:Content ID="ContentPsychoEdit2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h2>Editar Datos</h2>
+                <h3>Editar Datos</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

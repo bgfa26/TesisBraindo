@@ -18,6 +18,9 @@ namespace Braindo.View.IndexModule
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='LoginTest.aspx';", true);
             }
+            else
+            {
+            }
         }
 
         [System.Web.Services.WebMethod]

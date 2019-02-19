@@ -11,7 +11,7 @@
 
         <div id="page-wrapper-PsychoEdit">
             <div class="row centerProfileTitle">
-                <h2>Cambiar Contraseña</h2>
+                <h3>Cambiar Contraseña</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

@@ -8,7 +8,7 @@
 <asp:Content ID="ContentMedicalAppointment2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
         <div id="page-wrapper-Medical">
             <div class="row centerProfileTitle">
-                <h2>Lista de Citas</h2>
+                <h3>Lista de Citas</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

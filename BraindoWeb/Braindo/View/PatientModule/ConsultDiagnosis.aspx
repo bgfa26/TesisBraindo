@@ -8,7 +8,7 @@
 <asp:Content ID="ContentConsultDiagnosis2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
-                <h2>Diagnosticos del paciente</h2>
+                <h3>Diagnosticos del paciente</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">

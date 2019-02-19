@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
 
+
     <style>
 
         #chartdiv {
@@ -106,13 +107,14 @@
                                 <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
                             </div>                              
                             </div>
-                        <div id="chartdiv3"></div>
+                            <div id="chartdiv3"></div>
                     </div>
                 </div>
             </div>
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
+
 
             //PageMethods.GetCareerStatistics("", onSuccess);
             var dataValue = { "nullParameter": "" };

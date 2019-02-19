@@ -3,6 +3,7 @@
 
 <asp:Content ID="ContentRegisterAppointment" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MedicalAppointment.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />
     <script type="text/javascript" src="/Content/js/OnlyLettersValidation.js"></script>
     <script type="text/javascript" src="/Content/js/OnlyNumbersValidation.js"></script>
     <script type="text/javascript" src="/Content/js/AlphanumericValidation.js"></script>
@@ -13,20 +14,20 @@
 <asp:Content ID="ContentRegisterAppointment2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">       
         <div id="page-wrapper-Medical">
             <div class="row centerProfileTitle">
-                <h2>Registrar Cita</h2>
+                <h3>Registrar Cita</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group form-group-MentalExam-select" runat="server" id="NoRecord" visible="false">
-                                <label>Lista de pacientes:</label>
+                            <div class="form-group form-group-Medical-select" runat="server" id="NoRecord" visible="false">
+                                <label style="font-size:16px">Lista de pacientes:</label>
                                 <asp:DropDownList id="NoRecordList" runat="server" AutoPostBack="true" CssClass="form-control">
                                         <asp:ListItem>No tiene pacientes registrados</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="form-group form-group-MentalExam-select" runat="server" id="Record">
-                                <label>Lista de pacientes:</label>
+                            <div class="form-group form-group-Medical-select" runat="server" id="Record">
+                                <label style="font-size:16px">Lista de pacientes:</label>
                                 <asp:DropDownList id="patient_List" runat="server" AutoPostBack="true" CssClass="form-control">
                                         
                                 </asp:DropDownList>
