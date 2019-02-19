@@ -122,7 +122,9 @@ input[type=date]::-webkit-inner-spin-button {
     font-size: 85%;
 }
 
-
+thead{
+    font-size: 15px;
+}
 
 #tblData tbody{
     display: block;

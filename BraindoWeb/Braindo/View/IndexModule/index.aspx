@@ -56,7 +56,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por carrera</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de fobia social por carrera</h3>
                         </div>
                         <div class="panel-body">
                             <div id="chartdiv"></div>
@@ -68,7 +68,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Fobia Social por edad</h3>
+                            <h3 class="panel-title"><i class="fa fa-pie-chart"></i> Porcentaje de fobia social por edad</h3>
                         </div>
                         <div class="panel-body">
                             <div id="piediv"></div>
@@ -78,7 +78,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen Fobia Social por estado</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen fobia social por estado</h3>
                         </div>
                         <div class="panel-body">
                             <div id="chartdiv2"></div>
@@ -90,17 +90,17 @@
             <div class="col-lg-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Promedio de Estudiantes que padecen Fobia Social por fecha</h3>
+                        <h3 class="panel-title"><i class="fa fa-line-chart"></i> Promedio de fobia social por fecha</h3>
                     </div>
                     <div class="panel-body">
                         <div class="inline center">
                             <div>
                                 <label>Desde: </label>
-                                <input runat="server" id="initDate" type="date" required="required" class="form-control-DashboardInput"/>
+                                <input runat="server" id="initDate" type="date" class="form-control-DashboardInput"/>
                             </div>
                             <div>
                                 <label>Hasta: </label>
-                                <input runat="server" id="endDate" type="date" required="required" class="form-control-DashboardInput"/>
+                                <input runat="server" id="endDate" type="date"  class="form-control-DashboardInput"/>
                             </div>
                             <div>
                                 <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
@@ -154,7 +154,7 @@
                                 "title": "Ing. Civil",
                                 "value": careers[1].replace(",", ".")
                             }, {
-                                "title": "Ing. \n Telecomuni- \n caciones",
+                                "title": "Ing. \n Telecom.",
                                 "value": careers[2].replace(",", ".")
                             }, {
                                 "title": "Ing. \n Industrial",
@@ -389,7 +389,7 @@
             PageMethods.GetDateStatistics(document.getElementById('<%= initDate.ClientID %>').value, document.getElementById('<%= endDate.ClientID %>').value, SucessDate);
         }
         function SucessDate(response, userContext, methodName) {
-            if ((response != "Los años son diferentes, deben ser el mismo año") && (response != "En la fecha consultada no existen registros")) {
+            if ((response != "Los años son diferentes, deben ser el mismo año") && (response != "En la fecha consultada no existen registros") && (response != "Seleccione un rango de fecha")) {
                 var date = response.split("-");
                 console.log(date);
                 var chart = AmCharts.makeChart("chartdiv3", {

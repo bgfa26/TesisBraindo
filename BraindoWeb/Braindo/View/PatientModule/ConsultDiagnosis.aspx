@@ -29,9 +29,9 @@
                                         <ItemTemplate>
                                             <tr id="<%# Eval("_ID") %>">
                                                 <td><%# Eval("_DiagnosisDateString") %></td>
-                                                <td><%# Eval("_Feelings") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherFeelings") %>"><i class="fa fa-info customInfoIcon"></i></a></td>
-                                                <td><%# Eval("_Emotions") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherEmotions") %>"><i class="fa fa-info customInfoIcon"></i></a></td>
-                                                <td><%# Eval("_NetworkAnswer") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherNetworkAnswer") %>"><i class="fa fa-info customInfoIcon"></i></a></td>
+                                                <td><%# Eval("_Feelings") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherFeelings") %>"><i class="fa fa-info-circle customInfoIcon"></i></a></td>
+                                                <td><%# Eval("_Emotions") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherEmotions") %>"><i class="fa fa-info-circle customInfoIcon"></i></a></td>
+                                                <td><%# Eval("_NetworkAnswer") %> <a data-toggle="tooltip" data-placement="top" title="<%# Eval("_OtherNetworkAnswer") %>"><i class="fa fa-info-circle customInfoIcon"></i></a></td>
                                                 <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDetailedInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
                                             </tr>
                                         </ItemTemplate>

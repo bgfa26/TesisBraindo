@@ -458,7 +458,7 @@
                               "title": "Ing. Civil",
                               "value": careers[1]
                           }, {
-                              "title": "Ing. \n Telecomuni- \n caciones",
+                              "title": "Ing. \n Telecom.",
                               "value": careers[2]
                           }, {
                               "title": "Ing. \n Industrial",

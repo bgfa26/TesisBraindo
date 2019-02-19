@@ -127,6 +127,10 @@ fieldset[disabled] .form-control {
     table-layout: fixed;
 }
 
+thead{
+    font-size: 15px;
+}
+
 #tblData th{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -258,7 +262,7 @@ fieldset[disabled] .form-control {
 
 #tblData tbody{
     display: block;
-    max-height: 300px;
+    max-height: 325px;
     overflow-y: scroll;
 }
 
