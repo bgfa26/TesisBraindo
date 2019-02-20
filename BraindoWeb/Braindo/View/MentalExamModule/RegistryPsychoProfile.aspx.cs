@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using System.Globalization;
 namespace Braindo.View.MentalExamModule
 {
     public partial class RegistryPsychoProfile : System.Web.UI.Page
@@ -206,7 +207,7 @@ namespace Braindo.View.MentalExamModule
                             hourApp = "17:00";
                         }
 
-                    DateTime dateAppointment = Convert.ToDateTime(dateApp);
+                    DateTime dateAppointment = DateTime.ParseExact(dateApp, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                     DateTime hourAppointment = new DateTime();
                     hourAppointment = DateTime.ParseExact(hourApp, "HH:mm", null);
 
