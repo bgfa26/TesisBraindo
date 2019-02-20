@@ -16,14 +16,14 @@
         alert('Máximo 8 caracteres');
         return false;
     }
-    else if ((n2 == 0) && (val.length >= 10)) {
+    else if ((n2 == 0) && (val.length >= 15)) {
         evt.preventDefault();
-        alert('Máximo 10 caracteres');
+        alert('Máximo 15 caracteres');
         return false;
     }
-    else if ((n3 == 0) && (val.length >= 10)) {
+    else if ((n3 == 0) && (val.length >= 15)) {
         evt.preventDefault();
-        alert('Máximo 10 caracteres');
+        alert('Máximo 15 caracteres');
         return false;
     }
     else if ((n4 == 0) && (val.length >= 15)) {
