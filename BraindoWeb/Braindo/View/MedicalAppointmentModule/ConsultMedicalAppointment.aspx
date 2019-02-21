@@ -13,7 +13,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="table-responsive">
+                        <div class="table-responsive">   
+                            <%--<input runat="server" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" class="form-control-Medical"/>--%>
                             <table id="tblData" class="table table-bordered table-striped table-hover boxAppointment">          
                                 <thead>
                                     <tr>
@@ -54,4 +55,24 @@
                 </div>
             </div>
         </div>
+    <script>
+        <%--function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('<%= myInput.ClientID %>');
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblData");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }--%>
+</script>
  </asp:Content> 
