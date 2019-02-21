@@ -120,6 +120,7 @@ input[type=date]::-webkit-inner-spin-button {
     color: #222222;
     text-align: center;
     font-size: 85%;
+    word-wrap:break-word;
 }
 
 thead{
@@ -128,7 +129,7 @@ thead{
 
 #tblData tbody{
     display: block;
-    max-height: 300px;
+    max-height: 325px;
     overflow-y: scroll;
 }
 
