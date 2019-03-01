@@ -17,6 +17,7 @@
     <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
 
 
+
     <style>
 
         #chartdiv {
@@ -112,6 +113,7 @@
                 </div>
             </div>
         </div>
+     </div>
     <script type="text/javascript">
         $(document).ready(function () {
 
