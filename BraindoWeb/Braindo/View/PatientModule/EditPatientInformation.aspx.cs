@@ -319,17 +319,13 @@ namespace Braindo.View.PatientModule
                     patientModified = cmd.getAnswer();
                     if (patientModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                     {
-                        /*String myStringVariable = "Se Cambio";
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);*/
+                        Response.Redirect("ConsultPatients.aspx");
 
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Los datos fueron cambiados exitosamente');window.location.href='ConsultPatients.aspx';", true);
+                        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Los datos fueron cambiados exitosamente');window.location.href='ConsultPatients.aspx';", true);
 
                     }
                     else
                     {
-                        /*String myStringVariable = "No se Cambio";
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);*/
-
                         ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se realizaron los cambios');window.location.href='ConsultPatients.aspx';", true);
                     }
                 }

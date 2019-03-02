@@ -182,7 +182,8 @@ namespace Braindo.View.MedicalAppointmentModule
 
                             if (appointmentModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cambios realizados');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                Response.Redirect("ConsultMedicalAppointment.aspx");
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cambios realizados');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
                             else
                             {

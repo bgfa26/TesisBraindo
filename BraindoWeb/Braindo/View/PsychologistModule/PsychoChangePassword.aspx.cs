@@ -70,7 +70,8 @@ namespace Braindo.View.PsychologistModule
                     psychoChanged = cmd.getAnswer();
                     if (psychoChanged._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambió la contraseña');window.location.href='PsychoProfile.aspx';", true);
+                        Response.Redirect("PsychoProfile.aspx");
+                        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se cambió la contraseña');window.location.href='PsychoProfile.aspx';", true);
                     }
                     else
                     {
