@@ -7,6 +7,8 @@
 
 <asp:Content ID="ContentMedicalAppointment2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
         <div id="page-wrapper-Medical">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            </asp:ScriptManager>
             <div class="row centerProfileTitle">
                 <h3>Lista de Citas</h3>
             </div>
@@ -43,7 +45,7 @@
                                             </td>
                                             <td>
                                                 <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
-                                                <asp:ImageButton ID="Eliminar" CommandName="delete" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
+                                                <asp:ImageButton ID="Eliminar" runat="server" CommandName="delete" CommandArgument='<%# Eval("_ID")%>'  OnClientClick="return JSalert()"  ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
                                             </td>
                                         </tr>
                                         </ItemTemplate>
@@ -55,24 +57,41 @@
                 </div>
             </div>
         </div>
-    <script>
-        <%--function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById('<%= myInput.ClientID %>');
-            filter = input.value.toUpperCase();
-            table = document.getElementById("tblData");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+        <!-- JS dependencies -->
+        <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap 4 dependency -->
+        <script src="/Content/bootbox/popper.min.js"></script>
+        <script src="/Content/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- bootbox code -->
+        <script src="/Content/bootbox/bootbox.min.js"></script>
+        <script src="/Content/bootbox/bootbox.locales.min.js"></script>--%>
+        <script>
+            function JSalert() {
+                
+                bootbox.confirm({
+                    message: "Desea eliminar la cita?",
+                    buttons: {
+                        confirm: {
+                            label: 'Si',
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: 'No',
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            console.log('Si');
+                            return true;
+                        }
+                        else {
+                            console.log('No');
+                        }
                     }
-                }
+                });
+                return false;
             }
-        }--%>
-</script>
+    </script>
  </asp:Content> 

@@ -14,8 +14,13 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/local.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/PsychoProfile.css" />
 
-    <script type="text/javascript" src="/Content/js/jquery-1.10.2.min.js"></script>
+    <%--<script type="text/javascript" src="/Content/js/jquery-1.10.2.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/Content/bootbox/popper.min.js"></script>
     <script type="text/javascript" src="/Content/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/Content/bootbox/bootbox.min.js"></script>
+    <script src="/Content/bootbox/bootbox.locales.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 

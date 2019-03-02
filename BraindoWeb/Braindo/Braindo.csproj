@@ -65,6 +65,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootbox\bootbox.all.min.js" />
+    <Content Include="Content\bootbox\bootbox.locales.min.js" />
+    <Content Include="Content\bootbox\bootbox.min.js" />
+    <Content Include="Content\bootbox\popper.min.js" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
