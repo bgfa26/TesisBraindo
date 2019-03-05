@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/IndexDashboard.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/light-bootstrap/all.min.css" />
     <link id="gridcss" rel="stylesheet" type="text/css" href="/Content/css/dark-bootstrap/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/BootBoxCustom.css" />
 
     <script type="text/javascript" src="/Content/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="/Content/js/gridData.js"></script>
@@ -525,7 +526,14 @@
                 }
             }
             else {
-                alert(response);
+                bootbox.alert({
+                    message: response,
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+                        
+                    }
+                })
             }
         }
         //PageMethods.GetDateStatistics("", onSuccess);

@@ -3,11 +3,14 @@
 
 <asp:Content ID="ContentConsultPatient" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/BootBoxCustom.css" />
 </asp:Content>
 
 
 <asp:Content ID="ContentConsultPatient2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div id="page-wrapper-PatientEdit">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            </asp:ScriptManager>
             <div class="row centerProfileTitle">
                 <h3>Lista de Pacientes</h3>
             </div>
@@ -56,5 +59,29 @@
                 </div>
             </div>
         </div>
+    <script>
+        function BootAlertTrue() {
+            bootbox.alert({
+                message: "Se eliminó exitosamente",
+                size: 'small',
+                className: "centerDialog",
+                callback: function () {
+                    window.location.href = 'ConsultPatients.aspx';
+                }
+            })
+        }
+        </script>
+        <script>
+            function BootAlertFalse() {
+                bootbox.alert({
+                    message: "ERROR! no pudo eliminarse el paciente",
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+                        window.location.href = 'ConsultPatients.aspx';
+                    }
+                })
+            }
+        </script>
 </asp:Content>
 

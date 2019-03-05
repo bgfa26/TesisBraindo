@@ -293,7 +293,7 @@ namespace Braindo.View.PatientModule
 
             if (nameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || ageTXT.Text.Equals("") || career1.SelectedValue.Equals("") || state1.SelectedValue.Equals("") || municipality1.SelectedValue.Equals("") || parish1.SelectedValue.Equals(""))
             {
-                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                string script = "BootAlert('ERROR! No debe dejar espacios en blancos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -326,7 +326,10 @@ namespace Braindo.View.PatientModule
                     }
                     else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se realizaron los cambios');window.location.href='ConsultPatients.aspx';", true);
+                        string script = "BootAlertNoRegistration('ERROR, no se realizaron los cambios');";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+                        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se realizaron los cambios');window.location.href='ConsultPatients.aspx';", true);
                     }
                 }
                 catch (Exception ex)

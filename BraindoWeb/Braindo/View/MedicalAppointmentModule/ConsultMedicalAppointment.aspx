@@ -3,6 +3,7 @@
 
 <asp:Content ID="ContentMedicalAppointment" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MedicalAppointment.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/BootBoxCustom.css" />
 </asp:Content>
 
 <asp:Content ID="ContentMedicalAppointment2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
@@ -32,7 +33,7 @@
                                     <tr runat ="server" id="NoRecord" visible="false">
                                         <td>No tiene citas registradas</td>
                                     </tr>
-                                    <asp:Repeater ID="listMedicalAppointments" runat="server" OnItemCommand="actionAppointment_Command">
+                                    <asp:Repeater ID="listMedicalAppointments" runat="server" EnableViewState="true" OnItemCommand="actionAppointment_Command">
                                         <ItemTemplate>
                                         <tr>
                                             <td style="text-align:center"><%# Eval("_DateString") %></td>
@@ -45,7 +46,7 @@
                                             </td>
                                             <td>
                                                 <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="~/Content/images/edit.ico" Height="24px" Width="24px"  ToolTip="Editar cita" />
-                                                <asp:ImageButton ID="Eliminar" runat="server" CommandName="delete" CommandArgument='<%# Eval("_ID")%>'  OnClientClick="return JSalert()"  ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
+                                                <asp:ImageButton ID="Eliminar" runat="server" CommandName="delete" CommandArgument='<%# Eval("_ID")%>' ImageUrl="~/Content/images/delete.ico" Height="24px" Width="24px" ToolTip="Eliminar cita" />
                                             </td>
                                         </tr>
                                         </ItemTemplate>
@@ -57,41 +58,16 @@
                 </div>
             </div>
         </div>
-        <!-- JS dependencies -->
-        <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Bootstrap 4 dependency -->
-        <script src="/Content/bootbox/popper.min.js"></script>
-        <script src="/Content/bootstrap/js/bootstrap.min.js"></script>
-
-        <!-- bootbox code -->
-        <script src="/Content/bootbox/bootbox.min.js"></script>
-        <script src="/Content/bootbox/bootbox.locales.min.js"></script>--%>
         <script>
-            function JSalert() {
-                
-                bootbox.confirm({
-                    message: "Desea eliminar la cita?",
-                    buttons: {
-                        confirm: {
-                            label: 'Si',
-                            className: 'btn-success'
-                        },
-                        cancel: {
-                            label: 'No',
-                            className: 'btn-danger'
-                        }
-                    },
-                    callback: function (result) {
-                        if (result) {
-                            console.log('Si');
-                            return true;
-                        }
-                        else {
-                            console.log('No');
-                        }
+            function BootAlert(msg) {
+                bootbox.alert({
+                    message: msg,
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+                        window.location.href = 'ConsultMedicalAppointment.aspx';
                     }
-                });
-                return false;
+                })
             }
-    </script>
+        </script>
  </asp:Content> 

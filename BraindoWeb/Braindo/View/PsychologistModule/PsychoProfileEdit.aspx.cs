@@ -65,7 +65,7 @@ namespace Braindo.View.PsychologistModule
 
             if (nameTXT.Text.Equals("") || secondNameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || secondSurnameTXT.Text.Equals("") || date.Value.Equals("") || registrationNumberTXT.Text.Equals("") || email_txt.Value.Equals(""))
             {
-                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -98,7 +98,10 @@ namespace Braindo.View.PsychologistModule
                     }
                     else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se cambiaron los datos');window.location.href='PsychoProfile.aspx';", true);
+                        string script = "BootAlertNoRegistration('ERROR! No se cambiaron los datos');";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+                        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se cambiaron los datos');window.location.href='PsychoProfile.aspx';", true);
                     }
                 }
                 catch (Exception ex)

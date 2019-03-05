@@ -115,7 +115,7 @@ namespace Braindo.View.MentalExamModule
         {
             if (behavior_txt.Value.Equals("") || attitude_txt.Value.Equals("") || alertness_txt.Value.Equals("") || awareness_txt.Value.Equals("") || mood_txt.Value.Equals("") || language_txt.Value.Equals("") || thought_txt.Value.Equals(""))
             {
-                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -148,13 +148,16 @@ namespace Braindo.View.MentalExamModule
                         mentalExamRegistered = cmd.getAnswer();
                         if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                         {
-
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                            Response.Redirect("../MedicalAppointmentModule/ConsultMedicalAppointment.aspx");
+                            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                         }
                         else
                         {
-                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró el examen');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                            string script = "BootAlertNoRegistration('ERROR! No se registró el examen');";
+                            ScriptManager.RegisterStartupScript(this, GetType(),
+                                                    "ServerControlScript", script, true);
+                            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró el examen');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                         }
                     }
@@ -264,13 +267,16 @@ namespace Braindo.View.MentalExamModule
                             mentalExamRegistered = cmd.getAnswer();
                             if (mentalExamRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                             {
-
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                                Response.Redirect("../MedicalAppointmentModule/ConsultMedicalAppointment.aspx");
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se Registro el examen exitosamente');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
+                                string script = "BootAlertNoRegistration('ERROR! No se registró el examen');";
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                                        "ServerControlScript", script, true);
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
 
                             }
                         }

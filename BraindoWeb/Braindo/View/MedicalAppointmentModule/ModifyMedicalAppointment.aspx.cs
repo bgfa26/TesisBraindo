@@ -69,7 +69,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (date_appointment_txt.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reasonTXT.Text.Equals(""))
             {
-                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -139,11 +139,15 @@ namespace Braindo.View.MedicalAppointmentModule
 
                             if (appointmentModified._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cambios realizados');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                Response.Redirect("ConsultMedicalAppointment.aspx");
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cambios realizados');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                string script = "BootAlertNoRegistration('ERROR! No se realizaron los cambios');";
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                                        "ServerControlScript", script, true);
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
 
                         }
@@ -154,7 +158,7 @@ namespace Braindo.View.MedicalAppointmentModule
                     }
                     else if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        string script = "alert(\"ERROR! La fecha y hora esta registrada en otra cita\");";
+                        string script = "BootAlert('ERROR! La fecha y hora esta registrada en otra cita');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                     }
@@ -187,7 +191,10 @@ namespace Braindo.View.MedicalAppointmentModule
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                string script = "BootAlertNoRegistration('ERROR! No se realizaron los cambios');";
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                                        "ServerControlScript", script, true);
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
 
                         }

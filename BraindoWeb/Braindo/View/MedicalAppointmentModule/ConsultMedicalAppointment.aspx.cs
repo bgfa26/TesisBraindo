@@ -66,6 +66,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (e.CommandName == "delete")
             {
+
                 String id = e.CommandArgument.ToString();
 
                 int idInt = Convert.ToInt32(id);
@@ -80,11 +81,16 @@ namespace Braindo.View.MedicalAppointmentModule
                     deletedAppointment = cmd.getAnswer();
                     if (deletedAppointment._Error == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se eliminó exitosamente');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                        string script = "BootAlert('Se eliminó exitosamente');";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+                        
                     }
                     else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! no pudo eliminarse la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                        string script = "BootAlert('ERROR! no pudo eliminarse la cita');";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
                     }
 
                 }
@@ -115,7 +121,10 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
+                    string script = "BootAlert('ERROR! Esta cita no tiene examen mental registrado');";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                            "ServerControlScript", script, true);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
                 }
             }
             else if (e.CommandName == "addExam")
@@ -134,8 +143,7 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
-
-                    string script = "alert(\"ERROR! Esta cita ya tiene un examen mental registrado\");";
+                    string script = "BootAlert('ERROR! Esta cita ya tiene un examen mental registrado');";
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                             "ServerControlScript", script, true);
 

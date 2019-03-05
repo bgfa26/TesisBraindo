@@ -2,7 +2,8 @@
 
 <asp:Content ID="ContentRegisterExam" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />
-    <script type="text/javascript" src="/Content/js/lengthValidation.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Content/css/BootBoxCustom.css" />
+    <%--<script type="text/javascript" src="/Content/js/lengthValidation.js"></script>--%>
 </asp:Content>
 
 <asp:Content ID="ContentRegisterExam2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
@@ -64,5 +65,136 @@
                 <div class="col-lg-3">
                 </div>
             </div>  
-        </div>    
+        </div>  
+    <script>
+        function lengthValidationAlert(evt, val, field) {
+
+            /*PSYCHOLOGIST AND PATIENT MODULE*/
+            var strPass = "pass";
+            var strName = "name";
+            var strSurname = "surname";
+            var strRegistration = "registration";
+
+            var n = field.localeCompare(strPass);
+            var n2 = field.localeCompare(strName);
+            var n3 = field.localeCompare(strSurname);
+            var n4 = field.localeCompare(strRegistration);
+
+            if ((n == 0) && (val.length >= 8)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Máximo 8 caracteres',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+            else if ((n2 == 0) && (val.length >= 15)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Máximo 15 caracteres',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+            else if ((n3 == 0) && (val.length >= 15)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Máximo 15 caracteres',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+            else if ((n4 == 0) && (val.length >= 15)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Máximo 15 caracteres',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+
+
+
+            /*MENTAL EXAMN AND MEDICAL APPOINTMENT MODULE*/
+            //MENTAL EXAM
+            var strMentalExam = "mentalExam";
+            var strMedicalApp = "medicalAppointment";
+
+            var n5 = field.localeCompare(strMentalExam);
+            var n6 = field.localeCompare(strMedicalApp);
+
+            if ((n5 == 0) && (val.length >= 699)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Excediste el tamaño asignado',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+
+            if ((n6 == 0) && (val.length >= 199)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Excediste el tamaño asignado',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+
+        }
+    </script>
+    <script>
+        function BootAlert(msg) {
+            bootbox.alert({
+                message: msg,
+                size: 'small',
+                className: "centerDialog",
+                callback: function () {
+
+                }
+            })
+        }
+     </script>
+    <script>
+        function BootAlertNoRegistration(msg) {
+            bootbox.alert({
+                message: msg,
+                size: 'small',
+                className: "centerDialog",
+                callback: function () {
+                    window.location.href = '../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';
+                }
+            })
+        }
+     </script>  
  </asp:Content> 
