@@ -50,7 +50,7 @@
                                         </asp:TextBox>
                                     </div>                           
                                     <div class="form-group-Medical">
-                                        <asp:Button ID="btnModifyAppointment" runat="server" Text="Modificar Cita" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-Medical"></asp:Button>
+                                        <asp:Button ID="btnModifyAppointment" runat="server" Text="MODIFICAR" OnClick = "btnModifyAppointment_Click" CssClass ="btn btn-lg btn-info-Medical"></asp:Button>
                                     </div>
                                 </div>
                             </div>     

@@ -103,13 +103,12 @@ fieldset[disabled] .form-control {
 .btn-info-Patient {
   content:'';
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
+  background-color: #69f0ae;
   transition: all 0.3s ease;
 }
 
 .btn-info-Patient:hover {
-  background: #341b56;
+  background: #45b780;
   color: #ffffff;
 }
 

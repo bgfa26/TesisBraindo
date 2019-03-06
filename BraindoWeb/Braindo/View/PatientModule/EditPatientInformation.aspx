@@ -72,7 +72,7 @@
                                     </asp:DropDownList>
                                 </div>
                                 <div class="form-group-Patient">
-                                    <asp:Button ID="btnChangeData" runat="server" Text="Modificar Datos" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-Patient"></asp:Button>
+                                    <asp:Button ID="btnChangeData" runat="server" Text="MODIFICAR" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-Patient"></asp:Button>
                                 </div>
                                 </div>
                             </div>     

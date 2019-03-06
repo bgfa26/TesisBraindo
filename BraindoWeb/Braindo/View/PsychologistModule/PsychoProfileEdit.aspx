@@ -55,7 +55,7 @@
                                     <input runat="server" id="email_txt" type="email" class="form-control-ProfileEdit"/>
                                 </div>
                                 <div class="form-group-ProfileEdit">
-                                    <asp:Button ID="btnChangeData" runat="server" Text="Modificar Datos" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
+                                    <asp:Button ID="btnChangeData" runat="server" Text="MODIFICAR" OnClick = "btnChangeData_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
                                 </div>
                                 </div>
                             </div>     

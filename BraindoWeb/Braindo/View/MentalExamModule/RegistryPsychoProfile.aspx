@@ -57,7 +57,7 @@
                                 <textarea runat="server" id="thought_txt" onkeypress="lengthValidationAlert(event, this.value, 'mentalExam');" class="form-control" rows="3"></textarea>
                             </div>
                             <div class="form-group-MentalExam">
-                                <asp:Button ID="btnRegisterPsychoProfile" runat="server" Text="Registrar Examen" OnClick = "btnRegisterPsychoProfile_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
+                                <asp:Button ID="btnRegisterPsychoProfile" runat="server" Text="REGISTRAR" OnClick = "btnRegisterPsychoProfile_Click" CssClass ="btn btn-lg btn-info-MentalExam"></asp:Button>
                             </div>
                         </div>
                     </div>

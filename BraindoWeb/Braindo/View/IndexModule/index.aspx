@@ -106,7 +106,7 @@
                                 <input runat="server" id="endDate" type="date"  class="form-control-DashboardInput"/>
                             </div>
                             <div>
-                                <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
+                                <input type="button" value="CONSULTAR" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
                             </div>                              
                             </div>
                             <div id="chartdiv3"></div>

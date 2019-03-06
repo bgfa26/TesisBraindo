@@ -28,7 +28,7 @@
                                         </asp:TextBox>
                                     </div>  
                                     <div class="form-group-ProfileEdit">
-                                        <asp:Button ID="btnChange" runat="server" Text="Cambiar Contraseña" OnClick = "btnChange_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
+                                        <asp:Button ID="btnChange" runat="server" Text="MODIFICAR" OnClick = "btnChange_Click" CssClass ="btn btn-lg btn-info-ProfileEdit"></asp:Button>
                                     </div>
                                 </div>
                             </div>     

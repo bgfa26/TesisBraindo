@@ -165,11 +165,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6 ml-auto text-center">
+        <div class="col-lg-4 ml-auto text-center">
             <p class="mb-5"  style="color:white">Fobia social por estado</p>
             <div id="chartdiv" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
-        <div class="col-lg-6 mr-auto text-center">
+        <div class="col-lg-8 mr-auto text-center">
             <p class="mb-5"  style="color:white">Fobia social por carrera (%)</p>
             <div id="piediv" class="wow fadeInDown" style="margin-top:-50px"></div> 
         </div>
