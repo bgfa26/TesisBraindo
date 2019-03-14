@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Consultar Examen" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultMentalExam.aspx.cs" Inherits="Braindo.View.MentalExamModule.ConsultMentalExam" %>
+﻿<%@ Page Title="Braindo | Consultar Examen" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultMentalExam.aspx.cs" Inherits="Braindo.View.MentalExamModule.ConsultMentalExam" %>
 
 <asp:Content ID="ContentConsultExam" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />

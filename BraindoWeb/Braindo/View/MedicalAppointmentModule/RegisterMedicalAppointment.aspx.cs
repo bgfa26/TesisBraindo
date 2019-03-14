@@ -111,7 +111,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (date_appointment.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reasonTXT.Text.Equals(""))
             {
-                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
+                string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -137,7 +137,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
                     if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        string script = "BootAlert('ERROR! La fecha y hora esta registrada en otra cita');";
+                        string script = "BootAlert('La fecha y hora esta registrada en otra cita');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                     }
@@ -181,7 +181,7 @@ namespace Braindo.View.MedicalAppointmentModule
                             }
                             else
                             {
-                                string script = "BootAlertNoRegistration('ERROR! No se registró la cita');";
+                                string script = "BootAlertNoRegistration('No se registró la cita');";
                                 ScriptManager.RegisterStartupScript(this, GetType(),
                                                         "ServerControlScript", script, true);
                             }

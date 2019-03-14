@@ -115,7 +115,7 @@ namespace Braindo.View.MentalExamModule
         {
             if (behavior_txt.Value.Equals("") || attitude_txt.Value.Equals("") || alertness_txt.Value.Equals("") || awareness_txt.Value.Equals("") || mood_txt.Value.Equals("") || language_txt.Value.Equals("") || thought_txt.Value.Equals(""))
             {
-                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
+                string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -154,7 +154,7 @@ namespace Braindo.View.MentalExamModule
                         }
                         else
                         {
-                            string script = "BootAlertNoRegistration('ERROR! No se registró el examen');";
+                            string script = "BootAlertNoRegistration('No se registró el examen');";
                             ScriptManager.RegisterStartupScript(this, GetType(),
                                                     "ServerControlScript", script, true);
                             //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró el examen');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);
@@ -273,7 +273,7 @@ namespace Braindo.View.MentalExamModule
                             }
                             else
                             {
-                                string script = "BootAlertNoRegistration('ERROR! No se registró el examen');";
+                                string script = "BootAlertNoRegistration('No se registró el examen');";
                                 ScriptManager.RegisterStartupScript(this, GetType(),
                                                         "ServerControlScript", script, true);
                                 //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se Registro');window.location.href='../MedicalAppointmentModule/ConsultMedicalAppointment.aspx';", true);

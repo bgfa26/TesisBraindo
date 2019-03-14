@@ -293,7 +293,7 @@ namespace Braindo.View.PatientModule
 
             if (nameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || ageTXT.Text.Equals("") || career1.SelectedValue.Equals("") || state1.SelectedValue.Equals("") || municipality1.SelectedValue.Equals("") || parish1.SelectedValue.Equals(""))
             {
-                string script = "BootAlert('ERROR! No debe dejar espacios en blancos');";
+                string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -326,7 +326,7 @@ namespace Braindo.View.PatientModule
                     }
                     else
                     {
-                        string script = "BootAlertNoRegistration('ERROR, no se realizaron los cambios');";
+                        string script = "BootAlertNoRegistration('No se realizaron los cambios');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                         //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se realizaron los cambios');window.location.href='ConsultPatients.aspx';", true);

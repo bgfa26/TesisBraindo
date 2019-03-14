@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.IndexModule.index" %>
+﻿<%@ Page Title="Braindo | Estadísticas" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.IndexModule.index" %>
 
 <asp:Content ID="ContentIndex" ContentPlaceHolderID="head" runat="server">
      <!-- you need to include the shieldui css and js assets in order for the charts to work -->

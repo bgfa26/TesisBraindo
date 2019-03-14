@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Test" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="DetailedTest.aspx.cs" Inherits="Braindo.View.PatientModule.DetailedTest" %>
+﻿<%@ Page Title="Braindo | Test" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="DetailedTest.aspx.cs" Inherits="Braindo.View.PatientModule.DetailedTest" %>
 
 <asp:Content ID="ContentDetailedTest" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />

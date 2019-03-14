@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Cambio de Contraseña" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoChangePassword" %>
+﻿<%@ Page Title="Braindo | Cambio de Contraseña" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoChangePassword.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoChangePassword" %>
 
 <asp:Content ID="ContentPsychoChange" ContentPlaceHolderID="head" runat="server">
 
@@ -67,7 +67,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo numeros',
+                    message: 'Por favor, introduzca sólo números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -87,7 +87,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo letras o numeros',
+                    message: 'Por favor, introduzca sólo letras o números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -125,11 +125,11 @@
                 })
                 return false;
             }
-            else if ((n2 == 0) && (val.length >= 15)) {
+            else if ((n2 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -138,11 +138,11 @@
                 })
                 return false;
             }
-            else if ((n3 == 0) && (val.length >= 15)) {
+            else if ((n3 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -151,11 +151,11 @@
                 })
                 return false;
             }
-            else if ((n4 == 0) && (val.length >= 15)) {
+            else if ((n4 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
