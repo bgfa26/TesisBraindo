@@ -176,7 +176,7 @@ INSERT INTO PACIENTE VALUES (23998741, 'Miguel', 'Rodriguez', 22, 'Administraci�
 INSERT INTO PACIENTE VALUES (24537842, 'Pablo', 'Montero', 21, 'Ingeniería en Telecomunicaciones', 111);
 INSERT INTO PACIENTE VALUES (23458204, 'Pedro', 'Fernández', 22, 'Ingeniería en Telecomunicaciones', 40);
 INSERT INTO PACIENTE VALUES (20632741, 'David', 'Rodriguez', 25, 'Ingeniería en Telecomunicaciones', 69);
-INSERT INTO PACIENTE VALUES (24537842, 'Jessica', 'García', 20, 'Ingeniería en Telecomunicaciones', 78);
+INSERT INTO PACIENTE VALUES (24467812, 'Jessica', 'García', 20, 'Ingeniería en Telecomunicaciones', 78);
 
 /*DERECHO*/
 INSERT INTO PACIENTE VALUES (21442081, 'Raúl', 'Alonso', 20, 'Derecho', 110);

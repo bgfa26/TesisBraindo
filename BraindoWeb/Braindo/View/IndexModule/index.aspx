@@ -394,7 +394,7 @@
             PageMethods.GetDateStatistics(document.getElementById('<%= initDate.ClientID %>').value, document.getElementById('<%= endDate.ClientID %>').value, SucessDate);
         }
         function SucessDate(response, userContext, methodName) {
-            if ((response != "Los años son diferentes, deben ser el mismo año") && (response != "En la fecha consultada no existen registros") && (response != "Seleccione un rango de fecha")) {
+            if ((response != "Deben ser el mismo año") && (response != "En la fecha consultada no existen registros") && (response != "Seleccione un rango de fecha")) {
                 var date = response.split("-");
                 console.log(date);
                 var chart = AmCharts.makeChart("chartdiv3", {
