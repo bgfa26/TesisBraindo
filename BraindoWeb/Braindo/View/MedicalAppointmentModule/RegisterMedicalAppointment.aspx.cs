@@ -111,7 +111,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (date_appointment.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reasonTXT.Text.Equals(""))
             {
-                string script = "alert(\"ERROR! No debe dejar espacios en blancos\");";
+                string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -137,7 +137,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
                     if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        string script = "alert(\"ERROR! La fecha y hora esta registrada en otra cita\");";
+                        string script = "BootAlert('La fecha y hora esta registrada en otra cita');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                     }
@@ -176,11 +176,14 @@ namespace Braindo.View.MedicalAppointmentModule
                             appointmentRegistered = cmd.getAnswer();
                             if (appointmentRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                Response.Redirect("ConsultMedicalAppointment.aspx");
+                                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se registró la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
                             }
                             else
                             {
-                                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se registró la cita');window.location.href='ConsultMedicalAppointment.aspx';", true);
+                                string script = "BootAlertNoRegistration('No se registró la cita');";
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                                        "ServerControlScript", script, true);
                             }
 
                         }

@@ -27,7 +27,7 @@
   text-align:center;
 }
 
-.form-group-MentalExam-select {
+.form-group-Medical-select {
   width: 100%;
 }
 
@@ -78,13 +78,12 @@ fieldset[disabled] .form-control {
 .btn-info-Medical {
   content:'';
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
+  background-color: #69f0ae;
   transition: all 0.3s ease;
 }
 
 .btn-info-Medical:hover {
-  background: #341b56;
+  background: #45b780;
   color: #ffffff;
 }
 
@@ -94,7 +93,7 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 .boxAppointment {
-    width:85%; 
+    width:90%; 
     margin-left:auto; 
     margin-right:auto;
     overflow-x:auto;
@@ -120,6 +119,7 @@ input[type=date]::-webkit-inner-spin-button {
     color: #222222;
     text-align: center;
     font-size: 85%;
+    word-wrap:break-word;
 }
 
 thead{
@@ -128,7 +128,7 @@ thead{
 
 #tblData tbody{
     display: block;
-    max-height: 300px;
+    max-height: 325px;
     overflow-y: scroll;
 }
 

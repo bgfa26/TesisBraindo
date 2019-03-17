@@ -1,10 +1,11 @@
-﻿<%@ Page Title="Braindo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.IndexModule.index" %>
+﻿<%@ Page Title="Braindo | Estadísticas" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Braindo.View.IndexModule.index" %>
 
 <asp:Content ID="ContentIndex" ContentPlaceHolderID="head" runat="server">
      <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="/Content/css/IndexDashboard.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/light-bootstrap/all.min.css" />
     <link id="gridcss" rel="stylesheet" type="text/css" href="/Content/css/dark-bootstrap/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/BootBoxCustom.css" />
 
     <script type="text/javascript" src="/Content/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="/Content/js/gridData.js"></script>
@@ -15,6 +16,8 @@
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+
+
 
     <style>
 
@@ -65,7 +68,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-pie-chart"></i> Porcentaje de fobia social por edad</h3>
@@ -75,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Estudiantes que padecen fobia social por estado</h3>
@@ -103,16 +106,18 @@
                                 <input runat="server" id="endDate" type="date"  class="form-control-DashboardInput"/>
                             </div>
                             <div>
-                                <input type="button" value="Consultar" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
+                                <input type="button" value="CONSULTAR" class="btn-info-DashboardDateInput" onclick="CargarFecha()"/>
                             </div>                              
                             </div>
-                        <div id="chartdiv3"></div>
+                            <div id="chartdiv3"></div>
                     </div>
                 </div>
             </div>
         </div>
+     </div>
     <script type="text/javascript">
         $(document).ready(function () {
+
 
             //PageMethods.GetCareerStatistics("", onSuccess);
             var dataValue = { "nullParameter": "" };
@@ -389,7 +394,7 @@
             PageMethods.GetDateStatistics(document.getElementById('<%= initDate.ClientID %>').value, document.getElementById('<%= endDate.ClientID %>').value, SucessDate);
         }
         function SucessDate(response, userContext, methodName) {
-            if ((response != "Los años son diferentes, deben ser el mismo año") && (response != "En la fecha consultada no existen registros") && (response != "Seleccione un rango de fecha")) {
+            if ((response != "Deben ser el mismo año") && (response != "En la fecha consultada no existen registros") && (response != "Seleccione un rango de fecha")) {
                 var date = response.split("-");
                 console.log(date);
                 var chart = AmCharts.makeChart("chartdiv3", {
@@ -521,7 +526,14 @@
                 }
             }
             else {
-                alert(response);
+                bootbox.alert({
+                    message: response,
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+                        
+                    }
+                })
             }
         }
         //PageMethods.GetDateStatistics("", onSuccess);

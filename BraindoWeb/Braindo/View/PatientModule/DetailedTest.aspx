@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Test" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="DetailedTest.aspx.cs" Inherits="Braindo.View.PatientModule.DetailedTest" %>
+﻿<%@ Page Title="Braindo | Test" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="DetailedTest.aspx.cs" Inherits="Braindo.View.PatientModule.DetailedTest" %>
 
 <asp:Content ID="ContentDetailedTest" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />
@@ -7,7 +7,7 @@
 <asp:Content ID="ContentDetailedTest2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper-Psychologist">
             <div class="centerProfileTitle">
-                <h2 runat="server" id="tittle_Test"></h2>
+                <h3 runat="server" id="tittle_Test"></h3>
             </div>
 
             <div class="row">

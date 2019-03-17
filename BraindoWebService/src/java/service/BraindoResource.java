@@ -75,7 +75,7 @@ public class BraindoResource {
         try {
             EncryptedPatient encryptedPatient = gson.fromJson(_patient, EncryptedPatient.class);
             //privatekey.dat
-            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            String key  = "C:\\Users\\Bárbara Fernández\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
             ShieldVault crypto = new ShieldVault();
             
             Patient patient = new Patient(Integer.parseInt(crypto.desencriptadoPrivadaRSA(encryptedPatient.get_id(), key)), crypto.desencriptadoPrivadaRSA(encryptedPatient.get_firstname(), key),
@@ -132,7 +132,7 @@ public class BraindoResource {
         try {
             EncryptedPatient encryptedPatient = gson.fromJson(_patient, EncryptedPatient.class);
             //privatekey.dat
-            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            String key  = "C:\\Users\\Bárbara Fernández\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
             ShieldVault crypto = new ShieldVault();
             
             Patient patient = new Patient(Integer.parseInt(crypto.desencriptadoPrivadaRSA(encryptedPatient.get_id(), key)), 

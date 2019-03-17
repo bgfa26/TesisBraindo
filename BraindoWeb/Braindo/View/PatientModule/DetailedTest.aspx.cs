@@ -38,7 +38,7 @@ namespace Braindo.View.PatientModule
                         diagnosisConsulted = cmdDetailedDiag.getAnswer();
 
 
-                        tittle_Test.InnerText = "Test: " + diagnosisConsulted._Patient._Name + " " + diagnosisConsulted._Patient._Surname;
+                        tittle_Test.InnerText = "Paciente: " + diagnosisConsulted._Patient._Name + " " + diagnosisConsulted._Patient._Surname;
                         string[] answerArgs = diagnosisConsulted._Answer.Split(new char[] { ',' });
 
                         /*Asignar valores a los dropdownlist (EXCLUYO LA PREGUNTA 23, osea answerArgs[22] Y 40 osea answerArgs[39]*/

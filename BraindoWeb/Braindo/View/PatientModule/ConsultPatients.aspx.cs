@@ -109,14 +109,18 @@ namespace Braindo.View.PatientModule
                     if (patientDeleted._Error == Registry.RESULTADO_CODIGO_BIEN)
                     {
 
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Se eliminó exitosamente');window.location.href='ConsultPatients.aspx';", true);
+                        string script = "BootAlertTrue();";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
 
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR, no se eliminó');window.location.href='ConsultPatients.aspx';", true);
+                    string script = "BootAlertFalse();";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                            "ServerControlScript", script, true);
 
                     throw ex;
                 }

@@ -54,7 +54,7 @@ public class DAOTest {
             float totalAnxiety = Float.parseFloat(totalanx);
             cstmt.setFloat(7, totalAnxiety);
             ShieldVault crypto = new ShieldVault();
-            String key  = "C:\\Users\\LuisAlejandro\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
+            String key  = "C:\\Users\\Bárbara Fernández\\Documents\\GitHub\\TesisBraindo\\BraindoWebService\\privatekey.dat";
             String email = crypto.desencriptadoPrivadaRSA(_test.getPatient().get_email(), key);
             int id = Integer.parseInt(crypto.desencriptadoPrivadaRSA(_test.getPatient().get_id(), key));
             cstmt.setInt(8, id);

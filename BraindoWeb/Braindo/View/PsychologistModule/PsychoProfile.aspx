@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfile" %>
+﻿<%@ Page Title="Braindo | Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfile" %>
 
 <asp:Content ID="ContentPsychoProfile" ContentPlaceHolderID="head" runat="server">
 
@@ -10,7 +10,7 @@
 
         <div id="page-wrapper-Psychologist">
             <div class="centerProfileTitle">
-                <h2>Perfil del Psicólogo</h2>
+                <h3>Perfil del Psicólogo</h3>
             </div>
 
             <div class="row">

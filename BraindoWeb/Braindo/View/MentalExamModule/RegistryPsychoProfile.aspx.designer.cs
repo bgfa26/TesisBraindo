@@ -13,6 +13,15 @@ namespace Braindo.View.MentalExamModule {
     public partial class RegistryPsychoProfile {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// NoRecord control.
         /// </summary>
         /// <remarks>
@@ -28,7 +37,7 @@ namespace Braindo.View.MentalExamModule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label1;
         
         /// <summary>
         /// NoRecordList control.
@@ -55,7 +64,7 @@ namespace Braindo.View.MentalExamModule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AppointmentList_Tittle;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AppointmentList_Tittle;
         
         /// <summary>
         /// patient_List control.

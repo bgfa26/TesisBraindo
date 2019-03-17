@@ -1,10 +1,18 @@
 ﻿function AllowAlphabet(e) {
     isIE = document.all ? 1 : 0
-    keyEntry = !isIE ? e.which : event.keyCode;
-    if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '96') && (keyEntry <= '123')) || (keyEntry == '8') || (keyEntry == '32'))
-        return true;
-    else {
-        alert('Por favor, introduzca sólo letras');
+    key = !isIE ? e.which : event.keyCode;
+    if ((key != 32) && (key < 65) || (key > 90) && (key < 97) || (key > 122 && key != 241 && key != 209 && key != 225 && key != 233 && key != 237 && key != 243 && key != 250 && key != 193 && key != 201 && key != 205 && key != 211 && key != 218)) {
+        bootbox.alert({
+            message: 'Por favor, introduzca sólo letras',
+            size: 'small',
+            className: "centerDialog",
+            callback: function () {
+
+            }
+        })
         return false;
+    }
+    else {
+        return true;
     }
 }

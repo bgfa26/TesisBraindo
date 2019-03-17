@@ -103,19 +103,18 @@ fieldset[disabled] .form-control {
 .btn-info-Patient {
   content:'';
   color: #ffffff;
-  background-color: #542d89;
-  border-color: #ffffff;
+  background-color: #69f0ae;
   transition: all 0.3s ease;
 }
 
 .btn-info-Patient:hover {
-  background: #341b56;
+  background: #45b780;
   color: #ffffff;
 }
 
 
 .boxPatient {
-    width:70%; 
+    width:90%; 
     margin-left:auto; 
     margin-right:auto;
     overflow-x:auto;
@@ -137,6 +136,7 @@ thead{
     text-align: center;
     background-color: #45b780;
     color: #ffffff;
+    width: 50px;
 }
 
 .aspTableHeaderCell{
@@ -154,6 +154,7 @@ thead{
     text-align: center;
     font-size: 85%;
     word-wrap:break-word;
+    width: 50px;
 }
 
 .aspTableRow{
