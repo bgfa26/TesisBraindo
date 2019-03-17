@@ -60,7 +60,7 @@ public class NeuralNetworkTestCommand extends Command{
         this.ans2 = (float)(ans2 - 1) / 4;
         this.ans3 = (float)(ans3 - 1) / 4;
         this.ans4 = (float)(ans4 - 1) / 4;
-        this.ans5 = (float)(ans5 - 1) / 4;
+        this.ans5 = (float)(ans5 - 5) / (-4);
         this.ans6 = (float)(ans6 - 1) / 4;
         this.ans7 = (float)(ans7 - 1) / 4;
         this.ans8 = (float)(ans8 - 1) / 4;
