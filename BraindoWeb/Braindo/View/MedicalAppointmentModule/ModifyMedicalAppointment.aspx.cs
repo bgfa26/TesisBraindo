@@ -69,7 +69,7 @@ namespace Braindo.View.MedicalAppointmentModule
 
             if (date_appointment_txt.Value.Equals("") || hour_appointment.SelectedValue.Equals("") || reasonTXT.Text.Equals(""))
             {
-                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
+                string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -144,7 +144,7 @@ namespace Braindo.View.MedicalAppointmentModule
                             }
                             else
                             {
-                                string script = "BootAlertNoRegistration('ERROR! No se realizaron los cambios');";
+                                string script = "BootAlertNoRegistration('No se realizaron los cambios');";
                                 ScriptManager.RegisterStartupScript(this, GetType(),
                                                         "ServerControlScript", script, true);
                                 //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);
@@ -158,7 +158,7 @@ namespace Braindo.View.MedicalAppointmentModule
                     }
                     else if (resp == Registry.RESULTADO_CODIGO_BIEN)
                     {
-                        string script = "BootAlert('ERROR! La fecha y hora esta registrada en otra cita');";
+                        string script = "BootAlert('La fecha y hora esta registrada en otra cita');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                     }
@@ -191,7 +191,7 @@ namespace Braindo.View.MedicalAppointmentModule
                             }
                             else
                             {
-                                string script = "BootAlertNoRegistration('ERROR! No se realizaron los cambios');";
+                                string script = "BootAlertNoRegistration('No se realizaron los cambios');";
                                 ScriptManager.RegisterStartupScript(this, GetType(),
                                                         "ServerControlScript", script, true);
                                 //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se realizaron los cambios');window.location.href='ConsultMedicalAppointment.aspx';", true);

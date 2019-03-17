@@ -16,7 +16,7 @@ namespace Braindo.View.IndexModule
         {
             if (Session["USER_ID"] == null)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesion para ver esta ventana');window.location.href='LoginTest.aspx';", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Inicie sesión para ver esta ventana');window.location.href='LoginTest.aspx';", true);
             }
             else
             {
@@ -60,7 +60,7 @@ namespace Braindo.View.IndexModule
 
                 if (compare != 0)
                 {
-                    answer = "Los años son diferentes, deben ser el mismo año";
+                    answer = "Deben ser el mismo año";
                 }
                 else
                 {

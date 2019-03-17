@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Modificar Cita" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ModifyMedicalAppointment.aspx.cs" Inherits="Braindo.View.MedicalAppointmentModule.ModifyMedicalAppointment" %>
+﻿<%@ Page Title="Braindo | Modificar Cita" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ModifyMedicalAppointment.aspx.cs" Inherits="Braindo.View.MedicalAppointmentModule.ModifyMedicalAppointment" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -95,7 +95,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo numeros',
+                    message: 'Por favor, introduzca sólo números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -115,7 +115,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo letras o numeros',
+                    message: 'Por favor, introduzca sólo letras o números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {

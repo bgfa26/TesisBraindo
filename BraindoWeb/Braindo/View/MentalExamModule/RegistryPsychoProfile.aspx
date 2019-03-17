@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Registrar Examen" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="RegistryPsychoProfile.aspx.cs" Inherits="Braindo.View.MentalExamModule.RegistryPsychoProfile" %>
+﻿<%@ Page Title="Braindo | Registrar Examen" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="RegistryPsychoProfile.aspx.cs" Inherits="Braindo.View.MentalExamModule.RegistryPsychoProfile" %>
 
 <asp:Content ID="ContentRegisterExam" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/MentalExam.css" />
@@ -8,6 +8,8 @@
 
 <asp:Content ID="ContentRegisterExam2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
         <div id="page-wrapper-MentalExam">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            </asp:ScriptManager>
             <div class="row centerProfileTitle">
                 <h3>Examen Mental</h3>
             </div>
@@ -65,7 +67,20 @@
                 <div class="col-lg-3">
                 </div>
             </div>  
-        </div>  
+        </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Disable cut copy paste
+            $('body').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            });
+
+            //Disable mouse right click
+            $("body").on("contextmenu", function (e) {
+                return false;
+            });
+        });
+	</script>  
     <script>
         function lengthValidationAlert(evt, val, field) {
 

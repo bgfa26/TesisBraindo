@@ -51,7 +51,7 @@ namespace Braindo.View.PsychologistModule
 
             if (passTXT.Text.Equals(""))
             {
-                string script = "BootAlert('ERROR! No debe dejar espacios en blanco');";
+                string script = "BootAlert('No debe dejar el campo vacío');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
             }
@@ -75,7 +75,7 @@ namespace Braindo.View.PsychologistModule
                     }
                     else
                     {
-                        string script = "BootAlertNoRegistration('ERROR! No se hizo el cambio de la contraseña');";
+                        string script = "BootAlertNoRegistration('No se realizó el cambio de la contraseña');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                         //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! No se hizo el cambio de la contraseña');window.location.href='PsychoProfile.aspx';", true);

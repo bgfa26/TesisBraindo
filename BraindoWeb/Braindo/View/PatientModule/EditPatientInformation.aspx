@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Editar Datos del Paciente" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="EditPatientInformation.aspx.cs" Inherits="Braindo.View.PatientModule.EditPatientInformation" %>
+﻿<%@ Page Title="Braindo | Editar Datos del Paciente" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="EditPatientInformation.aspx.cs" Inherits="Braindo.View.PatientModule.EditPatientInformation" %>
 
 <asp:Content ID="ContentEditPatient" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/PatientInformation.css" />
@@ -11,7 +11,7 @@
 <asp:Content ID="ContentEditPatient2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
         <div id="page-wrapper-PatientEdit">
             <div class="row centerProfileTitle">
-                <h3>Editar Datos Personales del Paciente</h3>
+                <h3>Editar Datos del Paciente</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -111,7 +111,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo numeros',
+                    message: 'Por favor, introduzca sólo números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -131,7 +131,7 @@
             else {
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Por favor, introduzca sólo letras o numeros',
+                    message: 'Por favor, introduzca sólo letras o números',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -169,11 +169,11 @@
                 })
                 return false;
             }
-            else if ((n2 == 0) && (val.length >= 15)) {
+            else if ((n2 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -182,11 +182,11 @@
                 })
                 return false;
             }
-            else if ((n3 == 0) && (val.length >= 15)) {
+            else if ((n3 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
@@ -195,11 +195,11 @@
                 })
                 return false;
             }
-            else if ((n4 == 0) && (val.length >= 15)) {
+            else if ((n4 == 0) && (val.length >= 30)) {
                 evt.preventDefault();
                 bootbox.hideAll();
                 bootbox.alert({
-                    message: 'Máximo 15 caracteres',
+                    message: 'Máximo 30 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {

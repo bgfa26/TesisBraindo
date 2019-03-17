@@ -88,7 +88,7 @@ namespace Braindo.View.MedicalAppointmentModule
                     }
                     else
                     {
-                        string script = "BootAlert('ERROR! no pudo eliminarse la cita');";
+                        string script = "BootAlert('No pudo eliminarse la cita');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
                     }
@@ -121,7 +121,7 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
-                    string script = "BootAlert('ERROR! Esta cita no tiene examen mental registrado');";
+                    string script = "BootAlert('Esta cita no tiene examen mental registrado');";
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                             "ServerControlScript", script, true);
                     //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('ERROR! Esta cita no tiene examen mental registrado');", true);
@@ -143,7 +143,7 @@ namespace Braindo.View.MedicalAppointmentModule
                 }
                 else
                 {
-                    string script = "BootAlert('ERROR! Esta cita ya tiene un examen mental registrado');";
+                    string script = "BootAlert('Esta cita ya tiene un examen mental registrado');";
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                             "ServerControlScript", script, true);
 

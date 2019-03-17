@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfile" %>
+﻿<%@ Page Title="Braindo | Perfil del Psicólogo" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="PsychoProfile.aspx.cs" Inherits="Braindo.View.PsychologistModule.PsychoProfile" %>
 
 <asp:Content ID="ContentPsychoProfile" ContentPlaceHolderID="head" runat="server">
 

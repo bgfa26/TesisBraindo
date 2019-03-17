@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Braindo - Lista de Pacientes" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultPatients.aspx.cs" Inherits="Braindo.View.PatientModule.ConsultPatients" %>
+﻿<%@ Page Title="Braindo | Lista de Pacientes" Language="C#" MasterPageFile="~/View/MenuLayout.Master" AutoEventWireup="true" CodeBehind="ConsultPatients.aspx.cs" Inherits="Braindo.View.PatientModule.ConsultPatients" %>
 
 
 <asp:Content ID="ContentConsultPatient" ContentPlaceHolderID="head" runat="server">
@@ -44,9 +44,9 @@
                                                 <td><%# Eval("_Age") %></td>
                                                 <td><%# Eval("_Career") %></td>
                                                 <td><%# Eval("_State") %>, <%# Eval("_Municipality") %>, <%# Eval("_Parish") %></td>
-                                                <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDiagnosis" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnostico" /></td>
+                                                <td><asp:ImageButton ID="VerDiagnostico" CommandName="viewDiagnosis" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/search.ico" Height="25px" Width="25px"  ToolTip="Ver Diagnóstico" /></td>
                                                 <td>
-                                                    <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar paciente" />
+                                                    <asp:ImageButton ID="Modificar" CommandName="modifyInfo" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/edit.ico" Height="25px" Width="25px"  ToolTip="Editar datos del paciente" />
                                                     <asp:ImageButton ID="Eliminar" CommandName="delete" CommandArgument='<%# Eval("_ID")%>' runat="server" ImageUrl="/Content/images/delete.ico" Height="25px" Width="25px" ToolTip="Eliminar paciente" />
                                                 </td>
                                             </tr>
@@ -74,7 +74,7 @@
         <script>
             function BootAlertFalse() {
                 bootbox.alert({
-                    message: "ERROR! no pudo eliminarse el paciente",
+                    message: "No pudo eliminarse el paciente",
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
