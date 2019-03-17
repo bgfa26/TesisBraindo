@@ -7,6 +7,7 @@ package model;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONObject;
 import paralleldots.ParallelDots;
 
 /**
@@ -21,18 +22,19 @@ public class TextAnalyzer {
             Translator translate = new Translator();
             String translatedText = translate.translate("es", "en", text);
             String emotion = pd.emotion(translatedText);
+            
             if (emotion.contains("200")){
-                emotion = emotion.replace("\"", "");
-                emotion = emotion.replace("{code: 200, emotion: {probabilities: {Fear: ", "");
-                emotion = emotion.replace("}, emotion: ", "%");
-                emotion = emotion.split("%")[0];
-                emotion = emotion.replace(" Sad: ", "");
-                emotion = emotion.replace(" Happy: ", "");
-                emotion = emotion.replace(" Angry: ", "");
-                emotion = emotion.replace(" Excited: ", "");
-                emotion = emotion.replace(" Bored: ", "");
-                emotion = emotion.replace(",", ";");
-                return emotion;
+                JSONObject jsonObject = new JSONObject(emotion);
+                JSONObject emotionObj = (JSONObject) jsonObject.get("emotion");
+                JSONObject emotionProbObj = (JSONObject) emotionObj.get("probabilities");
+                String fear = String.valueOf(emotionProbObj.get("Fear"));
+                String sad = String.valueOf(emotionProbObj.get("Sad"));
+                String happy = String.valueOf(emotionProbObj.get("Happy"));
+                String angry = String.valueOf(emotionProbObj.get("Angry"));
+                String excited = String.valueOf(emotionProbObj.get("Excited"));
+                String bored = String.valueOf(emotionProbObj.get("Bored"));
+                String emotions = fear + ";" + sad + ";" + happy + ";" + angry + ";" + excited + ";" + bored;
+                return emotions;
             }else{
                 return "NotAnalyzedEmotions";
             }
@@ -46,17 +48,15 @@ public class TextAnalyzer {
             Translator translate = new Translator();
             String translatedText = translate.translate("es", "en", text);
             String sentiment = pd.sentiment(translatedText);
-            if (sentiment.contains("\"code\":200")){
+            if (sentiment.contains("200")){                
+                JSONObject jsonObject = new JSONObject(sentiment);
+                JSONObject sentimentProbObj = (JSONObject) jsonObject.get("probabilities");
+                String negative = String.valueOf(sentimentProbObj.get("negative"));
+                String neutral = String.valueOf(sentimentProbObj.get("neutral"));
+                String positive = String.valueOf(sentimentProbObj.get("positive"));
                 sentiment = sentiment.replace("},\"code\":200}", "");
-                sentiment = sentiment.replace("\"probabilities\"", "\"%probabilities\"");
-                sentiment = sentiment.split("%")[1];
-                sentiment = sentiment.replace("probabilities\":{", "");
-                sentiment = sentiment.replace("\"negative\":", "");
-                sentiment = sentiment.replace("\"neutral\":", "");
-                sentiment = sentiment.replace("\"positive\":", "");
-                sentiment = sentiment.replace(",", ";");
-                sentiment = sentiment.replace("\"", "");
-                return sentiment;
+                String sentiments = negative + ";" + neutral + ";" + positive;
+                return sentiments;
             }else{
                 return "NotAnalyzedSentiments";
             }
