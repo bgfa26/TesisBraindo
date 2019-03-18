@@ -269,7 +269,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #ffffff;
-  background-color: #353535;
+  background-color: #181818;
 }
 input,
 button,
@@ -4014,7 +4014,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #3f3d3d;
   border-color: #ffffff;
 }
 .navbar-inverse .navbar-brand {
@@ -5962,7 +5962,7 @@ table.tablesorter thead tr th:hover {
 	border-radius: 0;
 	border-right: 1px solid black;
     border-top: 1px solid black;
-	background-color: #222222;
+	background-color: #3f3d3d;
 	overflow-y: auto;
   }
 
