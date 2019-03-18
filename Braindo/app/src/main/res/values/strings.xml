@@ -59,12 +59,12 @@
 
     <!-- Strings related to register -->
     <string name="error_field_required">Este campo es requerido</string>
-    <string name="error_special_char">Este campo no puede contener caracteres especiales diferentes a coma, punto o punto y coma</string>
+    <string name="error_special_char">Este campo no puede contener caracteres especiales</string>
     <string name="error_invalid_space_char">Este campo no puede contener caracteres especiales o espacios</string>
     <string name="error_starts_with_space">Este campo no puede empezar con un espacio</string>
     <string name="error_id_registered">La cédula utilizada ya se encuentra registrada en el sistema</string>
     <string name="error_id_not_registered">La cédula utilizada no se encuentra registrada en el sistema</string>
-    <string name="error_invalid_email">El correo ingresado no es válido</string>
+    <string name="error_invalid_email">El correo ingresado no es válido, caracter especial no permitido</string>
     <string name="error_not_registered_email">El correo ingresado no se se encuentra registrado</string>
     <string name="error_bad_communication">Se produjo un problema de comunicación. Inténtelo de nuevo</string>
     <string name="operation_cancelled">La operación ha sido cancelada</string>
