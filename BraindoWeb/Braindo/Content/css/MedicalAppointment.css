@@ -78,12 +78,12 @@ fieldset[disabled] .form-control {
 .btn-info-Medical {
   content:'';
   color: #ffffff;
-  background-color: #69f0ae;
+  background-color: #45b780;
   transition: all 0.3s ease;
 }
 
 .btn-info-Medical:hover {
-  background: #45b780;
+  background: #69f0ae;
   color: #ffffff;
 }
 

@@ -20,7 +20,7 @@
 
 .btn-info-DashboardDateInput {
 
-  background-color: #69f0ae;
+  background-color: #45b780;
   border-radius: 4px;
   color: #ffffff;
   padding: 7px 20px;
@@ -33,7 +33,7 @@
 }
 
 .btn-info-DashboardDateInput:hover {
-  background: #45b780;
+  background: #69f0ae;
   color: #ffffff;
 }
 

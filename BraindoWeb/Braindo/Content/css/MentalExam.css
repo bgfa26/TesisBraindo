@@ -80,12 +80,12 @@ fieldset[disabled] .form-control {
 .btn-info-MentalExam {
   content:'';
   color: #ffffff;
-  background-color: #69f0ae;
+  background-color: #45b780;
   transition: all 0.3s ease;
 }
 
 .btn-info-MentalExam:hover {
-  background: #45b780;
+  background: #69f0ae;
   color: #ffffff;
 }
 

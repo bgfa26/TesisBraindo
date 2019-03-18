@@ -90,7 +90,7 @@
         <div class="col-lg-8 mx-auto text-center">
           <h2 class="section-heading text-white">¿Qué es la fobia social?</h2>
           <hr class="light my-4">
-          <p class="text-faded mb-4">El trastorno de fobia social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de fobia social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
+          <p class="text-faded mb-4" style="color: white">El trastorno de fobia social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de fobia social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Iniciemos</a>
         </div>
       </div> 
@@ -147,8 +147,8 @@
           <h2 class="section-heading text-white">Braindo: Versión Móvil ¿Qué es?
           </h2>
           <hr class="my-4" style="border-color:#69f0ae" />
-          <p class="text-faded mb-4">Braindo: Versión Móvil es una aplicación para dispositivos con sistema operativo Android que permite a sus usuarios realizar un test que será enviado a su psicólogo tratante* luego de ser procesado por una red neuronal y un analizador de texto que determinan el porcentaje de fobia social que el paciente padece y los sentimientos y emociones presentes en sus respuestas escritas </p>
-          <p class="text-faded mb-4"><i>* El psicólogo tratante debe estar registrado en la versión web de Braindo</i></p>
+          <p class="text-faded mb-4" style="color: white">Braindo: Versión Móvil es una aplicación para dispositivos con sistema operativo Android que permite a sus usuarios realizar un test que será enviado a su psicólogo tratante* luego de ser procesado por una red neuronal y un analizador de texto que determinan el porcentaje de fobia social que el paciente padece y los sentimientos y emociones presentes en sus respuestas escritas </p>
+          <p class="text-faded mb-4" style="color: white"><i>* El psicólogo tratante debe estar registrado en la versión web de Braindo</i></p>
           <img src="img/google.png" alt="Disponible en Google Play" width="200" height="80"/>
         </div>
       </div> 
@@ -253,6 +253,7 @@
       cursor: pointer;
       width: 100%;
       border-radius: 8px;
+      font-weight: bold;
     }
 
 
@@ -266,6 +267,7 @@
       padding: 10px 18px;
       background-color: #7127a0;
       border-radius: 8px;
+      font-weight: bold;
     }
 
     /* Center the image and position the close button */
@@ -375,14 +377,14 @@
         </asp:ScriptManager>
         <asp:updatepanel runat="server">
             <ContentTemplate>
-                 <asp:Button ID="aceptar" runat="server" Text="Ingresar" class="buttonLog" OnClick="aceptar_Click" />
+                 <asp:Button ID="aceptar" runat="server" Text="INGRESAR" class="buttonLog" OnClick="aceptar_Click" />
             </ContentTemplate>
         </asp:updatepanel>
 
       </div>
 
       <div class="container" style="background-color:#f1f1f1;width:100%;height:80%">
-        <button type="button" onclick="document.getElementById('login_modal').style.display='none'" class="cancelbtn">Cancelar</button>
+        <button type="button" onclick="document.getElementById('login_modal').style.display='none'" class="cancelbtn">CANCELAR</button>
         <span class="psw">Regístrese <a href="../Registration/Registration.aspx">aquí</a></span>
       </div>
     </form>
