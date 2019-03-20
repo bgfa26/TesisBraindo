@@ -43,7 +43,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <img src="img/logo/braindo.png" alt="Braindo" height="40" width="48" style="margin-right:5px"/> 
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">BRAINDO</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="margin-top:8px">BRAINDO</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -79,7 +79,7 @@
           <hr style="border-color:#69f0ae" />
         </div>
         <div class="col-lg-8 mx-auto">
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about" style="background-color:#69f0ae">Descubre más</a>
+          <a class="btn-creative btn-primary-creative btn-xl-creative js-scroll-trigger" href="#about" style="background-color:#69f0ae; color:white;">Descubre más</a>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@
           <h2 class="section-heading text-white">¿Qué es la fobia social?</h2>
           <hr class="light my-4">
           <p class="text-faded mb-4">El trastorno de fobia social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de fobia social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Iniciemos</a>
+          <a class="btn-creative btn-light btn-xl-creative js-scroll-trigger" href="#services">Iniciemos</a>
         </div>
       </div> 
     </div>

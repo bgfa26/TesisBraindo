@@ -45,37 +45,56 @@ namespace Braindo.View.Home
 
         protected void aceptar_Click(object sender, EventArgs e)
         {
-            String pwd = Request.Form["psw"];
-            pwd = GenerateSHA256String(pwd);
-            String email = Request.Form["mail"];
 
-            _psychologist = new Psychologist();
-            _psychologist._Email = email;
-            _psychologist._Password = pwd;
+            String pwdConfirm = Request.Form["psw"];
+            String emailConfirm = Request.Form["mail"];
 
-            LoginPsychologistCommand cmd = new LoginPsychologistCommand(_psychologist);
 
-            try
+            if (String.IsNullOrWhiteSpace(pwdConfirm) || String.IsNullOrWhiteSpace(emailConfirm))
             {
-                cmd.execute();
-                _psychologistConsulted = cmd.getAnswer();
-
-                if (_psychologistConsulted._ID == 0)
-                {
-                    String message = "Correo o contraseña invalido";
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + message + "');", true);
-                }
-                else
-                {
-                    Session["USER_ID"] = _psychologistConsulted._ID;
-                    Response.Redirect("~/View/Home/postlogin.aspx", false);
-                }
-
+                string script = "BootAlert('No debe dejar campos vacios');";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "ServerControlScript", script, true);
             }
-            catch (Exception ex)
+            else
             {
+                String pwd = Request.Form["psw"];
+                pwd = GenerateSHA256String(pwd);
+                String email = Request.Form["mail"];
 
-                throw ex;
+                _psychologist = new Psychologist();
+                _psychologist._Email = email;
+                _psychologist._Password = pwd;
+
+                LoginPsychologistCommand cmd = new LoginPsychologistCommand(_psychologist);
+
+                try
+                {
+                    cmd.execute();
+                    _psychologistConsulted = cmd.getAnswer();
+
+                    if (_psychologistConsulted._ID == 0)
+                    {
+
+                        string script = "BootAlert('Correo o contraseña invalido');";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+
+                        //String message = "Correo o contraseña invalido";
+                        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + message + "');", true);
+                    }
+                    else
+                    {
+                        Session["USER_ID"] = _psychologistConsulted._ID;
+                        Response.Redirect("~/View/Home/postlogin.aspx", false);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
 

@@ -295,7 +295,7 @@ header.masthead p {
   color: #7127a0 !important;
 }
 
-.btn {
+.btn-creative {
   font-weight: 700;
   text-transform: uppercase;
   border: none;
@@ -303,18 +303,64 @@ header.masthead p {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.btn-xl-creative {
+  padding: 1rem 2rem;
+}
+
+.btn-primary-creative {
+  background-color: #45b780;
+  border-color: #45b780;
+}
+
+.btn-primary-creative:hover, .btn-primary-creative:focus, .btn-primary-creative:active {
+  color: #fff;
+  background-color: #45b780 !important;
+}
+
+.btn-primary-creative:active, .btn-primary-creative:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(69, 183, 128, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(69, 183, 128, 0.5) !important;
+}
+
+
+/*ESTILO PARA LA ALERTA*/
+
+.btn {
+    width: 50px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 .btn-xl {
   padding: 1rem 2rem;
 }
 
 .btn-primary {
-  background-color: #F05F40;
-  border-color: #F05F40;
+    color: #fff;
+    background-color: #45b780;
+    border-color: #45b780;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #45b780 !important;
+  background-color: #45b780!important;
 }
 
 .btn-primary:active, .btn-primary:focus {

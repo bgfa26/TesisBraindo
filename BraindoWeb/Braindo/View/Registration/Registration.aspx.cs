@@ -71,38 +71,57 @@ namespace Braindo.View.Registration
                         _psychologistRegistered = cmd.getAnswer();
                         if (_psychologistRegistered._Error == Registry.RESULTADO_CODIGO_RECURSO_CREADO)
                         {
-                            Session["USER_ID"] = _psychologistRegistered._ID;
-                            string script = "alert(\"Se ha completado el registro exitosamente\");";
-                            ScriptManager.RegisterStartupScript(this, GetType(),
-                                                    "ServerControlScript", script, true);
-                            Response.AddHeader("REFRESH", "1;URL=/View/Home/postlogin.aspx");
+                            Response.Redirect("../Home/index.aspx");
+                            //Session["USER_ID"] = _psychologistRegistered._ID;
+                            //string script = "alert(\"Se ha completado el registro exitosamente\");";
+                            //ScriptManager.RegisterStartupScript(this, GetType(),
+                            //                        "ServerControlScript", script, true);
+                            //Response.AddHeader("REFRESH", "1;URL=/View/Home/postlogin.aspx");
                         }
                         else
                         {
-                            string script = "alert(\"No se ha podido completar el registro, por favor intente nuevamente\");";
+                            string script = "BootAlert('No se ha podido completar el registro, por favor intente nuevamente');";
                             ScriptManager.RegisterStartupScript(this, GetType(),
                                                     "ServerControlScript", script, true);
+
+                            //string script = "alert(\"No se ha podido completar el registro, por favor intente nuevamente\");";
+                            //ScriptManager.RegisterStartupScript(this, GetType(),
+                            //                        "ServerControlScript", script, true);
                         }
                     }
                     catch (Exception ex)
                     {
-                        string script = "alert(\"No se ha podido completar el registro, por favor intente nuevamente\");";
+
+                        string script = "BootAlert('No se ha podido completar el registro, por favor intente nuevamente');";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                                 "ServerControlScript", script, true);
+
+                        //string script = "alert(\"No se ha podido completar el registro, por favor intente nuevamente\");";
+                        //ScriptManager.RegisterStartupScript(this, GetType(),
+                        //                        "ServerControlScript", script, true);
                     }
                 }
                 else
                 {
-                    string script = "alert(\"Existen campos vacíos en el formulario\");";
+                    string script = "BootAlert('Existen campos vacíos en el formulario');";
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                             "ServerControlScript", script, true);
+
+                    //string script = "alert(\"Existen campos vacíos en el formulario\");";
+                    //ScriptManager.RegisterStartupScript(this, GetType(),
+                    //                        "ServerControlScript", script, true);
                 }
             }
             else
             {
-                string script = "alert(\"Existen campos vacíos en el formulario\");";
+
+                string script = "BootAlert('Existen campos vacíos en el formulario');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                         "ServerControlScript", script, true);
+
+                //string script = "alert(\"Existen campos vacíos en el formulario\");";
+                //ScriptManager.RegisterStartupScript(this, GetType(),
+                //                        "ServerControlScript", script, true);
             }
 
         }

@@ -26,6 +26,7 @@
   <!-- Custom styles for this template -->
   <link href="css/creative.css" rel="stylesheet">
 
+
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
   <script src="https://www.amcharts.com/lib/3/pie.js"></script>
@@ -42,7 +43,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <img src="img/logo/braindo.png" alt="Braindo" height="40" width="48" style="margin-right:5px"/> 
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">BRAINDO</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="margin-top:8px">BRAINDO</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,7 +62,7 @@
             <a class="nav-link js-scroll-trigger" href="#contact">Estadísticas</a>
           </li>
           <li class="nav-item">
-            <button onclick="document.getElementById('login_modal').style.display='block'" style="width:auto; height:20px; text-align:center; line-height: 0px; margin-top: 2px; margin-left: 15px;background-color:#69f0ae" class="btn btn-primary btn-xl js-scroll-trigger">Iniciar sesión</button>
+            <button onclick="document.getElementById('login_modal').style.display='block'" style="width:auto; height:20px; text-align:center; line-height: 0px; margin-top: 2px; margin-left: 15px;background-color:#69f0ae" class="btn-creative btn-primary-creative btn-xl js-scroll-trigger">Iniciar sesión</button>
           </li>
         </ul>
       </div>
@@ -78,7 +79,7 @@
           <hr style="border-color:#69f0ae" />
         </div>
         <div class="col-lg-8 mx-auto">
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about" style="background-color:#69f0ae">Descubre más</a>
+          <a class="btn-creative btn-primary-creative btn-xl-creative js-scroll-trigger" href="#about" style="background-color:#69f0ae; color:white;">Descubre más</a>
         </div>
       </div>
     </div>
@@ -91,7 +92,7 @@
           <h2 class="section-heading text-white">¿Qué es la fobia social?</h2>
           <hr class="light my-4">
           <p class="text-faded mb-4" style="color: white">El trastorno de fobia social es un problema de salud mental que consiste en un temor intenso y persistente de ser observado y juzgado por otros. Este temor puede afectar el trabajo, la escuela y otras actividades cotidianas, incluso puede dificultar hacer y mantener amistades. Sin embargo ¡el trastorno de fobia social no tiene que detenerlo de alcanzar su potencial! Ya que el diagnóstico y tratamiento le puede ayudar a superar sus síntomas.</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Iniciemos</a>
+          <a class="btn-creative btn-light btn-xl-creative js-scroll-trigger" href="#services">Iniciemos</a>
         </div>
       </div> 
     </div>
@@ -295,7 +296,7 @@
     .modal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
+      /*z-index: 1;*/ /* Sit on top */
       left: 0;
       top: 0;
       width: 100%; /* Full width */
@@ -356,8 +357,40 @@
          width: 100%;
       }
     }
+
+
+    .centerDialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+    }
+
+
   </style>
   
+
+    <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/Content/bootbox/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/Content/bootbox/bootbox.min.js"></script>
+    <script src="/Content/bootbox/bootbox.locales.min.js"></script>
+
+    <script>
+        function BootAlert(msg) {
+            bootbox.alert({
+                closeButton: false,
+                message: msg,
+                size: 'small',
+                className: 'centerDialog',
+                callback: function () {
+
+                }
+            })
+        }
+     </script>
+
 
   <div id="login_modal" class="modal">
   
@@ -369,10 +402,10 @@
 
       <div class="container">
         <label for="uname"><b>Correo electrónico</b></label>
-        <input type="text" placeholder="Introduzca el correo" name="mail" required oninvalid="alert('El campo de correo electrónico no puede estar vacío');">
+        <input type="text" placeholder="Introduzca el correo" name="mail"">
 
         <label for="psw"><b>Contraseña</b></label>
-        <input type="password" placeholder="Introduzca la contraseña" name="psw" required oninvalid="alert('El campo de contraseña no puede estar vacío')">
+        <input type="password" placeholder="Introduzca la contraseña" name="psw">
         <asp:ScriptManager runat="server" ID="sm">
         </asp:ScriptManager>
         <asp:updatepanel runat="server">
@@ -405,10 +438,6 @@
 
   </script>
 
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
