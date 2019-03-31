@@ -56,14 +56,12 @@ namespace Braindo.View.IndexModule
                 string[] endDateArgs = fechaFinal.Split('-');
                 String yearEnd = endDateArgs[0];
 
-                int compare = string.Compare(yearInit, yearEnd);
+                //int compare = string.Compare(yearInit, yearEnd);
 
-                if (compare != 0)
-                {
-                    answer = "Deben ser el mismo año";
-                }
-                else
-                {
+                //if (compare != 0)
+                //{
+                //    answer = "Deben ser el mismo año";
+                //}
                     DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
                     DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
 
@@ -143,7 +141,6 @@ namespace Braindo.View.IndexModule
 
                         throw ex;
                     }
-                }
             }
             return answer;
         }
