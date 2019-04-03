@@ -63,6 +63,24 @@
         }
    </script>
 
+   <script>
+       $(document).ready(function () {
+           //called when key is pressed in textbox
+           $("#idNumber").keypress(function (e) {
+
+               var maxlengthNumber = parseInt($('#idNumber').attr('maxlength'));
+               var inputValueLength = $('#idNumber').val().length + 1;
+               if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+
+                   return false;
+               }
+               if (maxlengthNumber < inputValueLength) {
+                   return false;
+               }
+           });
+       });
+   </script>
+
 </head>
 <body>
 
@@ -75,7 +93,7 @@
                     <form runat="server" id="signupform" class="signup-form">
                         <h2 class="form-title">Registro de psicólogos</h2>
                         <div class="form-group">
-                            <input type="number" class="form-input" name="id" id="id" placeholder="Cédula de identidad" max="8" min="6"/>
+                            <input type="number" class="form-input" name="idNumber" id="idNumber" placeholder="Cédula de identidad" maxlength="8"/>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="psychologicalId" id="psychologicalId" placeholder="Número de registro" maxlength="15"/>

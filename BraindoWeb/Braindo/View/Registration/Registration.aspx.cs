@@ -47,7 +47,7 @@ namespace Braindo.View.Registration
             pwd = GenerateSHA256String(pwd);
             String re_password = Request.Form["re_password"];
             re_password = GenerateSHA256String(re_password);
-            String id = Request.Form["id"];
+            String id = Request.Form["idNumber"];
             String psychologicalId = Request.Form["psychologicalId"];
             String firstname = Request.Form["firstname"];
             String secondname = Request.Form["secondname"];
