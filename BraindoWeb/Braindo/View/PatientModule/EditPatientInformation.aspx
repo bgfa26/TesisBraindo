@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="form-group-Patient">
                                     <label>Edad</label>
-                                    <asp:TextBox runat="server" id="ageTXT" onkeypress="return AllowNumbers(event)" CssClass="form-control-Patient">
+                                    <asp:TextBox runat="server" id="ageTXT" onkeypress="var b = AllowNumbers(event);lengthValidationAlert(event, this.value, 'age'); return b" CssClass="form-control-Patient">
                                     </asp:TextBox>
                                 </div>
                                 <div class="form-group-Patient">
@@ -150,11 +150,13 @@
             var strName = "name";
             var strSurname = "surname";
             var strRegistration = "registration";
+            var strAge = "age";
 
             var n = field.localeCompare(strPass);
             var n2 = field.localeCompare(strName);
             var n3 = field.localeCompare(strSurname);
             var n4 = field.localeCompare(strRegistration);
+            var n41 = field.localeCompare(strAge);
 
             if ((n == 0) && (val.length >= 8)) {
                 evt.preventDefault();
@@ -200,6 +202,19 @@
                 bootbox.hideAll();
                 bootbox.alert({
                     message: 'Máximo 30 caracteres',
+                    size: 'small',
+                    className: "centerDialog",
+                    callback: function () {
+
+                    }
+                })
+                return false;
+            }
+            else if ((n41 == 0) && (val.length >= 2)) {
+                evt.preventDefault();
+                bootbox.hideAll();
+                bootbox.alert({
+                    message: 'Máximo 2 caracteres',
                     size: 'small',
                     className: "centerDialog",
                     callback: function () {
