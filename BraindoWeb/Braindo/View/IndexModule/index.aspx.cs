@@ -23,6 +23,12 @@ namespace Braindo.View.IndexModule
             }
         }
 
+        public static DateTime LastDayOfMonth(DateTime dt)
+        {
+            DateTime ss = new DateTime(dt.Year, dt.Month, 1);
+            return ss.AddMonths(1).AddDays(-1);
+        }
+
         [System.Web.Services.WebMethod]
         public static String GetDateStatistics(String initDate, String endingDate)
         {
@@ -56,16 +62,20 @@ namespace Braindo.View.IndexModule
                 string[] endDateArgs = fechaFinal.Split('-');
                 String yearEnd = endDateArgs[0];
 
-                //int compare = string.Compare(yearInit, yearEnd);
+                int compare = string.Compare(yearInit, yearEnd);
 
-                //if (compare != 0)
-                //{
-                //    answer = "Deben ser el mismo año";
-                //}
+                if (compare != 0)
+                {
+                    answer = "Deben ser el mismo año";
+                }
+                else
+                {
                     DateTime fechaInicialDT = Convert.ToDateTime(fechaInicial);
                     DateTime fechaFinalDT = Convert.ToDateTime(fechaFinal);
 
-                    Statistics stats = new Statistics(fechaInicialDT, fechaFinalDT);
+                    DateTime lastDayOfFinalMonth = LastDayOfMonth(fechaFinalDT);
+
+                    Statistics stats = new Statistics(fechaInicialDT, lastDayOfFinalMonth);
 
                     DateStatisticsCommand dateCMD = new DateStatisticsCommand(stats);
 
@@ -141,6 +151,7 @@ namespace Braindo.View.IndexModule
 
                         throw ex;
                     }
+                }
             }
             return answer;
         }
