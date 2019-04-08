@@ -55,8 +55,7 @@ namespace Braindo.View.Registration
             String secondlastname = Request.Form["secondlastname"];
             String birthday = Request.Form["birthday"];
             String email = Request.Form["email"];
-            if (!pwd.Equals("") && !re_password.Equals("") && !id.Equals("") && !psychologicalId.Equals("") && !firstname.Equals("") &&
-                !secondname.Equals("") && !firstlastname.Equals("") && !secondlastname.Equals("") && !birthday.Equals("") && !email.Equals(""))
+            if (!pwd.Equals("") && !re_password.Equals("") && !id.Equals("") && !psychologicalId.Equals("") && !firstname.Equals("") && !firstlastname.Equals("") && !birthday.Equals("") && !email.Equals(""))
             {
                 int _id = Convert.ToInt32(id);
                 DateTime birthdate = DateTime.Parse(birthday);

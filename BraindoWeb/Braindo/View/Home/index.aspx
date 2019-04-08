@@ -218,7 +218,7 @@
     body {font-family: Arial, Helvetica, sans-serif;}
 
     /* Full-width input fields */
-    input[type=text], input[type=password] {
+    input[type=text], input[type=password], input[type=email] {
       width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -402,7 +402,7 @@
 
       <div class="container">
         <label for="uname"><b>Correo electrónico</b></label>
-        <input type="text" placeholder="Introduzca el correo" name="mail"">
+        <input type="email" placeholder="Introduzca el correo" name="mail"">
 
         <label for="psw"><b>Contraseña</b></label>
         <input type="password" placeholder="Introduzca la contraseña" name="psw">

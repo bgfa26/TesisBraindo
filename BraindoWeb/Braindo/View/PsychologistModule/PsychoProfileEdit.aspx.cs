@@ -63,7 +63,7 @@ namespace Braindo.View.PsychologistModule
         protected void btnChangeData_Click(object sender, EventArgs e)
         {
 
-            if (nameTXT.Text.Equals("") || secondNameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || secondSurnameTXT.Text.Equals("") || date.Value.Equals("") || registrationNumberTXT.Text.Equals("") || email_txt.Value.Equals(""))
+            if (nameTXT.Text.Equals("") || surnameTXT.Text.Equals("") || date.Value.Equals("") || registrationNumberTXT.Text.Equals("") || email_txt.Value.Equals(""))
             {
                 string script = "BootAlert('No debe dejar campos vacíos');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
