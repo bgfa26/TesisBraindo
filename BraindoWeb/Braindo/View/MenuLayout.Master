@@ -46,7 +46,7 @@
                             <img src="../Home/img/logo/braindo.png" alt="Braindo" height="40" width="48" style="margin-right:5px"/> 
                         </div>
                         <div class="col-lg-2" style="margin-left:-150px">
-                            <a class="navbar-brand" href="../IndexModule/index.aspx">BRAINDO</a>
+                            <a class="navbar-brand" href="../Home/postlogin.aspx">BRAINDO</a>
                         </div>
                      <%--<img src="../Home/img/logo/braindo.png" alt="Braindo" height="40" width="48" style="margin-right:5px"/> --%>
                      <%--<a class="navbar-brand" href="../IndexModule/index.aspx">BRAINDO</a>--%>
